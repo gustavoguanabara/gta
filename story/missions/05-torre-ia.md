@@ -3,7 +3,7 @@ id: 05-torre-ia
 title: Isla 5 — Torre IA
 start: COM-73
 target: COM-50
-objective: Vayan a COM-50: sigan la flecha
+objective: Destino: COM-50 (sigan la flecha)
 reward_item: cofre-ia
 roof_color: #9225A5
 roof_logo: logos-cursos/ia2.svg

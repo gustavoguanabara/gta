@@ -6,6 +6,7 @@ import { ConfirmDialogController } from './ui/confirm-dialog.js?v=2';
 import { AssetsRefreshDialogController } from './ui/assets-refresh-dialog.js?v=2';
 import { InventoryController } from './ui/inventory-controller.js?v=21';
 import { CityMap } from './world/city-map.js?v=30';
+import { ExpeditionTimer } from './ui/expedition-timer.js?v=1';
 import {
   loadGameState,
   clearGameState,
@@ -39,6 +40,12 @@ async function boot() {
   const canvas = document.getElementById('game-canvas');
   const minimapCanvas = document.getElementById('minimap-canvas');
   const touchControls = document.getElementById('touch-controls');
+  const expeditionTimer = new ExpeditionTimer({
+    badgeEl: document.getElementById('timer-badge'),
+    textEl: document.getElementById('timer-text'),
+    selectEl: document.getElementById('timer-select'),
+    onTimeUp: () => hud.showToast('⏱ ¡Se terminó el tiempo! Vayan al cierre con las letras que juntaron.', 8000),
+  });
 
   let storyPackage = null;
   let cityMap = null;
@@ -191,6 +198,7 @@ async function boot() {
       if (activeEngine) {
         activeEngine.stop();
       }
+      expeditionTimer.begin({ restart: !useSaved });
       if (!useSaved) {
         clearGameState();
         savedState = null;
@@ -218,6 +226,8 @@ async function boot() {
       });
       activeEngine.initWorld();
       activeEngine.start();
+      // Solo para pruebas automáticas: index.html?debug expone el motor.
+      if (new URLSearchParams(location.search).has('debug')) window.__engine = activeEngine;
       if (backgroundPreloadPromise && !backgroundPreloadDone) {
         hud.setBackgroundLoadingProgress(backgroundPreloadPercent);
       } else {

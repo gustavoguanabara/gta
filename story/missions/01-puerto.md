@@ -3,7 +3,7 @@ id: 01-puerto
 title: Isla 1 — Puerto de partida
 start: CASA-01
 target: COM-30
-objective: Vayan a COM-30: sigan la flecha
+objective: Destino: COM-30 (sigan la flecha)
 reward_item: cofre-puerto
 roof_color: #00A096
 roof_logo: logos-cursos/intro.svg

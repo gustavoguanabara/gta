@@ -909,6 +909,14 @@ export class Engine {
       this.setObjective(null);
       if (mission.rewardItem && !this.inventory.hasItem(mission.rewardItem)) {
         this.#grantMissionItem(mission.rewardItem);
+        const rewardDef = this.storyPackage?.items?.get(mission.rewardItem);
+        if (rewardDef) {
+          this.hud?.showToast?.(`¡Recibieron: ${rewardDef.name}!`, {
+            durationMs: 5000,
+            imageUrl: rewardDef.imageUrl || '',
+            imageAlt: rewardDef.name,
+          });
+        }
       }
       const hasNext = this.currentMissionIndex + 1 < this.storyPackage.missions.length;
       this.paused = true;

@@ -128,7 +128,8 @@ export class WebModalController {
     if (!this.screen || !this.iframe) return;
     let parsed;
     try {
-      parsed = new URL(String(url || '').trim());
+      // Acepta rutas relativas (laboratorios dentro de story/) resolviéndolas contra la página.
+      parsed = new URL(String(url || '').trim(), globalThis.location?.href);
     } catch {
       return;
     }

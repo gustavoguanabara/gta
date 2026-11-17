@@ -3,7 +3,7 @@ id: 04-mina-de-datos
 title: Isla 4 — Mina de Datos
 start: COM-74
 target: COM-73
-objective: Vayan a COM-73: sigan la flecha
+objective: Destino: COM-73 (sigan la flecha)
 reward_item: cofre-datos
 roof_color: #30A936
 roof_logo: logos-cursos/datos.png

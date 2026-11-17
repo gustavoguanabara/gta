@@ -3,7 +3,7 @@ id: 06-taller-microbit
 title: Isla 6 — Taller Micro:bit
 start: COM-50
 target: COM-02
-objective: Vayan a COM-02: sigan la flecha
+objective: Destino: COM-02 (sigan la flecha)
 reward_item: cofre-microbit
 roof_color: #FFC800
 roof_logo: logos-cursos/microbit.svg

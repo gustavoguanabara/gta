@@ -2499,3 +2499,12 @@ body {
     width: min(44%, 240px);
   }
 }
+
+/* Temporizador de expedición */
+.timer-badge { font-variant-numeric: tabular-nums; font-weight: 800; }
+.timer-badge.is-low { background: rgba(245, 158, 11, 0.92); color: #1d1d1b; }
+.timer-badge.is-up { background: rgba(220, 38, 38, 0.95); color: #fff; animation: timer-blink 1s steps(1) infinite; }
+@keyframes timer-blink { 50% { opacity: 0.55; } }
+@media (prefers-reduced-motion: reduce) { .timer-badge.is-up { animation: none; } }
+.start-timer { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 10px 0 4px; font-weight: 700; color: #f8fafc; }
+.start-timer select { min-height: 40px; padding: 6px 10px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(15, 23, 42, 0.85); color: #f8fafc; font: inherit; }

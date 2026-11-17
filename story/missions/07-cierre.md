@@ -3,7 +3,7 @@ id: 07-cierre
 title: Cierre — La palabra secreta
 start: COM-02
 target: COM-03
-objective: Vayan a COM-03 para el cierre: sigan la flecha
+objective: Cierre en COM-03 (sigan la flecha)
 roof_color: #05428F
 roof_logo: assets/ceibal-hoja.svg
 ---

@@ -73,6 +73,12 @@
             <div id="hud-bg-progress-fill" class="progress-fill"></div>
           </div>
         </div>
+        <div id="timer-badge" class="hud-pill timer-badge hidden" role="timer" aria-label="Tiempo restante de la expedición">
+          <svg class="hud-location-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2.5 2.5M9 2h6"></path>
+          </svg>
+          <span id="timer-text">--:--</span>
+        </div>
         <div id="location-badge" class="hud-pill" aria-label="Ubicación actual">
           <svg class="hud-location-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 1 1 13 0c0 5.4-6.5 11-6.5 11Z"></path>
@@ -162,6 +168,15 @@
             <span id="start-loading-percent" class="start-loading-percent">0%</span>
           </div>
         </div>
+        <label class="start-timer" for="timer-select">
+          <span>Tiempo de expedición</span>
+          <select id="timer-select">
+            <option value="0">Sin límite</option>
+            <option value="7">7 minutos</option>
+            <option value="10" selected>10 minutos</option>
+            <option value="15">15 minutos</option>
+          </select>
+        </label>
         <div class="start-actions">
           <button id="start-button" type="button" class="primary-button" disabled>Cargando...</button>
           <button id="new-game-button" type="button" class="secondary-button hidden" disabled>Nueva partida</button>

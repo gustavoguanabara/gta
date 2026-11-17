@@ -3,7 +3,7 @@ id: 02-isla-web
 title: Isla 2 — Isla Web
 start: COM-30
 target: COM-51
-objective: Vayan a COM-51: sigan la flecha
+objective: Destino: COM-51 (sigan la flecha)
 reward_item: cofre-web
 roof_color: #0C88CA
 roof_logo: logos-cursos/web.svg

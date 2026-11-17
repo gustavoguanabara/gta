@@ -3,7 +3,7 @@ id: 03-volcan-python
 title: Isla 3 — Volcán Python
 start: COM-51
 target: COM-74
-objective: Vayan a COM-74: sigan la flecha
+objective: Destino: COM-74 (sigan la flecha)
 reward_item: cofre-python
 roof_color: #F39219
 roof_logo: logos-cursos/prog.svg
