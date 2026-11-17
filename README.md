@@ -1,109 +1,111 @@
 <p align="center">
-  <img src="./story/favicon.svg" alt="Logo GTA — Guanabara Testando Agentes" width="84" height="84">
+  <img src="./story/favicon.svg" alt="Logo Expedición CC" width="84" height="84">
 </p>
 
-<h1 align="center">GTA (Guanabara Testando Agentes)</h1>
+<h1 align="center">Expedición CC · Modo Ciudad</h1>
 
 <p align="center">
-  <strong>Um jogo retrô de mundo aberto em visão superior construído com WebGL, Canvas 2D e JavaScript puro — aberto para você jogar, estudar e criar suas próprias histórias.</strong>
+  <strong>Recurso educativo de Ceibal · Programa Ciencias de la Computación.<br>
+  Manejen por una ciudad vista desde arriba, visiten seis edificios (uno por curso), resuelvan los laboratorios y junten las letras de la palabra secreta.</strong>
 </p>
 
 <p align="center">
-  <img src="./story/splash/splash-start.png" alt="Tela de abertura de GTA: Missão Vibe Coding" width="760">
+  <img src="./story/splash/splash-start.png" alt="Pantalla de inicio de Expedición CC · Modo Ciudad" width="760">
 </p>
 
 ---
 
-## Sobre o Projeto
+## Qué es
 
-**GTA (Guanabara Testando Agentes)** nasceu como um laboratório prático e divertido para explorar o desenvolvimento de aplicações completas com apoio de agentes de inteligência artificial — sem abrir mão de arquitetura limpa, testes automatizados e experiência polida em desktop e celular.
+Es la versión "ciudad" de **Expedición CC**: el mapa de islas se convirtió en una ciudad de mundo abierto. Cada isla es ahora un edificio con techo del color de su curso:
 
-Todo o motor roda diretamente no navegador, sem frameworks ou dependências externas em tempo de execução, combinando **ES Modules**, **WebGL** para renderização da cidade, **Canvas 2D** para minimapa e mapa ampliado, **Service Worker** para cache offline e suporte completo a **PWA** (incluindo *Adicionar à Tela de Início* no iPhone e iPad).
+| # | Edificio | Curso | Tutor/a | Laboratorio | Letra |
+|---|---|---|---|---|---|
+| 1 | Puerto de partida | Fase 1 · Intro a las CC e IA desde cero | Rosario | Mesa de inscripciones, ruta del programa, detector de rumores | U |
+| 2 | Isla Web | Desarrollo web | Nacho | Mini editor HTML/CSS/JS, reparar la página, viaje de un paquete | R |
+| 3 | Volcán Python | Programación 1, 2 y 3 | Martina | Comillas, bucle, ¿quién es el bucle?, lógica | F |
+| 4 | Mina de Datos | Datos para la acción | Joaquín | Consola hacker (SQL), tablas relacionadas | O |
+| 5 | Torre IA | IA desde cero · Profundización en IA | Camila | Anti-cheat con umbral, filtro antispam | T |
+| 6 | Taller Micro:bit | Micro:bit | Facundo | Sensor de inclinación, eventos | U |
+| 7 | Centro Ceibal | Cierre | Rosario | Palabra secreta y ruta de cursos | — |
 
----
+En cada edificio:
+1. El tutor o la tutora presenta el curso.
+2. El equipo abre el **laboratorio** (se abre dentro del juego) y resuelve los desafíos.
+3. Al terminar, el laboratorio muestra un **código de desbloqueo**. El equipo lo elige en el diálogo. Si se equivoca, recibe una pista y vuelve a intentar.
+4. Recibe un **cofre** con una letra (queda en el inventario).
 
-## A História Atual: *Missão Vibe Coding*
+Además hay una **mesa de inscripciones** (techo verde agua, cerca del inicio) con la información del programa, y 12 objetos coleccionables escondidos por la ciudad.
 
-Nesta edição, a pasta [`story/`](./story) traz a campanha **Missão Vibe Coding**.
+## Guía docente (10–15 minutos)
 
-<table>
-  <tr>
-    <td width="190" align="center">
-      <img src="./story/characters/guanabara.png" alt="Personagem Guanabara" width="160">
-    </td>
-    <td>
-      Você controla <strong>Guanabara</strong>, um motorista experiente que conhece cada rua, esquina e atalho da ilha.<br><br>
-      Tudo começa com uma encomenda misteriosa: uma <strong>caixa secreta</strong> que precisa cruzar a cidade. A partir daí, uma sequência de entregas, imprevistos tecnológicos, bugs improváveis e figuras inspiradas no universo de tecnologia e inteligência artificial transforma um simples trajeto em uma corrida cheia de humor — envolvendo GPUs, servidores, robôs e muito café.<br><br>
-      <em>Sem spoilers:</em> explore a cidade com calma, converse com moradores nas calçadas e fique atento aos itens colecionáveis espalhados pelos quarteirões!
-    </td>
-  </tr>
-</table>
+1. **Minuto 0–2.** Formen equipos de 3:
+   - **Piloto:** maneja el celular o la compu.
+   - **Escriba:** completa la [bitácora](./docs/bitacora.html) (imprimir una por equipo).
+   - **Navegante:** lee el mapa (tecla `M`) y decide.
 
----
+   Que el piloto pruebe los controles un minuto antes de arrancar.
+2. **Minuto 2–12.** Expedición: sigan la flecha amarilla hasta cada edificio. En los laboratorios, anoten la predicción en la bitácora antes de probar.
+3. **Minuto 12–15.** Cierre: cada equipo dice su palabra secreta, cuántas islas completó y qué curso le interesó más.
 
-## Crie Sua Própria História (Fork & Personalize)
+Si un equipo no llega a todos los edificios, igual participa del cierre con las letras que juntó. Con poco tiempo, se puede jugar en dos clases: el progreso queda guardado en el navegador.
 
-Este é um projeto **Open Source** pensado para ser modificado. Você pode fazer um **fork** deste repositório e transformar o jogo em uma campanha totalmente nova — com seus próprios personagens, falas, itens, cenários e missões — editando apenas arquivos Markdown e imagens dentro de [`story/`](./story), sem precisar mexer no motor do jogo:
+**Controles:**
+- **Teclado:** flechas o `WASD` para moverse, `Espacio` para acción o acelerar, `Shift`/`X` para frenar, `I` para el inventario, `M` para el mapa, `Esc` para pausa.
+- **Celular:** analógico virtual a pie y volante al manejar.
+- **Gamepad:** también funciona.
+
+## Cómo editar el contenido
+
+Todo el contenido está en [`story/`](./story), en Markdown, sin tocar el motor:
 
 ```text
 story/
-├── story.md              # Título, subtítulo, título da aba, lista de personagens, itens e missões
-├── favicon.svg           # Ícone da aba do navegador e do Web App (suporta .svg, .png ou .ico)
-├── npc-lines.md          # Frases aleatórias para balões HQ dos moradores na rua (até 60 caracteres)
-├── wrong-item-lines.md   # Reações genéricas ao tentar entregar um item errado (até 60 caracteres)
-├── splash/
-│   ├── splash-start.png  # Imagem da tela inicial e de compartilhamento em redes sociais
-│   └── splash-end.png    # Imagem exibida na conclusão da campanha
-├── characters/           # Fichas (.md) e retratos (.png) dos personagens das cutscenes
-├── items/                # Definições (.md) e ícones (.svg/.png) de itens de missão e extras
-├── missions/             # Roteiros das missões (.md), locais, cutscenes, escolhas e entregas
-└── map/                  # Mapeamento dos códigos da cidade (map.md) e cenários das cutscenes
+├── story.md            # título, personajes, ítems y orden de las misiones
+├── missions/           # una misión por edificio (01-puerto.md … 07-cierre.md) y el encuentro extra
+├── puzzles/            # laboratorios HTML que se abren dentro del juego
+├── characters/         # fichas y retratos de tutores y del equipo
+├── items/              # cofres (letras) y coleccionables
+├── logos-cursos/       # íconos de los cursos (techos de los edificios)
+├── map/map.md          # nombres de calles, plazas, comercios y casas
+├── npc-lines.md        # frases de la gente en la calle
+└── wrong-item-lines.md # reacciones al entregar un ítem equivocado
 ```
 
-Basta trocar os textos e imagens dessa pasta para publicar sua própria aventura no GitHub Pages!
+En los diálogos de las misiones se pueden usar estas instrucciones:
 
----
+```text
+- Personaje: Texto que dice.
+- LINK: Abrir laboratorio -> puzzles/web.html      (página local o https://...)
+- OPCION: Respuesta correcta -> CORRECTO: explicación que se muestra
+- OPCION: Respuesta incorrecta -> REINTENTAR: pista; deja volver a intentar
+- OPCION: Volver a abrir el laboratorio -> ATRAS
+- OPCION: Seguir -> SIGUIENTE
+```
 
-## Recursos do Motor e Jogabilidade
+En el encabezado de cada misión:
+- `reward_item:` entrega un ítem al completar la misión.
+- `roof_color:` y `roof_logo:` pintan el techo del edificio de destino.
 
-- **Cidade-ilha procedural (30×30 quarteirões)**: ruas nomeadas, casas, comércios, praças, 40 hospitais com recuperação de vida, áreas portuárias e barcos circulando ao redor da ilha.
-- **Tráfego e pedestres vivos**: carros, motos e vans com comportamento distinto, curvas suaves em esquinas, semáforos, faixas de pedestres, frenagem preventiva diante do jogador a pé, colisões com dano proporcional à velocidade e explosões em cadeia.
-- **Balões de diálogo estilo HQ**: moradores na rua e reações no inventário exibem balões animados acima do alvo com efeito de digitação.
-- **Mapa ampliado inteligente**: enquadramento automático de jogador e destino ao abrir, zoom por pinça/scroll/botões e rota traçada pelas ruas até o objetivo.
-- **Controles multiplataforma**:
-  - **Teclado**: `Setas` ou `WASD` para mover/dirigir, `Espaço` para ação/acelerar, `Shift`/`X` para frear/ré, `I`/`Tab` para inventário, `M` para mapa ampliado e `Esc`/`P` para pausa.
-  - **Joystick / Gamepad**: suporte completo em menus, diálogos e direção.
-  - **Tela de toque (iOS/Android)**: analógico virtual a pé, volante horizontal com âncora relativa ao primeiro toque ao dirigir, além de HUD adaptativo para modo retrato e paisagem.
-- **Progresso salvo no navegador**: missões desbloqueadas, inventário e posição são preservados entre recarregamentos.
+Las palabras clave originales en portugués (`OPCAO`, `NEXT`, `COMPLETE`, `GAMEOVER`) siguen funcionando.
 
----
+## Ejecutar localmente y tests
 
-## Como Executar Localmente e Rodar os Testes
-
-Como o projeto utiliza **ES Modules**, sirva esta pasta por um servidor HTTP local (não abra o `index.html` diretamente via `file://`):
+El juego usa ES Modules, así que hay que servirlo por HTTP; no funciona abriendo el archivo directamente:
 
 ```bash
-# Opção 1: Python
 python3 -m http.server 8080
-
-# Opção 2: Node.js
-npx serve .
 ```
 
-Depois, acesse `http://localhost:8080` no navegador.
-
-Para executar a suíte de testes unitários com Node.js:
+Después, abran `http://localhost:8080`. Para correr los tests:
 
 ```bash
 node --test tests/*.test.js
 ```
 
----
+Para publicarlo en GitHub Pages: **Settings → Pages → Deploy from a branch → `main` / root**.
 
-## Propósito Educacional — Curso em Vídeo
+## Créditos
 
-Este projeto foi idealizado e criado por **Gustavo Guanabara**, professor e fundador do [**Curso em Vídeo**](https://www.youtube.com/cursoemvideo) no YouTube.
-
-O objetivo do **GTA — Guanabara Testando Agentes** vai muito além do jogo: ele existe para **incentivar pessoas de todas as idades a aprenderem a desenvolver soluções reais**, mostrando na prática como tecnologia, criatividade, lógica e ferramentas modernas podem caminhar juntas. O **Curso em Vídeo** tem como missão democratizar o ensino de tecnologia em língua portuguesa e **formar a próxima geração de desenvolvedores do mercado**.
-
-Curtiu o projeto? Faça um **fork**, crie sua própria história em [`story/`](./story), compartilhe com a comunidade e continue aprendendo!
+- **Contenido educativo:** Expedición CC, Ceibal · Programa Ciencias de la Computación.
+- **Motor del juego:** [GTA — Guanabara Testando Agentes](https://github.com/gustavoguanabara/gta), de **Gustavo Guanabara** ([Curso em Vídeo](https://www.youtube.com/cursoemvideo)). Este repositorio es un fork adaptado para uso educativo. El repositorio original no declara una licencia; para distribuirlo más allá del aula, consulten al autor.

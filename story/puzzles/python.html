@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Volcán Python · Expedición CC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="comun.css">
+</head>
+<body>
+<main class="app" id="app"></main>
+<noscript><p style="padding:16px">Esta página necesita JavaScript para funcionar.</p></noscript>
+<script src="comun.js"></script>
+<script>
+CC.iniciar({
+  id:'python', codigo:'BUCLE',
+  nombre:'Volcán Python', kick:'Isla 3/6 · Fase 2',
+  curso:'Fase 2 · Programación 1, 2 y 3', mapaCurso:'Programación 1 · 2 · 3',
+  color:'#F39219', ct:'#1D1D1B', logo:'prog.svg',
+  info:'Tres niveles en Python: tus primeros programas, estructuras de datos y programación orientada a objetos.',
+  modalidad:['Online','Con tutoría','Encuentros en vivo'],
+  preguntas:[
+  { tipo:'sim', sim:'comillas', etiqueta:'Puzzle de tipos', pred:true,
+    codigo:'print("1" + "1")', lang:'py',
+    texto:'Un programa da un resultado raro. Descubran por qué usando el laboratorio.',
+    meta:'Experimenten con y sin comillas. Después escriban qué muestra print("1" + "1").',
+    respuestas:['11'],
+    exp:'Con comillas, "1" es texto (str). El + entre textos los pega: se llama concatenar. Por eso da 11. Sin comillas son números y da 2. Texto + número da error.' },
+  { tipo:'sim', sim:'bucle', etiqueta:'Puzzle de bucle',
+    texto:'Ana necesita que el programa la salude justo 4 veces, ni una más. Ajusten el bucle y ejecútenlo.',
+    meta:'Que «Hola Ana» aparezca exactamente 4 veces.',
+    exp:'range(4) da 4 vueltas: 0, 1, 2 y 3. El bloque con sangría se repite; lo que no tiene sangría se ejecuta una sola vez.' },
+  { tipo:'linea', etiqueta:'¿Quién es el bucle?',
+    texto:'En este programa hay una línea que hace repetir. Encuéntrenla y tóquenla.',
+    codigo:'nombre = "Ana"\nfor vuelta in range(4):\n    print("Hola", nombre)\nprint("Listo")', lang:'py', ok:1,
+    pista:'Esa línea se ejecuta, pero no hace repetir nada. Busquen la que tiene debajo un bloque con sangría.',
+    exp:'La línea del for es el bucle: repite el bloque de abajo con sangría. La primera línea guarda un dato en una variable y la última se ejecuta una vez.' },
+  { tipo:'sim', sim:'logica', etiqueta:'Puzzle lógico', pred:true,
+    codigo:'edad = 17\ntiene_permiso = True\nprint(edad >= 18 or tiene_permiso)', lang:'py',
+    texto:'Este control de acceso deja pasar a casi todos. Encuentren el único caso en que dice False.',
+    meta:'Cambien los valores hasta que la expresión dé False.',
+    exp:'Con or alcanza que una parte sea True para que todo dé True. Solo da False si las dos partes son False: menor de 18 y sin permiso.' }
+  ]
+});
+</script>
+</body>
+</html>

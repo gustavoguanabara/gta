@@ -41,6 +41,10 @@ export class CutsceneController {
     this.prevLeft = false;
     this.prevRight = false;
     this.recentBackgroundsByType = new Map();
+    this.wrongChoices = new Set();
+    this.stats = { correct: 0, firstTry: 0, wrong: 0 };
+    this.feedbackActive = false;
+    this.feedbackEl = null;
 
     this.linkBtn?.addEventListener('click', () => this.openStepLink());
     this.nextBtn.addEventListener('click', () => this.advance());
@@ -107,6 +111,9 @@ export class CutsceneController {
     this.selectedActionIndex = 0;
     this.onFinish = onFinish;
     this.onDeliverRequest = options.onDeliverRequest || null;
+    this.wrongChoices = new Set();
+    this.stats = { correct: 0, firstTry: 0, wrong: 0 };
+    this.#clearFeedback();
     this.prevAction = true;
     this.prevUp = false;
     this.prevDown = false;
@@ -130,7 +137,7 @@ export class CutsceneController {
       this.bgLabel.textContent = '';
       this.bgLabel.classList.add('hidden');
     } else {
-      this.bgLabel.textContent = rawBgText || 'Cena Lateral';
+      this.bgLabel.textContent = rawBgText || 'Escena';
       this.bgLabel.classList.remove('hidden');
     }
     if (this.stageEl) {
@@ -176,6 +183,7 @@ export class CutsceneController {
   }
 
   renderStep() {
+    this.#clearFeedback();
     const step = this.cutscene.steps[this.stepIndex];
     if (!step) {
       this.finish({ outcome: 'complete', reason: '' });
@@ -242,6 +250,10 @@ export class CutsceneController {
         btn.className = 'cutscene-choice-btn';
         if (isKeyboardUiMode() && idx === this.selectedChoiceIndex) btn.classList.add('selected');
         btn.textContent = choice.label;
+        if (this.wrongChoices.has(choice)) {
+          btn.classList.add('is-wrong');
+          btn.disabled = true;
+        }
         btn.addEventListener('click', () => {
           this.#selectChoice(choice);
         });
@@ -251,7 +263,7 @@ export class CutsceneController {
       this.choicesEl.classList.add('hidden');
       this.nextBtn.classList.remove('hidden');
       this.nextBtn.textContent =
-        this.stepIndex >= this.cutscene.steps.length - 1 ? 'Concluir cena' : 'Continuar';
+        this.stepIndex >= this.cutscene.steps.length - 1 ? 'Terminar escena' : 'Continuar';
       if (step.link) {
         if (this.linkBtn) {
           this.linkBtn.textContent = step.link.label;
@@ -295,17 +307,26 @@ export class CutsceneController {
     const right = Boolean(inputState.moveX > 0.5);
     const action = Boolean(inputState.actionPressed ?? inputState.action);
 
-    if (step.choices && step.choices.length > 0) {
+    if (this.feedbackActive) {
+      if (action && !this.prevAction) this.advance();
+    } else if (step.choices && step.choices.length > 0) {
+      const moveChoice = (delta) => {
+        const n = step.choices.length;
+        let idx = this.selectedChoiceIndex;
+        for (let i = 0; i < n; i += 1) {
+          idx = (idx + delta + n) % n;
+          if (!this.wrongChoices.has(step.choices[idx])) break;
+        }
+        this.selectedChoiceIndex = idx;
+        this.#syncChoiceSelection();
+      };
       if (up && !this.prevUp) {
         setUiInputMode('keyboard');
-        this.selectedChoiceIndex =
-          (this.selectedChoiceIndex - 1 + step.choices.length) % step.choices.length;
-        this.#syncChoiceSelection();
+        moveChoice(-1);
       }
       if (down && !this.prevDown) {
         setUiInputMode('keyboard');
-        this.selectedChoiceIndex = (this.selectedChoiceIndex + 1) % step.choices.length;
-        this.#syncChoiceSelection();
+        moveChoice(1);
       }
       if (action && !this.prevAction) {
         const chosen = step.choices[this.selectedChoiceIndex];
@@ -342,6 +363,27 @@ export class CutsceneController {
 
   #selectChoice(choice) {
     if (!choice) return;
+    if (this.feedbackActive) return;
+    if (choice.outcome === 'retry') {
+      // Resposta errada: marca o botão, mostra a pista e mantém as opções.
+      this.wrongChoices.add(choice);
+      this.stats.wrong += 1;
+      this.#showChoiceFeedback(choice.feedback, false);
+      return;
+    }
+    if (choice.outcome === 'back') {
+      this.stepIndex = Math.max(0, this.stepIndex - 1);
+      this.selectedChoiceIndex = 0;
+      this.prevAction = true;
+      this.renderStep();
+      return;
+    }
+    if (choice.outcome === 'next' && choice.feedback) {
+      this.stats.correct += 1;
+      if (!this.#stepHasWrongAnswer()) this.stats.firstTry += 1;
+      this.#showChoiceFeedback(choice.feedback, true);
+      return;
+    }
     if (choice.outcome === 'next') {
       if (this.stepIndex < this.cutscene.steps.length - 1) {
         this.stepIndex += 1;
@@ -356,10 +398,58 @@ export class CutsceneController {
     this.finish({ outcome: choice.outcome, reason: choice.reason || '' });
   }
 
+  #stepHasWrongAnswer() {
+    const step = this.cutscene?.steps?.[this.stepIndex];
+    return Boolean(step?.choices?.some((c) => this.wrongChoices.has(c)));
+  }
+
+  #showChoiceFeedback(text, isCorrect) {
+    const step = this.cutscene?.steps?.[this.stepIndex];
+    if (!step) return;
+    this.feedbackEl?.remove();
+    const box = document.createElement('p');
+    box.className = `cutscene-feedback ${isCorrect ? 'is-correct' : 'is-wrong'}`;
+    box.setAttribute('role', 'status');
+    box.textContent = `${isCorrect ? '✔ ¡Correcto! ' : '✘ '}${text || ''}`;
+    this.feedbackEl = box;
+    this.textEl.insertAdjacentElement('afterend', box);
+
+    if (isCorrect) {
+      this.feedbackActive = true;
+      this.choicesEl.replaceChildren();
+      this.choicesEl.classList.add('hidden');
+      this.nextBtn.classList.remove('hidden');
+      this.nextBtn.textContent =
+        this.stepIndex >= this.cutscene.steps.length - 1 ? 'Terminar escena' : 'Continuar';
+      this.selectedActionIndex = 1;
+      this.prevAction = true;
+      this.#syncActionSelection();
+    } else {
+      const buttons = [...this.choicesEl.querySelectorAll('.cutscene-choice-btn')];
+      step.choices.forEach((choice, idx) => {
+        const btn = buttons[idx];
+        if (!btn) return;
+        const wrong = this.wrongChoices.has(choice);
+        btn.classList.toggle('is-wrong', wrong);
+        btn.disabled = wrong;
+      });
+      const firstOpen = step.choices.findIndex((c) => !this.wrongChoices.has(c));
+      if (firstOpen !== -1) this.selectedChoiceIndex = firstOpen;
+      this.prevAction = true;
+      this.#syncChoiceSelection();
+    }
+  }
+
+  #clearFeedback() {
+    this.feedbackActive = false;
+    this.feedbackEl?.remove();
+    this.feedbackEl = null;
+  }
+
   advance() {
     if (!this.active || this.awaitingDelivery) return;
     const step = this.cutscene.steps[this.stepIndex];
-    if (step?.choices && step.choices.length > 0) return;
+    if (step?.choices && step.choices.length > 0 && !this.feedbackActive) return;
 
     if (this.stepIndex < this.cutscene.steps.length - 1) {
       this.stepIndex += 1;
@@ -371,6 +461,8 @@ export class CutsceneController {
   }
 
   finish(result) {
+    this.#clearFeedback();
+    if (result && typeof result === 'object') result.stats = { ...this.stats };
     this.webModal.close();
     this.active = false;
     this.screen.classList.add('hidden');

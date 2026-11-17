@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Tu futuro también se programa · Expedición CC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="comun.css">
+<style>
+.hero{background:#05428F;color:#fff;display:flex;flex-direction:column;gap:14px;padding:22px 18px 18px;margin-top:16px}
+.hero .kick{color:#86CEE0}
+.hero h1{font-size:2.1rem;font-weight:800;letter-spacing:-.02em;line-height:1.08}
+.hero h1 .resalte{display:inline-block;background:var(--acento);color:#1D1D1B;border-radius:999px;padding:0 .4em}
+.hero p{color:#DCEBF5;max-width:36ch}
+.logos-fila{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;list-style:none;margin:0;padding:0}
+.logos-fila li{display:flex;flex-direction:column;gap:4px;min-width:0}
+.logos-fila img{width:100%;height:auto;display:block;border-radius:8px}
+.logos-fila span{font-size:.68rem;font-weight:700;color:#DCEBF5;text-align:center;line-height:1.2}
+@media (max-width:480px){ .logos-fila{grid-template-columns:repeat(3,1fr);gap:10px} }
+.fase{display:flex;flex-direction:column;gap:10px}
+.fase h2{font-size:1.3rem;font-weight:800}
+.fase > p{color:var(--gris);font-size:.95rem}
+.cursos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.curso{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:start;background:var(--sup);border-left:4px solid var(--cc,#00A096);padding:12px}
+.curso > *{min-width:0}
+.curso img{width:56px;height:auto;display:block;border-radius:8px}
+.curso .circ{width:56px;height:56px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:1.5rem;background:var(--acento);color:#1D1D1B}
+.curso h3{font-size:1.02rem;font-weight:800}
+.curso p{font-size:.92rem}
+.curso .chips{margin-top:6px}
+.cta{background:var(--primario);color:#fff;padding:28px 16px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.cta .logo-ceibal{height:44px;width:auto;display:block}
+.cta p.grande{font-size:1.6rem;font-weight:800;line-height:1.2}
+.cta p{max-width:36ch}
+</style>
+</head>
+<body>
+<main class="app">
+  <header class="hero">
+    <span class="kick">Expedición CC · cierre</span>
+    <h1>Tu futuro también <span class="resalte">se programa</span></h1>
+    <p>Cada isla que recorrieron es un curso del programa Ciencias de la Computación de Ceibal. Así se arma el camino.</p>
+    <ul class="logos-fila" aria-label="Cursos del programa">
+      <li><img src="../logos-cursos/intro.svg" alt="" width="270" height="259"><span>Intro a las CC</span></li>
+      <li><img src="../logos-cursos/ia.svg" alt="" width="270" height="259"><span>IA desde cero</span></li>
+      <li><img src="../logos-cursos/web.svg" alt="" width="270" height="259"><span>Desarrollo web</span></li>
+      <li><img src="../logos-cursos/prog.svg" alt="" width="270" height="259"><span>Programación</span></li>
+      <li><img src="../logos-cursos/datos.png" alt="" width="270" height="259"><span>Datos</span></li>
+      <li><img src="../logos-cursos/microbit.svg" alt="" width="270" height="259"><span>Micro:bit</span></li>
+    </ul>
+  </header>
+
+  <section class="fase" aria-labelledby="t-f1">
+    <span class="kick">Paso 1</span>
+    <h2 id="t-f1">Fase 1 · cursos iniciales</h2>
+    <p>Para 1.°, 2.° y 3.° de bachillerato público de Secundaria y UTU. No hace falta saber programar.</p>
+    <ul class="cursos">
+      <li class="curso" style="--cc:#59257F">
+        <img src="../logos-cursos/intro.svg" alt="Ícono del curso Introducción a las ciencias de la computación" width="270" height="259">
+        <div>
+          <h3>Introducción a las ciencias de la computación</h3>
+          <p>El curso de entrada al programa: el punto de partida para todo lo demás.</p>
+          <ul class="chips" aria-label="Modalidad"><li>Online</li><li>Autoasistido</li><li>Webinars optativos</li></ul>
+        </div>
+      </li>
+      <li class="curso" style="--cc:#9225A5">
+        <img src="../logos-cursos/ia.svg" alt="Ícono del curso IA desde cero" width="270" height="259">
+        <div>
+          <h3>IA desde cero</h3>
+          <p>Qué es la inteligencia artificial, cómo funciona y dónde impacta.</p>
+          <ul class="chips" aria-label="Modalidad"><li>Online</li><li>Autoasistido</li><li>Webinars optativos</li></ul>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="fase" aria-labelledby="t-f2">
+    <span class="kick">Paso 2</span>
+    <h2 id="t-f2">Fase 2 · siete cursos para elegir</h2>
+    <p>Al aprobar la Fase 1 se anotan en la Fase 2 y eligen curso: con tutoría y encuentros en vivo.</p>
+    <ul class="cursos">
+      <li class="curso" style="--cc:#0C88CA">
+        <img src="../logos-cursos/web.svg" alt="Ícono del curso Desarrollo web" width="270" height="259">
+        <div>
+          <h3>Desarrollo web</h3>
+          <p>HTML, CSS, cómo fluye la información en internet y frameworks modernos.</p>
+          <ul class="chips" aria-label="Modalidad"><li>Online</li><li>Con tutoría</li><li>Encuentros en vivo</li></ul>
+        </div>
+      </li>
+      <li class="curso" style="--cc:#F39219">
+        <img src="../logos-cursos/prog.svg" alt="Ícono de los cursos de Programación" width="270" height="259">
+        <div>
+          <h3>Programación 1 → 2 → 3</h3>
+          <p>Python desde cero, estructuras de datos y programación orientada a objetos.</p>
+          <ul class="chips" aria-label="Modalidad"><li>Online</li><li>Con tutoría</li><li>Encuentros en vivo</li></ul>
+        </div>
+      </li>
+      <li class="curso" style="--cc:#30A936">
+        <img src="../logos-cursos/datos.png" alt="Ícono del curso Datos para la acción" width="270" height="259">
+        <div>
+          <h3>Datos para la acción</h3>
+          <p>Recolectar, organizar y analizar datos para decidir mejor.</p>
+          <ul class="chips" aria-label="Modalidad"><li>Online</li><li>Con tutoría</li><li>Encuentros en vivo</li></ul>
+        </div>
+      </li>
+      <li class="curso" style="--cc:#9225A5">
+        <img src="../logos-cursos/ia2.svg" alt="Ícono del curso Profundización en IA" width="270" height="259">
+        <div>
+          <h3>Profundización en IA</h3>
+          <p>Técnicas y herramientas de IA, sus aplicaciones y sus desafíos éticos.</p>
+          <ul class="chips" aria-label="Modalidad"><li>Online</li><li>Con tutoría</li><li>Encuentros en vivo</li></ul>
+        </div>
+      </li>
+      <li class="curso" style="--cc:#FFC800">
+        <img src="../logos-cursos/microbit.svg" alt="Ícono del curso Micro:bit" width="270" height="259">
+        <div>
+          <h3>Micro:bit</h3>
+          <p>Programar la placa, simular en MakeCode y resolver problemas cotidianos.</p>
+          <ul class="chips" aria-label="Modalidad"><li>Online</li><li>Con tutoría</li><li>Encuentros en vivo</li></ul>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="fase" aria-labelledby="t-f3">
+    <span class="kick">Y después</span>
+    <h2 id="t-f3">Formación continua</h2>
+    <ul class="cursos">
+      <li class="curso" style="--cc:#FFC800">
+        <div class="circ" aria-hidden="true">+</div>
+        <div>
+          <h3>Mucho más para seguir</h3>
+          <p>Computadora según disponibilidad y plazos, Olimpíada de Robótica, Programación y Videojuegos, y más cursos.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="cta" aria-label="Convocatoria">
+    <svg class="logo-ceibal" style="height:44px;color:#fff;--logo-hoja:#fff" xmlns="http://www.w3.org/2000/svg" viewBox="105 100 590 220" role="img" aria-label="Ceibal"><path fill="currentColor" d="M301.2,263.3c-31.6,0-54.6-22.5-54.6-53.5c0-30.8,22.8-53.4,54.8-53.4c25.5,0,46,15.3,51,38.6h-20 c-4.5-13-16.7-20.8-31.1-20.8c-19.6,0-34.7,14.6-34.7,35.5c0,21.1,15.2,35.7,34.7,35.7c14.9,0,27.1-8.3,31.5-22.5h20.2 C347.8,247.5,327.3,263.3,301.2,263.3z"/><path fill="currentColor" d="M436.4,223.7c0,2.2-0.2,4.1-0.5,5.9h-56.8c0.6,10.8,9.5,18,20.7,18c7.7,0,13.8-3.1,17.2-9.4h18.3c-5,15.5-19.1,25-36.8,25 c-24.4,0-37.4-18.5-37.4-38.2c0-19.9,13.3-38.3,37.9-38.3C421.2,186.8,436.4,201.9,436.4,223.7z M418.6,217.7 c-1.1-10.3-10.5-16-19.7-16c-8.6,0-17.7,5-19.4,16H418.6z"/><path fill="currentColor" d="M458,153.4c6.1,0,10.6,4.5,10.6,10.6c0,6.3-4.5,10.8-10.6,10.8c-6.3,0-10.8-4.5-10.8-10.8C447.2,158,451.7,153.4,458,153.4z M448.9,188.3h18v73.4h-18V188.3z"/><path fill="currentColor" d="M503.2,154.1v43.5c5.2-6.4,12.8-10.8,25-10.8c20.5,0,36,15.6,36,38c0,22.2-15.6,38.5-36.6,38.5c-12.2,0-20-4.5-25-11 l-1.9,9.4h-15.5V154.1H503.2z M503.2,224.8c0,12.4,9.1,22.7,21.9,22.7c13,0,21.6-10.3,21.6-22.7c0-12.5-8.6-22.2-21.6-22.2 C512.3,202.6,503.2,212.3,503.2,224.8z"/><path fill="currentColor" d="M601.5,263.1c-13.9,0-27.2-6.9-27.2-21.8c0-17.4,14.7-23.5,30.5-23.5h20.3v-3.3c0-8.6-7.2-12.8-15.2-12.8 c-6.6,0-13.6,2.8-14.9,9.5h-17.2c2-17.2,17.2-24.7,32.9-24.7c18.3,0,32.2,9.4,32.2,28.8v26.4c0,4.1,1.9,6.4,5.8,6.4 c0.5,0,0.8,0,1.3-0.2v14.2c-2.2,0.3-4.4,0.5-6.6,0.5c-7.8,0-15.3-2.5-17.1-11.7C620.9,259.7,611.5,263.1,601.5,263.1z M606.6,229.6 c-7.2,0-13.8,2.3-13.8,9.9c0,6.9,5.9,9.5,12.7,9.5c11.4,0,19.2-7,19.6-17.2v-2.2H606.6z"/><path fill="currentColor" d="M679.4,154.1v107.7h-18V154.1H679.4z"/><path style="fill:var(--logo-hoja,#00A096)" d="M199.2,210c0-49.1,29.4-70,29.4-82.2c0-16.2-18-15.3-18-15.3c-54.4,0-94.6,44.8-94.6,97.5 c0,53.9,40.2,97.5,97.2,97.5c9.3,0,15.4-6.9,15.4-15.3C228.6,279.5,199.2,258.4,199.2,210z"/></svg>
+    <p class="grande">Tu futuro también se programa</p>
+    <p>Cursos online y gratuitos para bachillerato público de Secundaria y UTU.<br>Atentos a la próxima convocatoria en <b>ceibal.edu.uy</b></p>
+  </section>
+
+  <p class="pie">Recurso educativo · ANEP / Ceibal · ceibal.edu.uy</p>
+</main>
+</body>
+</html>

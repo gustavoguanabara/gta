@@ -17,7 +17,7 @@ export class HudController {
     this.startScreen = document.getElementById('start-screen');
     this.startButton = document.getElementById('start-button');
     this.newGameButton = document.getElementById('new-game-button');
-    this.startReadyLabel = 'Entrar na Cidade';
+    this.startReadyLabel = 'Entrar a la ciudad';
     this.startSelectedIndex = 0;
     this.loadingScreen = document.getElementById('loading-screen');
     this.loadingBar = document.getElementById('loading-bar');
@@ -285,11 +285,11 @@ export class HudController {
   }
 
   showMissionComplete(missionTitle, hasNextMission, onContinue) {
-    this.missionCompleteTitleEl.textContent = hasNextMission ? 'MISSÃO CONCLUÍDA' : 'HISTÓRIA CONCLUÍDA';
+    this.missionCompleteTitleEl.textContent = hasNextMission ? '¡MISIÓN CUMPLIDA!' : '¡HISTORIA COMPLETA!';
     this.missionCompleteSubtitleEl.textContent = hasNextMission
-      ? `${missionTitle} finalizada. Prepare-se para a próxima missão.`
-      : `${missionTitle} finalizada! Todas as missões foram concluídas. Modo exploração livre ativado.`;
-    this.missionCompleteBtn.textContent = hasNextMission ? 'Próxima Missão' : 'Explorar Livremente';
+      ? `${missionTitle}: ¡terminada! Prepárense para la próxima misión.`
+      : `${missionTitle}: ¡terminada! Completaron todas las misiones. Modo exploración libre activado.`;
+    this.missionCompleteBtn.textContent = hasNextMission ? 'Próxima misión' : 'Explorar libremente';
     this.missionCompleteHandler = onContinue;
     this.missionCompleteScreen.classList.remove('hidden');
   }
@@ -358,7 +358,7 @@ export class HudController {
     });
   }
 
-  setStartButtonState({ label = 'Entrar na Cidade', hasSave = false } = {}) {
+  setStartButtonState({ label = 'Entrar a la ciudad', hasSave = false } = {}) {
     this.startReadyLabel = label;
     if (this.startButton && !this.startButton.disabled) {
       this.startButton.textContent = label;
@@ -409,7 +409,7 @@ export class HudController {
     }
     if (this.startButton) {
       this.startButton.disabled = !ready;
-      this.startButton.textContent = ready ? (this.startReadyLabel || 'Entrar na Cidade') : 'Carregando...';
+      this.startButton.textContent = ready ? (this.startReadyLabel || 'Entrar a la ciudad') : 'Cargando...';
     }
     if (this.newGameButton) {
       this.newGameButton.disabled = !ready;
@@ -593,7 +593,7 @@ export class HudController {
     this.#cancelExpandedMapAnimations();
     this.expandedMapClosing = false;
     if (this.expandedMapObjectiveEl) {
-      this.expandedMapObjectiveEl.textContent = objectiveText || this.objectiveHintEl?.textContent || 'Exploração livre';
+      this.expandedMapObjectiveEl.textContent = objectiveText || this.objectiveHintEl?.textContent || 'Exploración libre';
     }
     this.expandedMapScreen.classList.remove('hidden');
   }
@@ -708,7 +708,7 @@ export class HudController {
       this.inventoryButton.textContent = `${count}/${capacity}`;
     }
     if (this.inventoryButton) {
-      this.inventoryButton.setAttribute('aria-label', `Abrir inventário (${count} de ${capacity})`);
+      this.inventoryButton.setAttribute('aria-label', `Abrir inventario (${count} de ${capacity})`);
     }
   }
 
@@ -963,7 +963,7 @@ export class HudController {
     clearTimeout(this.missionBannerHideTimer);
 
     if (this.missionBannerTitleEl) {
-      this.missionBannerTitleEl.textContent = `MISSÃO ${missionNumber}`;
+      this.missionBannerTitleEl.textContent = `MISIÓN ${missionNumber}`;
     }
     if (this.missionBannerObjectiveEl) {
       this.missionBannerObjectiveEl.textContent = String(objectiveText || '');
@@ -991,7 +991,7 @@ export class HudController {
   }
 
   showGameOver(reason) {
-    this.gameoverReasonEl.textContent = String(reason || 'Você se deu mal.');
+    this.gameoverReasonEl.textContent = String(reason || 'Perdiste.');
     this.gameoverScreen.classList.remove('hidden');
   }
 
@@ -1070,15 +1070,15 @@ export class HudController {
     this.loadingScreen.classList.add('hidden');
     this.hudLayer.classList.add('hidden');
     this.gameoverScreen.classList.add('hidden');
-    this.errorMessage.textContent = String(message || 'Erro desconhecido.');
+    this.errorMessage.textContent = String(message || 'Error desconocido.');
     this.errorScreen.classList.remove('hidden');
   }
 
   updateStatus({ locationCode, vehicle, isDrifting, objectiveCode, health = 100 }) {
-    this.locationCodeEl.textContent = locationCode || 'CIDADE';
+    this.locationCodeEl.textContent = locationCode || 'CIUDAD';
     if (vehicle) {
       const kmh = Math.round(vehicle.speed * 0.25);
-      const driftTag = isDrifting ? ' · DRIFT!' : '';
+      const driftTag = isDrifting ? ' · ¡DERRAPE!' : '';
       const valueEl = document.createElement('span');
       valueEl.className = 'hud-speed-value';
       valueEl.textContent = String(kmh);
@@ -1087,9 +1087,9 @@ export class HudController {
       unitEl.textContent = ` km/h${driftTag}`;
       this.vehicleStatusEl.replaceChildren(valueEl, unitEl);
     } else {
-      this.vehicleStatusEl.textContent = 'A pé';
+      this.vehicleStatusEl.textContent = 'A pie';
     }
-    this.objectiveHintEl.textContent = objectiveCode ? `Destino: ${objectiveCode}` : 'Exploração livre';
+    this.objectiveHintEl.textContent = objectiveCode ? `Destino: ${objectiveCode}` : 'Exploración libre';
 
     const clampedHealth = Math.max(0, Math.min(100, Math.round(health)));
     this.healthValueEl.textContent = String(clampedHealth);

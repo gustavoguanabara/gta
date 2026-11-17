@@ -6,13 +6,13 @@ const BLOCK_WIDTH_CHOICES = [250, 310, 370, 440, 290, 410];
 const BLOCK_HEIGHT_CHOICES = [250, 320, 380, 280, 430, 350];
 
 export const VEHICLE_VARIANTS = [
-  { kind: 'car', model: 'Sedan Urbano', color: '#e63946' },
-  { kind: 'car', model: 'Cupê Esportivo', color: '#3a86ff' },
-  { kind: 'car', model: 'Compacto Retrô', color: '#ffbe0b' },
-  { kind: 'moto', model: 'Moto Street', color: '#fb5607' },
-  { kind: 'moto', model: 'Moto Cruiser', color: '#06d6a0' },
-  { kind: 'van', model: 'Van de Carga', color: '#f8f9fa' },
-  { kind: 'van', model: 'Furgão Azul', color: '#457b9d' }
+  { kind: 'car', model: 'Sedán urbano', color: '#e63946' },
+  { kind: 'car', model: 'Cupé deportivo', color: '#3a86ff' },
+  { kind: 'car', model: 'Compacto retro', color: '#ffbe0b' },
+  { kind: 'moto', model: 'Moto urbana', color: '#fb5607' },
+  { kind: 'moto', model: 'Moto crucero', color: '#06d6a0' },
+  { kind: 'van', model: 'Camioneta de carga', color: '#f8f9fa' },
+  { kind: 'van', model: 'Furgón azul', color: '#457b9d' }
 ];
 
 const ROOF_PALETTES = {

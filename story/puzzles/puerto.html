@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Puerto de partida · Expedición CC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="comun.css">
+</head>
+<body>
+<main class="app" id="app"></main>
+<noscript><p style="padding:16px">Esta página necesita JavaScript para funcionar.</p></noscript>
+<script src="comun.js"></script>
+<script>
+CC.iniciar({
+  id:'puerto', codigo:'ACCESO',
+  nombre:'Puerto de partida', kick:'Isla 1/6 · Fase 1',
+  curso:'Fase 1 · Intro a las CC e IA desde cero', mapaCurso:'Fase 1 · cursos iniciales',
+  color:'#00A096', ct:'#FFFFFF', logo:'intro.svg',
+  info:'Dos cursos de entrada: Introducción a las ciencias de la computación e IA desde cero. Para 1.°, 2.° y 3.° de bachillerato público de Secundaria y UTU.',
+  modalidad:['Online','Autoasistido','Webinars optativos'],
+  preguntas:[
+  { tipo:'sim', sim:'clasificar', etiqueta:'Puzzle de acceso', titulo:'Mesa de inscripciones',
+    texto:'Hoy atienden la mesa de inscripciones. Lean cada solicitud y decidan quién puede anotarse ya en la Fase 1.',
+    meta:'Ubicar bien las 5 solicitudes.',
+    bins:[{id:'si',label:'Puede anotarse'},{id:'no',label:'Todavía no'}],
+    items:[{txt:'Sofía · 2.° de bachillerato en un liceo público', bin:'si'},
+           {txt:'Mateo · 3.° de ciclo básico', bin:'no'},
+           {txt:'Lucía · 1.° de bachillerato en UTU', bin:'si'},
+           {txt:'Nico · Enseñanza Media Profesional de UTU', bin:'no'},
+           {txt:'Valen · 3.° de bachillerato, nunca programó', bin:'si'}],
+    exp:'Pueden anotarse estudiantes de 1.°, 2.° y 3.° de bachillerato público de Secundaria o UTU. En UTU no incluye Enseñanza Media Profesional, y no hace falta saber programar. Mateo podrá anotarse cuando llegue a bachillerato.' },
+  { tipo:'orden', etiqueta:'Puzzle de ruta', titulo:'Arma la ruta',
+    texto:'El mapa del programa se desordenó. Ordenen los pasos para llegar de la inscripción a la Fase 2.',
+    pasos:['Me anoto en la Fase 1','Hago un curso inicial online (Intro a las CC o IA desde cero)','Apruebo la Fase 1','Me anoto en la Fase 2 y elijo curso','Curso con tutoría y encuentros en vivo'],
+    exp:'La Fase 1 es online y autoasistida, con webinars optativos. Al aprobarla pasas a la Fase 2: siete cursos con tutoría y encuentros sincrónicos.' },
+  { tipo:'sim', sim:'clasificar', etiqueta:'Puzzle de rumores', titulo:'Detector de rumores',
+    texto:'Por los pasillos circulan rumores sobre el programa. Separen lo que es verdad (sale) de lo que es falso (no sale).',
+    meta:'Clasificar bien los 5 rumores.',
+    bins:[{id:'sale',label:'Sale'},{id:'no',label:'No sale'}],
+    items:[{txt:'Desde la Fase 2 se prevé entregar computadoras, según disponibilidad y plazos', bin:'sale'},
+           {txt:'Para empezar tienes que saber programar', bin:'no'},
+           {txt:'La Fase 1 es online y autoasistida, con webinars optativos', bin:'sale'},
+           {txt:'En Desarrollo web aprendes a reparar el hardware de la compu', bin:'no'},
+           {txt:'En la Fase 2 hay tutoría y encuentros en vivo', bin:'sale'}],
+    exp:'Los cursos son introductorios: no hace falta saber programar. Desarrollo web trata de páginas, HTML, CSS e internet, no de reparar hardware.' }
+  ]
+});
+</script>
+</body>
+</html>

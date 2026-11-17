@@ -50,7 +50,7 @@ export class WebGLRenderer {
                canvas.getContext('experimental-webgl', { alpha: false, antialias: false });
 
     if (!gl) {
-      throw new Error('[WebGL] WebGL não está disponível neste navegador ou dispositivo.');
+      throw new Error('[WebGL] WebGL no está disponible en este navegador o dispositivo.');
     }
 
     this.gl = gl;
@@ -75,7 +75,7 @@ export class WebGLRenderer {
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
       const info = gl.getShaderInfoLog(shader);
       gl.deleteShader(shader);
-      throw new Error(`[WebGL] Falha ao compilar shader: ${info}`);
+      throw new Error(`[WebGL] Error al compilar shader: ${info}`);
     }
     return shader;
   }
@@ -91,7 +91,7 @@ export class WebGLRenderer {
     gl.linkProgram(program);
 
     if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-      throw new Error(`[WebGL] Falha ao linkar programa: ${gl.getProgramInfoLog(program)}`);
+      throw new Error(`[WebGL] Error al enlazar el programa: ${gl.getProgramInfoLog(program)}`);
     }
 
     gl.useProgram(program);

@@ -1067,6 +1067,36 @@ body {
   color: #fef08a;
 }
 
+.cutscene-choice-btn.is-wrong,
+.cutscene-choice-btn.is-wrong:hover {
+  border-color: rgba(248, 113, 113, 0.7);
+  background: rgba(127, 29, 29, 0.55);
+  color: #fecaca;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.cutscene-feedback {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: clamp(13px, 1.9vw, 15px);
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.cutscene-feedback.is-correct {
+  background: rgba(22, 101, 52, 0.85);
+  border: 1px solid #4ade80;
+  color: #dcfce7;
+}
+
+.cutscene-feedback.is-wrong {
+  background: rgba(127, 29, 29, 0.85);
+  border: 1px solid #f87171;
+  color: #fee2e2;
+}
+
 .cutscene-actions {
   display: flex;
   flex-wrap: wrap;

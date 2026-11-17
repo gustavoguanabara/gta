@@ -6,7 +6,7 @@ import {
 } from './input-mode.js?v=1';
 
 const DEFAULT_HINT =
-  'Role com mouse, dedo ou setas. Se o site não carregar aqui, use "Abrir no navegador externo".';
+  'Desplácense con el mouse, el dedo o las flechas. Si el sitio no carga acá, usen "Abrir en el navegador".';
 
 export class WebModalController {
   constructor() {
@@ -124,7 +124,7 @@ export class WebModalController {
     }
   }
 
-  open(url, label = 'SITE EXTERNO', options = {}) {
+  open(url, label = 'SITIO EXTERNO', options = {}) {
     if (!this.screen || !this.iframe) return;
     let parsed;
     try {
@@ -143,18 +143,18 @@ export class WebModalController {
     this.prevLeft = false;
     this.prevRight = false;
 
-    if (this.titleEl) this.titleEl.textContent = label || 'SITE EXTERNO';
+    if (this.titleEl) this.titleEl.textContent = label || 'SITIO EXTERNO';
     if (this.urlEl) this.urlEl.textContent = this.url;
     if (this.hintEl) this.hintEl.textContent = DEFAULT_HINT;
     if (this.loadingEl) {
-      this.loadingEl.textContent = 'Carregando site...';
+      this.loadingEl.textContent = 'Cargando sitio...';
       this.loadingEl.classList.remove('hidden');
     }
     clearTimeout(this.loadTimer);
     this.loadTimer = setTimeout(() => {
       if (!this.active || !this.loadingEl) return;
       this.loadingEl.textContent =
-        'O site está demorando para responder ou bloqueou a exibição interna. Você pode aguardar ou clicar em "Abrir no navegador externo".';
+        'El sitio está tardando en responder o bloqueó la vista interna. Pueden esperar o tocar "Abrir en el navegador".';
     }, 6000);
     this.iframe.src = this.url;
     this.screen.classList.remove('hidden');
@@ -180,7 +180,7 @@ export class WebModalController {
     const popup = window.open(this.url, '_blank', 'noopener,noreferrer');
     if (!popup && this.hintEl) {
       this.hintEl.textContent =
-        'O navegador bloqueou a nova janela. Permita pop-ups para este site e tente novamente.';
+        'El navegador bloqueó la ventana nueva. Permitan las ventanas emergentes para este sitio y vuelvan a intentarlo.';
     }
   }
 

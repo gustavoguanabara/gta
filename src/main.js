@@ -56,11 +56,11 @@ async function boot() {
   };
 
   try {
-    hud.showLoading(15, 'Lendo abertura da história...');
+    hud.showLoading(15, 'Leyendo la portada de la historia...');
     const splashHeader = await loadStorySplashHeader('./story');
 
     if (splashHeader.splashUrl) {
-      hud.showLoading(60, 'Carregando tela inicial...');
+      hud.showLoading(60, 'Cargando pantalla de inicio...');
       const splashRes = await preloadImageAsset(splashHeader.splashUrl);
       if (splashRes?.ok) {
         markAssetLoaded(splashHeader.splashUrl);
@@ -76,16 +76,16 @@ async function boot() {
       faviconUrl: splashHeader.faviconUrl
     });
 
-    hud.showLoading(100, 'Tela inicial pronta!');
+    hud.showLoading(100, '¡Pantalla de inicio lista!');
     await waitMs(40);
-    hud.setStartLoadingProgress(4, 'Gerando cidade-base...', { ready: false });
+    hud.setStartLoadingProgress(4, 'Generando ciudad base...', { ready: false });
     hud.showStartScreen();
 
     // Yield para garantir que o navegador pinte a splash screen antes de gerar o mapa
     await waitMs(16);
     cityMap = new CityMap();
 
-    hud.setStartLoadingProgress(12, 'Carregando dados da história e missões...', { ready: false });
+    hud.setStartLoadingProgress(12, 'Cargando datos de la historia y misiones...', { ready: false });
     storyPackage = await loadStoryPackage('./story', cityMap, {
       prefetchedManifest: splashHeader.manifest,
       prefetchedSplashUrl: splashHeader.splashUrl,
@@ -107,9 +107,9 @@ async function boot() {
     const targetMissionIndex = savedState
       ? Math.max(0, Math.min(savedState.currentMissionIndex || 0, Math.max(0, (storyPackage.missions?.length || 1) - 1)))
       : 0;
-    const missionLabel = `Missão ${targetMissionIndex + 1}`;
+    const missionLabel = `Misión ${targetMissionIndex + 1}`;
 
-    hud.setStartLoadingProgress(65, `Pré-carregando imagens da ${missionLabel} e itens extras...`, { ready: false });
+    hud.setStartLoadingProgress(65, `Precargando imágenes de la ${missionLabel} y objetos extra...`, { ready: false });
     await preloadMissionAssets(storyPackage, targetMissionIndex, {
       includeSplash: false,
       includeExtras: true,
@@ -118,15 +118,15 @@ async function boot() {
         const assetName = url ? url.split('/').pop() : '';
         const label = total > 0 && assetName
           ? `${missionLabel} (${loaded}/${total}): ${assetName}`
-          : `Recursos da ${missionLabel} prontos.`;
+          : `Recursos de la ${missionLabel} listos.`;
         hud.setStartLoadingProgress(65 + ratio * 35, label, { ready: false });
       }
     });
 
-    hud.setStartLoadingProgress(100, `Recursos da ${missionLabel} carregados!`, { ready: true });
+    hud.setStartLoadingProgress(100, `¡Recursos de la ${missionLabel} cargados!`, { ready: true });
   } catch (error) {
     console.error('[StoryLoader] Erro ao carregar história:', error);
-    hud.showError(error?.message || 'Erro ao carregar o pacote de história.');
+    hud.showError(error?.message || 'Error al cargar el paquete de la historia.');
     return;
   }
 
@@ -139,7 +139,7 @@ async function boot() {
     if (backgroundPreloadPromise || backgroundPreloadDone || !storyPackage) return;
     backgroundPreloadPercent = 0;
     if (hud.isStartScreenOpen()) {
-      hud.setStartLoadingProgress(0, 'Carregando demais recursos da história...', { ready: true });
+      hud.setStartLoadingProgress(0, 'Cargando el resto de los recursos de la historia...', { ready: true });
     } else {
       hud.setBackgroundLoadingProgress(0);
     }
@@ -151,8 +151,8 @@ async function boot() {
         const assetName = url ? url.split('/').pop() : '';
         if (hud.isStartScreenOpen()) {
           const text = total > 0 && assetName
-            ? `História (${loaded}/${total}): ${assetName}`
-            : 'Todos os recursos da história carregados!';
+            ? `Historia (${loaded}/${total}): ${assetName}`
+            : '¡Todos los recursos de la historia cargados!';
           hud.setStartLoadingProgress(backgroundPreloadPercent, text, { ready: true });
         } else {
           hud.setBackgroundLoadingProgress(backgroundPreloadPercent);
@@ -163,7 +163,7 @@ async function boot() {
       backgroundPreloadPromise = null;
       hud.hideBackgroundLoadingProgress();
       if (hud.isStartScreenOpen()) {
-        hud.setStartLoadingProgress(100, 'Todos os recursos da história carregados!', { ready: true });
+        hud.setStartLoadingProgress(100, '¡Todos los recursos de la historia cargados!', { ready: true });
       }
     }).catch(() => {
       backgroundPreloadPromise = null;
@@ -230,7 +230,7 @@ async function boot() {
       }
     } catch (error) {
       console.error('[Engine] Erro fatal ao iniciar:', error);
-      hud.showError(error?.message || 'Erro inesperado ao inicializar o motor do jogo.');
+      hud.showError(error?.message || 'Error inesperado al iniciar el motor del juego.');
     }
   };
 
@@ -257,26 +257,26 @@ async function boot() {
       });
       activeEngine?.applyRefreshedStoryPackage(storyPackage);
       const failNote = result.failed?.length
-        ? ` (${result.failed.length} arquivo(s) não encontrado(s))`
+        ? ` (${result.failed.length} archivo(s) no encontrado(s))`
         : '';
       assetsRefreshDialog.finish(
-        `Atualização concluída! ${result.refreshedCount} imagem(ns) e dados salvos no navegador${failNote}.`,
+        `¡Actualización completa! ${result.refreshedCount} imagen(es) y datos guardados en el navegador${failNote}.`,
       );
     } catch (error) {
       if (error?.name === 'AbortError' || signal.aborted) {
         return;
       }
       console.error('[StoryLoader] Erro ao recarregar assets:', error);
-      assetsRefreshDialog.fail(error?.message || 'Erro ao recarregar assets.');
+      assetsRefreshDialog.fail(error?.message || 'Error al recargar los recursos.');
     }
   };
 
   const requestNewGame = (onConfirmed = null) => {
     confirmDialog.open({
-      title: 'INICIAR NOVO JOGO?',
-      message: 'Ao iniciar um novo jogo, todo o progresso atual será perdido. Deseja continuar?',
+      title: '¿EMPEZAR UNA NUEVA PARTIDA?',
+      message: 'Al empezar una nueva partida se pierde todo el progreso actual. ¿Quieren continuar?',
       cancelLabel: 'Cancelar',
-      confirmLabel: 'Iniciar Novo Jogo',
+      confirmLabel: 'Empezar nueva partida',
       onConfirm: () => {
         onConfirmed?.();
         launchGame({ useSaved: false });
@@ -344,10 +344,10 @@ async function boot() {
 
   const requestResetGame = (onConfirmed = null) => {
     confirmDialog.open({
-      title: 'RESETAR TODO O JOGO?',
-      message: 'Isso apagará progresso, inventário, cache de assets e dados locais, reiniciando como no primeiro acesso. Deseja continuar?',
+      title: '¿REINICIAR TODO EL JUEGO?',
+      message: 'Esto borra el progreso, el inventario, la caché de recursos y los datos locales, y el juego vuelve a empezar como la primera vez. ¿Quieren continuar?',
       cancelLabel: 'Cancelar',
-      confirmLabel: 'Resetar Tudo',
+      confirmLabel: 'Reiniciar todo',
       onConfirm: () => {
         onConfirmed?.();
         resetAllSessionData();

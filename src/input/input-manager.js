@@ -93,8 +93,8 @@ export class InputManager {
     this.handIconEl?.classList.toggle('hidden', nextMode);
     this.accelIconEl?.classList.toggle('hidden', !nextMode);
 
-    this.analogEl?.setAttribute('aria-label', nextMode ? 'Volante virtual' : 'Direcional analógico virtual');
-    this.actionBtnEl?.setAttribute('aria-label', nextMode ? 'Acelerar' : 'Ação');
+    this.analogEl?.setAttribute('aria-label', nextMode ? 'Volante virtual' : 'Palanca analógica virtual');
+    this.actionBtnEl?.setAttribute('aria-label', nextMode ? 'Acelerar' : 'Acción');
   }
 
   #updateAnalogFromEvent(e) {

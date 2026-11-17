@@ -55,7 +55,7 @@ export class AssetsRefreshDialogController {
     this.abortController = new AbortController();
     this.isOpen = true;
     this.inProgress = true;
-    this.setProgress(0, 'Iniciando atualização dos assets...');
+    this.setProgress(0, 'Iniciando la actualización de los recursos...');
     if (this.actionBtn) {
       this.actionBtn.textContent = 'Cancelar';
       this.actionBtn.className = 'secondary-button';
@@ -72,21 +72,21 @@ export class AssetsRefreshDialogController {
     if (this.textEl && text) this.textEl.textContent = text;
   }
 
-  finish(text = 'Assets recarregados e salvos no navegador!') {
+  finish(text = '¡Recursos recargados y guardados en el navegador!') {
     this.inProgress = false;
     this.setProgress(100, text);
     if (this.actionBtn) {
-      this.actionBtn.textContent = 'Fechar';
+      this.actionBtn.textContent = 'Cerrar';
       this.actionBtn.className = 'primary-button';
       this.#syncActionBtnHighlight();
     }
   }
 
-  fail(text = 'Não foi possível recarregar todos os assets.') {
+  fail(text = 'No se pudieron recargar todos los recursos.') {
     this.inProgress = false;
     if (this.textEl) this.textEl.textContent = text;
     if (this.actionBtn) {
-      this.actionBtn.textContent = 'Fechar';
+      this.actionBtn.textContent = 'Cerrar';
       this.actionBtn.className = 'secondary-button';
       this.#syncActionBtnHighlight();
     }

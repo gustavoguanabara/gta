@@ -1,7 +1,8 @@
 {
-  "name": "Missão Vibe Coding — Curso em Vídeo",
-  "short_name": "GTA",
-  "description": "Cruzando a cidade para descobrir o segredo guardado em uma caixa secreta e lidando com GPUs, servidores e robôs!",
+  "name": "Expedición CC · Modo Ciudad",
+  "short_name": "Expedición CC",
+  "description": "Recorran la ciudad, cumplan misiones y resuelvan desafíos de programación en las islas Web, Python, Micro:bit, Datos e IA.",
+  "lang": "es-UY",
   "start_url": "./index.html",
   "scope": "./",
   "display": "fullscreen",

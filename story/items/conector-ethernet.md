@@ -1,7 +1,7 @@
 ---
 id: conector-ethernet
-name: Conector Ethernet Dourado
-description: RJ-45 folheado a ouro. Promete zero ping até quando o Wi-Fi da vizinhança cai.
+name: Conector Ethernet dorado
+description: RJ-45 brillante. Promete cero lag aunque se caiga el wifi de todo el liceo.
 image: assets/item-conector-ethernet.svg
 location: RUA-04 x RUA-36 NE
 category: extra

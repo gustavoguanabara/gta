@@ -53,9 +53,9 @@ test('salva, carrega e limpa estado do jogo e inventário com escopo por histór
 });
 
 test('formatContinueLabel exibe missão atual ou modo livre', () => {
-  assert.equal(formatContinueLabel(null), 'Entrar na Cidade');
-  assert.equal(formatContinueLabel({ currentMissionIndex: 1, freeRoamMode: false }), 'Continuar (Missão 2)');
-  assert.equal(formatContinueLabel({ currentMissionIndex: 4, freeRoamMode: true }), 'Continuar (Modo Livre)');
+  assert.equal(formatContinueLabel(null), 'Entrar a la ciudad');
+  assert.equal(formatContinueLabel({ currentMissionIndex: 1, freeRoamMode: false }), 'Continuar (Misión 2)');
+  assert.equal(formatContinueLabel({ currentMissionIndex: 4, freeRoamMode: true }), 'Continuar (modo libre)');
 });
 
 test('persiste missões desbloqueadas e mantém apenas a primeira missão no novo jogo', () => {

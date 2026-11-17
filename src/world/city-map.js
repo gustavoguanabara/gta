@@ -620,19 +620,19 @@ export class CityMap {
 
   resolveLocationCode(code) {
     if (typeof code !== 'string' || !code.trim()) {
-      throw new Error(`[CityMap] Código de local inválido: "${String(code)}"`);
+      throw new Error(`[CityMap] Código de lugar inválido: "${String(code)}"`);
     }
     const normalized = code.trim().toUpperCase();
     const location = this.locationsByCode.get(normalized);
     if (!location) {
-      throw new Error(`[CityMap] Código de local inexistente: "${normalized}"`);
+      throw new Error(`[CityMap] Código de lugar inexistente: "${normalized}"`);
     }
     return location;
   }
 
   resolveItemLocation(locationStr) {
     if (typeof locationStr !== 'string' || !locationStr.trim()) {
-      throw new Error(`[CityMap] Posição de item inválida: "${String(locationStr)}"`);
+      throw new Error(`[CityMap] Posición de objeto inválida: "${String(locationStr)}"`);
     }
     const trimmed = locationStr.trim().toUpperCase();
     const cornerMatch = trimmed.match(/^(RUA-\d+)\s*[X×,]\s*(RUA-\d+)(?:\s+(NO|NE|SO|SE|NW|SW))?$/);
@@ -640,12 +640,12 @@ export class CityMap {
       const roadA = this.resolveLocationCode(cornerMatch[1]);
       const roadB = this.resolveLocationCode(cornerMatch[2]);
       if (roadA.type !== 'road' || roadB.type !== 'road') {
-        throw new Error(`[CityMap] Esquina inválida para item: "${locationStr}"`);
+        throw new Error(`[CityMap] Esquina inválida para objeto: "${locationStr}"`);
       }
       const horiz = roadA.bounds.w > roadA.bounds.h ? roadA : roadB;
       const vert = roadA.bounds.h > roadA.bounds.w ? roadA : roadB;
       if (horiz === vert) {
-        throw new Error(`[CityMap] As ruas "${cornerMatch[1]}" e "${cornerMatch[2]}" são paralelas e não formam esquina.`);
+        throw new Error(`[CityMap] Las calles "${cornerMatch[1]}" y "${cornerMatch[2]}" son paralelas y no forman esquina.`);
       }
       const dir = cornerMatch[3] || 'SE';
       const rx = vert.bounds.x;
@@ -720,7 +720,7 @@ export class CityMap {
   resolveIndoorOppositePosition(code) {
     const loc = this.resolveLocationCode(String(code || '').trim());
     if (loc.type !== 'house' && loc.type !== 'commerce' && loc.type !== 'hospital') {
-      throw new Error(`Local "${code}" não é uma construção com interior.`);
+      throw new Error(`El lugar "${code}" no es un edificio con interior.`);
     }
     const { x, y } = this.#computeIndoorOppositePoint(loc);
     let angle = Math.PI * 0.5;

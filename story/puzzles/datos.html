@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Mina de Datos · Expedición CC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="comun.css">
+</head>
+<body>
+<main class="app" id="app"></main>
+<noscript><p style="padding:16px">Esta página necesita JavaScript para funcionar.</p></noscript>
+<script src="comun.js"></script>
+<script>
+CC.iniciar({
+  id:'datos', codigo:'SELECT',
+  nombre:'Mina de Datos', kick:'Isla 4/6 · Fase 2',
+  curso:'Fase 2 · Datos para la acción', mapaCurso:'Datos para la acción',
+  color:'#30A936', ct:'#FFFFFF', logo:'datos.png',
+  info:'Recolecta, organiza y analiza datos con herramientas digitales para tomar mejores decisiones y contar historias visuales.',
+  modalidad:['Online','Con tutoría','Encuentros en vivo'],
+  preguntas:[
+  { tipo:'sim', sim:'hacker', etiqueta:'Misión hacker 1', pred:true,
+    texto:'¿Cuántos cursos tiene la Fase 1? Pídanselo a la base de datos.',
+    meta:'Mostrar solo el nombre de los cursos de la Fase 1.',
+    mision:{cols:['curso'], tabla:'cursos_cc', cond:'f1'},
+    exp:'¡Acaban de escribir SQL! MOSTRAME es SELECT (qué columnas), DE DÓNDE es FROM (qué tabla) y DÓNDE es WHERE (qué filas). La Fase 1 tiene 2 cursos.' },
+  { tipo:'sim', sim:'hacker', etiqueta:'Misión hacker 2',
+    texto:'Ahora una más difícil: ¿en qué fases hay cursos de IA y cómo se cursan?',
+    meta:'Mostrar el curso y la modalidad de todos los cursos del área IA.',
+    mision:{cols:['curso','modalidad'], tabla:'cursos_cc', cond:'ia'},
+    exp:'Hay IA en las dos fases: IA desde cero (autoasistido) y Profundización en IA (con tutoría). Con SQL se pide exactamente lo que se necesita de miles de filas en segundos.' },
+  { tipo:'sim', sim:'unir', etiqueta:'Puzzle relacional',
+    texto:'Se mezclaron las listas de clase. Las dos tablas se conectan por un dato en común: úsenlo para descubrir qué curso hace cada estudiante.',
+    meta:'Elegir el curso correcto para las 4 personas.',
+    exp:'curso_id en la tabla estudiantes apunta al id de la tabla cursos. Ese dato en común conecta las tablas: por eso se llama base de datos relacional.' }
+  ]
+});
+</script>
+</body>
+</html>

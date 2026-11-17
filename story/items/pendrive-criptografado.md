@@ -1,7 +1,7 @@
 ---
 id: pendrive-criptografado
-name: Pendrive Criptografado
-description: Backup secreto do Futuro do Curso em Vídeo. Senha: 'olamundo123' (não conte pra ninguém).
+name: Pendrive encriptado
+description: Backup secreto del liceo. Contraseña: «hola123». Esa contraseña es pésima: ¡cámbienla!
 image: assets/item-pendrive-criptografado.svg
 location: RUA-20 x RUA-50 NO
 category: extra

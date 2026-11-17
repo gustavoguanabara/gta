@@ -152,10 +152,10 @@ export function clearGameState(storage = getDefaultStorage()) {
 }
 
 export function formatContinueLabel(savedState) {
-  if (!savedState) return 'Entrar na Cidade';
+  if (!savedState) return 'Entrar a la ciudad';
   if (savedState.freeRoamMode) {
-    return 'Continuar (Modo Livre)';
+    return 'Continuar (modo libre)';
   }
   const missionNum = Math.max(1, (savedState.currentMissionIndex || 0) + 1);
-  return `Continuar (Missão ${missionNum})`;
+  return `Continuar (Misión ${missionNum})`;
 }

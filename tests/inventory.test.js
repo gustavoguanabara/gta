@@ -76,13 +76,13 @@ test('inventário inicia com 1 página de 10 slots (2x5) e cria nova página ao 
   assert.equal(refill.slotIndex, 9);
 });
 
-test('parser de itens e missões lê story/items/ e valida entrega da caixa secreta na missão 01', () => {
+test('parser de itens e missões lê story/items/ e valida o cofre de recompensa da missão 01', () => {
   const cityMap = new CityMap();
   const manifest = parseStoryManifest(fs.readFileSync(path.join(storyDir, 'story.md'), 'utf8'), 'story.md');
-  assert.ok(manifest.items.includes('caixa-secreta'));
+  assert.ok(manifest.items.includes('cofre-puerto'));
 
   const itemsMap = new Map();
-  for (const itemId of manifest.items) {
+  for (const itemId of [...manifest.items, ...manifest.collectibles]) {
     const raw = fs.readFileSync(path.join(storyDir, 'items', `${itemId}.md`), 'utf8');
     const itemDef = parseItemMarkdown(raw, `items/${itemId}.md`);
     assert.equal(itemDef.id, itemId);
@@ -93,19 +93,17 @@ test('parser de itens e missões lê story/items/ e valida entrega da caixa secr
   }
 
   const mission1 = parseMissionMarkdown(
-    fs.readFileSync(path.join(storyDir, 'missions', '01-caixa-secreta.md'), 'utf8'),
-    'missions/01-caixa-secreta.md',
+    fs.readFileSync(path.join(storyDir, 'missions', '01-puerto.md'), 'utf8'),
+    'missions/01-puerto.md',
     cityMap,
   );
-  assert.equal(mission1.pickupLocation, 'PRACA-01');
-  assert.equal(mission1.giveItem, 'caixa-secreta');
-  assert.equal(mission1.requireItem, 'caixa-secreta');
-  assert.ok(mission1.deliveryPrompt.length > 0);
-  assert.ok(mission1.wrongItemMessage.length > 0);
-  assert.ok(mission1.outroCutscene.steps.some((step) => step.type === 'deliver' && step.itemId === 'caixa-secreta'));
+  assert.equal(mission1.rewardItem, 'cofre-puerto');
+  assert.ok(itemsMap.has(mission1.rewardItem));
+  // Os cofres são "extra" para não se perderem ao reiniciar uma missão.
+  assert.equal(itemsMap.get('cofre-puerto').category, 'extra');
 
   const assetUrls = collectStoryAssetUrls({ items: itemsMap, characters: new Map(), missions: [] });
-  assert.ok(assetUrls.includes('./story/assets/item-caixa-secreta.svg'));
+  assert.ok(assetUrls.includes('./story/assets/item-cofre-puerto.svg'));
 });
 
 test('rejeita item sem campos obrigatórios ou caminho de imagem externo', () => {

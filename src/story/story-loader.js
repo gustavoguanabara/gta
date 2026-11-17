@@ -20,10 +20,10 @@ async function fetchText(url, label, options = {}) {
     });
   } catch (err) {
     if (err?.name === 'AbortError') throw err;
-    throw new Error(`Falha de rede ao carregar "${label}" (${url}): ${err.message}`);
+    throw new Error(`Error de red al cargar "${label}" (${url}): ${err.message}`);
   }
   if (!response.ok) {
-    throw new Error(`Arquivo não encontrado ou inacessível: "${label}" (${url}, status ${response.status}).`);
+    throw new Error(`Archivo no encontrado o inaccesible: "${label}" (${url}, estado ${response.status}).`);
   }
   return response.text();
 }
@@ -290,11 +290,11 @@ export async function loadStoryPackage(basePath = './story', cityMap = null, opt
 
   let manifest = prefetchedManifest;
   if (!manifest) {
-    reportProgress(0.05, 'Lendo manifesto da história...');
+    reportProgress(0.05, 'Leyendo el manifiesto de la historia...');
     const manifestRaw = await readStoryText(manifestUrl, 'story.md');
     manifest = parseStoryManifest(manifestRaw, 'story.md');
   } else {
-    reportProgress(0.05, 'Manifesto carregado. Lendo mapa...');
+    reportProgress(0.05, 'Manifiesto cargado. Leyendo mapa...');
   }
 
   let locationNames = new Map();
@@ -351,7 +351,7 @@ export async function loadStoryPackage(basePath = './story', cityMap = null, opt
         sprites: resolvedSprites,
       });
       loadedChars += 1;
-      reportProgress(0.2 + (loadedChars / totalChars) * 0.25, `Carregando personagens (${loadedChars}/${totalChars})...`);
+      reportProgress(0.2 + (loadedChars / totalChars) * 0.25, `Cargando personajes (${loadedChars}/${totalChars})...`);
     }),
   );
 
@@ -383,7 +383,7 @@ export async function loadStoryPackage(basePath = './story', cityMap = null, opt
         worldPoint,
       });
       loadedItems += 1;
-      reportProgress(0.45 + (loadedItems / totalItems) * 0.15, `Carregando itens (${loadedItems}/${totalItems})...`);
+      reportProgress(0.45 + (loadedItems / totalItems) * 0.15, `Cargando objetos (${loadedItems}/${totalItems})...`);
     }),
   );
 
@@ -430,10 +430,10 @@ export async function loadStoryPackage(basePath = './story', cityMap = null, opt
 
   async function hydrateCutscene(cutscene, fallbackCode, sourceFile) {
     if (cutscene.leftChar && !characters.has(cutscene.leftChar)) {
-      throw new StoryParseError(sourceFile, 0, `Personagem "${cutscene.leftChar}" não declarado em story.md.`);
+      throw new StoryParseError(sourceFile, 0, `Personaje "${cutscene.leftChar}" no declarado en story.md.`);
     }
     if (cutscene.rightChar && !characters.has(cutscene.rightChar)) {
-      throw new StoryParseError(sourceFile, 0, `Personagem "${cutscene.rightChar}" não declarado em story.md.`);
+      throw new StoryParseError(sourceFile, 0, `Personaje "${cutscene.rightChar}" no declarado en story.md.`);
     }
     const bgType = extractCutsceneLocationType(cutscene.background, fallbackCode);
     const pool = typePools.get(bgType) || [];
@@ -450,10 +450,15 @@ export async function loadStoryPackage(basePath = './story', cityMap = null, opt
     cutscene.background = replaceLocationCodesWithNames(cutscene.background, locationNames);
     for (const step of cutscene.steps) {
       step.text = replaceLocationCodesWithNames(step.text, locationNames);
+      if (step.link?.relative) {
+        step.link.url = `${cleanBase}/${step.link.url}`;
+        step.link.relative = false;
+      }
       if (step.choices) {
         for (const choice of step.choices) {
           choice.label = replaceLocationCodesWithNames(choice.label, locationNames);
           choice.reason = replaceLocationCodesWithNames(choice.reason, locationNames);
+          choice.feedback = replaceLocationCodesWithNames(choice.feedback, locationNames);
         }
       }
     }
@@ -468,10 +473,16 @@ export async function loadStoryPackage(basePath = './story', cityMap = null, opt
       const mission = parseMissionMarkdown(raw, missionFile, cityMap);
 
       if (mission.giveItem && !items.has(mission.giveItem)) {
-        throw new StoryParseError(missionFile, 2, `Item "${mission.giveItem}" (give_item) não declarado em story.md.`);
+        throw new StoryParseError(missionFile, 2, `Objeto "${mission.giveItem}" (give_item) no declarado en story.md.`);
+      }
+      if (mission.rewardItem && !items.has(mission.rewardItem)) {
+        throw new StoryParseError(missionFile, 2, `Objeto "${mission.rewardItem}" (reward_item) no declarado en story.md.`);
+      }
+      if (mission.roofLogo) {
+        mission.roofLogo = withBust(`${cleanBase}/${mission.roofLogo}`);
       }
       if (mission.requireItem && !items.has(mission.requireItem)) {
-        throw new StoryParseError(missionFile, 2, `Item "${mission.requireItem}" (require_item) não declarado em story.md.`);
+        throw new StoryParseError(missionFile, 2, `Objeto "${mission.requireItem}" (require_item) no declarado en story.md.`);
       }
 
       const cutsceneConfigs = [
@@ -498,7 +509,7 @@ export async function loadStoryPackage(basePath = './story', cityMap = null, opt
       loadedMissions += 1;
       reportProgress(
         0.6 + (loadedMissions / totalMissions) * 0.4,
-        `Carregando missões (${loadedMissions}/${totalMissions})...`,
+        `Cargando misiones (${loadedMissions}/${totalMissions})...`,
       );
       return mission;
     }),
@@ -513,7 +524,7 @@ export async function loadStoryPackage(basePath = './story', cityMap = null, opt
         throw new StoryParseError(
           encounterFile,
           2,
-          `Personagem "${encounter.npc}" (npc) não declarado em story.md.`,
+          `Personaje "${encounter.npc}" (npc) no declarado en story.md.`,
         );
       }
       await hydrateCutscene(encounter.cutscene, encounter.location, encounterFile);
@@ -569,6 +580,7 @@ export function collectStoryAssetUrls(storyPackage) {
     }
   }
   for (const mission of storyPackage.missions || []) {
+    if (mission?.roofLogo) urls.add(mission.roofLogo);
     for (const cs of [mission?.introCutscene, mission?.outroCutscene]) {
       if (!cs) continue;
       if (cs.backgroundImage) urls.add(cs.backgroundImage);
@@ -775,7 +787,7 @@ export async function preloadMissionAssets(storyPackage, missionIndex = 0, optio
 
 function throwIfAborted(signal) {
   if (signal?.aborted) {
-    throw new DOMException('Operação cancelada pelo usuário.', 'AbortError');
+    throw new DOMException('Operación cancelada por el usuario.', 'AbortError');
   }
 }
 
@@ -799,13 +811,13 @@ export async function refreshAllStoryAssets({
   };
 
   throwIfAborted(signal);
-  report(0.02, 'Recarregando manifesto, mapa, missões e itens...');
+  report(0.02, 'Recargando manifiesto, mapa, misiones y objetos...');
 
   const freshPackage = await loadStoryPackage(basePath, cityMap, {
     forceReload: true,
     signal,
     onProgress: ({ ratio, message }) => {
-      report(0.02 + ratio * 0.33, message || 'Recarregando dados da história...');
+      report(0.02 + ratio * 0.33, message || 'Recargando datos de la historia...');
     },
   });
 
@@ -830,7 +842,7 @@ export async function refreshAllStoryAssets({
     const shortName = url.split('/').pop() || url;
     report(
       0.35 + (i / Math.max(1, totalAssets)) * 0.58,
-      `Recarregando e salvando imagem (${i + 1}/${totalAssets}): ${shortName}`,
+      `Recargando y guardando imagen (${i + 1}/${totalAssets}): ${shortName}`,
     );
 
     try {
@@ -860,7 +872,7 @@ export async function refreshAllStoryAssets({
 
     report(
       0.35 + ((i + 1) / Math.max(1, totalAssets)) * 0.58,
-      `Salvo (${i + 1}/${totalAssets}): ${shortName}`,
+      `Guardado (${i + 1}/${totalAssets}): ${shortName}`,
     );
   }
 
@@ -872,7 +884,7 @@ export async function refreshAllStoryAssets({
     const shellUrl = shellUrls[i];
     report(
       0.93 + (i / shellUrls.length) * 0.06,
-      `Atualizando cache do aplicativo (${shellUrl.replace('./', '') || 'index.html'})...`,
+      `Actualizando la caché de la aplicación (${shellUrl.replace('./', '') || 'index.html'})...`,
     );
     try {
       const res = await fetch(shellUrl, {
@@ -887,7 +899,7 @@ export async function refreshAllStoryAssets({
     }
   }
 
-  report(1, `Concluído! ${refreshedCount} imagem(ns) e dados salvos no navegador.`);
+  report(1, `¡Listo! ${refreshedCount} imagen(es) y datos guardados en el navegador.`);
   return {
     storyPackage: freshPackage,
     totalAssets,

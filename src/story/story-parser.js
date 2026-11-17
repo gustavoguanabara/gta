@@ -20,7 +20,7 @@ export function validateAssetPath(rawPath, fileName, line = 1) {
     throw new StoryParseError(
       fileName,
       line,
-      `Caminho de recurso inválido "${value}". Use apenas caminhos relativos dentro da pasta da história.`,
+      `Ruta de recurso inválida "${value}". Usen solo rutas relativas dentro de la carpeta de la historia.`,
     );
   }
   return value.replace(/^\.\//, '');
@@ -31,7 +31,7 @@ export function parseFrontmatter(rawText, fileName = 'arquivo.md') {
   const lines = normalized.split('\n');
 
   if (lines[0]?.trim() !== '---') {
-    throw new StoryParseError(fileName, 1, 'Cabeçalho frontmatter "---" ausente na primeira linha.');
+    throw new StoryParseError(fileName, 1, 'Falta el encabezado frontmatter "---" en la primera línea.');
   }
 
   let endIndex = -1;
@@ -43,7 +43,7 @@ export function parseFrontmatter(rawText, fileName = 'arquivo.md') {
   }
 
   if (endIndex === -1) {
-    throw new StoryParseError(fileName, 1, 'Fechamento "---" do frontmatter não encontrado.');
+    throw new StoryParseError(fileName, 1, 'No se encontró el cierre "---" del frontmatter.');
   }
 
   const meta = {};
@@ -54,7 +54,7 @@ export function parseFrontmatter(rawText, fileName = 'arquivo.md') {
 
     const colonIndex = trimmed.indexOf(':');
     if (colonIndex <= 0) {
-      throw new StoryParseError(fileName, i + 1, `Linha inválida no frontmatter: "${trimmed}". Esperado "chave: valor".`);
+      throw new StoryParseError(fileName, i + 1, `Línea inválida en el frontmatter: "${trimmed}". Se esperaba "clave: valor".`);
     }
 
     const key = trimmed.slice(0, colonIndex).trim();
@@ -77,17 +77,17 @@ export function parseStoryManifest(rawText, fileName = 'story.md') {
   const { meta, body } = parseFrontmatter(rawText, fileName);
 
   if (!meta.title) {
-    throw new StoryParseError(fileName, 2, 'Campo obrigatório "title" ausente em story.md.');
+    throw new StoryParseError(fileName, 2, 'Falta el campo obligatorio "title" en story.md.');
   }
 
   const characters = parseListField(meta.characters);
   if (characters.length === 0) {
-    throw new StoryParseError(fileName, 2, 'Campo obrigatório "characters" deve listar ao menos um personagem.');
+    throw new StoryParseError(fileName, 2, 'El campo obligatorio "characters" debe listar al menos un personaje.');
   }
 
   const missions = parseListField(meta.missions);
   if (missions.length === 0) {
-    throw new StoryParseError(fileName, 2, 'Campo obrigatório "missions" deve listar ao menos uma missão.');
+    throw new StoryParseError(fileName, 2, 'El campo obligatorio "missions" debe listar al menos una misión.');
   }
 
   const items = parseListField(meta.items);
@@ -112,16 +112,16 @@ export function parseItemMarkdown(rawText, fileName = 'item.md') {
   const { meta, body } = parseFrontmatter(rawText, fileName);
 
   if (!meta.id || !meta.name) {
-    throw new StoryParseError(fileName, 2, 'Item deve definir "id" e "name" no frontmatter.');
+    throw new StoryParseError(fileName, 2, 'El objeto debe definir "id" y "name" en el frontmatter.');
   }
 
   const rawCategory = String(meta.category || 'missao').trim().toLowerCase();
   if (rawCategory !== 'missao' && rawCategory !== 'extra') {
-    throw new StoryParseError(fileName, 2, `Categoria inválida para item "${meta.id}": "${meta.category}". Use "missao" ou "extra".`);
+    throw new StoryParseError(fileName, 2, `Categoría inválida para el objeto "${meta.id}": "${meta.category}". Usen "missao" (misión) o "extra".`);
   }
   const rawRarity = String(meta.rarity || '').trim().toLowerCase();
   if (rawRarity && rawRarity !== 'normal' && rawRarity !== 'especial' && rawRarity !== 'lendario') {
-    throw new StoryParseError(fileName, 2, `Raridade inválida para item "${meta.id}": "${meta.rarity}". Use "normal", "especial" ou "lendario".`);
+    throw new StoryParseError(fileName, 2, `Rareza inválida para el objeto "${meta.id}": "${meta.rarity}". Usen "normal", "especial" o "lendario" (legendario).`);
   }
 
   return {
@@ -139,7 +139,7 @@ export function parseCharacterMarkdown(rawText, fileName = 'character.md') {
   const { meta } = parseFrontmatter(rawText, fileName);
 
   if (!meta.id || !meta.name) {
-    throw new StoryParseError(fileName, 2, 'Personagem deve definir "id" e "name" no frontmatter.');
+    throw new StoryParseError(fileName, 2, 'El personaje debe definir "id" y "name" en el frontmatter.');
   }
 
   return {
@@ -155,6 +155,8 @@ export function parseCharacterMarkdown(rawText, fileName = 'character.md') {
     },
   };
 }
+
+const OPTION_PREFIXES = ['- OPCAO:', '- OPCION:', '- OPCIÓN:'];
 
 function parseCutsceneBlock(blockLines, startLine, fileName) {
   const cutscene = {
@@ -187,34 +189,41 @@ function parseCutsceneBlock(blockLines, startLine, fileName) {
       const linkBody = trimmed.slice('- LINK:'.length).trim();
       const arrowIdx = linkBody.indexOf('->');
       const label = arrowIdx === -1
-        ? 'Visualizar o link'
-        : (linkBody.slice(0, arrowIdx).trim() || 'Visualizar o link');
+        ? 'Ver el enlace'
+        : (linkBody.slice(0, arrowIdx).trim() || 'Ver el enlace');
       const rawUrl = arrowIdx === -1 ? linkBody : linkBody.slice(arrowIdx + 2).trim();
 
       if (!rawUrl) {
         throw new StoryParseError(
           fileName,
           lineNum,
-          'Link vazio em "- LINK:". Use "- LINK: Texto -> https://..." ou "- LINK: https://...".',
+          'Enlace vacío en "- LINK:". Usen "- LINK: Texto -> https://..." o "- LINK: https://...".',
         );
       }
 
       let parsedUrl;
-      try {
-        parsedUrl = new URL(rawUrl);
-      } catch {
-        throw new StoryParseError(
-          fileName,
-          lineNum,
-          `URL inválida "${rawUrl}" em "- LINK:". Use uma URL completa com http:// ou https://.`,
-        );
+      let relativePath = '';
+      if (/^[^:]+\.html?(?:[?#].*)?$/i.test(rawUrl)) {
+        // Página HTML relativa à pasta da história (ex.: puzzles/web.html).
+        relativePath = validateAssetPath(rawUrl, fileName, lineNum);
+        parsedUrl = { protocol: 'https:', href: relativePath };
+      } else {
+        try {
+          parsedUrl = new URL(rawUrl);
+        } catch {
+          throw new StoryParseError(
+            fileName,
+            lineNum,
+            `URL inválida "${rawUrl}" en "- LINK:". Usen una URL completa con http:// o https://, o una página .html relativa.`,
+          );
+        }
       }
 
       if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') {
         throw new StoryParseError(
           fileName,
           lineNum,
-          `Protocolo não permitido "${parsedUrl.protocol}" em "- LINK:". Use apenas http:// ou https://.`,
+          `Protocolo no permitido "${parsedUrl.protocol}" en "- LINK:". Usen solo http:// o https://.`,
         );
       }
 
@@ -223,14 +232,14 @@ function parseCutsceneBlock(blockLines, startLine, fileName) {
         throw new StoryParseError(
           fileName,
           lineNum,
-          'A diretiva "- LINK:" deve vir logo após uma fala de personagem.',
+          'La directiva "- LINK:" debe ir justo después de una línea de diálogo de un personaje.',
         );
       }
       if (lastStep.link) {
         throw new StoryParseError(
           fileName,
           lineNum,
-          'Cada fala pode ter apenas uma diretiva "- LINK:".',
+          'Cada línea de diálogo puede tener solo una directiva "- LINK:".',
         );
       }
 
@@ -239,17 +248,19 @@ function parseCutsceneBlock(blockLines, startLine, fileName) {
         label,
         url: parsedUrl.href,
       };
+      if (relativePath) lastStep.link.relative = true;
       continue;
     }
 
-    if (trimmed.startsWith('- OPCAO:')) {
-      const optionBody = trimmed.slice('- OPCAO:'.length).trim();
+    const optionPrefix = OPTION_PREFIXES.find((prefix) => trimmed.toUpperCase().startsWith(prefix));
+    if (optionPrefix) {
+      const optionBody = trimmed.slice(optionPrefix.length).trim();
       const arrowIdx = optionBody.indexOf('->');
       if (arrowIdx === -1) {
         throw new StoryParseError(
           fileName,
           lineNum,
-          'Opção malformada. Use "- OPCAO: Texto -> COMPLETE" ou "-> GAMEOVER: motivo".',
+          'Opción mal formada. Usen "- OPCION: Texto -> COMPLETAR" (o "- OPCAO: Texto -> COMPLETE") o "-> FIN: motivo" (o "-> GAMEOVER: motivo").',
         );
       }
 
@@ -257,33 +268,47 @@ function parseCutsceneBlock(blockLines, startLine, fileName) {
       const targetRaw = optionBody.slice(arrowIdx + 2).trim();
       let outcome = 'complete';
       let reason = '';
+      let feedback = '';
+      const colonIdx = targetRaw.indexOf(':');
+      const keyword = (colonIdx !== -1 ? targetRaw.slice(0, colonIdx) : targetRaw).trim().toUpperCase();
+      const detail = colonIdx !== -1 ? targetRaw.slice(colonIdx + 1).trim() : '';
 
-      if (targetRaw.toUpperCase().startsWith('GAMEOVER')) {
+      if (keyword === 'GAMEOVER' || keyword === 'FIN') {
         outcome = 'gameover';
-        const colonIdx = targetRaw.indexOf(':');
-        reason = colonIdx !== -1 ? targetRaw.slice(colonIdx + 1).trim() : 'Você fez a escolha errada.';
-      } else if (targetRaw.toUpperCase() === 'NEXT') {
+        reason = detail || 'Esa no era la elección correcta.';
+      } else if (keyword === 'NEXT' || keyword === 'SIGUIENTE') {
         outcome = 'next';
-      } else if (targetRaw.toUpperCase() === 'COMPLETE') {
+      } else if (keyword === 'COMPLETE' || keyword === 'COMPLETAR') {
         outcome = 'complete';
+      } else if (keyword === 'ATRAS' || keyword === 'ATRÁS' || keyword === 'VOLTAR') {
+        // Volta para a fala anterior (ex.: reabrir um LINK de laboratório).
+        outcome = 'back';
+      } else if (keyword === 'CORRECTO' || keyword === 'CERTO') {
+        // Resposta certa: mostra a explicação e segue para a próxima fala.
+        outcome = 'next';
+        feedback = detail;
+      } else if (keyword === 'REINTENTAR' || keyword === 'TENTAR') {
+        // Resposta errada: mostra a pista e deixa tentar de novo.
+        outcome = 'retry';
+        feedback = detail || 'Esa no es. ¡Prueben otra vez!';
       } else {
         throw new StoryParseError(
           fileName,
           lineNum,
-          `Destino de opção desconhecido "${targetRaw}". Use COMPLETE, NEXT ou GAMEOVER: motivo.`,
+          `Destino de opción desconocido "${targetRaw}". Usen SIGUIENTE, CORRECTO: explicación, REINTENTAR: pista, ATRAS, COMPLETAR o FIN: motivo.`,
         );
       }
 
       if (!pendingChoices) {
         if (cutscene.steps.length === 0) {
-          cutscene.steps.push({ speaker: '', text: 'Escolha uma ação:', choices: [] });
+          cutscene.steps.push({ speaker: '', text: 'Elijan una acción:', choices: [] });
         }
         const lastStep = cutscene.steps[cutscene.steps.length - 1];
         lastStep.choices = lastStep.choices || [];
         pendingChoices = lastStep.choices;
       }
 
-      pendingChoices.push({ label, outcome, reason });
+      pendingChoices.push({ label, outcome, reason, feedback });
       continue;
     }
 
@@ -293,7 +318,7 @@ function parseCutsceneBlock(blockLines, startLine, fileName) {
       const speech = trimmed.slice(2).trim();
       const colonIdx = speech.indexOf(':');
       if (colonIdx <= 0) {
-        throw new StoryParseError(fileName, lineNum, `Fala malformada: "${trimmed}". Use "- Personagem: Fala".`);
+        throw new StoryParseError(fileName, lineNum, `Línea de diálogo mal formada: "${trimmed}". Usen "- Personaje: Texto".`);
       }
       const speaker = speech.slice(0, colonIdx).trim();
       const text = speech.slice(colonIdx + 1).trim();
@@ -345,6 +370,19 @@ function splitMarkdownSections(body, bodyStartLine, allowedNames) {
   return { sections, sectionStarts };
 }
 
+function parseOptionalRoofColor(rawValue, fileName) {
+  const value = String(rawValue || '').trim();
+  if (!value) return '';
+  if (!/^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(value)) {
+    throw new StoryParseError(
+      fileName,
+      2,
+      `Color de techo inválido ("roof_color: ${value}"). Usen formato hexadecimal como #d6282e.`,
+    );
+  }
+  return value;
+}
+
 export function parseMissionMarkdown(rawText, fileName = 'mission.md', cityMap = null) {
   const { meta, body, bodyStartLine } = parseFrontmatter(rawText, fileName);
 
@@ -352,7 +390,7 @@ export function parseMissionMarkdown(rawText, fileName = 'mission.md', cityMap =
     throw new StoryParseError(
       fileName,
       2,
-      'Missão deve definir "id", "title", "start" e "target" no frontmatter.',
+      'La misión debe definir "id", "title", "start" y "target" en el frontmatter.',
     );
   }
 
@@ -360,18 +398,18 @@ export function parseMissionMarkdown(rawText, fileName = 'mission.md', cityMap =
     try {
       cityMap.resolveLocationCode(meta.start);
     } catch (err) {
-      throw new StoryParseError(fileName, 2, `Local de início inválido ("start: ${meta.start}"): ${err.message}`);
+      throw new StoryParseError(fileName, 2, `Lugar de inicio inválido ("start: ${meta.start}"): ${err.message}`);
     }
     try {
       cityMap.resolveLocationCode(meta.target);
     } catch (err) {
-      throw new StoryParseError(fileName, 2, `Local de destino inválido ("target: ${meta.target}"): ${err.message}`);
+      throw new StoryParseError(fileName, 2, `Lugar de destino inválido ("target: ${meta.target}"): ${err.message}`);
     }
     if (meta.pickup) {
       try {
         cityMap.resolveLocationCode(meta.pickup);
       } catch (err) {
-        throw new StoryParseError(fileName, 2, `Local de coleta inválido ("pickup: ${meta.pickup}"): ${err.message}`);
+        throw new StoryParseError(fileName, 2, `Lugar de recogida inválido ("pickup: ${meta.pickup}"): ${err.message}`);
       }
     }
   }
@@ -388,9 +426,12 @@ export function parseMissionMarkdown(rawText, fileName = 'mission.md', cityMap =
     pickupLocation: String(meta.pickup || '').trim(),
     pickupObjective: String(meta.pickup_objective || '').trim(),
     targetLocation: meta.target,
-    objective: meta.objective || `Vá até ${meta.target}`,
+    objective: meta.objective || `Vayan a ${meta.target}`,
     giveItem: String(meta.give_item || '').trim(),
     requireItem: String(meta.require_item || '').trim(),
+    rewardItem: String(meta.reward_item || '').trim(),
+    roofColor: parseOptionalRoofColor(meta.roof_color, fileName),
+    roofLogo: meta.roof_logo ? validateAssetPath(meta.roof_logo, fileName, 2) : '',
     deliveryPrompt: String(meta.delivery_prompt || '').trim(),
     wrongItemMessage: String(meta.wrong_item_message || '').trim(),
     introCutscene: parseCutsceneBlock(sections.CUTSCENE_INICIO, sectionStarts.CUTSCENE_INICIO, fileName),
@@ -405,7 +446,7 @@ export function parseEncounterMarkdown(rawText, fileName = 'encounter.md', cityM
     throw new StoryParseError(
       fileName,
       2,
-      'Encontro extra deve definir "id", "npc" e "location" no frontmatter.',
+      'El encuentro extra debe definir "id", "npc" y "location" en el frontmatter.',
     );
   }
 
@@ -416,7 +457,7 @@ export function parseEncounterMarkdown(rawText, fileName = 'encounter.md', cityM
       throw new StoryParseError(
         fileName,
         2,
-        `Local inválido para encontro ("location: ${meta.location}"): ${err.message}`,
+        `Lugar inválido para el encuentro ("location: ${meta.location}"): ${err.message}`,
       );
     }
   }
@@ -434,7 +475,7 @@ export function parseEncounterMarkdown(rawText, fileName = 'encounter.md', cityM
     throw new StoryParseError(
       fileName,
       startLine,
-      'Encontro extra deve conter uma seção "## CUTSCENE" com ao menos uma fala.',
+      'El encuentro extra debe tener una sección "## CUTSCENE" con al menos una línea de diálogo.',
     );
   }
 
@@ -444,7 +485,7 @@ export function parseEncounterMarkdown(rawText, fileName = 'encounter.md', cityM
     throw new StoryParseError(
       fileName,
       2,
-      `Cor de telhado inválida ("roof_color: ${rawRoofColor}"). Use formato hexadecimal como #d6282e.`,
+      `Color de techo inválido ("roof_color: ${rawRoofColor}"). Usen formato hexadecimal como #d6282e.`,
     );
   }
   const roofLogo = meta.roof_logo ? validateAssetPath(meta.roof_logo, fileName, 2) : '';
@@ -473,12 +514,12 @@ export function parseMapMarkdown(rawText, fileName = 'map/map.md') {
     }
     const colonIdx = trimmed.indexOf(':');
     if (colonIdx <= 0) {
-      throw new StoryParseError(fileName, i + 1, `Linha malformada em "${fileName}": "${trimmed}". Use "CODIGO: Nome".`);
+      throw new StoryParseError(fileName, i + 1, `Línea mal formada en "${fileName}": "${trimmed}". Usen "CODIGO: Nombre".`);
     }
     const code = trimmed.slice(0, colonIdx).trim().toUpperCase();
     const name = trimmed.slice(colonIdx + 1).trim();
     if (!code || !name) {
-      throw new StoryParseError(fileName, i + 1, `Código ou nome vazio em "${fileName}": "${trimmed}".`);
+      throw new StoryParseError(fileName, i + 1, `Código o nombre vacío en "${fileName}": "${trimmed}".`);
     }
     locationNames.set(code, name);
   }
