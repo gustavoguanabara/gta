@@ -53,6 +53,7 @@ function mezclar(arr, semilla){
 const reducido = () => window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 const sleep = ms => new Promise(r=>setTimeout(r, reducido() ? 0 : ms));
 const coma = n => String(n).replace('.',',');
+const ANCHO = window.matchMedia('(min-width:720px)');
 
 const ICONO_LAPIZ = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 17.2V21h3.8l11-11-3.8-3.8-11 11zM20.7 7a1 1 0 0 0 0-1.4l-2.3-2.3a1 1 0 0 0-1.4 0l-1.8 1.8 3.8 3.8L20.7 7z"/></svg>';
 const ICONO_SIM = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16v12H4zM2 18h20v2H2z"/><path d="M8 8l3 2-3 2zM12 12h4v1h-4z" fill="#fff"/></svg>';
@@ -119,7 +120,7 @@ function crearMazo(raiz, slides, opts){
   });
   // Deslizar con el dedo
   let ini = null;
-  const desplazableX = n => { for(let x=n; x && x !== vista; x = x.parentElement){ if(x.scrollWidth > x.clientWidth + 2 && getComputedStyle(x).overflowX !== 'hidden') return true; } return false; };
+  const desplazableX = n => { for(let x=n; x && x !== vista; x = x.parentElement){ if(x.scrollWidth > x.clientWidth + 2 && /(auto|scroll)/.test(getComputedStyle(x).overflowX)) return true; } return false; };
   vista.addEventListener('touchstart', ev=>{
     const t = ev.target;
     if(ev.touches.length !== 1 || t.closest('input, select, textarea, .no-swipe, .fb-panel') || desplazableX(t)){ ini = null; return; }
@@ -500,7 +501,7 @@ const SIMS = {
       tabBtns[k] = b; tabsBox.append(b);
       panels[k] = el('div',{class:'ed-panel p-'+k,role:'tabpanel',id:ctx.uid+'pan-'+k,'aria-labelledby':ctx.uid+'tab-'+k});
     });
-    const ancho = window.matchMedia('(min-width:720px)');
+    const ancho = ANCHO;
     function elegirTab(k){
       if(ancho.matches && k==='editar') k = 'vista';
       est.tab = k;
@@ -749,9 +750,14 @@ const SIMS = {
     const soltar = ()=>{ arrastrando = false; };
     graf.addEventListener('pointerup', soltar); graf.addEventListener('pointercancel', soltar);
 
-    ctx.alFallar = ()=>{ if(ctx.fallos >= 2){ guia.hidden = false; hueco.hidden = false; } };
+    // Pista guiada tras dos intentos: en pantallas anchas va en la columna de la consigna; en angostas, arriba del gráfico
+    ctx.alFallar = ()=>{
+      if(ctx.fallos < 2 || !guia.hidden) return;
+      if(ANCHO.matches) ctx.izq.append(guia); else top.after(guia);
+      guia.hidden = false; hueco.hidden = false;
+    };
     pintar();
-    cuerpo.append(top, leyenda, graf, eje, slider, guia, vivo);
+    cuerpo.append(top, leyenda, graf, eje, slider, vivo);
     pie.append(btnComprobar(()=>{
       const a = aciertos();
       ctx.intento(a >= 9, 'Van '+a+' de 10 aciertos. Muevan la línea violeta hasta que casi todos los humanos queden a la izquierda y los bots a la derecha.');
@@ -1014,7 +1020,10 @@ function iniciar(isla){
     ctx.grid = el('div',{class:'pz-grid'}, ctx.plegar, ctx.izq, ctx.zona);
     plegar(ctx, false);
     // En pantallas angostas, al empezar a usar el simulador la consigna se pliega sola (una vez)
-    ctx.zona.addEventListener('pointerdown', ()=>{ if(!ctx.autoPlegado && !ANCHO.matches){ ctx.autoPlegado = true; plegar(ctx, true); } }, true);
+    // (después del clic, para no «comerse» el primer toque con el salto de diseño)
+    const autoPlegar = ()=>{ if(!ctx.autoPlegado && !ANCHO.matches){ ctx.autoPlegado = true; setTimeout(()=>plegar(ctx, true), 0); } };
+    ctx.zona.addEventListener('click', autoPlegar, true);
+    ctx.zona.addEventListener('change', autoPlegar, true);
     ctx.sec = el('section',{class:'slide-pz',id:'puzzle-'+(i+1),'aria-labelledby':tituloId},
       el('div',{class:'pz-cab'},
         el('h2',{id:tituloId}, el('span',{class:'capsula isla'}, q.etiqueta), el('span',{class:'pz-num'},'Puzzle '+(i+1)+' de '+N)),
@@ -1069,7 +1078,6 @@ function iniciar(isla){
   });
 }
 
-const ANCHO = window.matchMedia('(min-width:720px)');
 function plegar(ctx, si){
   ctx.grid.classList.toggle('plegado', si);
   ctx.plegar.setAttribute('aria-expanded', String(!si));
