@@ -155,6 +155,8 @@ export function clearGameState(storage = getDefaultStorage()) {
   if (!storage) return false;
   try {
     storage.removeItem(SAVE_STORAGE_KEY);
+    // Intereses y resultados de los laboratorios (los usa el cierre para la ruta sugerida).
+    storage.removeItem('cc_expedicion_intereses');
     return true;
   } catch {
     return false;
