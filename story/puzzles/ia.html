@@ -23,13 +23,16 @@ CC.iniciar({
   info:'IA desde cero (Fase 1): qué es, cómo funciona y dónde impacta. Profundización (Fase 2): técnicas, aplicaciones y desafíos éticos.',
   modalidad:['Fase 1 y Fase 2','Online','Tutoría en Fase 2'],
   preguntas:[
-  { tipo:'sim', sim:'ia', etiqueta:'Puzzle de entrenamiento',
-    texto:'Un videojuego online necesita un anti-cheat. Entrenen una IA que detecte bots según los clics por segundo (CPS) de cada jugador.',
-    meta:'Muevan el umbral hasta clasificar bien al menos 9 de 10 jugadores.',
-    exp:'Así «aprende» un modelo: ajusta su regla mirando ejemplos reales. ¿Notaron que 10 de 10 es imposible? El jugador pro hace 15 CPS, como un bot. Si lo banean, es un falso positivo: la IA también se equivoca y alguien tiene que revisar.' },
+  { tipo:'sim', sim:'ia', etiqueta:'Puzzle anti-cheat',
+    como:['Miren los 10 jugadores: cada punto es uno, ubicado según cuántos <b>clics por segundo (CPS)</b> hace. Azul redondo = humano, naranja cuadrado = bot.',
+          'Muevan la <b>línea violeta</b> (arrastrando o con el control «Umbral»). Todo lo que quede a su derecha, la IA lo banea como bot.',
+          'Miren «Aciertos» y lleguen a <b>9 de 10</b>. Después toquen «Comprobar meta».'],
+    texto:'En el videojuego «Isla Clash» hay bots que hacen trampa: clickean muchísimo más rápido que una persona. Su IA anti-cheat decide quién es bot con una sola regla: «si hace más de X clics por segundo, es bot». Ustedes eligen la X.',
+    meta:'Elegir un umbral que clasifique bien al menos 9 de los 10 jugadores.',
+    exp:'¡Así «aprende» un modelo: ajusta su regla mirando ejemplos reales! ¿Notaron que 10 de 10 es imposible? PRO_xNico es humano, pero clickea a 15 CPS, más rápido que un bot. Si lo dejan pasar, se escapa un bot; si lo banean, es un falso positivo: una persona castigada por error. Por eso las IA también se equivocan y siempre tiene que haber alguien que revise los casos dudosos.' },
   { tipo:'sim', sim:'spam', etiqueta:'Puzzle antispam',
-    texto:'Al grupo de WhatsApp de la clase le llegan mensajes tramposos. Elijan las palabras que activan el filtro para que atrape el spam sin tirar los mensajes importantes.',
-    meta:'Clasificar bien los 6 mensajes.',
+    texto:'Al grupo de WhatsApp de la clase llegan mensajes tramposos (spam). Su filtro usa una regla simple: si un mensaje tiene alguna de las palabras marcadas, va a la carpeta Spam; si no, queda en la bandeja de entrada.',
+    meta:'Que los 3 mensajes tramposos vayan a Spam y los 3 de la clase queden en la bandeja (6 de 6). Empiecen sin palabras marcadas y vayan probando.',
     exp:'Así trabajan muchos filtros: buscan rasgos que aparecen en los ejemplos de spam. Si eligen «tarea» o «prueba», el filtro tira mensajes importantes. Elegir buenos rasgos es parte de entrenar una IA.' }
   ]
 });
