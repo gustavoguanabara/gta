@@ -305,7 +305,11 @@ export class CutsceneController {
         .map((line) => `${line.speaker}: ${line.text}`)
         .join(' ');
     }
-    if (this.videoEl.getAttribute('src') !== step.url) this.videoEl.src = step.url;
+    // En pantallas verticales se usa la versión vertical (videos/vertical/...), si existe.
+    const portrait = Boolean(globalThis.matchMedia?.('(orientation: portrait)').matches);
+    const url = portrait && !step.noVertical ? step.url.replace(/\/videos\/([^/]+)$/, '/videos/vertical/$1') : step.url;
+    this.currentVideoStep = step;
+    if (this.videoEl.getAttribute('src') !== url) this.videoEl.src = url;
     try { this.videoEl.currentTime = 0; } catch { /* ignore */ }
     const playing = this.videoEl.play();
     if (playing?.catch) playing.catch(() => { /* sin autoplay: queda el botón Saltar */ });
@@ -328,11 +332,16 @@ export class CutsceneController {
     this.renderStep();
   }
 
-  // Si el video no carga, se muestran sus falas como diálogo común.
+  // Si el video no carga, se prueba la versión horizontal y, si tampoco, se muestran sus falas.
   #videoFailed() {
     if (!this.active) return;
     const step = this.cutscene?.steps?.[this.stepIndex];
     if (!step || step.type !== 'video') return;
+    if (!step.noVertical && this.videoEl?.getAttribute('src') !== step.url) {
+      step.noVertical = true;
+      this.#playVideo(step);
+      return;
+    }
     this.videoActive = false;
     this.videoLayer?.classList.add('hidden');
     const speech = (step.transcript || []).map((line) => ({ speaker: line.speaker, text: line.text }));

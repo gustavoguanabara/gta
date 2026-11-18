@@ -19,6 +19,8 @@ const { fontFamily: TEXTO } = loadMontserrat('normal', { weights: ['600', '800']
 
 const clamp = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;
 const story = (p: string) => staticFile(`story/${p}`);
+// Versión vertical (celular): mismos elementos, otra disposición.
+const useVertical = () => { const { width, height } = useVideoConfig(); return height > width; };
 
 // Fondo: foto del lugar con zoom lento, tinte del curso, viñeta y barras de cine.
 const Fondo: React.FC<{ escena: Escena }> = ({ escena }) => {
@@ -47,8 +49,9 @@ const PlacaMision: React.FC<{ escena: Escena }> = ({ escena }) => {
   const entra = spring({ frame, fps, config: { damping: 12, stiffness: 140 } });
   const sale = interpolate(frame, [durationInFrames - 10, durationInFrames], [0, 1], clamp);
   const [num, ...resto] = escena.title.split('—');
+  const v = useVertical();
   return (
-    <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'flex-start', paddingLeft: 110 }}>
+    <AbsoluteFill style={{ justifyContent: v ? 'flex-start' : 'center', alignItems: 'flex-start', paddingLeft: v ? 60 : 110, paddingRight: v ? 40 : 0, paddingTop: v ? 260 : 0 }}>
       <div style={{ rotate: '-4deg', translate: `${interpolate(entra, [0, 1], [-900, 0])}px ${sale * -40}px`, opacity: 1 - sale }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
           {escena.logo ? <Img src={story(escena.logo)} style={{ width: 96, height: 92, borderRadius: 12, border: '5px solid #111', boxShadow: '8px 8px 0 #111' }} /> : null}
@@ -56,7 +59,7 @@ const PlacaMision: React.FC<{ escena: Escena }> = ({ escena }) => {
             {(num || '').trim().toUpperCase()}
           </div>
         </div>
-        <div style={{ fontFamily: TITULO, fontSize: 132, lineHeight: 1, color: '#fff', marginTop: 10, WebkitTextStroke: '5px #111', paintOrder: 'stroke fill', textShadow: '10px 10px 0 #111' }}>
+        <div style={{ fontFamily: TITULO, fontSize: v ? 120 : 132, lineHeight: 1, color: '#fff', marginTop: 10, WebkitTextStroke: '5px #111', paintOrder: 'stroke fill', textShadow: '10px 10px 0 #111' }}>
           {resto.join('—').trim().toUpperCase() || escena.title.toUpperCase()}
         </div>
       </div>
@@ -68,6 +71,7 @@ const PlacaMision: React.FC<{ escena: Escena }> = ({ escena }) => {
 const Personajes: React.FC<{ escena: Escena; hablante: string; desde: number }> = ({ escena, hablante, desde }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const v = useVertical();
   const slots = [
     { id: escena.left, lado: 'izq' as const },
     { id: escena.right, lado: 'der' as const },
@@ -86,9 +90,9 @@ const Personajes: React.FC<{ escena: Escena; hablante: string; desde: number }> 
             src={story(`characters/${id}.png`)}
             style={{
               position: 'absolute',
-              bottom: -40,
-              [lado === 'izq' ? 'left' : 'right']: 120,
-              height: 640,
+              bottom: v ? -30 : -40,
+              [lado === 'izq' ? 'left' : 'right']: v ? -20 : 120,
+              height: v ? 720 : 640,
               translate: `${x}px ${respira + (activo ? 0 : 18)}px`,
               scale: String(activo ? 1.06 : 0.96),
               filter: activo ? `drop-shadow(0 0 26px ${escena.color}) brightness(1.05)` : `brightness(${interpolate(foco, [0, 1], [1, 0.5])}) saturate(.7)`,
@@ -108,16 +112,17 @@ const Subtitulo: React.FC<{ fala: Fala; color: string; lado: 'izq' | 'der' }> = 
   const entra = spring({ frame, fps, config: { damping: 14, stiffness: 160 } });
   const sale = interpolate(frame, [durationInFrames - 6, durationInFrames], [0, 1], clamp);
   const letras = Math.floor(interpolate(frame, [4, Math.max(8, durationInFrames - 22)], [0, fala.text.length], clamp));
+  const v = useVertical();
   return (
-    <AbsoluteFill style={{ justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 78 }}>
-      <div style={{ width: 1060, translate: `0px ${interpolate(entra, [0, 1], [80, 0]) + sale * 30}px`, opacity: interpolate(entra, [0, 1], [0, 1]) * (1 - sale) }}>
+    <AbsoluteFill style={{ justifyContent: v ? 'flex-start' : 'flex-end', alignItems: 'center', paddingBottom: v ? 0 : 78, paddingTop: v ? 170 : 0 }}>
+      <div style={{ width: v ? 650 : 1060, translate: `0px ${interpolate(entra, [0, 1], [80, 0]) + sale * 30}px`, opacity: interpolate(entra, [0, 1], [0, 1]) * (1 - sale) }}>
         <div style={{ display: 'flex', justifyContent: lado === 'izq' ? 'flex-start' : 'flex-end' }}>
-          <div style={{ fontFamily: TITULO, fontSize: 34, letterSpacing: 2, color: '#111', backgroundColor: '#FFC800', padding: '4px 20px', rotate: '-3deg', border: '4px solid #111', boxShadow: '6px 6px 0 #111', marginBottom: -10, zIndex: 2 }}>
+          <div style={{ fontFamily: TITULO, fontSize: v ? 40 : 34, letterSpacing: 2, color: '#111', backgroundColor: '#FFC800', padding: '4px 20px', rotate: '-3deg', border: '4px solid #111', boxShadow: '6px 6px 0 #111', marginBottom: -10, zIndex: 2 }}>
             {fala.name.toUpperCase()}
           </div>
         </div>
         <div style={{ backgroundColor: 'rgba(10,10,18,.88)', border: `4px solid ${color}`, borderRadius: 18, padding: '26px 34px 24px', boxShadow: '0 18px 40px rgba(0,0,0,.55)' }}>
-          <div style={{ fontFamily: TEXTO, fontWeight: 800, fontSize: 34, lineHeight: 1.3, color: '#fff', minHeight: 88 }}>
+          <div style={{ fontFamily: TEXTO, fontWeight: 800, fontSize: v ? 42 : 34, lineHeight: 1.3, color: '#fff', minHeight: v ? 220 : 88 }}>
             {fala.text.slice(0, letras)}
             <span style={{ opacity: 0 }}>{fala.text.slice(letras)}</span>
           </div>
@@ -147,11 +152,12 @@ const Cofre: React.FC<{ escena: Escena }> = ({ escena }) => {
   const cae = spring({ frame, fps, config: { damping: 9, stiffness: 120 } });
   const letra = spring({ frame: frame - 28, fps, config: { damping: 8, stiffness: 160 } });
   const brillo = interpolate(frame, [20, 60], [0, 1], clamp);
+  const v = useVertical();
   return (
     <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: `rgba(0,0,0,${0.55 * brillo})` }}>
       <div style={{ position: 'absolute', width: 760, height: 760, borderRadius: 999, background: `radial-gradient(circle, ${escena.color}aa 0%, rgba(255,200,0,.25) 40%, rgba(0,0,0,0) 70%)`, opacity: brillo, rotate: `${frame * 1.5}deg` }} />
       <Img src={story(escena.reward.image)} style={{ width: 260, height: 260, imageRendering: 'pixelated', translate: `0px ${interpolate(cae, [0, 1], [-700, -60])}px` }} />
-      <div style={{ position: 'absolute', top: 400, display: 'flex', flexDirection: 'column', alignItems: 'center', scale: String(letra), rotate: '-4deg' }}>
+      <div style={{ position: 'absolute', top: v ? 760 : 400, display: 'flex', flexDirection: 'column', alignItems: 'center', scale: String(letra), rotate: '-4deg' }}>
         <div style={{ fontFamily: TITULO, fontSize: 64, color: '#FFC800', WebkitTextStroke: '3px #111', paintOrder: 'stroke fill', textShadow: '6px 6px 0 #111', letterSpacing: 4 }}>
           LETRA {escena.reward.letter}
         </div>

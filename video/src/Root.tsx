@@ -25,6 +25,20 @@ export const RemotionRoot: React.FC = () => {
           ))}
         </Folder>
       ))}
+      <Folder name="vertical">
+        {ESCENAS.map((escena) => (
+          <Composition
+            key={`${escena.id}-v`}
+            id={`${escena.id}-v`}
+            component={Dialogo}
+            durationInFrames={escena.timing.total}
+            fps={30}
+            width={720}
+            height={1280}
+            defaultProps={{ escena }}
+          />
+        ))}
+      </Folder>
     </>
   );
 };
