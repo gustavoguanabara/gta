@@ -2524,3 +2524,5 @@ body {
 @keyframes btc-pop { 40% { transform: scale(1.18); background: rgba(247, 147, 26, 0.9); color: #111; } }
 @keyframes btc-float { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-26px); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .btc-badge.btc-gain, .btc-badge.btc-gain::after { animation: none; } }
+.cutscene-video-sound { position: absolute; left: 14px; bottom: 14px; appearance: none; width: 48px; height: 48px; border-radius: 999px; border: 1px solid rgba(255,255,255,.45); background: rgba(10,14,22,.72); color: #fff; font-size: 20px; cursor: pointer; }
+.cutscene-video-sound:hover, .cutscene-video-sound:focus-visible { background: #fbbf24; color: #111; }

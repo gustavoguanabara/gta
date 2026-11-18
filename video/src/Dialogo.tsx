@@ -1,5 +1,6 @@
 import { loadFont as loadAnton } from '@remotion/google-fonts/Anton';
 import { loadFont as loadMontserrat } from '@remotion/google-fonts/Montserrat';
+import { Audio } from '@remotion/media';
 import React from 'react';
 import {
   AbsoluteFill,
@@ -19,6 +20,7 @@ const { fontFamily: TEXTO } = loadMontserrat('normal', { weights: ['600', '800']
 
 const clamp = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;
 const story = (p: string) => staticFile(`story/${p}`);
+const sfx = (n: string) => staticFile(`sfx/${n}.wav`);
 // Versión vertical (celular): mismos elementos, otra disposición.
 const useVertical = () => { const { width, height } = useVideoConfig(); return height > width; };
 
@@ -179,8 +181,45 @@ export const Dialogo: React.FC<{ escena: Escena }> = ({ escena }) => {
   const finDialogo = cursor;
   const frame = useCurrentFrame();
   const actual = tramos.find((t) => frame >= t.from && frame < t.from + t.dur) || tramos[tramos.length - 1];
+  const { durationInFrames } = useVideoConfig();
+  const entradaPersonajes = conPlaca ? timing.intro - 20 : 0;
   return (
     <AbsoluteFill style={{ fontFamily: TEXTO }}>
+      <Audio
+        name="Música"
+        src={sfx('musica')}
+        loop
+        volume={(f) => 0.32 * interpolate(f, [0, 15, durationInFrames - 20, durationInFrames], [0, 1, 1, 0], clamp)}
+      />
+      {conPlaca ? (
+        <>
+          <Audio name="Whoosh título" src={sfx('whoosh')} volume={0.7} />
+          <Sequence name="Golpe título" from={8} layout="none">
+            <Audio src={sfx('golpe')} volume={0.8} />
+          </Sequence>
+        </>
+      ) : null}
+      <Sequence name="Whoosh personajes" from={entradaPersonajes} layout="none">
+        <Audio src={sfx('whoosh')} volume={0.45} />
+      </Sequence>
+      {escena.section === 'inicio' && escena.missionNumber > 1 ? <Audio name="Llamada" src={sfx('llamada')} volume={0.5} /> : null}
+      {tramos.map((t, i) => (
+        <Sequence key={`a${i}`} name={`Sonido fala ${i + 1}`} from={t.from} durationInFrames={t.dur} layout="none">
+          <Audio src={sfx('pop')} volume={0.5} />
+          <Audio src={sfx('tecleo')} volume={0.35} durationInFrames={Math.max(8, t.dur - 26)} />
+        </Sequence>
+      ))}
+      {escena.reward ? (
+        <Sequence name="Sonidos cofre" from={finDialogo} layout="none">
+          <Audio src={sfx('caida')} volume={0.6} />
+          <Sequence from={26} layout="none">
+            <Audio src={sfx('ding')} volume={0.7} />
+          </Sequence>
+          <Sequence from={32} layout="none">
+            <Audio src={sfx('fanfarria')} volume={0.5} />
+          </Sequence>
+        </Sequence>
+      ) : null}
       <Fondo escena={escena} />
       <Sequence name="Personajes" from={conPlaca ? timing.intro - 20 : 0} layout="none">
         <Personajes escena={escena} hablante={frame >= (conPlaca ? timing.intro - 20 : 0) ? actual?.fala.speaker || '' : ''} desde={0} />

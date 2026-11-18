@@ -30,6 +30,17 @@ export class CutsceneController {
     this.videoSkipBtn = document.getElementById('cutscene-video-skip');
     this.videoTranscriptEl = document.getElementById('cutscene-video-transcript');
     this.videoActive = false;
+    this.videoSoundBtn = document.getElementById('cutscene-video-sound');
+    this.videoMuted = false;
+    try { this.videoMuted = localStorage.getItem('cc_video_sonido') === 'off'; } catch { /* sin almacenamiento */ }
+    this.#syncSoundButton();
+    this.videoSoundBtn?.addEventListener('click', () => {
+      // Se basa en el estado real del video (pudo haber sido silenciado por el navegador).
+      this.videoMuted = !(this.videoActive ? this.videoEl.muted : this.videoMuted);
+      try { localStorage.setItem('cc_video_sonido', this.videoMuted ? 'off' : 'on'); } catch { /* ignorar */ }
+      if (this.videoEl) this.videoEl.muted = this.videoMuted;
+      this.#syncSoundButton();
+    });
     this.videoEl?.addEventListener('ended', () => this.#endVideo());
     this.videoEl?.addEventListener('error', () => this.#videoFailed());
     this.videoSkipBtn?.addEventListener('click', () => this.#endVideo());
@@ -311,8 +322,26 @@ export class CutsceneController {
     this.currentVideoStep = step;
     if (this.videoEl.getAttribute('src') !== url) this.videoEl.src = url;
     try { this.videoEl.currentTime = 0; } catch { /* ignore */ }
+    this.videoEl.muted = this.videoMuted;
+    this.videoEl.volume = 0.9;
     const playing = this.videoEl.play();
-    if (playing?.catch) playing.catch(() => { /* sin autoplay: queda el botón Saltar */ });
+    if (playing?.catch) {
+      playing.catch(() => {
+        // El navegador bloqueó el sonido automático: seguimos en silencio.
+        if (!this.videoActive || this.videoEl.muted) return;
+        this.videoEl.muted = true;
+        this.#syncSoundButton(true);
+        this.videoEl.play().catch(() => { /* queda el botón Saltar */ });
+      });
+    }
+  }
+
+  #syncSoundButton(forcedMute = false) {
+    if (!this.videoSoundBtn) return;
+    const muted = forcedMute || this.videoMuted;
+    this.videoSoundBtn.textContent = muted ? '🔇' : '🔊';
+    this.videoSoundBtn.setAttribute('aria-pressed', String(!muted));
+    this.videoSoundBtn.setAttribute('aria-label', muted ? 'Sonido apagado: tocar para activar' : 'Sonido activado: tocar para silenciar');
   }
 
   #hideVideo() {
