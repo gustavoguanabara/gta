@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Isla Web · Expedición CC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="comun.css">
+</head>
+<body>
+<main class="app" id="app"></main>
+<noscript><p style="padding:16px">Esta página necesita JavaScript para funcionar.</p></noscript>
+<script src="comun.js"></script>
+<script>
+CC.iniciar({
+  id:'web', codigo:'ETIQUETA',
+  nombre:'Isla Web', kick:'Isla 2/6 · Fase 2',
+  curso:'Fase 2 · Desarrollo web · Redes e internet', mapaCurso:'Desarrollo web',
+  color:'#0C88CA', ct:'#FFFFFF', logo:'web.svg',
+  info:'Construye páginas web desde cero: cómo fluye la información en internet, estructura con HTML, estilo con CSS y frameworks modernos.',
+  modalidad:['Online','Con tutoría','Encuentros en vivo'],
+  preguntas:[
+  { tipo:'sim', sim:'web', etiqueta:'Puzzle de capas',
+    texto:'Un cliente quiere su página lista ya. Ármenla con el editor por bloques: elementos (HTML), reglas de estilo (CSS) y qué hace el botón (JS). Miren el código que se genera y prueben la Vista.',
+    meta:'El título <h1> dice «Hola UTU», está en naranja y el botón cuenta los «me gusta» (pruébenlo en la Vista).',
+    exp:'HTML arma la estructura (el título, el botón). CSS le da estilo (el color). JS le da comportamiento (que el botón cuente). Esqueleto, ropa y músculos.' },
+  { tipo:'orden', etiqueta:'Puzzle HTML', titulo:'Repara la página', mono:true,
+    texto:'La página se rompió: las etiquetas quedaron desordenadas. Ordénenlas para que el navegador pueda dibujarla.',
+    meta:'Cada etiqueta que se abre se cierra después, como cajas una dentro de otra. Primero va el título y después el párrafo.',
+    pasos:['<html>','<body>','<h1>Hola UTU</h1>','<p>Bienvenida a la web</p>','</body>','</html>'],
+    exp:'html contiene a body, y body contiene el contenido. Se abren de afuera hacia adentro y se cierran de adentro hacia afuera. Si se cruzan, el navegador se confunde.' },
+  { tipo:'orden', etiqueta:'Puzzle de red', titulo:'Viaje de un paquete',
+    texto:'Sigan el viaje de una página: ¿qué pasa desde que escriben ceibal.edu.uy hasta que la ven? Ordenen los pasos.',
+    pasos:['Escribo la dirección en el navegador','El DNS traduce el nombre a una dirección IP','Mi compu le pide la página al servidor','El servidor responde con HTML, CSS y JS','El navegador dibuja la página'],
+    exp:'Internet usa direcciones IP numéricas. El DNS funciona como una guía: traduce nombres fáciles de recordar a esas direcciones.' }
+  ]
+});
+</script>
+</body>
+</html>

@@ -56,10 +56,10 @@ export class InventoryController {
     this.onDeliver = null;
     this.onClose = onClose;
 
-    this.titleEl.textContent = 'INVENTÁRIO';
-    this.subtitleEl.textContent = 'Selecione um item para ver os detalhes.';
+    this.titleEl.textContent = 'INVENTARIO';
+    this.subtitleEl.textContent = 'Elijan un objeto para ver los detalles.';
     this.deliverBtn.classList.add('hidden');
-    this.closeBtn.textContent = 'Fechar';
+    this.closeBtn.textContent = 'Cerrar';
     this.#hideFeedback();
     this.#selectInitialSlot();
     this.#openScreen();
@@ -67,9 +67,9 @@ export class InventoryController {
 
   openDelivery(inventory, options = {}) {
     const {
-      prompt = 'Selecione o item correto para entregar:',
+      prompt = 'Elijan el objeto correcto para entregar:',
       expectedItemId = '',
-      wrongItemMessage = 'Não é esse item que eu procuro!',
+      wrongItemMessage = '¡Ese no es el objeto que estoy buscando!',
       wrongItemMessages = [],
       onDeliver = null,
       onCancel = null,
@@ -84,10 +84,10 @@ export class InventoryController {
     this.onDeliver = onDeliver;
     this.onClose = onCancel;
 
-    this.titleEl.textContent = 'ENTREGAR ITEM';
+    this.titleEl.textContent = 'ENTREGAR OBJETO';
     this.subtitleEl.textContent = prompt;
     this.deliverBtn.classList.remove('hidden');
-    this.closeBtn.textContent = 'Voltar';
+    this.closeBtn.textContent = 'Volver';
     this.#hideFeedback();
     this.#selectInitialSlot();
     this.#openScreen();
@@ -151,7 +151,7 @@ export class InventoryController {
       pool.push(missionMsg);
     }
     if (pool.length === 0) {
-      return 'Não é esse item que eu procuro!';
+      return '¡Ese no es el objeto que estoy buscando!';
     }
     const candidates = pool.length > 1
       ? pool.filter((m) => m !== this.lastWrongItemMessage)
@@ -223,7 +223,7 @@ export class InventoryController {
     if (!this.isOpen || this.mode !== 'delivery' || !this.inventory) return;
     const item = this.inventory.getItemAt(this.selectedIndex);
     if (!item) {
-      this.#showFeedback('Selecione um espaço com item para entregar.');
+      this.#showFeedback('Elijan un espacio con un objeto para entregar.');
       return;
     }
     if (this.expectedItemId && item.id !== this.expectedItemId) {
@@ -289,7 +289,7 @@ export class InventoryController {
       }
       if (globalIdx === this.selectedIndex) btn.classList.add('selected');
       btn.setAttribute('role', 'gridcell');
-      btn.setAttribute('aria-label', item ? item.name : `Espaço ${globalIdx + 1} vazio`);
+      btn.setAttribute('aria-label', item ? item.name : `Espacio ${globalIdx + 1} vacío`);
 
       if (item) {
         if (item.imageUrl) {
@@ -320,7 +320,7 @@ export class InventoryController {
     const RARITY_LABELS = {
       normal: 'Normal',
       especial: 'Especial',
-      lendario: 'Lendário',
+      lendario: 'Legendario',
     };
     const selected = this.inventory.getItemAt(this.selectedIndex);
     if (selected) {
@@ -336,13 +336,13 @@ export class InventoryController {
       } else if (selected.category !== 'extra') {
         const missionSpan = document.createElement('span');
         missionSpan.className = 'inventory-detail-rarity category-missao';
-        missionSpan.textContent = 'Missão';
+        missionSpan.textContent = 'Misión';
         this.detailNameEl.appendChild(missionSpan);
       }
-      this.detailDescEl.textContent = selected.description || 'Item de missão.';
+      this.detailDescEl.textContent = selected.description || 'Objeto de misión.';
     } else {
-      this.detailNameEl.textContent = 'Espaço vazio';
-      this.detailDescEl.textContent = 'Nenhum item guardado neste espaço.';
+      this.detailNameEl.textContent = 'Espacio vacío';
+      this.detailDescEl.textContent = 'No hay ningún objeto guardado en este espacio.';
     }
     if (this.detailDescEl) {
       this.detailDescEl.scrollTop = 0;

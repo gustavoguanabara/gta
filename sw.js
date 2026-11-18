@@ -1,4 +1,4 @@
-const SHELL_CACHE = 'gta-cv-shell-v2';
+const SHELL_CACHE = 'gta-cv-shell-v3';
 const ASSETS_CACHE = 'gta-cv-assets-v5';
 
 const IMAGE_EXT_RE = /\.(png|jpe?g|webp|gif|svg)$/i;
@@ -111,6 +111,9 @@ self.addEventListener('fetch', (event) => {
   }
 
   if (request.method !== 'GET') return;
+
+  // Videos: el navegador los pide por rangos (respuestas 206), que la Cache API no guarda.
+  if (/\.(mp4|webm)$/i.test(url.pathname)) return;
 
   if (
     isStoryRequest(url) &&

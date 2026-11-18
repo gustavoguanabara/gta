@@ -94,7 +94,7 @@ export class ConfirmDialogController {
 
   open({
     title = 'CONFIRMAR',
-    message = 'Tem certeza que deseja continuar?',
+    message = '¿Seguro que quieren continuar?',
     cancelLabel = 'Cancelar',
     confirmLabel = 'Confirmar',
     onConfirm = null,

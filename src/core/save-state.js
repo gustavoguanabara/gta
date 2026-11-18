@@ -46,6 +46,8 @@ export function createSaveSnapshot({
   inventorySlots = [],
   collectedExtraIds = [],
   completedNpcPoints = [],
+  bitcoin = 0,
+  completedEncounterIds = [],
   player = {},
 } = {}) {
   const health = Number.isFinite(player.health) ? Math.max(1, Math.min(100, player.health)) : 100;
@@ -72,6 +74,10 @@ export function createSaveSnapshot({
       ? completedNpcPoints
         .filter((pt) => pt && Number.isFinite(pt.x) && Number.isFinite(pt.y))
         .map((pt) => ({ x: pt.x, y: pt.y }))
+      : [],
+    bitcoin: Math.max(0, Math.floor(Number(bitcoin) || 0)),
+    completedEncounterIds: Array.isArray(completedEncounterIds)
+      ? [...new Set(completedEncounterIds.map((id) => String(id)).filter(Boolean))]
       : [],
     player: {
       x: Number.isFinite(player.x) ? player.x : 0,
@@ -129,6 +135,10 @@ export function loadGameState(storyKey = 'default', storage = getDefaultStorage(
       completedNpcPoints: Array.isArray(parsed.completedNpcPoints)
         ? parsed.completedNpcPoints.filter((pt) => pt && Number.isFinite(pt.x) && Number.isFinite(pt.y))
         : [],
+      bitcoin: Math.max(0, Math.floor(Number(parsed.bitcoin) || 0)),
+      completedEncounterIds: Array.isArray(parsed.completedEncounterIds)
+        ? parsed.completedEncounterIds.map((id) => String(id)).filter(Boolean)
+        : [],
       player: {
         x: parsed.player.x,
         y: parsed.player.y,
@@ -145,6 +155,8 @@ export function clearGameState(storage = getDefaultStorage()) {
   if (!storage) return false;
   try {
     storage.removeItem(SAVE_STORAGE_KEY);
+    // Intereses y resultados de los laboratorios (los usa el cierre para la ruta sugerida).
+    storage.removeItem('cc_expedicion_intereses');
     return true;
   } catch {
     return false;
@@ -152,10 +164,10 @@ export function clearGameState(storage = getDefaultStorage()) {
 }
 
 export function formatContinueLabel(savedState) {
-  if (!savedState) return 'Entrar na Cidade';
+  if (!savedState) return 'Entrar a la ciudad';
   if (savedState.freeRoamMode) {
-    return 'Continuar (Modo Livre)';
+    return 'Continuar (modo libre)';
   }
   const missionNum = Math.max(1, (savedState.currentMissionIndex || 0) + 1);
-  return `Continuar (Missão ${missionNum})`;
+  return `Continuar (Misión ${missionNum})`;
 }

@@ -1,1771 +1,1771 @@
-<!-- Mapa de nomes dos locais da cidade -->
-# Mapa da Cidade
+<!-- Mapa de nombres de los lugares de la ciudad -->
+# Mapa de la Ciudad
 
-## Ruas
-RUA-01: Av. Aurélio Valporto
-RUA-02: Rua dos Guararapes
-RUA-03: Rua Sete de Setembro
-RUA-04: Av. Brasil
-RUA-05: Rua Marechal Deodoro
-RUA-06: Rua XV de Novembro
-RUA-07: Av. Getúlio Vargas
-RUA-08: Rua Tiradentes
-RUA-09: Rua Rui Barbosa
-RUA-10: Rua Duque de Caxias
-RUA-11: Av. Paulista
-RUA-12: Rua das Flores
-RUA-13: Rua da Praia
-RUA-14: Rua São José
-RUA-15: Rua Santa Catarina
-RUA-16: Av. Beira-Mar
-RUA-17: Rua dos Bandeirantes
-RUA-18: Rua Dom Pedro II
-RUA-19: Rua Barão do Rio Branco
-RUA-20: Rua Almirante Tamandaré
-RUA-21: Av. Independência
-RUA-22: Rua Floriano Peixoto
-RUA-23: Rua Gonçalves Dias
-RUA-24: Rua Castro Alves
-RUA-25: Rua Machado de Assis
-RUA-26: Av. das Palmeiras
-RUA-27: Rua dos Pinheiros
-RUA-28: Rua das Acácias
-RUA-29: Rua dos Ipês
-RUA-30: Rua das Laranjeiras
-RUA-31: Av. Atlântica
-RUA-32: Rua do Comércio
-RUA-33: Rua da Liberdade
-RUA-34: Rua Boa Vista
-RUA-35: Rua Bela Vista
-RUA-36: Rua São Paulo
-RUA-37: Rua Rio de Janeiro
-RUA-38: Rua Minas Gerais
-RUA-39: Rua Bahia
-RUA-40: Rua Pernambuco
-RUA-41: Rua Paraná
-RUA-42: Rua Ceará
-RUA-43: Rua Amazonas
-RUA-44: Rua Goiás
-RUA-45: Rua Alagoas
-RUA-46: Av. dos Trabalhadores
-RUA-47: Rua da Saudade
-RUA-48: Rua da Esperança
-RUA-49: Rua da Paz
-RUA-50: Rua da Alegria
-RUA-51: Rua Carlos Gomes
-RUA-52: Rua Villa-Lobos
-RUA-53: Rua Santos Dumont
-RUA-54: Rua Oswaldo Cruz
-RUA-55: Rua José Bonifácio
-RUA-56: Av. Presidente Kennedy
-RUA-57: Rua Visconde de Mauá
-RUA-58: Rua General Osório
-RUA-59: Rua Padre Anchieta
-RUA-60: Rua Frei Caneca
-RUA-61: Rua Marquês de Itu
-RUA-62: Av. do Contorno
+## Calles
+RUA-01: Av. 18 de Julio
+RUA-02: Bv. Artigas
+RUA-03: Rambla Sur
+RUA-04: Treinta y Tres
+RUA-05: Rincón
+RUA-06: Sarandí
+RUA-07: Colonia
+RUA-08: Mercedes
+RUA-09: Juan Lacaze
+RUA-10: Av. Gral. Flores
+RUA-11: Av. Rivera
+RUA-12: Av. Italia
+RUA-13: Av. Agraciada
+RUA-14: Av. Millán
+RUA-15: Bv. España
+RUA-16: Juana de Ibarbourou
+RUA-17: Delmira Agustini
+RUA-18: José Pedro Varela
+RUA-19: Clemente Estable
+RUA-20: Paysandú
+RUA-21: Soriano
+RUA-22: Canelones
+RUA-23: Maldonado
+RUA-24: San José
+RUA-25: Durazno
+RUA-26: Florida
+RUA-27: Rocha
+RUA-28: Tacuarembó
+RUA-29: Cerro Largo
+RUA-30: Río Negro
+RUA-31: Salto
+RUA-32: Lavalleja
+RUA-33: Ejido
+RUA-34: Yaguarón
+RUA-35: Cuareim
+RUA-36: Andes
+RUA-37: Convención
+RUA-38: Río Branco
+RUA-39: Julio Herrera y Obes
+RUA-40: Gral. Rondeau
+RUA-41: Av. Uruguay
+RUA-42: Av. Brasil
+RUA-43: Av. Garibaldi
+RUA-44: Av. Centenario
+RUA-45: María Eugenia Vaz Ferreira
+RUA-46: Juan Zorrilla de San Martín
+RUA-47: Florencio Sánchez
+RUA-48: Horacio Quiroga
+RUA-49: Mario Benedetti
+RUA-50: Idea Vilariño
+RUA-51: Pedro Figari
+RUA-52: Joaquín Torres García
+RUA-53: Dámaso A. Larrañaga
+RUA-54: Gral. Leandro Gómez
+RUA-55: Av. de las Instrucciones
+RUA-56: Camino Carrasco
+RUA-57: Rambla de Pocitos
+RUA-58: Av. Sayago
+RUA-59: Gaboto
+RUA-60: Fernández Crespo
+RUA-61: Isla de Flores
+RUA-62: Av. del Libertador
 
-## Praças
-PRACA-01: Praça da Matriz
-PRACA-02: Praça da República
-PRACA-03: Praça dos Três Poderes
-PRACA-04: Praça da Bandeira
-PRACA-05: Praça da Liberdade
-PRACA-06: Praça Dom Pedro
-PRACA-07: Praça das Flores
-PRACA-08: Praça do Sol
-PRACA-09: Praça da Estação
-PRACA-10: Praça Tiradentes
-PRACA-11: Praça XV
-PRACA-12: Praça Rui Barbosa
-PRACA-13: Praça Duque de Caxias
-PRACA-14: Praça Getúlio Vargas
-PRACA-15: Praça das Palmeiras
-PRACA-16: Praça dos Ipês
-PRACA-17: Praça São José
-PRACA-18: Praça Santa Luzia
-PRACA-19: Praça Nossa Senhora
-PRACA-20: Praça do Pescador
-PRACA-21: Praça dos Imigrantes
-PRACA-22: Praça da Juventude
-PRACA-23: Praça do Trabalhador
-PRACA-24: Praça da Cultura
-PRACA-25: Praça da Música
-PRACA-26: Praça dos Esportes
-PRACA-27: Praça da Paz
-PRACA-28: Praça da Amizade
-PRACA-29: Praça Bela Vista
-PRACA-30: Praça Alto da Colina
-PRACA-31: Praça Jardim América
-PRACA-32: Praça Vila Nova
-PRACA-33: Praça São Cristóvão
-PRACA-34: Praça Santo Antônio
-PRACA-35: Praça Boa Viagem
-PRACA-36: Praça do Farol
+## Plazas
+PRACA-01: Plaza Independencia
+PRACA-02: Plaza Cagancha
+PRACA-03: Plaza Matriz
+PRACA-04: Plaza Zabala
+PRACA-05: Plaza Fabini
+PRACA-06: Plaza de los Treinta y Tres
+PRACA-07: Plaza Gomensoro
+PRACA-08: Plaza Virgilio
+PRACA-09: Parque Rodó
+PRACA-10: Parque Batlle
+PRACA-11: Parque Rivera
+PRACA-12: Parque Capurro
+PRACA-13: Plaza de Deportes N.º 1
+PRACA-14: Plaza de los Bomberos
+PRACA-15: Plaza Lafone
+PRACA-16: Plaza Colón
+PRACA-17: Plaza Cuba
+PRACA-18: Plaza Varela
+PRACA-19: Plaza del Cordón
+PRACA-20: Plaza del Buceo
+PRACA-21: Plaza de la Teja
+PRACA-22: Plaza Malvín
+PRACA-23: Plaza Sayago
+PRACA-24: Plaza Peñarol
+PRACA-25: Plaza de la Unión
+PRACA-26: Plaza Ituzaingó
+PRACA-27: Plaza Casavalle
+PRACA-28: Espacio Libre Barrio Sur
+PRACA-29: Plaza de la Bandera
+PRACA-30: Plazoleta del Mate
+PRACA-31: Plaza de los Olímpicos
+PRACA-32: Plaza España
+PRACA-33: Plaza Italia
+PRACA-34: Plaza Las Pioneras
+PRACA-35: Plaza del Candombe
+PRACA-36: Plazoleta del Ombú
 
-## Comércios
-COM-01: Farmácia Bom Preço
-COM-02: Padaria Bom Preço
-COM-03: Mercado Bom Preço
-COM-04: Mercadinho Bom Preço
-COM-05: Empório São Jorge
-COM-06: Barbearia Bom Preço
-COM-07: Oficina Bom Preço
-COM-08: Lanchonete Bom Preço
-COM-09: Café Bom Preço
-COM-10: Livraria Bom Preço
-COM-11: Papelaria Bom Preço
-COM-12: Açougue Bom Preço
-COM-13: Quitanda Bom Preço
-COM-14: Pizzaria Bom Preço
-COM-15: Sorveteria Bom Preço
-COM-16: Restaurante Bom Preço
-COM-17: Pet Shop Bom Preço
-COM-18: Loja de Roupas Bom Preço
-COM-19: Sapataria Bom Preço
-COM-20: Relojoaria Bom Preço
-COM-21: Ótica Bom Preço
-COM-22: Floricultura Bom Preço
-COM-23: Banca de Jornal Bom Preço
-COM-24: Lavanderia Bom Preço
-COM-25: Auto Peças Bom Preço
-COM-26: Borracharia Bom Preço
-COM-27: Eletrônica Bom Preço
-COM-28: Informática Bom Preço
-COM-29: Academia Bom Preço
-COM-30: Clínica Bom Preço
-COM-31: Dentista Bom Preço
-COM-32: Veterinária Bom Preço
-COM-33: Chaveiro Bom Preço
-COM-34: Confeitaria Bom Preço
-COM-35: Pastelaria Bom Preço
-COM-36: Hamburgueria Bom Preço
-COM-37: Bistrô Bom Preço
-COM-38: Armazém Bom Preço
-COM-39: Ferragens Bom Preço
-COM-40: Material de Construção Bom Preço
-COM-41: Móveis Bom Preço
-COM-42: Tintas Bom Preço
-COM-43: Vidraçaria Bom Preço
-COM-44: Gráfica Bom Preço
-COM-45: Locadora Bom Preço
-COM-46: Estacionamento Bom Preço
-COM-47: Posto Bom Preço
-COM-48: Tabacaria Bom Preço
-COM-49: Casa Lotérica Bom Preço
-COM-50: Joalheria Bom Preço
-COM-51: Perfumaria Bom Preço
-COM-52: Farmácia Central
-COM-53: Padaria Central
-COM-54: Mercado Central
-COM-55: Mercadinho Central
-COM-56: Barbearia Central
-COM-57: Oficina Central
-COM-58: Lanchonete Central
-COM-59: Café Central
-COM-60: Livraria Central
-COM-61: Papelaria Central
-COM-62: Açougue Central
-COM-63: Quitanda Central
-COM-64: Pizzaria Central
-COM-65: Sorveteria Central
-COM-66: Restaurante Central
-COM-67: Pet Shop Central
-COM-68: Loja de Roupas Central
-COM-69: Sapataria Central
-COM-70: Relojoaria Central
-COM-71: Ótica Central
-COM-72: Floricultura Central
-COM-73: Banca de Jornal Central
-COM-74: Lavanderia Central
-COM-75: Auto Peças Central
-COM-76: Borracharia Central
-COM-77: Eletrônica Central
-COM-78: Informática Central
-COM-79: Academia Central
-COM-80: Clínica Central
-COM-81: Dentista Central
-COM-82: Veterinária Central
-COM-83: Chaveiro Central
-COM-84: Confeitaria Central
-COM-85: Pastelaria Central
-COM-86: Hamburgueria Central
-COM-87: Bistrô Central
-COM-88: Armazém Central
-COM-89: Ferragens Central
-COM-90: Material de Construção Central
-COM-91: Móveis Central
-COM-92: Tintas Central
-COM-93: Vidraçaria Central
-COM-94: Gráfica Central
-COM-95: Locadora Central
-COM-96: Estacionamento Central
-COM-97: Posto Central
-COM-98: Tabacaria Central
-COM-99: Casa Lotérica Central
-COM-100: Joalheria Central
-COM-101: Perfumaria Central
-COM-102: Farmácia Estrela
-COM-103: Padaria Estrela
-COM-104: Mercado Estrela
-COM-105: Mercadinho Estrela
-COM-106: Barbearia Estrela
-COM-107: Oficina Estrela
-COM-108: Lanchonete Estrela
-COM-109: Café Estrela
-COM-110: Livraria Estrela
-COM-111: Papelaria Estrela
-COM-112: Açougue Estrela
-COM-113: Quitanda Estrela
-COM-114: Pizzaria Estrela
-COM-115: Sorveteria Estrela
-COM-116: Restaurante Estrela
-COM-117: Pet Shop Estrela
-COM-118: Loja de Roupas Estrela
-COM-119: Sapataria Estrela
-COM-120: Relojoaria Estrela
-COM-121: Ótica Estrela
-COM-122: Floricultura Estrela
-COM-123: Banca de Jornal Estrela
-COM-124: Lavanderia Estrela
-COM-125: Auto Peças Estrela
-COM-126: Borracharia Estrela
-COM-127: Eletrônica Estrela
-COM-128: Informática Estrela
-COM-129: Academia Estrela
-COM-130: Clínica Estrela
-COM-131: Dentista Estrela
-COM-132: Veterinária Estrela
-COM-133: Chaveiro Estrela
-COM-134: Confeitaria Estrela
-COM-135: Pastelaria Estrela
-COM-136: Hamburgueria Estrela
-COM-137: Bistrô Estrela
-COM-138: Armazém Estrela
-COM-139: Ferragens Estrela
-COM-140: Material de Construção Estrela
-COM-141: Móveis Estrela
-COM-142: Tintas Estrela
-COM-143: Vidraçaria Estrela
-COM-144: Gráfica Estrela
-COM-145: Locadora Estrela
-COM-146: Estacionamento Estrela
-COM-147: Posto Estrela
-COM-148: Tabacaria Estrela
-COM-149: Casa Lotérica Estrela
-COM-150: Joalheria Estrela
-COM-151: Perfumaria Estrela
-COM-152: Farmácia Progresso
-COM-153: Padaria Progresso
-COM-154: Mercado Progresso
-COM-155: Mercadinho Progresso
-COM-156: Barbearia Progresso
-COM-157: Oficina Progresso
-COM-158: Lanchonete Progresso
-COM-159: Café Progresso
-COM-160: Livraria Progresso
-COM-161: Papelaria Progresso
-COM-162: Açougue Progresso
-COM-163: Quitanda Progresso
-COM-164: Pizzaria Progresso
-COM-165: Sorveteria Progresso
-COM-166: Restaurante Progresso
-COM-167: Pet Shop Progresso
-COM-168: Loja de Roupas Progresso
-COM-169: Sapataria Progresso
-COM-170: Relojoaria Progresso
-COM-171: Ótica Progresso
-COM-172: Floricultura Progresso
-COM-173: Banca de Jornal Progresso
-COM-174: Lavanderia Progresso
-COM-175: Auto Peças Progresso
-COM-176: Borracharia Progresso
-COM-177: Eletrônica Progresso
-COM-178: Informática Progresso
-COM-179: Academia Progresso
-COM-180: Clínica Progresso
-COM-181: Dentista Progresso
-COM-182: Veterinária Progresso
-COM-183: Chaveiro Progresso
-COM-184: Confeitaria Progresso
-COM-185: Pastelaria Progresso
-COM-186: Hamburgueria Progresso
-COM-187: Bistrô Progresso
-COM-188: Armazém Progresso
-COM-189: Ferragens Progresso
-COM-190: Material de Construção Progresso
-COM-191: Móveis Progresso
-COM-192: Tintas Progresso
-COM-193: Vidraçaria Progresso
-COM-194: Gráfica Progresso
-COM-195: Locadora Progresso
-COM-196: Estacionamento Progresso
-COM-197: Posto Progresso
-COM-198: Tabacaria Progresso
-COM-199: Casa Lotérica Progresso
-COM-200: Joalheria Progresso
-COM-201: Perfumaria Progresso
-COM-202: Farmácia Alvorada
-COM-203: Padaria Alvorada
-COM-204: Mercado Alvorada
-COM-205: Mercadinho Alvorada
-COM-206: Barbearia Alvorada
-COM-207: Oficina Alvorada
-COM-208: Lanchonete Alvorada
-COM-209: Café Alvorada
-COM-210: Livraria Alvorada
-COM-211: Papelaria Alvorada
-COM-212: Açougue Alvorada
-COM-213: Quitanda Alvorada
-COM-214: Pizzaria Alvorada
-COM-215: Sorveteria Alvorada
-COM-216: Restaurante Alvorada
-COM-217: Pet Shop Alvorada
-COM-218: Loja de Roupas Alvorada
-COM-219: Sapataria Alvorada
-COM-220: Relojoaria Alvorada
-COM-221: Ótica Alvorada
-COM-222: Floricultura Alvorada
-COM-223: Banca de Jornal Alvorada
-COM-224: Lavanderia Alvorada
-COM-225: Auto Peças Alvorada
-COM-226: Borracharia Alvorada
-COM-227: Eletrônica Alvorada
-COM-228: Informática Alvorada
-COM-229: Academia Alvorada
-COM-230: Clínica Alvorada
-COM-231: Dentista Alvorada
-COM-232: Veterinária Alvorada
-COM-233: Chaveiro Alvorada
-COM-234: Confeitaria Alvorada
-COM-235: Pastelaria Alvorada
-COM-236: Hamburgueria Alvorada
-COM-237: Bistrô Alvorada
-COM-238: Armazém Alvorada
-COM-239: Ferragens Alvorada
-COM-240: Material de Construção Alvorada
-COM-241: Móveis Alvorada
-COM-242: Tintas Alvorada
-COM-243: Vidraçaria Alvorada
-COM-244: Gráfica Alvorada
-COM-245: Locadora Alvorada
-COM-246: Estacionamento Alvorada
-COM-247: Posto Alvorada
-COM-248: Tabacaria Alvorada
-COM-249: Casa Lotérica Alvorada
-COM-250: Joalheria Alvorada
-COM-251: Perfumaria Alvorada
-COM-252: Farmácia Esperança
-COM-253: Padaria Esperança
-COM-254: Mercado Esperança
-COM-255: Mercadinho Esperança
-COM-256: Barbearia Esperança
-COM-257: Oficina Esperança
-COM-258: Lanchonete Esperança
-COM-259: Café Esperança
-COM-260: Livraria Esperança
-COM-261: Papelaria Esperança
-COM-262: Açougue Esperança
-COM-263: Quitanda Esperança
-COM-264: Pizzaria Esperança
-COM-265: Sorveteria Esperança
-COM-266: Restaurante Esperança
-COM-267: Pet Shop Esperança
-COM-268: Loja de Roupas Esperança
-COM-269: Sapataria Esperança
-COM-270: Relojoaria Esperança
-COM-271: Ótica Esperança
-COM-272: Floricultura Esperança
-COM-273: Banca de Jornal Esperança
-COM-274: Lavanderia Esperança
-COM-275: Auto Peças Esperança
-COM-276: Borracharia Esperança
-COM-277: Eletrônica Esperança
-COM-278: Informática Esperança
-COM-279: Academia Esperança
-COM-280: Clínica Esperança
-COM-281: Dentista Esperança
-COM-282: Veterinária Esperança
-COM-283: Chaveiro Esperança
-COM-284: Confeitaria Esperança
-COM-285: Pastelaria Esperança
-COM-286: Hamburgueria Esperança
-COM-287: Bistrô Esperança
-COM-288: Armazém Esperança
-COM-289: Ferragens Esperança
-COM-290: Material de Construção Esperança
-COM-291: Móveis Esperança
-COM-292: Tintas Esperança
-COM-293: Vidraçaria Esperança
-COM-294: Gráfica Esperança
-COM-295: Locadora Esperança
-COM-296: Estacionamento Esperança
-COM-297: Posto Esperança
-COM-298: Tabacaria Esperança
-COM-299: Casa Lotérica Esperança
-COM-300: Joalheria Esperança
-COM-301: Perfumaria Esperança
-COM-302: Farmácia União
-COM-303: Padaria União
-COM-304: Mercado União
-COM-305: Mercadinho União
-COM-306: Barbearia União
-COM-307: Oficina União
-COM-308: Lanchonete União
-COM-309: Café União
-COM-310: Livraria União
-COM-311: Papelaria União
-COM-312: Açougue União
-COM-313: Quitanda União
-COM-314: Pizzaria União
-COM-315: Sorveteria União
-COM-316: Restaurante União
-COM-317: Pet Shop União
-COM-318: Loja de Roupas União
-COM-319: Sapataria União
-COM-320: Relojoaria União
-COM-321: Ótica União
-COM-322: Floricultura União
-COM-323: Banca de Jornal União
-COM-324: Lavanderia União
-COM-325: Auto Peças União
-COM-326: Borracharia União
-COM-327: Eletrônica União
-COM-328: Informática União
-COM-329: Academia União
-COM-330: Clínica União
-COM-331: Dentista União
-COM-332: Veterinária União
-COM-333: Chaveiro União
-COM-334: Confeitaria União
-COM-335: Pastelaria União
-COM-336: Hamburgueria União
-COM-337: Bistrô União
-COM-338: Armazém União
-COM-339: Ferragens União
-COM-340: Material de Construção União
-COM-341: Móveis União
-COM-342: Tintas União
-COM-343: Vidraçaria União
-COM-344: Gráfica União
-COM-345: Locadora União
-COM-346: Estacionamento União
-COM-347: Posto União
-COM-348: Tabacaria União
-COM-349: Casa Lotérica União
-COM-350: Joalheria União
-COM-351: Perfumaria União
-COM-352: Farmácia São Jorge
-COM-353: Padaria São Jorge
-COM-354: Mercado São Jorge
-COM-355: Mercadinho São Jorge
-COM-356: Barbearia São Jorge
-COM-357: Oficina São Jorge
-COM-358: Lanchonete São Jorge
-COM-359: Café São Jorge
-COM-360: Livraria São Jorge
-COM-361: Papelaria São Jorge
-COM-362: Açougue São Jorge
-COM-363: Quitanda São Jorge
-COM-364: Pizzaria São Jorge
-COM-365: Sorveteria São Jorge
-COM-366: Restaurante São Jorge
-COM-367: Pet Shop São Jorge
-COM-368: Loja de Roupas São Jorge
-COM-369: Sapataria São Jorge
-COM-370: Relojoaria São Jorge
-COM-371: Ótica São Jorge
-COM-372: Floricultura São Jorge
-COM-373: Banca de Jornal São Jorge
-COM-374: Lavanderia São Jorge
-COM-375: Auto Peças São Jorge
-COM-376: Borracharia São Jorge
-COM-377: Eletrônica São Jorge
-COM-378: Informática São Jorge
-COM-379: Academia São Jorge
-COM-380: Clínica São Jorge
-COM-381: Dentista São Jorge
-COM-382: Veterinária São Jorge
-COM-383: Chaveiro São Jorge
-COM-384: Confeitaria São Jorge
-COM-385: Pastelaria São Jorge
-COM-386: Hamburgueria São Jorge
-COM-387: Bistrô São Jorge
-COM-388: Armazém São Jorge
-COM-389: Ferragens São Jorge
-COM-390: Material de Construção São Jorge
-COM-391: Móveis São Jorge
-COM-392: Tintas São Jorge
-COM-393: Vidraçaria São Jorge
-COM-394: Gráfica São Jorge
-COM-395: Locadora São Jorge
-COM-396: Estacionamento São Jorge
-COM-397: Posto São Jorge
-COM-398: Tabacaria São Jorge
-COM-399: Casa Lotérica São Jorge
-COM-400: Joalheria São Jorge
-COM-401: Perfumaria São Jorge
-COM-402: Farmácia Santa Rita
-COM-403: Padaria Santa Rita
-COM-404: Mercado Santa Rita
-COM-405: Mercadinho Santa Rita
-COM-406: Barbearia Santa Rita
-COM-407: Oficina Santa Rita
-COM-408: Lanchonete Santa Rita
-COM-409: Café Santa Rita
-COM-410: Livraria Santa Rita
-COM-411: Papelaria Santa Rita
-COM-412: Açougue Santa Rita
-COM-413: Quitanda Santa Rita
-COM-414: Pizzaria Santa Rita
-COM-415: Sorveteria Santa Rita
-COM-416: Restaurante Santa Rita
-COM-417: Pet Shop Santa Rita
-COM-418: Loja de Roupas Santa Rita
-COM-419: Sapataria Santa Rita
-COM-420: Relojoaria Santa Rita
-COM-421: Ótica Santa Rita
-COM-422: Floricultura Santa Rita
-COM-423: Banca de Jornal Santa Rita
-COM-424: Lavanderia Santa Rita
-COM-425: Auto Peças Santa Rita
-COM-426: Borracharia Santa Rita
-COM-427: Eletrônica Santa Rita
-COM-428: Informática Santa Rita
-COM-429: Academia Santa Rita
-COM-430: Clínica Santa Rita
-COM-431: Dentista Santa Rita
-COM-432: Veterinária Santa Rita
-COM-433: Chaveiro Santa Rita
-COM-434: Confeitaria Santa Rita
-COM-435: Pastelaria Santa Rita
-COM-436: Hamburgueria Santa Rita
-COM-437: Bistrô Santa Rita
-COM-438: Armazém Santa Rita
-COM-439: Ferragens Santa Rita
-COM-440: Material de Construção Santa Rita
-COM-441: Móveis Santa Rita
-COM-442: Tintas Santa Rita
-COM-443: Vidraçaria Santa Rita
-COM-444: Gráfica Santa Rita
-COM-445: Locadora Santa Rita
-COM-446: Estacionamento Santa Rita
-COM-447: Posto Santa Rita
-COM-448: Tabacaria Santa Rita
-COM-449: Casa Lotérica Santa Rita
-COM-450: Joalheria Santa Rita
-COM-451: Perfumaria Santa Rita
-COM-452: Farmácia Boa Vista
-COM-453: Padaria Boa Vista
-COM-454: Mercado Boa Vista
-COM-455: Mercadinho Boa Vista
-COM-456: Barbearia Boa Vista
-COM-457: Oficina Boa Vista
-COM-458: Lanchonete Boa Vista
-COM-459: Café Boa Vista
-COM-460: Livraria Boa Vista
-COM-461: Papelaria Boa Vista
-COM-462: Açougue Boa Vista
-COM-463: Quitanda Boa Vista
-COM-464: Pizzaria Boa Vista
-COM-465: Sorveteria Boa Vista
-COM-466: Restaurante Boa Vista
-COM-467: Pet Shop Boa Vista
-COM-468: Loja de Roupas Boa Vista
-COM-469: Sapataria Boa Vista
-COM-470: Relojoaria Boa Vista
-COM-471: Ótica Boa Vista
-COM-472: Floricultura Boa Vista
-COM-473: Banca de Jornal Boa Vista
-COM-474: Lavanderia Boa Vista
-COM-475: Auto Peças Boa Vista
-COM-476: Borracharia Boa Vista
-COM-477: Eletrônica Boa Vista
-COM-478: Informática Boa Vista
-COM-479: Academia Boa Vista
-COM-480: Clínica Boa Vista
-COM-481: Dentista Boa Vista
-COM-482: Veterinária Boa Vista
-COM-483: Chaveiro Boa Vista
-COM-484: Confeitaria Boa Vista
-COM-485: Pastelaria Boa Vista
-COM-486: Hamburgueria Boa Vista
-COM-487: Bistrô Boa Vista
-COM-488: Armazém Boa Vista
-COM-489: Ferragens Boa Vista
-COM-490: Material de Construção Boa Vista
-COM-491: Móveis Boa Vista
-COM-492: Tintas Boa Vista
-COM-493: Vidraçaria Boa Vista
-COM-494: Gráfica Boa Vista
-COM-495: Locadora Boa Vista
-COM-496: Estacionamento Boa Vista
-COM-497: Posto Boa Vista
-COM-498: Tabacaria Boa Vista
-COM-499: Casa Lotérica Boa Vista
-COM-500: Joalheria Boa Vista
-COM-501: Perfumaria Boa Vista
-COM-502: Farmácia do Bairro
-COM-503: Padaria do Bairro
-COM-504: Mercado do Bairro
-COM-505: Mercadinho do Bairro
-COM-506: Barbearia do Bairro
-COM-507: Oficina do Bairro
-COM-508: Lanchonete do Bairro
-COM-509: Café do Bairro
-COM-510: Livraria do Bairro
-COM-511: Papelaria do Bairro
-COM-512: Açougue do Bairro
-COM-513: Quitanda do Bairro
-COM-514: Pizzaria do Bairro
-COM-515: Sorveteria do Bairro
-COM-516: Restaurante do Bairro
-COM-517: Pet Shop do Bairro
-COM-518: Loja de Roupas do Bairro
-COM-519: Sapataria do Bairro
-COM-520: Relojoaria do Bairro
-COM-521: Ótica do Bairro
-COM-522: Floricultura do Bairro
-COM-523: Banca de Jornal do Bairro
-COM-524: Lavanderia do Bairro
-COM-525: Auto Peças do Bairro
-COM-526: Borracharia do Bairro
-COM-527: Eletrônica do Bairro
-COM-528: Informática do Bairro
-COM-529: Academia do Bairro
-COM-530: Clínica do Bairro
-COM-531: Dentista do Bairro
-COM-532: Veterinária do Bairro
-COM-533: Chaveiro do Bairro
-COM-534: Confeitaria do Bairro
-COM-535: Pastelaria do Bairro
-COM-536: Hamburgueria do Bairro
-COM-537: Bistrô do Bairro
-COM-538: Armazém do Bairro
-COM-539: Ferragens do Bairro
-COM-540: Material de Construção do Bairro
-COM-541: Móveis do Bairro
-COM-542: Tintas do Bairro
-COM-543: Vidraçaria do Bairro
-COM-544: Gráfica do Bairro
-COM-545: Locadora do Bairro
-COM-546: Estacionamento do Bairro
-COM-547: Posto do Bairro
-COM-548: Tabacaria do Bairro
-COM-549: Casa Lotérica do Bairro
-COM-550: Joalheria do Bairro
-COM-551: Perfumaria do Bairro
-COM-552: Farmácia Popular
-COM-553: Padaria Popular
-COM-554: Mercado Popular
-COM-555: Mercadinho Popular
-COM-556: Barbearia Popular
-COM-557: Oficina Popular
-COM-558: Lanchonete Popular
-COM-559: Café Popular
-COM-560: Livraria Popular
-COM-561: Papelaria Popular
-COM-562: Açougue Popular
-COM-563: Quitanda Popular
-COM-564: Pizzaria Popular
-COM-565: Sorveteria Popular
-COM-566: Restaurante Popular
-COM-567: Pet Shop Popular
-COM-568: Loja de Roupas Popular
-COM-569: Sapataria Popular
-COM-570: Relojoaria Popular
-COM-571: Ótica Popular
-COM-572: Floricultura Popular
-COM-573: Banca de Jornal Popular
-COM-574: Lavanderia Popular
-COM-575: Auto Peças Popular
-COM-576: Borracharia Popular
-COM-577: Eletrônica Popular
-COM-578: Informática Popular
-COM-579: Academia Popular
-COM-580: Clínica Popular
-COM-581: Dentista Popular
-COM-582: Veterinária Popular
-COM-583: Chaveiro Popular
-COM-584: Confeitaria Popular
-COM-585: Pastelaria Popular
-COM-586: Hamburgueria Popular
-COM-587: Bistrô Popular
-COM-588: Armazém Popular
-COM-589: Ferragens Popular
-COM-590: Material de Construção Popular
-COM-591: Móveis Popular
-COM-592: Tintas Popular
-COM-593: Vidraçaria Popular
-COM-594: Gráfica Popular
-COM-595: Locadora Popular
-COM-596: Estacionamento Popular
-COM-597: Posto Popular
-COM-598: Tabacaria Popular
-COM-599: Casa Lotérica Popular
-COM-600: Joalheria Popular
-COM-601: Perfumaria Popular
-COM-602: Farmácia Modelo
-COM-603: Padaria Modelo
-COM-604: Mercado Modelo
-COM-605: Mercadinho Modelo
-COM-606: Barbearia Modelo
-COM-607: Oficina Modelo
-COM-608: Lanchonete Modelo
-COM-609: Café Modelo
-COM-610: Livraria Modelo
-COM-611: Papelaria Modelo
-COM-612: Açougue Modelo
-COM-613: Quitanda Modelo
-COM-614: Pizzaria Modelo
-COM-615: Sorveteria Modelo
-COM-616: Restaurante Modelo
-COM-617: Pet Shop Modelo
-COM-618: Loja de Roupas Modelo
-COM-619: Sapataria Modelo
-COM-620: Relojoaria Modelo
-COM-621: Ótica Modelo
-COM-622: Floricultura Modelo
-COM-623: Banca de Jornal Modelo
-COM-624: Lavanderia Modelo
-COM-625: Auto Peças Modelo
-COM-626: Borracharia Modelo
-COM-627: Eletrônica Modelo
-COM-628: Informática Modelo
-COM-629: Academia Modelo
-COM-630: Clínica Modelo
-COM-631: Dentista Modelo
-COM-632: Veterinária Modelo
-COM-633: Chaveiro Modelo
-COM-634: Confeitaria Modelo
-COM-635: Pastelaria Modelo
-COM-636: Hamburgueria Modelo
-COM-637: Bistrô Modelo
-COM-638: Armazém Modelo
-COM-639: Ferragens Modelo
-COM-640: Material de Construção Modelo
-COM-641: Móveis Modelo
-COM-642: Tintas Modelo
-COM-643: Vidraçaria Modelo
-COM-644: Gráfica Modelo
-COM-645: Locadora Modelo
-COM-646: Estacionamento Modelo
-COM-647: Posto Modelo
-COM-648: Tabacaria Modelo
-COM-649: Casa Lotérica Modelo
-COM-650: Joalheria Modelo
-COM-651: Perfumaria Modelo
-COM-652: Farmácia Ideal
-COM-653: Padaria Ideal
-COM-654: Mercado Ideal
-COM-655: Mercadinho Ideal
-COM-656: Barbearia Ideal
-COM-657: Oficina Ideal
-COM-658: Lanchonete Ideal
-COM-659: Café Ideal
-COM-660: Livraria Ideal
-COM-661: Papelaria Ideal
-COM-662: Açougue Ideal
-COM-663: Quitanda Ideal
-COM-664: Pizzaria Ideal
-COM-665: Sorveteria Ideal
-COM-666: Restaurante Ideal
-COM-667: Pet Shop Ideal
-COM-668: Loja de Roupas Ideal
-COM-669: Sapataria Ideal
-COM-670: Relojoaria Ideal
-COM-671: Ótica Ideal
-COM-672: Floricultura Ideal
-COM-673: Banca de Jornal Ideal
-COM-674: Lavanderia Ideal
-COM-675: Auto Peças Ideal
-COM-676: Borracharia Ideal
-COM-677: Eletrônica Ideal
-COM-678: Informática Ideal
-COM-679: Academia Ideal
-COM-680: Clínica Ideal
-COM-681: Dentista Ideal
-COM-682: Veterinária Ideal
-COM-683: Chaveiro Ideal
-COM-684: Confeitaria Ideal
-COM-685: Pastelaria Ideal
-COM-686: Hamburgueria Ideal
-COM-687: Bistrô Ideal
-COM-688: Armazém Ideal
-COM-689: Ferragens Ideal
-COM-690: Material de Construção Ideal
-COM-691: Móveis Ideal
-COM-692: Tintas Ideal
-COM-693: Vidraçaria Ideal
-COM-694: Gráfica Ideal
-COM-695: Locadora Ideal
-COM-696: Estacionamento Ideal
-COM-697: Posto Ideal
-COM-698: Tabacaria Ideal
-COM-699: Casa Lotérica Ideal
-COM-700: Joalheria Ideal
-COM-701: Perfumaria Ideal
-COM-702: Farmácia Vitória
-COM-703: Padaria Vitória
-COM-704: Mercado Vitória
-COM-705: Mercadinho Vitória
-COM-706: Barbearia Vitória
-COM-707: Oficina Vitória
-COM-708: Lanchonete Vitória
-COM-709: Café Vitória
-COM-710: Livraria Vitória
-COM-711: Papelaria Vitória
-COM-712: Açougue Vitória
-COM-713: Quitanda Vitória
-COM-714: Pizzaria Vitória
-COM-715: Sorveteria Vitória
-COM-716: Restaurante Vitória
-COM-717: Pet Shop Vitória
-COM-718: Loja de Roupas Vitória
-COM-719: Sapataria Vitória
-COM-720: Relojoaria Vitória
-COM-721: Ótica Vitória
-COM-722: Floricultura Vitória
-COM-723: Banca de Jornal Vitória
-COM-724: Lavanderia Vitória
-COM-725: Auto Peças Vitória
-COM-726: Borracharia Vitória
-COM-727: Eletrônica Vitória
-COM-728: Informática Vitória
-COM-729: Academia Vitória
-COM-730: Clínica Vitória
-COM-731: Dentista Vitória
-COM-732: Veterinária Vitória
-COM-733: Chaveiro Vitória
-COM-734: Confeitaria Vitória
-COM-735: Pastelaria Vitória
-COM-736: Hamburgueria Vitória
-COM-737: Bistrô Vitória
-COM-738: Armazém Vitória
-COM-739: Ferragens Vitória
-COM-740: Material de Construção Vitória
-COM-741: Móveis Vitória
-COM-742: Tintas Vitória
-COM-743: Vidraçaria Vitória
-COM-744: Gráfica Vitória
-COM-745: Locadora Vitória
-COM-746: Estacionamento Vitória
-COM-747: Posto Vitória
-COM-748: Tabacaria Vitória
-COM-749: Casa Lotérica Vitória
-COM-750: Joalheria Vitória
-COM-751: Perfumaria Vitória
+## Comercios
+COM-01: Bazar La Tecla
+COM-02: Taller Micro:bit
+COM-03: Centro Ceibal
+COM-04: Mascotas La Garra
+COM-05: Quiniela de Capurro
+COM-06: Kiosco La Cumparsita
+COM-07: Service de PC El Parador
+COM-08: Heladería El Gurí
+COM-09: Imprenta El Zorzal
+COM-10: Autoservice El Faro
+COM-11: Fábrica de Pastas del Cordón
+COM-12: Almacén El Tero
+COM-13: Sastrería Lo de Cacho
+COM-14: Papelería de Punta Gorra
+COM-15: Florería El Tero
+COM-16: Panchería El Arroyo
+COM-17: Carnicería Doña Rosa
+COM-18: Pescadería Lo de Cacho
+COM-19: Tortas y Postres Lo de Beto
+COM-20: Mueblería El Molino
+COM-21: Autoservice de Peñarol
+COM-22: Fábrica de Pastas del Reducto
+COM-23: Mini Mercado La Cumparsita
+COM-24: Tienda Doña Mirta
+COM-25: Barbería La Estrella
+COM-26: Panchería Santa Rita
+COM-27: Electrónica Doña Blanca
+COM-28: Regalería La Tacuara
+COM-29: Mesa de inscripciones
+COM-30: Puerto de partida
+COM-31: Kiosco Six Seven
+COM-32: Bar de Colón
+COM-33: Taller El Bicho
+COM-34: Sastrería Los Amigos
+COM-35: Bazar Lo de Toto
+COM-36: Autoservice Doña Blanca
+COM-37: Kiosco Las Gurisas
+COM-38: Florería de Atahualpa
+COM-39: Cyber La Paloma
+COM-40: Carnicería El Trébol
+COM-41: Arreglos de Celulares La Luna
+COM-42: Electrónica El Sauce
+COM-43: Pañalería Don Tito
+COM-44: Electrónica Don Héctor
+COM-45: Barbería del Cerro
+COM-46: Carnicería de Sayago
+COM-47: Mueblería de Colón
+COM-48: Óptica El Arroyo
+COM-49: Tortas y Postres La Cumparsita
+COM-50: Torre IA
+COM-51: Isla Web
+COM-52: Biblioteca del Barrio
+COM-53: Juguetería El Hornero
+COM-54: Pañalería El Tamboril
+COM-55: Verdulería de Peñarol
+COM-56: Café Lo de Toto
+COM-57: Arreglos de Celulares La Amistad
+COM-58: Relojería La Espiga
+COM-59: Fábrica de Pastas La Garra
+COM-60: Tienda de Goes
+COM-61: Lavandería Doña Elsa
+COM-62: Fiambrería El Puerto
+COM-63: Relojería Doña Mirta
+COM-64: Gomería del Cordón
+COM-65: Arreglos de Celulares El Rincón
+COM-66: Fiambrería La Barra
+COM-67: Lavadero La Calandria
+COM-68: Bar El Progreso
+COM-69: Pinturería El Parador
+COM-70: Lavandería El Parador
+COM-71: Taller Mecánico Dos Hermanos
+COM-72: Café del Pato
+COM-73: Mina de Datos
+COM-74: Volcán Python
+COM-75: Cyber La Torcaza
+COM-76: Almacén del Barrio Sur
+COM-77: Juguetería Lo de Toto
+COM-78: Boliche de la Blanqueada
+COM-79: Taller Mecánico de Belvedere
+COM-80: Confitería La Paloma
+COM-81: Zapatería El Hornero
+COM-82: Bazar Don Pepe
+COM-83: Chivitería La Rambla
+COM-84: Zapatería Don Héctor
+COM-85: Vidriería del Cerro
+COM-86: Electrónica Doña Elsa
+COM-87: Despensa La Familia
+COM-88: Gimnasio El Ombú
+COM-89: Almacén El Oriental
+COM-90: Barbería El Termo
+COM-91: Mini Mercado El Timbó
+COM-92: Librería Lo de Mary
+COM-93: Pizzería Las Gurisas
+COM-94: Pescadería Don Washington
+COM-95: Tienda El Trébol
+COM-96: Verdulería Los Primos
+COM-97: Florería El Puente
+COM-98: Farmacia de Pocitos
+COM-99: Bicicletería de Peñarol
+COM-100: Bar de Punta Gorra
+COM-101: Relojería El Sol
+COM-102: Mascotas La Uruguaya
+COM-103: Cyber La Pantalla
+COM-104: Granja La Barra
+COM-105: Tienda de Remeras Vale
+COM-106: Florería La Tacuara
+COM-107: Granja de Tres Cruces
+COM-108: Librería La Cuadra
+COM-109: Bazar de Maroñas
+COM-110: Chivitería La Marcela
+COM-111: Lavandería Dos Hermanos
+COM-112: Ferretería La Esquina
+COM-113: Juguetería La Aurora
+COM-114: Sastrería El Mirador
+COM-115: Heladería del Buceo
+COM-116: Café Doña Blanca
+COM-117: Boliche La Perla
+COM-118: Gimnasio La Tacuara
+COM-119: Tortas y Postres El Gaucho
+COM-120: Pinturería Don Héctor
+COM-121: Cerrajería Doña Marta
+COM-122: Gomería La Rambla
+COM-123: Tortas y Postres del Cerro
+COM-124: Carnicería Lo de Beto
+COM-125: Gomería El Gaucho
+COM-126: Confitería El Termo
+COM-127: Rotisería Doña Blanca
+COM-128: Juguetería del Buceo
+COM-129: Pizzería de la Teja
+COM-130: Pinturería de Tres Cruces
+COM-131: Papelería Bobby
+COM-132: Panadería de Colón
+COM-133: Panchería de Palermo
+COM-134: Óptica de Tres Cruces
+COM-135: Casa de Fotos San Cayetano
+COM-136: Pinturería Santa Rita
+COM-137: Farmacia El Timbó
+COM-138: Imprenta La Amistad
+COM-139: Confitería Las Gurisas
+COM-140: Regalería Doña Gladys
+COM-141: Gimnasio La Vecinal
+COM-142: Pescadería de Pocitos
+COM-143: Peluquería Don Pepe
+COM-144: Gimnasio La Pitanga
+COM-145: Papelería de Colón
+COM-146: Mercería El Benteveo
+COM-147: Despensa de la Blanqueada
+COM-148: Panchería Lo de Mary
+COM-149: Veterinaria La Bombilla
+COM-150: Almacén Doña Susana
+COM-151: Fiambrería La Bombilla
+COM-152: Cerrajería Doña Nelly
+COM-153: Gimnasio El Benteveo
+COM-154: Taller Mecánico La Rambla
+COM-155: Service de PC de Pocitos
+COM-156: Autoservice Doña Elsa
+COM-157: Confitería Don Raúl
+COM-158: Autoservice El Zorzal
+COM-159: Casa de Fotos de la Teja
+COM-160: Panchería de Jacinto Vera
+COM-161: Barbería La Amistad
+COM-162: Relojería Las Gurisas
+COM-163: Mueblería Lo de Beto
+COM-164: Service de PC El Sol
+COM-165: Veterinaria El Faro
+COM-166: Zapatería Doña Susana
+COM-167: Quiniela El Tero
+COM-168: Panchería de Sayago
+COM-169: Veterinaria El Progreso
+COM-170: Tienda La Estrella
+COM-171: Bazar El Tero
+COM-172: Zapatería de Palermo
+COM-173: Casa de Fotos El Mate
+COM-174: Barbería del Paso Molino
+COM-175: Ferretería Lo de la Negra
+COM-176: Carnicería Los Amigos
+COM-177: Mascotas La Barra
+COM-178: Zapatería El Timbó
+COM-179: Relojería La Barra
+COM-180: Cerrajería Don Washington
+COM-181: Polirrubro El Charrúa
+COM-182: Polirrubro Doña Elsa
+COM-183: Casa de Fotos del Centro
+COM-184: Vidriería El Arroyo
+COM-185: Lavadero El Oriental
+COM-186: Imprenta Doña Mirta
+COM-187: Heladería El Mirador
+COM-188: Arreglos de Celulares Lo de Toto
+COM-189: Mercería Lo de Cacho
+COM-190: Gimnasio El Rincón
+COM-191: Heladería de Jacinto Vera
+COM-192: Verdulería El Mate
+COM-193: Relojería El Encuentro
+COM-194: Imprenta La Barra
+COM-195: Mueblería La Aurora
+COM-196: Veterinaria Lo de Cacho
+COM-197: Vidriería Dos Hermanos
+COM-198: Parrillada Doña Nelly
+COM-199: Gomería El Progreso
+COM-200: Bazar Doña Chela
+COM-201: Cyber La Vecinal
+COM-202: Imprenta de Palermo
+COM-203: Arreglos de Celulares La Pitanga
+COM-204: Carnicería Dos Hermanos
+COM-205: Gomería Don Ruben
+COM-206: Veterinaria El Gurí
+COM-207: Granja Doña Gladys
+COM-208: Óptica Don Washington
+COM-209: Pañalería de Brazo Oriental
+COM-210: Almacén La Espiga
+COM-211: Regalería El Rincón
+COM-212: Fiambrería Tres Esquinas
+COM-213: Electrónica La Perla
+COM-214: Mueblería Doña Gladys
+COM-215: Parrillada La Paloma
+COM-216: Mascotas de Malvín
+COM-217: Rotisería La Cumparsita
+COM-218: Cerrajería Lo de Mary
+COM-219: Mercería Don Raúl
+COM-220: Fiambrería del Cerro
+COM-221: Mueblería de Maroñas
+COM-222: Bazar El Encuentro
+COM-223: Heladería La Torcaza
+COM-224: Bazar El Ombú
+COM-225: Boliche Doña Chela
+COM-226: Cerrajería Don Pepe
+COM-227: Tienda Lo de la Negra
+COM-228: Verdulería de Tres Cruces
+COM-229: Electrónica La Estrella
+COM-230: Pañalería El Progreso
+COM-231: Barbería Lo de Pocho
+COM-232: Zapatería del Cerro
+COM-233: Parrillada Dos Hermanos
+COM-234: Bicicletería La Luna
+COM-235: Vidriería de Aguada
+COM-236: Granja Lo de la Negra
+COM-237: Lavadero El Sauce
+COM-238: Fiambrería San Cono
+COM-239: Despensa Lo de Fito
+COM-240: Relojería Doña Elsa
+COM-241: Café El Ceibo
+COM-242: Rotisería Don Walter
+COM-243: Lavandería La Costa
+COM-244: Librería El Hornero
+COM-245: Imprenta El Mirador
+COM-246: Fábrica de Pastas La Rambla
+COM-247: Autoservice del Cerro
+COM-248: Confitería La Calandria
+COM-249: Electrónica La Esquina
+COM-250: Mini Mercado de Belvedere
+COM-251: Cyber La Calandria
+COM-252: Peluquería El Rincón
+COM-253: Confitería La Pitanga
+COM-254: Rotisería Don Héctor
+COM-255: Juguetería La Costa
+COM-256: Tortas y Postres El Encuentro
+COM-257: Panchería La Estrella
+COM-258: Bicicletería La Amistad
+COM-259: Tienda El Zorzal
+COM-260: Cyber El Benteveo
+COM-261: Autoservice Don Julio
+COM-262: Bar Las Gurisas
+COM-263: Polirrubro de Belvedere
+COM-264: Gomería La Torcaza
+COM-265: Regalería del Cordón
+COM-266: Service de PC La Aurora
+COM-267: Sastrería del Barrio Sur
+COM-268: Mini Mercado del Prado
+COM-269: Peluquería Doña Susana
+COM-270: Tortas y Postres La Uruguaya
+COM-271: Florería El Butiá
+COM-272: Polirrubro El Benteveo
+COM-273: Cerrajería Mi Barrio
+COM-274: Rotisería de la Unión
+COM-275: Cyber El Rincón
+COM-276: Fábrica de Pastas Don Raúl
+COM-277: Mercería Don Julio
+COM-278: Parrillada El Encuentro
+COM-279: Panchería El Termo
+COM-280: Librería La Rambla
+COM-281: Pinturería La Amistad
+COM-282: Bazar El Puente
+COM-283: Pescadería Lo de Pocho
+COM-284: Taller Mecánico Don Raúl
+COM-285: Parrillada Doña Chela
+COM-286: Ferretería de Malvín
+COM-287: Librería El Molino
+COM-288: Chivitería Lo de Pocho
+COM-289: Verdulería Tres Esquinas
+COM-290: Pañalería La Familia
+COM-291: Papelería Don Washington
+COM-292: Kiosco Los Pinos
+COM-293: Rotisería El Timbó
+COM-294: Despensa Doña Gladys
+COM-295: Mercería de Capurro
+COM-296: Fiambrería Mi Barrio
+COM-297: Chivitería del Barrio Sur
+COM-298: Papelería El Zorzal
+COM-299: Pañalería Lo de Pocho
+COM-300: Tienda El Ombú
+COM-301: Parrillada El Parador
+COM-302: Rotisería de Atahualpa
+COM-303: Boliche de Belvedere
+COM-304: Ferretería El Hornero
+COM-305: Cyber La Uruguaya
+COM-306: Fiambrería de Palermo
+COM-307: Heladería El Rincón
+COM-308: Café de Tres Cruces
+COM-309: Pizzería Doña Mirta
+COM-310: Cyber La Garra
+COM-311: Heladería La Aurora
+COM-312: Librería del Prado
+COM-313: Bar La Bombilla
+COM-314: Pescadería El Termo
+COM-315: Gomería Doña Chela
+COM-316: Mini Mercado Don Néstor
+COM-317: Gimnasio La Esquina
+COM-318: Mascotas El Mate
+COM-319: Confitería de Atahualpa
+COM-320: Farmacia de la Unión
+COM-321: Óptica El Oriental
+COM-322: Bazar Lo de Fito
+COM-323: Granja El Puerto
+COM-324: Mueblería de Malvín
+COM-325: Pescadería de Punta Gorra
+COM-326: Sastrería La Calandria
+COM-327: Sastrería El Oriental
+COM-328: Verdulería La Tacuara
+COM-329: Boliche de Jacinto Vera
+COM-330: Barbería de Maroñas
+COM-331: Pizzería San Cayetano
+COM-332: Pinturería de Punta Gorra
+COM-333: Zapatería El Oriental
+COM-334: Panadería El Gurí
+COM-335: Cerrajería La Aurora
+COM-336: Óptica La Calandria
+COM-337: Pizzería El Butiá
+COM-338: Farmacia del Cordón
+COM-339: Pañalería La Espiga
+COM-340: Confitería Doña Gladys
+COM-341: Pañalería El Ceibo
+COM-342: Fiambrería Doña Chela
+COM-343: Veterinaria de Brazo Oriental
+COM-344: Verdulería La Pitanga
+COM-345: Heladería El Ceibo
+COM-346: Quiniela El Tamboril
+COM-347: Mascotas del Buceo
+COM-348: Lavandería Don Washington
+COM-349: Mini Mercado La Familia
+COM-350: Mascotas El Molino
+COM-351: Óptica Lo de Pocho
+COM-352: Peluquería de Goes
+COM-353: Sastrería de Pocitos
+COM-354: Florería de Brazo Oriental
+COM-355: Polirrubro de la Unión
+COM-356: Gimnasio El Charrúa
+COM-357: Óptica Doña Rosa
+COM-358: Autoservice Los Amigos
+COM-359: Kiosco Lo de la Negra
+COM-360: Café La Esquina
+COM-361: Boliche La Aurora
+COM-362: Lavandería de la Teja
+COM-363: Café Doña Nelly
+COM-364: Granja del Paso Molino
+COM-365: Fiambrería Los Primos
+COM-366: Despensa La Perla
+COM-367: Regalería de Punta Gorra
+COM-368: Panadería La Cumparsita
+COM-369: Papelería Lo de Cacho
+COM-370: Heladería El Timbó
+COM-371: Lavadero Doña Marta
+COM-372: Fábrica de Pastas La Esquina
+COM-373: Electrónica El Termo
+COM-374: Kiosco La Vecinal
+COM-375: Carnicería de Jacinto Vera
+COM-376: Taller Mecánico La Espiga
+COM-377: Rotisería de la Blanqueada
+COM-378: Bar La Familia
+COM-379: Almacén El Sol
+COM-380: Taller Mecánico El Ceibo
+COM-381: Polirrubro del Reducto
+COM-382: Polirrubro Lo de Beto
+COM-383: Farmacia El Puerto
+COM-384: Tortas y Postres de Jacinto Vera
+COM-385: Tortas y Postres El Timbó
+COM-386: Relojería de Brazo Oriental
+COM-387: Óptica El Mirador
+COM-388: Fábrica de Pastas El Butiá
+COM-389: Panadería del Cordón
+COM-390: Panadería El Tero
+COM-391: Boliche El Puerto
+COM-392: Service de PC El Tamboril
+COM-393: Despensa La Torcaza
+COM-394: Ferretería Don Pepe
+COM-395: Panchería Los Primos
+COM-396: Fábrica de Pastas Don Tito
+COM-397: Veterinaria El Trébol
+COM-398: Bicicletería de Sayago
+COM-399: Service de PC El Trébol
+COM-400: Carnicería El Benteveo
+COM-401: Regalería Lo de Mary
+COM-402: Tienda El Encuentro
+COM-403: Almacén Don Pepe
+COM-404: Polirrubro de Maroñas
+COM-405: Cerrajería de Aguada
+COM-406: Veterinaria de Palermo
+COM-407: Librería Lo de Fito
+COM-408: Zapatería de Colón
+COM-409: Mercería San Cono
+COM-410: Panadería de Peñarol
+COM-411: Papelería Santa Rita
+COM-412: Pinturería El Trébol
+COM-413: Panchería El Faro
+COM-414: Juguetería La Cuadra
+COM-415: Farmacia El Sauce
+COM-416: Kiosco El Molino
+COM-417: Óptica La Luna
+COM-418: Gomería El Molino
+COM-419: Barbería de Atahualpa
+COM-420: Confitería Don Tito
+COM-421: Bicicletería Doña Rosa
+COM-422: Lavandería Los Amigos
+COM-423: Veterinaria El Charrúa
+COM-424: Boliche La Costa
+COM-425: Café Los Pinos
+COM-426: Barbería La Tacuara
+COM-427: Relojería del Barrio Sur
+COM-428: Cyber La Luna
+COM-429: Papelería del Cordón
+COM-430: Taller Mecánico El Puente
+COM-431: Fábrica de Pastas Don Walter
+COM-432: Bazar Doña Rosa
+COM-433: Arreglos de Celulares El Sauce
+COM-434: Vidriería Lo de Beto
+COM-435: Fábrica de Pastas El Trébol
+COM-436: Lavadero El Tamboril
+COM-437: Heladería El Ombú
+COM-438: Peluquería La Rambla
+COM-439: Regalería del Prado
+COM-440: Arreglos de Celulares de Malvín
+COM-441: Despensa Santa Rita
+COM-442: Cyber de Peñarol
+COM-443: Heladería de la Blanqueada
+COM-444: Panadería Don Tito
+COM-445: Verdulería La Vecinal
+COM-446: Tienda La Uruguaya
+COM-447: Regalería del Centro
+COM-448: Pinturería El Faro
+COM-449: Service de PC Los Pinos
+COM-450: Tienda de Pocitos
+COM-451: Peluquería El Gaucho
+COM-452: Bicicletería El Trébol
+COM-453: Chivitería El Gaucho
+COM-454: Sastrería El Sauce
+COM-455: Pizzería de Goes
+COM-456: Cerrajería Lo de Toto
+COM-457: Ferretería La Torcaza
+COM-458: Lavandería Doña Mirta
+COM-459: Ferretería El Butiá
+COM-460: Confitería La Garra
+COM-461: Sastrería Doña Mirta
+COM-462: Mueblería Lo de Pocho
+COM-463: Zapatería de Punta Gorra
+COM-464: Verdulería Lo de Beto
+COM-465: Lavandería San Cono
+COM-466: Pescadería Don Ruben
+COM-467: Pizzería La Pitanga
+COM-468: Electrónica Dos Hermanos
+COM-469: Florería Don Néstor
+COM-470: Polirrubro El Oriental
+COM-471: Bar del Buceo
+COM-472: Óptica El Sauce
+COM-473: Panadería El Faro
+COM-474: Granja Don Ruben
+COM-475: Bar La Marcela
+COM-476: Gimnasio El Parador
+COM-477: Farmacia Doña Chela
+COM-478: Veterinaria La Espiga
+COM-479: Taller Mecánico La Amistad
+COM-480: Bicicletería La Bombilla
+COM-481: Mascotas de Brazo Oriental
+COM-482: Pañalería El Arroyo
+COM-483: Lavandería El Zorzal
+COM-484: Pizzería La Cuadra
+COM-485: Pizzería Los Primos
+COM-486: Óptica El Encuentro
+COM-487: Panchería La Calandria
+COM-488: Kiosco La Nueva
+COM-489: Tienda El Rincón
+COM-490: Regalería de Colón
+COM-491: Florería El Zorzal
+COM-492: Kiosco de Aguada
+COM-493: Pizzería de Aguada
+COM-494: Pizzería El Gaucho
+COM-495: Ferretería de Capurro
+COM-496: Lavadero La Pitanga
+COM-497: Relojería Lo de Fito
+COM-498: Granja San Cayetano
+COM-499: Mercería del Centro
+COM-500: Service de PC La Vecinal
+COM-501: Bazar Lo de la Negra
+COM-502: Tienda Don Héctor
+COM-503: Papelería Don Néstor
+COM-504: Polirrubro El Puerto
+COM-505: Gomería La Familia
+COM-506: Arreglos de Celulares El Charrúa
+COM-507: Electrónica Don Néstor
+COM-508: Arreglos de Celulares Don Walter
+COM-509: Lavadero de Colón
+COM-510: Kiosco Lo de Fito
+COM-511: Peluquería El Gurí
+COM-512: Taller Mecánico Las Gurisas
+COM-513: Regalería de Jacinto Vera
+COM-514: Bar Los Primos
+COM-515: Peluquería de Capurro
+COM-516: Chivitería El Sauce
+COM-517: Almacén del Cerro
+COM-518: Mercería El Gaucho
+COM-519: Vidriería Doña Nelly
+COM-520: Mini Mercado del Reducto
+COM-521: Mascotas Don Héctor
+COM-522: Fábrica de Pastas La Nueva
+COM-523: Lavadero de Capurro
+COM-524: Lavandería del Buceo
+COM-525: Kiosco La Marcela
+COM-526: Chivitería Doña Marta
+COM-527: Mercería Lo de Fito
+COM-528: Kiosco del Paso Molino
+COM-529: Parrillada Doña Susana
+COM-530: Farmacia La Cuadra
+COM-531: Pizzería La Paloma
+COM-532: Quiniela El Ombú
+COM-533: Ferretería La Barra
+COM-534: Mini Mercado Los Amigos
+COM-535: Farmacia El Arroyo
+COM-536: Sastrería Don Raúl
+COM-537: Parrillada El Mate
+COM-538: Autoservice San Cono
+COM-539: Sastrería La Esquina
+COM-540: Arreglos de Celulares Don Néstor
+COM-541: Gomería La Bombilla
+COM-542: Regalería Los Pinos
+COM-543: Librería El Mirador
+COM-544: Quiniela Los Primos
+COM-545: Despensa Lo de Beto
+COM-546: Despensa del Barrio Sur
+COM-547: Carnicería del Reducto
+COM-548: Despensa Doña Blanca
+COM-549: Imprenta La Estrella
+COM-550: Cyber El Parador
+COM-551: Pinturería La Marcela
+COM-552: Taller Mecánico La Barra
+COM-553: Boliche El Gurí
+COM-554: Gimnasio La Uruguaya
+COM-555: Vidriería de Malvín
+COM-556: Café El Hornero
+COM-557: Bazar del Cordón
+COM-558: Gimnasio El Hornero
+COM-559: Chivitería La Tacuara
+COM-560: Verdulería El Sol
+COM-561: Zapatería La Perla
+COM-562: Zapatería de Maroñas
+COM-563: Casa de Fotos Tres Esquinas
+COM-564: Fiambrería Doña Susana
+COM-565: Chivitería Doña Susana
+COM-566: Zapatería La Nueva
+COM-567: Service de PC El Charrúa
+COM-568: Casa de Fotos El Molino
+COM-569: Ferretería Doña Gladys
+COM-570: Gomería La Vecinal
+COM-571: Carnicería Santa Rita
+COM-572: Bicicletería El Sol
+COM-573: Mini Mercado El Termo
+COM-574: Pinturería La Luna
+COM-575: Fiambrería de Malvín
+COM-576: Parrillada El Termo
+COM-577: Verdulería Los Pinos
+COM-578: Papelería La Familia
+COM-579: Ferretería La Marcela
+COM-580: Cyber El Mate
+COM-581: Pañalería La Garra
+COM-582: Florería del Centro
+COM-583: Veterinaria La Garra
+COM-584: Cyber de Punta Gorra
+COM-585: Mueblería Don Néstor
+COM-586: Tortas y Postres Don Walter
+COM-587: Mercería El Ombú
+COM-588: Mercería El Puerto
+COM-589: Mueblería Los Amigos
+COM-590: Vidriería La Luna
+COM-591: Boliche El Mate
+COM-592: Óptica El Zorzal
+COM-593: Service de PC de la Teja
+COM-594: Quiniela Los Amigos
+COM-595: Ferretería del Buceo
+COM-596: Bicicletería El Tero
+COM-597: Kiosco Doña Rosa
+COM-598: Casa de Fotos Lo de Cacho
+COM-599: Pescadería La Nueva
+COM-600: Casa de Fotos de la Blanqueada
+COM-601: Sastrería Don Walter
+COM-602: Mini Mercado Doña Marta
+COM-603: Parrillada Doña Elsa
+COM-604: Papelería de Goes
+COM-605: Pizzería del Centro
+COM-606: Parrillada de Peñarol
+COM-607: Verdulería El Faro
+COM-608: Veterinaria San Cono
+COM-609: Peluquería El Timbó
+COM-610: Fábrica de Pastas La Paloma
+COM-611: Panadería El Puente
+COM-612: Bazar Mi Barrio
+COM-613: Autoservice El Ombú
+COM-614: Tortas y Postres La Estrella
+COM-615: Panadería Don Raúl
+COM-616: Pescadería de Capurro
+COM-617: Despensa de la Teja
+COM-618: Juguetería de Maroñas
+COM-619: Almacén La Marcela
+COM-620: Carnicería Doña Nelly
+COM-621: Rotisería Doña Nelly
+COM-622: Fábrica de Pastas La Familia
+COM-623: Mascotas La Amistad
+COM-624: Rotisería de la Teja
+COM-625: Mascotas Las Gurisas
+COM-626: Bicicletería El Arroyo
+COM-627: Vidriería de Atahualpa
+COM-628: Quiniela Don Julio
+COM-629: Almacén Santa Rita
+COM-630: Quiniela de Belvedere
+COM-631: Quiniela El Sol
+COM-632: Gimnasio La Torcaza
+COM-633: Parrillada Don Julio
+COM-634: Panadería de Goes
+COM-635: Peluquería El Charrúa
+COM-636: Arreglos de Celulares del Prado
+COM-637: Granja Mi Barrio
+COM-638: Bar de Sayago
+COM-639: Juguetería El Puente
+COM-640: Almacén La Perla
+COM-641: Café La Paloma
+COM-642: Fiambrería de Aguada
+COM-643: Peluquería Don Tito
+COM-644: Granja La Cumparsita
+COM-645: Despensa Lo de la Negra
+COM-646: Lavadero San Cayetano
+COM-647: Autoservice La Calandria
+COM-648: Quiniela Doña Gladys
+COM-649: Lavadero Los Pinos
+COM-650: Taller Mecánico de Malvín
+COM-651: Pañalería Don Pepe
+COM-652: Parrillada Doña Marta
+COM-653: Quiniela El Mirador
+COM-654: Vidriería Lo de Toto
+COM-655: Óptica de la Blanqueada
+COM-656: Pinturería Don Néstor
+COM-657: Farmacia El Gaucho
+COM-658: Papelería del Reducto
+COM-659: Vidriería Don Pepe
+COM-660: Bar San Cono
+COM-661: Pescadería del Prado
+COM-662: Café El Gurí
+COM-663: Pescadería del Centro
+COM-664: Chivitería La Uruguaya
+COM-665: Granja Santa Rita
+COM-666: Rotisería La Espiga
+COM-667: Imprenta del Buceo
+COM-668: Gomería La Espiga
+COM-669: Juguetería Lo de Mary
+COM-670: Pañalería de la Unión
+COM-671: Pescadería El Puente
+COM-672: Tienda La Vecinal
+COM-673: Florería El Progreso
+COM-674: Cerrajería de la Unión
+COM-675: Electrónica Mi Barrio
+COM-676: Boliche del Barrio Sur
+COM-677: Verdulería El Charrúa
+COM-678: Regalería El Tamboril
+COM-679: Autoservice de Atahualpa
+COM-680: Librería El Benteveo
+COM-681: Electrónica Don Raúl
+COM-682: Casa de Fotos El Faro
+COM-683: Papelería de Palermo
+COM-684: Taller Mecánico El Mate
+COM-685: Heladería Mi Barrio
+COM-686: Panadería La Cuadra
+COM-687: Bar San Cayetano
+COM-688: Farmacia Tres Esquinas
+COM-689: Imprenta Lo de Mary
+COM-690: Ferretería La Cuadra
+COM-691: Boliche de Atahualpa
+COM-692: Bar La Paloma
+COM-693: Peluquería La Uruguaya
+COM-694: Librería El Ceibo
+COM-695: Librería Don Tito
+COM-696: Tortas y Postres Don Julio
+COM-697: Imprenta El Oriental
+COM-698: Chivitería El Butiá
+COM-699: Mueblería La Rambla
+COM-700: Panchería Don Ruben
+COM-701: Lavadero Doña Rosa
+COM-702: Juguetería de la Unión
+COM-703: Lavadero La Costa
+COM-704: Bicicletería del Paso Molino
+COM-705: Heladería de Tres Cruces
+COM-706: Rotisería de Goes
+COM-707: Mercería del Paso Molino
+COM-708: Librería del Reducto
+COM-709: Mueblería El Arroyo
+COM-710: Gomería La Perla
+COM-711: Barbería San Cono
+COM-712: Chivitería El Mirador
+COM-713: Casa de Fotos El Hornero
+COM-714: Farmacia San Cayetano
+COM-715: Mini Mercado Don Washington
+COM-716: Veterinaria de Sayago
+COM-717: Quiniela La Costa
+COM-718: Barbería El Molino
+COM-719: Peluquería La Estrella
+COM-720: Kiosco de Peñarol
+COM-721: Barbería Tres Esquinas
+COM-722: Quiniela El Puerto
+COM-723: Arreglos de Celulares La Nueva
+COM-724: Florería de Pocitos
+COM-725: Almacén La Bombilla
+COM-726: Vidriería La Torcaza
+COM-727: Lavandería Lo de Pocho
+COM-728: Tortas y Postres El Butiá
+COM-729: Papelería de Capurro
+COM-730: Juguetería Doña Rosa
+COM-731: Barbería La Garra
+COM-732: Rotisería Don Washington
+COM-733: Confitería San Cayetano
+COM-734: Granja La Nueva
+COM-735: Almacén Doña Blanca
+COM-736: Service de PC Don Walter
+COM-737: Confitería El Tero
+COM-738: Imprenta de Maroñas
+COM-739: Librería Doña Blanca
+COM-740: Panadería Tres Esquinas
+COM-741: Service de PC de Belvedere
+COM-742: Casa de Fotos El Progreso
+COM-743: Carnicería La Costa
+COM-744: Cerrajería La Pitanga
+COM-745: Relojería del Prado
+COM-746: Autoservice de Brazo Oriental
+COM-747: Bicicletería El Parador
+COM-748: Café Don Héctor
+COM-749: Florería El Ceibo
+COM-750: Farmacia de Jacinto Vera
+COM-751: Polirrubro Doña Marta
 
 ## Casas
-CASA-01: Casa da Família Silva
-CASA-02: Casa do Mauro
-CASA-03: Casa do Mauro Santos
-CASA-04: Casa do Silva Santos
-CASA-05: Casa do Oliveira Santos
-CASA-06: Casa do Santos Santos
-CASA-07: Casa do Souza Santos
-CASA-08: Casa do Pereira Santos
-CASA-09: Casa do Costa Santos
-CASA-10: Casa do Rodrigues Santos
-CASA-11: Casa do Almeida Santos
-CASA-12: Casa do Nascimento Santos
-CASA-13: Casa do Lima Santos
-CASA-14: Casa do Araújo Santos
-CASA-15: Casa do Fernandes Santos
-CASA-16: Casa do Carvalho Santos
-CASA-17: Casa do Gomes Santos
-CASA-18: Casa do Martins Santos
-CASA-19: Casa do Rocha Santos
-CASA-20: Casa do Ribeiro Santos
-CASA-21: Casa do Alves Santos
-CASA-22: Casa do Monteiro Santos
-CASA-23: Casa do Mendes Santos
-CASA-24: Casa do Barros Santos
-CASA-25: Casa do Freitas Santos
-CASA-26: Casa do Barbosa Santos
-CASA-27: Casa do Pinto Santos
-CASA-28: Casa do Moura Santos
-CASA-29: Casa do Cavalcanti Santos
-CASA-30: Casa do Dias Santos
-CASA-31: Casa do Castro Santos
-CASA-32: Casa do Campos Santos
-CASA-33: Casa do Cardoso Santos
-CASA-34: Casa do Teixeira Santos
-CASA-35: Casa do Correia Santos
-CASA-36: Casa do Nunes Santos
-CASA-37: Casa do Vieira Santos
-CASA-38: Casa do Moreira Santos
-CASA-39: Casa do Ferreira Santos
-CASA-40: Casa do Duarte Santos
-CASA-41: Casa do Fonseca Santos
-CASA-42: Casa do Machado Santos
-CASA-43: Casa do Azevedo Santos
-CASA-44: Casa do Cunha Santos
-CASA-45: Casa do Lopes Santos
-CASA-46: Casa do Soares Santos
-CASA-47: Casa do Ramos Santos
-CASA-48: Casa do Reis Santos
-CASA-49: Casa do Borges Santos
-CASA-50: Casa do Cruz Santos
-CASA-51: Casa do Tavares Santos
-CASA-52: Casa do Peixoto Santos
-CASA-53: Casa do Ana Santos
-CASA-54: Casa do Beatriz Santos
-CASA-55: Casa do Carlos Santos
-CASA-56: Casa do Daniel Santos
-CASA-57: Casa do Eduardo Santos
-CASA-58: Casa do Fernanda Santos
-CASA-59: Casa do Gabriel Santos
-CASA-60: Casa do Helena Santos
-CASA-61: Casa do Igor Santos
-CASA-62: Casa do Juliana Santos
-CASA-63: Sede da Hostnet
-CASA-64: Casa do Mariana Santos
-CASA-65: Casa do Nícolas Santos
-CASA-66: Casa do Patrícia Santos
-CASA-67: Casa do Rafael Santos
-CASA-68: Casa do Camila Santos
-CASA-69: Casa do Thiago Santos
-CASA-70: Casa do Vanessa Santos
-CASA-71: Casa do Bruno Santos
-CASA-72: Casa do Larissa Santos
-CASA-73: Casa do Mauro Lima
-CASA-74: Casa do Silva Lima
-CASA-75: Casa do Oliveira Lima
-CASA-76: Casa do Santos Lima
-CASA-77: Casa do Souza Lima
-CASA-78: Casa do Pereira Lima
-CASA-79: Casa do Costa Lima
-CASA-80: Casa do Rodrigues Lima
-CASA-81: Casa do Almeida Lima
-CASA-82: Casa do Nascimento Lima
-CASA-83: Casa do Lima Lima
-CASA-84: Casa do Araújo Lima
-CASA-85: Casa do Fernandes Lima
-CASA-86: Casa do Carvalho Lima
-CASA-87: Casa do Gomes Lima
-CASA-88: Casa do Martins Lima
-CASA-89: Casa do Rocha Lima
-CASA-90: Casa do Ribeiro Lima
-CASA-91: Casa do Alves Lima
-CASA-92: Casa do Monteiro Lima
-CASA-93: Casa do Mendes Lima
-CASA-94: Casa do Barros Lima
-CASA-95: Casa do Freitas Lima
-CASA-96: Casa do Barbosa Lima
-CASA-97: Casa do Pinto Lima
-CASA-98: Casa do Moura Lima
-CASA-99: Casa do Cavalcanti Lima
-CASA-100: Casa do Dias Lima
-CASA-101: Casa do Castro Lima
-CASA-102: Casa do Campos Lima
-CASA-103: Casa do Cardoso Lima
-CASA-104: Casa do Teixeira Lima
-CASA-105: Casa do Correia Lima
-CASA-106: Casa do Nunes Lima
-CASA-107: Casa do Vieira Lima
-CASA-108: Casa do Moreira Lima
-CASA-109: Casa do Ferreira Lima
-CASA-110: Casa do Duarte Lima
-CASA-111: Casa do Fonseca Lima
-CASA-112: Casa do Machado Lima
-CASA-113: Casa do Azevedo Lima
-CASA-114: Casa do Cunha Lima
-CASA-115: Casa do Lopes Lima
-CASA-116: Casa do Soares Lima
-CASA-117: Casa do Ramos Lima
-CASA-118: Casa do Reis Lima
-CASA-119: Casa do Borges Lima
-CASA-120: Casa do Cruz Lima
-CASA-121: Casa do Tavares Lima
-CASA-122: Casa do Peixoto Lima
-CASA-123: Casa do Ana Lima
-CASA-124: Casa do Beatriz Lima
-CASA-125: Casa do Carlos Lima
-CASA-126: Casa do Daniel Lima
-CASA-127: Casa do Eduardo Lima
-CASA-128: Casa do Fernanda Lima
-CASA-129: Casa do Gabriel Lima
-CASA-130: Casa do Helena Lima
-CASA-131: Casa do Igor Lima
-CASA-132: Casa do Juliana Lima
-CASA-133: Casa do Lucas Lima
-CASA-134: Casa do Mariana Lima
-CASA-135: Casa do Nícolas Lima
-CASA-136: Casa do Patrícia Lima
-CASA-137: Casa do Rafael Lima
-CASA-138: Casa do Camila Lima
-CASA-139: Casa do Thiago Lima
-CASA-140: Casa do Vanessa Lima
-CASA-141: Casa do Bruno Lima
-CASA-142: Casa do Larissa Lima
-CASA-143: Casa da Mauro Ribeiro
-CASA-144: Casa da Silva Ribeiro
-CASA-145: Casa da Oliveira Ribeiro
-CASA-146: Casa da Santos Ribeiro
-CASA-147: Casa da Souza Ribeiro
-CASA-148: Casa da Pereira Ribeiro
-CASA-149: Casa da Costa Ribeiro
-CASA-150: Casa da Rodrigues Ribeiro
-CASA-151: Casa da Almeida Ribeiro
-CASA-152: Casa da Nascimento Ribeiro
-CASA-153: Casa da Lima Ribeiro
-CASA-154: Casa da Araújo Ribeiro
-CASA-155: Casa da Fernandes Ribeiro
-CASA-156: Casa da Carvalho Ribeiro
-CASA-157: Casa da Gomes Ribeiro
-CASA-158: Casa da Martins Ribeiro
-CASA-159: Casa da Rocha Ribeiro
-CASA-160: Casa da Ribeiro Ribeiro
-CASA-161: Casa da Alves Ribeiro
-CASA-162: Casa da Monteiro Ribeiro
-CASA-163: Casa da Mendes Ribeiro
-CASA-164: Casa da Barros Ribeiro
-CASA-165: Casa da Freitas Ribeiro
-CASA-166: Casa da Barbosa Ribeiro
-CASA-167: Casa da Pinto Ribeiro
-CASA-168: Casa da Moura Ribeiro
-CASA-169: Casa da Cavalcanti Ribeiro
-CASA-170: Casa da Dias Ribeiro
-CASA-171: Casa da Castro Ribeiro
-CASA-172: Casa da Campos Ribeiro
-CASA-173: Casa da Cardoso Ribeiro
-CASA-174: Casa da Teixeira Ribeiro
-CASA-175: Casa da Correia Ribeiro
-CASA-176: Casa da Nunes Ribeiro
-CASA-177: Casa da Vieira Ribeiro
-CASA-178: Casa da Moreira Ribeiro
-CASA-179: Casa da Ferreira Ribeiro
-CASA-180: Casa da Duarte Ribeiro
-CASA-181: Casa da Fonseca Ribeiro
-CASA-182: Casa da Machado Ribeiro
-CASA-183: Casa da Azevedo Ribeiro
-CASA-184: Casa da Cunha Ribeiro
-CASA-185: Casa da Lopes Ribeiro
-CASA-186: Casa da Soares Ribeiro
-CASA-187: Casa da Ramos Ribeiro
-CASA-188: Casa da Reis Ribeiro
-CASA-189: Casa da Borges Ribeiro
-CASA-190: Casa da Cruz Ribeiro
-CASA-191: Casa da Tavares Ribeiro
-CASA-192: Casa da Peixoto Ribeiro
-CASA-193: Casa da Ana Ribeiro
-CASA-194: Casa da Beatriz Ribeiro
-CASA-195: Casa da Carlos Ribeiro
-CASA-196: Casa da Daniel Ribeiro
-CASA-197: Casa da Eduardo Ribeiro
-CASA-198: Casa da Fernanda Ribeiro
-CASA-199: Casa da Gabriel Ribeiro
-CASA-200: Casa da Helena Ribeiro
-CASA-201: Casa da Igor Ribeiro
-CASA-202: Casa da Juliana Ribeiro
-CASA-203: Casa da Lucas Ribeiro
-CASA-204: Casa da Mariana Ribeiro
-CASA-205: Casa da Nícolas Ribeiro
-CASA-206: Casa da Patrícia Ribeiro
-CASA-207: Casa da Rafael Ribeiro
-CASA-208: Casa da Camila Ribeiro
-CASA-209: Casa da Thiago Ribeiro
-CASA-210: Casa da Vanessa Ribeiro
-CASA-211: Casa da Bruno Ribeiro
-CASA-212: Casa da Larissa Ribeiro
-CASA-213: Casa da Mauro Pinto
-CASA-214: Casa da Silva Pinto
-CASA-215: Casa da Oliveira Pinto
-CASA-216: Casa da Santos Pinto
-CASA-217: Casa da Souza Pinto
-CASA-218: Casa da Pereira Pinto
-CASA-219: Casa da Costa Pinto
-CASA-220: Casa da Rodrigues Pinto
-CASA-221: Casa da Almeida Pinto
-CASA-222: Casa da Nascimento Pinto
-CASA-223: Casa da Lima Pinto
-CASA-224: Casa da Araújo Pinto
-CASA-225: Casa da Fernandes Pinto
-CASA-226: Casa da Carvalho Pinto
-CASA-227: Casa da Gomes Pinto
-CASA-228: Casa da Martins Pinto
-CASA-229: Casa da Rocha Pinto
-CASA-230: Casa da Ribeiro Pinto
-CASA-231: Casa da Alves Pinto
-CASA-232: Casa da Monteiro Pinto
-CASA-233: Casa da Mendes Pinto
-CASA-234: Casa da Barros Pinto
-CASA-235: Casa da Freitas Pinto
-CASA-236: Casa da Barbosa Pinto
-CASA-237: Casa da Pinto Pinto
-CASA-238: Casa da Moura Pinto
-CASA-239: Casa da Cavalcanti Pinto
-CASA-240: Casa da Dias Pinto
-CASA-241: Casa da Castro Pinto
-CASA-242: Casa da Campos Pinto
-CASA-243: Casa da Cardoso Pinto
-CASA-244: Casa da Teixeira Pinto
-CASA-245: Casa da Correia Pinto
-CASA-246: Casa da Nunes Pinto
-CASA-247: Casa da Vieira Pinto
-CASA-248: Casa da Moreira Pinto
-CASA-249: Casa da Ferreira Pinto
-CASA-250: Casa da Duarte Pinto
-CASA-251: Casa da Fonseca Pinto
-CASA-252: Casa da Machado Pinto
-CASA-253: Casa da Azevedo Pinto
-CASA-254: Casa da Cunha Pinto
-CASA-255: Casa da Lopes Pinto
-CASA-256: Casa da Soares Pinto
-CASA-257: Casa da Ramos Pinto
-CASA-258: Casa da Reis Pinto
-CASA-259: Casa da Borges Pinto
-CASA-260: Casa da Cruz Pinto
-CASA-261: Casa da Tavares Pinto
-CASA-262: Casa da Peixoto Pinto
-CASA-263: Casa da Ana Pinto
-CASA-264: Casa da Beatriz Pinto
-CASA-265: Casa da Carlos Pinto
-CASA-266: Casa da Daniel Pinto
-CASA-267: Casa da Eduardo Pinto
-CASA-268: Casa da Fernanda Pinto
-CASA-269: Casa da Gabriel Pinto
-CASA-270: Casa da Helena Pinto
-CASA-271: Casa da Igor Pinto
-CASA-272: Casa da Juliana Pinto
-CASA-273: Casa da Lucas Pinto
-CASA-274: Casa da Mariana Pinto
-CASA-275: Casa da Nícolas Pinto
-CASA-276: Casa da Patrícia Pinto
-CASA-277: Casa da Rafael Pinto
-CASA-278: Casa da Camila Pinto
-CASA-279: Casa da Thiago Pinto
-CASA-280: Casa da Vanessa Pinto
-CASA-281: Casa da Bruno Pinto
-CASA-282: Casa da Larissa Pinto
-CASA-283: Residência Mauro Teixeira
-CASA-284: Residência Silva Teixeira
-CASA-285: Residência Oliveira Teixeira
-CASA-286: Residência Santos Teixeira
-CASA-287: Residência Souza Teixeira
-CASA-288: Residência Pereira Teixeira
-CASA-289: Residência Costa Teixeira
-CASA-290: Residência Rodrigues Teixeira
-CASA-291: Residência Almeida Teixeira
-CASA-292: Residência Nascimento Teixeira
-CASA-293: Residência Lima Teixeira
-CASA-294: Residência Araújo Teixeira
-CASA-295: Residência Fernandes Teixeira
-CASA-296: Residência Carvalho Teixeira
-CASA-297: Residência Gomes Teixeira
-CASA-298: Residência Martins Teixeira
-CASA-299: Residência Rocha Teixeira
-CASA-300: Residência Ribeiro Teixeira
-CASA-301: Residência Alves Teixeira
-CASA-302: Residência Monteiro Teixeira
-CASA-303: Residência Mendes Teixeira
-CASA-304: Residência Barros Teixeira
-CASA-305: Residência Freitas Teixeira
-CASA-306: Residência Barbosa Teixeira
-CASA-307: Residência Pinto Teixeira
-CASA-308: Residência Moura Teixeira
-CASA-309: Residência Cavalcanti Teixeira
-CASA-310: Residência Dias Teixeira
-CASA-311: Residência Castro Teixeira
-CASA-312: Residência Campos Teixeira
-CASA-313: Residência Cardoso Teixeira
-CASA-314: Residência Teixeira Teixeira
-CASA-315: Residência Correia Teixeira
-CASA-316: Residência Nunes Teixeira
-CASA-317: Residência Vieira Teixeira
-CASA-318: Residência Moreira Teixeira
-CASA-319: Residência Ferreira Teixeira
-CASA-320: Residência Duarte Teixeira
-CASA-321: Residência Fonseca Teixeira
-CASA-322: Residência Machado Teixeira
-CASA-323: Residência Azevedo Teixeira
-CASA-324: Residência Cunha Teixeira
-CASA-325: Residência Lopes Teixeira
-CASA-326: Residência Soares Teixeira
-CASA-327: Residência Ramos Teixeira
-CASA-328: Residência Reis Teixeira
-CASA-329: Residência Borges Teixeira
-CASA-330: Residência Cruz Teixeira
-CASA-331: Residência Tavares Teixeira
-CASA-332: Residência Peixoto Teixeira
-CASA-333: Residência Ana Teixeira
-CASA-334: Residência Beatriz Teixeira
-CASA-335: Residência Carlos Teixeira
-CASA-336: Residência Daniel Teixeira
-CASA-337: Residência Eduardo Teixeira
-CASA-338: Residência Fernanda Teixeira
-CASA-339: Residência Gabriel Teixeira
-CASA-340: Residência Helena Teixeira
-CASA-341: Residência Igor Teixeira
-CASA-342: Residência Juliana Teixeira
-CASA-343: Residência Lucas Teixeira
-CASA-344: Residência Mariana Teixeira
-CASA-345: Residência Nícolas Teixeira
-CASA-346: Residência Patrícia Teixeira
-CASA-347: Residência Rafael Teixeira
-CASA-348: Residência Camila Teixeira
-CASA-349: Residência Thiago Teixeira
-CASA-350: Residência Vanessa Teixeira
-CASA-351: Residência Bruno Teixeira
-CASA-352: Residência Larissa Teixeira
-CASA-353: Residência Mauro Fonseca
-CASA-354: Residência Silva Fonseca
-CASA-355: Residência Oliveira Fonseca
-CASA-356: Residência Santos Fonseca
-CASA-357: Residência Souza Fonseca
-CASA-358: Residência Pereira Fonseca
-CASA-359: Residência Costa Fonseca
-CASA-360: Residência Rodrigues Fonseca
-CASA-361: Residência Almeida Fonseca
-CASA-362: Residência Nascimento Fonseca
-CASA-363: Residência Lima Fonseca
-CASA-364: Residência Araújo Fonseca
-CASA-365: Residência Fernandes Fonseca
-CASA-366: Residência Carvalho Fonseca
-CASA-367: Residência Gomes Fonseca
-CASA-368: Residência Martins Fonseca
-CASA-369: Residência Rocha Fonseca
-CASA-370: Residência Ribeiro Fonseca
-CASA-371: Residência Alves Fonseca
-CASA-372: Residência Monteiro Fonseca
-CASA-373: Residência Mendes Fonseca
-CASA-374: Residência Barros Fonseca
-CASA-375: Residência Freitas Fonseca
-CASA-376: Residência Barbosa Fonseca
-CASA-377: Residência Pinto Fonseca
-CASA-378: Residência Moura Fonseca
-CASA-379: Residência Cavalcanti Fonseca
-CASA-380: Residência Dias Fonseca
-CASA-381: Residência Castro Fonseca
-CASA-382: Residência Campos Fonseca
-CASA-383: Residência Cardoso Fonseca
-CASA-384: Residência Teixeira Fonseca
-CASA-385: Residência Correia Fonseca
-CASA-386: Residência Nunes Fonseca
-CASA-387: Residência Vieira Fonseca
-CASA-388: Residência Moreira Fonseca
-CASA-389: Residência Ferreira Fonseca
-CASA-390: Residência Duarte Fonseca
-CASA-391: Residência Fonseca Fonseca
-CASA-392: Residência Machado Fonseca
-CASA-393: Residência Azevedo Fonseca
-CASA-394: Residência Cunha Fonseca
-CASA-395: Residência Lopes Fonseca
-CASA-396: Residência Soares Fonseca
-CASA-397: Residência Ramos Fonseca
-CASA-398: Residência Reis Fonseca
-CASA-399: Residência Borges Fonseca
-CASA-400: Residência Cruz Fonseca
-CASA-401: Residência Tavares Fonseca
-CASA-402: Residência Peixoto Fonseca
-CASA-403: Residência Ana Fonseca
-CASA-404: Residência Beatriz Fonseca
-CASA-405: Residência Carlos Fonseca
-CASA-406: Residência Daniel Fonseca
-CASA-407: Residência Eduardo Fonseca
-CASA-408: Residência Fernanda Fonseca
-CASA-409: Residência Gabriel Fonseca
-CASA-410: Residência Helena Fonseca
-CASA-411: Residência Igor Fonseca
-CASA-412: Residência Juliana Fonseca
-CASA-413: Residência Lucas Fonseca
-CASA-414: Residência Mariana Fonseca
-CASA-415: Residência Nícolas Fonseca
-CASA-416: Residência Patrícia Fonseca
-CASA-417: Residência Rafael Fonseca
-CASA-418: Residência Camila Fonseca
-CASA-419: Residência Thiago Fonseca
-CASA-420: Residência Vanessa Fonseca
-CASA-421: Residência Bruno Fonseca
-CASA-422: Residência Larissa Fonseca
-CASA-423: Sobrado Mauro Reis
-CASA-424: Sobrado Silva Reis
-CASA-425: Sobrado Oliveira Reis
-CASA-426: Sobrado Santos Reis
-CASA-427: Sobrado Souza Reis
-CASA-428: Sobrado Pereira Reis
-CASA-429: Sobrado Costa Reis
-CASA-430: Sobrado Rodrigues Reis
-CASA-431: Sobrado Almeida Reis
-CASA-432: Sobrado Nascimento Reis
-CASA-433: Sobrado Lima Reis
-CASA-434: Sobrado Araújo Reis
-CASA-435: Sobrado Fernandes Reis
-CASA-436: Sobrado Carvalho Reis
-CASA-437: Sobrado Gomes Reis
-CASA-438: Sobrado Martins Reis
-CASA-439: Sobrado Rocha Reis
-CASA-440: Sobrado Ribeiro Reis
-CASA-441: Sobrado Alves Reis
-CASA-442: Sobrado Monteiro Reis
-CASA-443: Sobrado Mendes Reis
-CASA-444: Sobrado Barros Reis
-CASA-445: Sobrado Freitas Reis
-CASA-446: Sobrado Barbosa Reis
-CASA-447: Sobrado Pinto Reis
-CASA-448: Sobrado Moura Reis
-CASA-449: Sobrado Cavalcanti Reis
-CASA-450: Sobrado Dias Reis
-CASA-451: Sobrado Castro Reis
-CASA-452: Sobrado Campos Reis
-CASA-453: Sobrado Cardoso Reis
-CASA-454: Sobrado Teixeira Reis
-CASA-455: Sobrado Correia Reis
-CASA-456: Sobrado Nunes Reis
-CASA-457: Sobrado Vieira Reis
-CASA-458: Sobrado Moreira Reis
-CASA-459: Sobrado Ferreira Reis
-CASA-460: Sobrado Duarte Reis
-CASA-461: Sobrado Fonseca Reis
-CASA-462: Sobrado Machado Reis
-CASA-463: Sobrado Azevedo Reis
-CASA-464: Sobrado Cunha Reis
-CASA-465: Sobrado Lopes Reis
-CASA-466: Sobrado Soares Reis
-CASA-467: Sobrado Ramos Reis
-CASA-468: Sobrado Reis Reis
-CASA-469: Sobrado Borges Reis
-CASA-470: Sobrado Cruz Reis
-CASA-471: Sobrado Tavares Reis
-CASA-472: Sobrado Peixoto Reis
-CASA-473: Sobrado Ana Reis
-CASA-474: Sobrado Beatriz Reis
-CASA-475: Sobrado Carlos Reis
-CASA-476: Sobrado Daniel Reis
-CASA-477: Sobrado Eduardo Reis
-CASA-478: Sobrado Fernanda Reis
-CASA-479: Sobrado Gabriel Reis
-CASA-480: Sobrado Helena Reis
-CASA-481: Sobrado Igor Reis
-CASA-482: Sobrado Juliana Reis
-CASA-483: Sobrado Lucas Reis
-CASA-484: Sobrado Mariana Reis
-CASA-485: Sobrado Nícolas Reis
-CASA-486: Sobrado Patrícia Reis
-CASA-487: Sobrado Rafael Reis
-CASA-488: Sobrado Camila Reis
-CASA-489: Sobrado Thiago Reis
-CASA-490: Sobrado Vanessa Reis
-CASA-491: Sobrado Bruno Reis
-CASA-492: Sobrado Larissa Reis
-CASA-493: Sobrado Mauro Carlos
-CASA-494: Sobrado Silva Carlos
-CASA-495: Sobrado Oliveira Carlos
-CASA-496: Sobrado Santos Carlos
-CASA-497: Sobrado Souza Carlos
-CASA-498: Sobrado Pereira Carlos
-CASA-499: Sobrado Costa Carlos
-CASA-500: Sobrado Rodrigues Carlos
-CASA-501: Sobrado Almeida Carlos
-CASA-502: Sobrado Nascimento Carlos
-CASA-503: Sobrado Lima Carlos
-CASA-504: Sobrado Araújo Carlos
-CASA-505: Sobrado Fernandes Carlos
-CASA-506: Sobrado Carvalho Carlos
-CASA-507: Sobrado Gomes Carlos
-CASA-508: Sobrado Martins Carlos
-CASA-509: Sobrado Rocha Carlos
-CASA-510: Sobrado Ribeiro Carlos
-CASA-511: Sobrado Alves Carlos
-CASA-512: Sobrado Monteiro Carlos
-CASA-513: Sobrado Mendes Carlos
-CASA-514: Sobrado Barros Carlos
-CASA-515: Sobrado Freitas Carlos
-CASA-516: Sobrado Barbosa Carlos
-CASA-517: Sobrado Pinto Carlos
-CASA-518: Sobrado Moura Carlos
-CASA-519: Sobrado Cavalcanti Carlos
-CASA-520: Sobrado Dias Carlos
-CASA-521: Sobrado Castro Carlos
-CASA-522: Sobrado Campos Carlos
-CASA-523: Sobrado Cardoso Carlos
-CASA-524: Sobrado Teixeira Carlos
-CASA-525: Sobrado Correia Carlos
-CASA-526: Sobrado Nunes Carlos
-CASA-527: Sobrado Vieira Carlos
-CASA-528: Sobrado Moreira Carlos
-CASA-529: Sobrado Ferreira Carlos
-CASA-530: Sobrado Duarte Carlos
-CASA-531: Sobrado Fonseca Carlos
-CASA-532: Sobrado Machado Carlos
-CASA-533: Sobrado Azevedo Carlos
-CASA-534: Sobrado Cunha Carlos
-CASA-535: Sobrado Lopes Carlos
-CASA-536: Sobrado Soares Carlos
-CASA-537: Sobrado Ramos Carlos
-CASA-538: Sobrado Reis Carlos
-CASA-539: Sobrado Borges Carlos
-CASA-540: Sobrado Cruz Carlos
-CASA-541: Sobrado Tavares Carlos
-CASA-542: Sobrado Peixoto Carlos
-CASA-543: Sobrado Ana Carlos
-CASA-544: Sobrado Beatriz Carlos
-CASA-545: Sobrado Carlos Carlos
-CASA-546: Sobrado Daniel Carlos
-CASA-547: Sobrado Eduardo Carlos
-CASA-548: Sobrado Fernanda Carlos
-CASA-549: Sobrado Gabriel Carlos
-CASA-550: Sobrado Helena Carlos
-CASA-551: Sobrado Igor Carlos
-CASA-552: Sobrado Juliana Carlos
-CASA-553: Sobrado Lucas Carlos
-CASA-554: Sobrado Mariana Carlos
-CASA-555: Sobrado Nícolas Carlos
-CASA-556: Sobrado Patrícia Carlos
-CASA-557: Sobrado Rafael Carlos
-CASA-558: Sobrado Camila Carlos
-CASA-559: Sobrado Thiago Carlos
-CASA-560: Sobrado Vanessa Carlos
-CASA-561: Sobrado Bruno Carlos
-CASA-562: Sobrado Larissa Carlos
-CASA-563: Casa de Mauro Juliana
-CASA-564: Casa de Silva Juliana
-CASA-565: Casa de Oliveira Juliana
-CASA-566: Casa de Santos Juliana
-CASA-567: Casa de Souza Juliana
-CASA-568: Casa de Pereira Juliana
-CASA-569: Casa de Costa Juliana
-CASA-570: Casa de Rodrigues Juliana
-CASA-571: Casa de Almeida Juliana
-CASA-572: Casa de Nascimento Juliana
-CASA-573: Casa de Lima Juliana
-CASA-574: Casa de Araújo Juliana
-CASA-575: Casa de Fernandes Juliana
-CASA-576: Casa de Carvalho Juliana
-CASA-577: Casa de Gomes Juliana
-CASA-578: Casa de Martins Juliana
-CASA-579: Casa de Rocha Juliana
-CASA-580: Casa de Ribeiro Juliana
-CASA-581: Casa de Alves Juliana
-CASA-582: Casa de Monteiro Juliana
-CASA-583: Casa de Mendes Juliana
-CASA-584: Casa de Barros Juliana
-CASA-585: Casa de Freitas Juliana
-CASA-586: Casa de Barbosa Juliana
-CASA-587: Casa de Pinto Juliana
-CASA-588: Casa de Moura Juliana
-CASA-589: Casa de Cavalcanti Juliana
-CASA-590: Casa de Dias Juliana
-CASA-591: Casa de Castro Juliana
-CASA-592: Casa de Campos Juliana
-CASA-593: Casa de Cardoso Juliana
-CASA-594: Casa de Teixeira Juliana
-CASA-595: Casa de Correia Juliana
-CASA-596: Casa de Nunes Juliana
-CASA-597: Casa de Vieira Juliana
-CASA-598: Casa de Moreira Juliana
-CASA-599: Casa de Ferreira Juliana
-CASA-600: Casa de Duarte Juliana
-CASA-601: Casa de Fonseca Juliana
-CASA-602: Casa de Machado Juliana
-CASA-603: Casa de Azevedo Juliana
-CASA-604: Casa de Cunha Juliana
-CASA-605: Casa de Lopes Juliana
-CASA-606: Casa de Soares Juliana
-CASA-607: Casa de Ramos Juliana
-CASA-608: Casa de Reis Juliana
-CASA-609: Casa de Borges Juliana
-CASA-610: Casa de Cruz Juliana
-CASA-611: Casa de Tavares Juliana
-CASA-612: Casa de Peixoto Juliana
-CASA-613: Casa de Ana Juliana
-CASA-614: Casa de Beatriz Juliana
-CASA-615: Casa de Carlos Juliana
-CASA-616: Casa de Daniel Juliana
-CASA-617: Casa de Eduardo Juliana
-CASA-618: Casa de Fernanda Juliana
-CASA-619: Casa de Gabriel Juliana
-CASA-620: Casa de Helena Juliana
-CASA-621: Casa de Igor Juliana
-CASA-622: Casa de Juliana Juliana
-CASA-623: Casa de Lucas Juliana
-CASA-624: Casa de Mariana Juliana
-CASA-625: Casa de Nícolas Juliana
-CASA-626: Casa de Patrícia Juliana
-CASA-627: Casa de Rafael Juliana
-CASA-628: Casa de Camila Juliana
-CASA-629: Casa de Thiago Juliana
-CASA-630: Casa de Vanessa Juliana
-CASA-631: Casa de Bruno Juliana
-CASA-632: Casa de Larissa Juliana
-CASA-633: Casa de Mauro Thiago
-CASA-634: Casa de Silva Thiago
-CASA-635: Casa de Oliveira Thiago
-CASA-636: Casa de Santos Thiago
-CASA-637: Casa de Souza Thiago
-CASA-638: Casa de Pereira Thiago
-CASA-639: Casa de Costa Thiago
-CASA-640: Casa de Rodrigues Thiago
-CASA-641: Casa de Almeida Thiago
-CASA-642: Casa de Nascimento Thiago
-CASA-643: Casa de Lima Thiago
-CASA-644: Casa de Araújo Thiago
-CASA-645: Casa de Fernandes Thiago
-CASA-646: Casa de Carvalho Thiago
-CASA-647: Casa de Gomes Thiago
-CASA-648: Casa de Martins Thiago
-CASA-649: Casa de Rocha Thiago
-CASA-650: Casa de Ribeiro Thiago
-CASA-651: Casa de Alves Thiago
-CASA-652: Casa de Monteiro Thiago
-CASA-653: Casa de Mendes Thiago
-CASA-654: Casa de Barros Thiago
-CASA-655: Casa de Freitas Thiago
-CASA-656: Casa de Barbosa Thiago
-CASA-657: Casa de Pinto Thiago
-CASA-658: Casa de Moura Thiago
-CASA-659: Casa de Cavalcanti Thiago
-CASA-660: Casa de Dias Thiago
-CASA-661: Casa de Castro Thiago
-CASA-662: Casa de Campos Thiago
-CASA-663: Casa de Cardoso Thiago
-CASA-664: Casa de Teixeira Thiago
-CASA-665: Casa de Correia Thiago
-CASA-666: Casa de Nunes Thiago
-CASA-667: Casa de Vieira Thiago
-CASA-668: Casa de Moreira Thiago
-CASA-669: Casa de Ferreira Thiago
-CASA-670: Casa de Duarte Thiago
-CASA-671: Casa de Fonseca Thiago
-CASA-672: Casa de Machado Thiago
-CASA-673: Casa de Azevedo Thiago
-CASA-674: Casa de Cunha Thiago
-CASA-675: Casa de Lopes Thiago
-CASA-676: Casa de Soares Thiago
-CASA-677: Casa de Ramos Thiago
-CASA-678: Casa de Reis Thiago
-CASA-679: Casa de Borges Thiago
-CASA-680: Casa de Cruz Thiago
-CASA-681: Casa de Tavares Thiago
-CASA-682: Casa de Peixoto Thiago
-CASA-683: Casa de Ana Thiago
-CASA-684: Casa de Beatriz Thiago
-CASA-685: Casa de Carlos Thiago
-CASA-686: Casa de Daniel Thiago
-CASA-687: Casa de Eduardo Thiago
-CASA-688: Casa de Fernanda Thiago
-CASA-689: Casa de Gabriel Thiago
-CASA-690: Casa de Helena Thiago
-CASA-691: Casa de Igor Thiago
-CASA-692: Casa de Juliana Thiago
-CASA-693: Casa de Lucas Thiago
-CASA-694: Casa de Mariana Thiago
-CASA-695: Casa de Nícolas Thiago
-CASA-696: Casa de Patrícia Thiago
-CASA-697: Casa de Rafael Thiago
-CASA-698: Casa de Camila Thiago
-CASA-699: Casa de Thiago Thiago
-CASA-700: Casa de Vanessa Thiago
-CASA-701: Casa de Bruno Thiago
-CASA-702: Casa de Larissa Thiago
-CASA-703: Chácara Mauro Santos
-CASA-704: Chácara Silva Santos
-CASA-705: Chácara Oliveira Santos
-CASA-706: Chácara Santos Santos
-CASA-707: Chácara Souza Santos
-CASA-708: Chácara Pereira Santos
-CASA-709: Chácara Costa Santos
-CASA-710: Chácara Rodrigues Santos
-CASA-711: Chácara Almeida Santos
-CASA-712: Chácara Nascimento Santos
-CASA-713: Chácara Lima Santos
-CASA-714: Chácara Araújo Santos
-CASA-715: Chácara Fernandes Santos
-CASA-716: Chácara Carvalho Santos
-CASA-717: Chácara Gomes Santos
-CASA-718: Chácara Martins Santos
-CASA-719: Chácara Rocha Santos
-CASA-720: Chácara Ribeiro Santos
-CASA-721: Chácara Alves Santos
-CASA-722: Chácara Monteiro Santos
-CASA-723: Chácara Mendes Santos
-CASA-724: Chácara Barros Santos
-CASA-725: Chácara Freitas Santos
-CASA-726: Chácara Barbosa Santos
-CASA-727: Chácara Pinto Santos
-CASA-728: Chácara Moura Santos
-CASA-729: Chácara Cavalcanti Santos
-CASA-730: Chácara Dias Santos
-CASA-731: Chácara Castro Santos
-CASA-732: Chácara Campos Santos
-CASA-733: Chácara Cardoso Santos
-CASA-734: Chácara Teixeira Santos
-CASA-735: Chácara Correia Santos
-CASA-736: Chácara Nunes Santos
-CASA-737: Chácara Vieira Santos
-CASA-738: Chácara Moreira Santos
-CASA-739: Chácara Ferreira Santos
-CASA-740: Chácara Duarte Santos
-CASA-741: Chácara Fonseca Santos
-CASA-742: Chácara Machado Santos
-CASA-743: Chácara Azevedo Santos
-CASA-744: Chácara Cunha Santos
-CASA-745: Chácara Lopes Santos
-CASA-746: Chácara Soares Santos
-CASA-747: Chácara Ramos Santos
-CASA-748: Chácara Reis Santos
-CASA-749: Chácara Borges Santos
-CASA-750: Chácara Cruz Santos
-CASA-751: Chácara Tavares Santos
-CASA-752: Chácara Peixoto Santos
-CASA-753: Chácara Ana Santos
-CASA-754: Chácara Beatriz Santos
-CASA-755: Chácara Carlos Santos
-CASA-756: Chácara Daniel Santos
-CASA-757: Chácara Eduardo Santos
-CASA-758: Chácara Fernanda Santos
-CASA-759: Chácara Gabriel Santos
-CASA-760: Chácara Helena Santos
-CASA-761: Chácara Igor Santos
-CASA-762: Chácara Juliana Santos
-CASA-763: Chácara Lucas Santos
-CASA-764: Chácara Mariana Santos
-CASA-765: Chácara Nícolas Santos
-CASA-766: Chácara Patrícia Santos
-CASA-767: Chácara Rafael Santos
-CASA-768: Chácara Camila Santos
-CASA-769: Chácara Thiago Santos
-CASA-770: Chácara Vanessa Santos
-CASA-771: Chácara Bruno Santos
-CASA-772: Chácara Larissa Santos
-CASA-773: Chácara Mauro Lima
-CASA-774: Chácara Silva Lima
-CASA-775: Chácara Oliveira Lima
-CASA-776: Chácara Santos Lima
-CASA-777: Chácara Souza Lima
-CASA-778: Chácara Pereira Lima
-CASA-779: Chácara Costa Lima
-CASA-780: Chácara Rodrigues Lima
-CASA-781: Chácara Almeida Lima
-CASA-782: Chácara Nascimento Lima
-CASA-783: Chácara Lima Lima
-CASA-784: Chácara Araújo Lima
-CASA-785: Chácara Fernandes Lima
-CASA-786: Chácara Carvalho Lima
-CASA-787: Chácara Gomes Lima
-CASA-788: Chácara Martins Lima
-CASA-789: Chácara Rocha Lima
-CASA-790: Chácara Ribeiro Lima
-CASA-791: Chácara Alves Lima
-CASA-792: Chácara Monteiro Lima
-CASA-793: Chácara Mendes Lima
-CASA-794: Chácara Barros Lima
-CASA-795: Chácara Freitas Lima
-CASA-796: Chácara Barbosa Lima
-CASA-797: Chácara Pinto Lima
-CASA-798: Chácara Moura Lima
-CASA-799: Chácara Cavalcanti Lima
-CASA-800: Chácara Dias Lima
-CASA-801: Chácara Castro Lima
-CASA-802: Chácara Campos Lima
-CASA-803: Chácara Cardoso Lima
-CASA-804: Chácara Teixeira Lima
-CASA-805: Chácara Correia Lima
-CASA-806: Chácara Nunes Lima
-CASA-807: Chácara Vieira Lima
-CASA-808: Chácara Moreira Lima
-CASA-809: Chácara Ferreira Lima
-CASA-810: Chácara Duarte Lima
-CASA-811: Chácara Fonseca Lima
-CASA-812: Chácara Machado Lima
-CASA-813: Chácara Azevedo Lima
-CASA-814: Chácara Cunha Lima
-CASA-815: Chácara Lopes Lima
-CASA-816: Chácara Soares Lima
-CASA-817: Chácara Ramos Lima
-CASA-818: Chácara Reis Lima
-CASA-819: Chácara Borges Lima
-CASA-820: Chácara Cruz Lima
-CASA-821: Chácara Tavares Lima
-CASA-822: Chácara Peixoto Lima
-CASA-823: Chácara Ana Lima
-CASA-824: Chácara Beatriz Lima
-CASA-825: Chácara Carlos Lima
-CASA-826: Chácara Daniel Lima
-CASA-827: Chácara Eduardo Lima
-CASA-828: Chácara Fernanda Lima
-CASA-829: Chácara Gabriel Lima
-CASA-830: Chácara Helena Lima
-CASA-831: Chácara Igor Lima
-CASA-832: Chácara Juliana Lima
-CASA-833: Chácara Lucas Lima
-CASA-834: Chácara Mariana Lima
-CASA-835: Chácara Nícolas Lima
-CASA-836: Chácara Patrícia Lima
-CASA-837: Chácara Rafael Lima
-CASA-838: Chácara Camila Lima
-CASA-839: Chácara Thiago Lima
-CASA-840: Chácara Vanessa Lima
-CASA-841: Chácara Bruno Lima
-CASA-842: Chácara Larissa Lima
-CASA-843: Vila Mauro Ribeiro
-CASA-844: Vila Silva Ribeiro
-CASA-845: Vila Oliveira Ribeiro
-CASA-846: Vila Santos Ribeiro
-CASA-847: Vila Souza Ribeiro
-CASA-848: Vila Pereira Ribeiro
-CASA-849: Vila Costa Ribeiro
-CASA-850: Vila Rodrigues Ribeiro
-CASA-851: Vila Almeida Ribeiro
-CASA-852: Vila Nascimento Ribeiro
-CASA-853: Vila Lima Ribeiro
-CASA-854: Vila Araújo Ribeiro
-CASA-855: Vila Fernandes Ribeiro
-CASA-856: Vila Carvalho Ribeiro
-CASA-857: Vila Gomes Ribeiro
-CASA-858: Vila Martins Ribeiro
-CASA-859: Vila Rocha Ribeiro
-CASA-860: Vila Ribeiro Ribeiro
-CASA-861: Vila Alves Ribeiro
-CASA-862: Vila Monteiro Ribeiro
-CASA-863: Vila Mendes Ribeiro
-CASA-864: Vila Barros Ribeiro
-CASA-865: Vila Freitas Ribeiro
-CASA-866: Vila Barbosa Ribeiro
-CASA-867: Vila Pinto Ribeiro
-CASA-868: Vila Moura Ribeiro
-CASA-869: Vila Cavalcanti Ribeiro
-CASA-870: Vila Dias Ribeiro
-CASA-871: Vila Castro Ribeiro
-CASA-872: Vila Campos Ribeiro
-HOSP-01: Hospital Noroeste
-HOSP-02: Hospital Norte
-HOSP-03: Hospital Nordeste
-HOSP-04: Hospital Oeste
-HOSP-05: Hospital Central
-HOSP-06: Hospital Leste
-HOSP-07: Hospital Sudoeste
-HOSP-08: Hospital Sul
-HOSP-09: Hospital Sudeste
-HOSP-10: Hospital Aurora
-HOSP-11: Hospital Esperança
-HOSP-12: Hospital Santa Clara
-HOSP-13: Hospital São Lucas
-HOSP-14: Hospital Vitória
-HOSP-15: Hospital Horizonte
-HOSP-16: Hospital Liberdade
-HOSP-17: Hospital Atlântico
-HOSP-18: Hospital Paulista
-HOSP-19: Hospital Guanabara
-HOSP-20: Hospital Boa Vista
-HOSP-21: Hospital Primavera
-HOSP-22: Hospital Bela Vista
-HOSP-23: Hospital Alvorada
-HOSP-24: Hospital Progresso
-HOSP-25: Hospital Independência
-HOSP-26: Hospital Bandeirantes
-HOSP-27: Hospital Planalto
-HOSP-28: Hospital Serra Verde
-HOSP-29: Hospital Parque Novo
-HOSP-30: Hospital Jardins
-HOSP-31: Hospital Centro-Sul
-HOSP-32: Hospital Vila Nova
-HOSP-33: Hospital Porto Seguro
-HOSP-34: Hospital Monte Verde
-HOSP-35: Hospital Santa Cruz
-HOSP-36: Hospital São José
-HOSP-37: Hospital São Gabriel
-HOSP-38: Hospital São Vicente
-HOSP-39: Hospital Santa Maria
-HOSP-40: Hospital Metropolitano
+CASA-01: Casa de Graciela y Matías
+CASA-02: Casa de Doña Camila Sena
+CASA-03: Casa de Beatriz Arbelo
+CASA-04: Casa de Gonzalo Marrero
+CASA-05: Casa de Inés Díaz
+CASA-06: Casa de Cecilia Etchegaray
+CASA-07: Casa de Natalia y Gonzalo
+CASA-08: Casa de Patricia Fleitas
+CASA-09: Casa de Daniel González
+CASA-10: Casa de Don Diego Sena
+CASA-11: Casa de la familia Olivera
+CASA-12: Casa de Marcelo Lima
+CASA-13: Casa de Valentina Martínez
+CASA-14: Casa de Doña Elena Castro
+CASA-15: Casa de Nicolás García
+CASA-16: Casa de Martín Píriz
+CASA-17: Casa de Don Luis Gadea
+CASA-18: Casa de la familia Cabrera
+CASA-19: Casa de los Silva Lemos
+CASA-20: Casa de los Viera Olivera
+CASA-21: Casa de los Fernández Sánchez
+CASA-22: Casa de la abuela Beatriz
+CASA-23: Casa de Don Fabián Medina
+CASA-24: Casa de Marcelo Benítez
+CASA-25: Casa de Cecilia Díaz
+CASA-26: Casa de los Rossi
+CASA-27: Casa de Doña Gabriela Rossi
+CASA-28: Casa de Paula Sena
+CASA-29: Casa de Doña Rosa Giménez
+CASA-30: Casa de la familia Quintana
+CASA-31: Casa de la familia Medina
+CASA-32: Casa de Hugo Ruiz
+CASA-33: Casa de los Marrero Gadea
+CASA-34: Casa de Bruno Umpiérrez
+CASA-35: Casa de Martín Fernández
+CASA-36: Casa de Alicia Morales
+CASA-37: Casa de los Rocha
+CASA-38: Casa de los Arbelo
+CASA-39: Casa de Doña Silvia Rocha
+CASA-40: Casa de Patricia Pereira
+CASA-41: Casa de los Píriz Lima
+CASA-42: Casa de Elena Romero
+CASA-43: Casa de Laura Borges
+CASA-44: Casa de los Duarte Núñez
+CASA-45: Casa de los Ortiz
+CASA-46: Casa de Sebastián Etchegaray
+CASA-47: Casa de Rosa Quintana
+CASA-48: Casa de Fabián González
+CASA-49: Casa de la familia Acosta
+CASA-50: Casa de la familia Cuello
+CASA-51: Chacra de los Benítez
+CASA-52: Casa de los Benítez Clavijo
+CASA-53: Casa de los Dutra Quintana
+CASA-54: Casa de Valentina y Nicolás
+CASA-55: Casa de los Rosano Camacho
+CASA-56: Casa de los Cabral Quintana
+CASA-57: Chacra de los Lemos
+CASA-58: Casa de Cecilia Ruiz
+CASA-59: Casa de Cecilia y Santiago
+CASA-60: Casa de los Quintana Iturralde
+CASA-61: Casa de Doña Patricia Álvarez
+CASA-62: Casa de Fernanda Pérez
+CASA-63: Casa de los Ferreira Acosta
+CASA-64: Casa de Matías Ruiz
+CASA-65: Casa de Don Carlos Castillo
+CASA-66: Casa de los Brito
+CASA-67: Casa de Leonardo Techera
+CASA-68: Casa de Patricia Varela
+CASA-69: Casa de Doña Sofía Sena
+CASA-70: Casa de Agustina Ortiz
+CASA-71: Casa de la abuela Micaela
+CASA-72: Casa de Mario Correa
+CASA-73: Casa de la familia Silva
+CASA-74: Casa de Jorge Varela
+CASA-75: Casa de Ana Carballo
+CASA-76: Casa de Carlos Pintos
+CASA-77: Casa de Silvia Hernández
+CASA-78: Casa de la familia Rocha
+CASA-79: Casa de los Morales Fernández
+CASA-80: Casa de Luis Arbelo
+CASA-81: Casa de Hugo Rodríguez
+CASA-82: Casa de los Fernández
+CASA-83: Casa de los Borges Romero
+CASA-84: Casa de Don Facundo Hernández
+CASA-85: Casa de los Olivera
+CASA-86: Casa de Mario Muniz
+CASA-87: Casa de Micaela y Sebastián
+CASA-88: Casa de Mario Álvarez
+CASA-89: Casa de los Etchegaray Medina
+CASA-90: Casa de los Díaz
+CASA-91: Casa de los Bonilla González
+CASA-92: Casa de los Rivero Viera
+CASA-93: Casa de Carolina Díaz
+CASA-94: Casa de los Varela Bentancor
+CASA-95: Casa de Doña Lorena Bianchi
+CASA-96: Casa de los Sánchez Hernández
+CASA-97: Casa de Graciela Duarte
+CASA-98: Casa de Florencia y Andrés
+CASA-99: Casa de Marcelo Rocha
+CASA-100: Casa de Don Matías Rossi
+CASA-101: Casa de Don Marcelo Benítez
+CASA-102: Casa de Gonzalo Moreira
+CASA-103: Casa de la familia Varela
+CASA-104: Casa de Lorena y Diego
+CASA-105: Casa de los Acosta Núñez
+CASA-106: Casa de Federico Arbelo
+CASA-107: Casa de Facundo Machado
+CASA-108: Casa de los Lombardo Rosano
+CASA-109: Casa de los Larrosa Sánchez
+CASA-110: Casa de Bruno Díaz
+CASA-111: Casa de la familia Silveira
+CASA-112: Casa de los Méndez Gómez
+CASA-113: Casa de Ricardo Rodríguez
+CASA-114: Casa de Andrea y Luis
+CASA-115: Casa del tío Martín
+CASA-116: Casa de los Gómez Viera
+CASA-117: Casa de Florencia Gadea
+CASA-118: Casa de Facundo Silveira
+CASA-119: Chacra de los Silva
+CASA-120: Casa de Joaquín Cabral
+CASA-121: Casa de Nicolás Lima
+CASA-122: Casa de Gonzalo Cardozo
+CASA-123: Casa del tío Ignacio
+CASA-124: Casa de Jorge Muniz
+CASA-125: Casa de los Cardozo
+CASA-126: Casa de Elena y José
+CASA-127: Casa de los Rosano
+CASA-128: Casa de Alicia Cabral
+CASA-129: Casa de los Umpiérrez Borges
+CASA-130: Casa de la abuela Florencia
+CASA-131: Casa de Lucía Ferreira
+CASA-132: Casa de Juan Moreira
+CASA-133: Casa de la familia Fagúndez
+CASA-134: Casa de Carlos Ruiz
+CASA-135: Casa de Nicolás Rossi
+CASA-136: Casa de los Rocha Ortiz
+CASA-137: Casa de los Bianchi Benítez
+CASA-138: Casa de la familia García
+CASA-139: Casa de los Morales
+CASA-140: Casa de la familia Vázquez
+CASA-141: Casa de Andrea Gadea
+CASA-142: Casa de Elena y Leonardo
+CASA-143: Casa de Noelia y Ricardo
+CASA-144: Casa de Teresa y Pablo
+CASA-145: Casa de Don Joaquín Bianchi
+CASA-146: Casa de Luis Ferreira
+CASA-147: Casa de Mario Vázquez
+CASA-148: Casa de la familia Bonilla
+CASA-149: Casa de los González Bianchi
+CASA-150: Casa del tío Mario
+CASA-151: Casa de los Nieves Álvarez
+CASA-152: Casa de la familia Gómez
+CASA-153: Casa de la familia Camacho
+CASA-154: Casa de la abuela Lorena
+CASA-155: Casa de Florencia Cardozo
+CASA-156: Casa de Andrés Larrosa
+CASA-157: Casa de Pablo Suárez
+CASA-158: Casa de la familia González
+CASA-159: Casa de los Ortiz Borges
+CASA-160: Casa de los Hernández Camacho
+CASA-161: Casa de los Píriz Bianchi
+CASA-162: Casa de Mariana Martínez
+CASA-163: Casa de Paula Martirena
+CASA-164: Casa de los Hernández
+CASA-165: Casa de Paula Ruiz
+CASA-166: Casa de la familia Álvarez
+CASA-167: Casa de Gustavo Muniz
+CASA-168: Casa de los Suárez Dutra
+CASA-169: Casa de los Fernández Vázquez
+CASA-170: Casa de la familia Martirena
+CASA-171: Casa de los Fagúndez
+CASA-172: Casa de Beatriz Techera
+CASA-173: Casa de los Fernández Lima
+CASA-174: Casa de Paula Silveira
+CASA-175: Casa del tío Sebastián
+CASA-176: Casa de Andrea y Bruno
+CASA-177: Casa de Mariana Ferreira
+CASA-178: Casa de Ricardo Suárez
+CASA-179: Casa de Graciela Brito
+CASA-180: Casa de Nicolás Bentancor
+CASA-181: Casa de la familia Machado
+CASA-182: Casa de Sofía Lemos
+CASA-183: Casa de Doña Alicia García
+CASA-184: Casa de Doña Carolina Méndez
+CASA-185: Casa de Gonzalo Rocha
+CASA-186: Casa de los Núñez
+CASA-187: Casa de los Lombardo Sena
+CASA-188: Casa de los Núñez Ramos
+CASA-189: Casa de Laura Barreto
+CASA-190: Casa de los Duarte Romero
+CASA-191: Casa de los Duarte Díaz
+CASA-192: Chacra de los Quintana
+CASA-193: Casa de Carolina Ferrari
+CASA-194: Casa de los Olivera Umpiérrez
+CASA-195: Casa de Lucía Rossi
+CASA-196: Casa de Doña Lucía Pintos
+CASA-197: Casa de Fernanda y Gonzalo
+CASA-198: Casa de los Varela Brito
+CASA-199: Casa de la familia Cabral
+CASA-200: Casa de Martín Benítez
+CASA-201: Casa de los Clavijo Martirena
+CASA-202: Casa de Lorena Nieves
+CASA-203: Casa de Hugo Brito
+CASA-204: Casa de Andrés Pérez
+CASA-205: Casa de Hugo Ramos
+CASA-206: Casa de Doña Natalia Iturralde
+CASA-207: Casa de la abuela Elena
+CASA-208: Casa de los Martirena
+CASA-209: Casa de los Cabrera
+CASA-210: Casa de Valentina y José
+CASA-211: Casa de los Clavijo Torres
+CASA-212: Casa de Don Jorge Ruiz
+CASA-213: Casa de Doña Patricia Fernández
+CASA-214: Casa de Ana Fleitas
+CASA-215: Casa de Elena y Martín
+CASA-216: Casa de Doña Rosa Iturralde
+CASA-217: Casa de Andrés Álvarez
+CASA-218: Casa de Don Daniel Machado
+CASA-219: Casa de los Bentancor Lima
+CASA-220: Casa de Carolina y Rodrigo
+CASA-221: Casa de José Fagúndez
+CASA-222: Casa de Cecilia Lemos
+CASA-223: Casa de los Núñez Martirena
+CASA-224: Casa de los López Borges
+CASA-225: Casa de Jorge Borges
+CASA-226: Casa de Marta y Bruno
+CASA-227: Casa de los Carballo García
+CASA-228: Casa de Federico Sena
+CASA-229: Casa de Don Álvaro Píriz
+CASA-230: Chacra de los Machado
+CASA-231: Casa de los Romero López
+CASA-232: Casa del tío José
+CASA-233: Casa de Federico Bonilla
+CASA-234: Casa de los Fernández Núñez
+CASA-235: Casa de la familia Benítez
+CASA-236: Casa de Graciela y Ignacio
+CASA-237: Casa de Carlos Lombardo
+CASA-238: Casa de la abuela Cecilia
+CASA-239: Casa de Gabriela Etchegaray
+CASA-240: Casa de la familia Pereira
+CASA-241: Casa de Florencia Sena
+CASA-242: Casa del tío Gonzalo
+CASA-243: Casa de los Bianchi Hernández
+CASA-244: Casa de los Pereira Correa
+CASA-245: Casa de los Clavijo Bianchi
+CASA-246: Casa de los Ferreira
+CASA-247: Casa de los Pérez Rivero
+CASA-248: Casa de Gabriela Bianchi
+CASA-249: Casa de los Clavijo Larrosa
+CASA-250: Casa de Paula Rivero
+CASA-251: Casa de Daniel Lemos
+CASA-252: Casa de Doña Cecilia Morales
+CASA-253: Casa de Doña Carolina Ortiz
+CASA-254: Casa de los Correa
+CASA-255: Casa de los Castillo Camacho
+CASA-256: Casa de Andrés Romero
+CASA-257: Casa de Don Juan Martínez
+CASA-258: Casa de Elena Clavijo
+CASA-259: Casa de los López
+CASA-260: Casa de Lucía y José
+CASA-261: Casa de los Ferreira Lima
+CASA-262: Casa de Andrea y Hugo
+CASA-263: Casa del tío Álvaro
+CASA-264: Casa de Don Federico Duarte
+CASA-265: Casa de Andrea Cuello
+CASA-266: Casa de Ana y Alberto
+CASA-267: Casa de Alberto Méndez
+CASA-268: Casa de la familia Gadea
+CASA-269: Casa de Andrés Morales
+CASA-270: Casa de los Martínez
+CASA-271: Casa de la familia Brito
+CASA-272: Casa de Sofía y Ignacio
+CASA-273: Casa de la familia Ramos
+CASA-274: Casa de los Camacho Lombardo
+CASA-275: Casa de Don Mario Cardozo
+CASA-276: Casa de los Rosano Cardozo
+CASA-277: Casa de Laura Quintana
+CASA-278: Casa de Lucía Giménez
+CASA-279: Casa de Facundo Álvarez
+CASA-280: Casa de Doña Lorena García
+CASA-281: Casa de la familia Díaz
+CASA-282: Casa de Facundo Marrero
+CASA-283: Casa de la familia Rodríguez
+CASA-284: Casa de los Méndez
+CASA-285: Casa de Lorena Rivero
+CASA-286: Casa de los Quintana Rivero
+CASA-287: Casa de Natalia y Alberto
+CASA-288: Casa de Alicia Acosta
+CASA-289: Casa de Mario Medina
+CASA-290: Casa de los Lombardo Machado
+CASA-291: Casa de Cecilia Moreira
+CASA-292: Casa de Sebastián Méndez
+CASA-293: Casa de Santiago Lemos
+CASA-294: Casa de Paula Bonilla
+CASA-295: Casa de Daniel Sosa
+CASA-296: Casa de Alicia Carballo
+CASA-297: Casa de la familia Martínez
+CASA-298: Casa de Silvia Larrosa
+CASA-299: Casa de los Umpiérrez
+CASA-300: Casa de los Méndez Pintos
+CASA-301: Casa de la familia Larrosa
+CASA-302: Casa de los Pintos Rodríguez
+CASA-303: Casa de Joaquín Rossi
+CASA-304: Casa de Carlos Rodríguez
+CASA-305: Casa de Patricia Álvarez
+CASA-306: Casa de Mónica Moreira
+CASA-307: Casa de los Clavijo
+CASA-308: Casa de Rosa Lombardo
+CASA-309: Casa de Natalia Píriz
+CASA-310: Casa de Noelia Larrosa
+CASA-311: Casa de la familia Sosa
+CASA-312: Casa de los Ruiz
+CASA-313: Casa de Federico Correa
+CASA-314: Casa de Valentina Ruiz
+CASA-315: Casa de Beatriz Dutra
+CASA-316: Chacra de los Correa
+CASA-317: Casa de Doña Marta Ferrari
+CASA-318: Casa de Doña Paula Correa
+CASA-319: Casa de Don Bruno Díaz
+CASA-320: Casa de Camila Ferrari
+CASA-321: Casa de Don Diego Fernández
+CASA-322: Casa de Doña Laura Etchegaray
+CASA-323: Casa de Doña Micaela Olivera
+CASA-324: Casa de Sebastián Acosta
+CASA-325: Casa del tío Carlos
+CASA-326: Casa de Ricardo Ferrari
+CASA-327: Casa de Facundo Bentancor
+CASA-328: Casa de Paula y Mario
+CASA-329: Casa de la abuela Camila
+CASA-330: Casa de Don Ricardo Silva
+CASA-331: Casa de los Viera Martirena
+CASA-332: Casa de los Moreira
+CASA-333: Casa de los Álvarez
+CASA-334: Casa de Ana López
+CASA-335: Casa de Martín Techera
+CASA-336: Casa de la familia Morales
+CASA-337: Casa del tío Federico
+CASA-338: Casa de los Acosta Viera
+CASA-339: Casa de los Rosano Píriz
+CASA-340: Casa de Fernanda Cuello
+CASA-341: Casa de los Etchegaray Sena
+CASA-342: Casa de Rodrigo Martínez
+CASA-343: Casa de Andrés Núñez
+CASA-344: Casa de los Lombardo
+CASA-345: Casa de la familia Ortiz
+CASA-346: Casa de Florencia Pintos
+CASA-347: Casa de Doña Noelia Silveira
+CASA-348: Casa de los Gadea Quintana
+CASA-349: Chacra de los Ortiz
+CASA-350: Casa de Inés y Andrés
+CASA-351: Casa de Marcelo Martirena
+CASA-352: Casa de los Díaz Clavijo
+CASA-353: Casa de Doña Beatriz Rosano
+CASA-354: Casa de Rosa y Gonzalo
+CASA-355: Casa de Hugo Machado
+CASA-356: Casa de Hugo Dutra
+CASA-357: Casa de los Fagúndez Álvarez
+CASA-358: Casa de Martín Lima
+CASA-359: Casa de Don Bruno Pereira
+CASA-360: Casa de Gabriela Ramos
+CASA-361: Casa de los Carballo
+CASA-362: Casa de Daniel Muniz
+CASA-363: Casa de los Etchegaray
+CASA-364: Casa de la familia Castillo
+CASA-365: Chacra de los Cabrera
+CASA-366: Casa de los Sosa
+CASA-367: Casa de los Machado Sosa
+CASA-368: Casa de los Torres Cabral
+CASA-369: Casa de Florencia Ferrari
+CASA-370: Casa de los Cabral Fernández
+CASA-371: Casa de Agustina y Álvaro
+CASA-372: Casa de la familia Borges
+CASA-373: Casa de la familia Giménez
+CASA-374: Casa de Florencia Bianchi
+CASA-375: Casa de los Núñez Rossi
+CASA-376: Casa de los Olivera Rossi
+CASA-377: Casa de Don Ricardo Barreto
+CASA-378: Casa de José Brito
+CASA-379: Casa de los Barreto Nieves
+CASA-380: Casa de Juan Lima
+CASA-381: Casa de Juan Méndez
+CASA-382: Casa de Doña Silvia Castillo
+CASA-383: Casa de los Bentancor
+CASA-384: Casa de Don Matías Ferreira
+CASA-385: Casa de Doña Inés López
+CASA-386: Casa de los Acosta Álvarez
+CASA-387: Casa de Bruno Dutra
+CASA-388: Chacra de los Hernández
+CASA-389: Casa de Laura García
+CASA-390: Casa de Mario Cabrera
+CASA-391: Casa de Sofía Cabrera
+CASA-392: Casa de los Ramos Varela
+CASA-393: Casa de los Lemos
+CASA-394: Casa de los Quintana
+CASA-395: Casa de Marta Sánchez
+CASA-396: Casa de Cecilia Rodríguez
+CASA-397: Casa de los Torres Gómez
+CASA-398: Casa de Don Luis Núñez
+CASA-399: Casa de los Lombardo Clavijo
+CASA-400: Casa de los Castro
+CASA-401: Casa de los Castro Díaz
+CASA-402: Casa de los Bonilla Nieves
+CASA-403: Casa de Santiago Álvarez
+CASA-404: Casa de los Álvarez Umpiérrez
+CASA-405: Casa de los Medina
+CASA-406: Casa de Facundo Núñez
+CASA-407: Casa de los Giménez Dutra
+CASA-408: Casa de los Viera Suárez
+CASA-409: Casa de Mariana Varela
+CASA-410: Casa de Silvia Vázquez
+CASA-411: Casa de Don Ignacio Castro
+CASA-412: Casa de Alicia Quintana
+CASA-413: Casa de Micaela y Gonzalo
+CASA-414: Casa de Elena Muniz
+CASA-415: Casa de Don Federico Sena
+CASA-416: Casa de Noelia y Facundo
+CASA-417: Casa de Doña Gabriela Álvarez
+CASA-418: Casa de la familia Clavijo
+CASA-419: Casa de Doña Valentina Nieves
+CASA-420: Casa de Paula y José
+CASA-421: Casa de Ana González
+CASA-422: Casa de Patricia Camacho
+CASA-423: Casa de la familia Hernández
+CASA-424: Casa de los Romero
+CASA-425: Casa de la familia Viera
+CASA-426: Casa de Don Jorge Clavijo
+CASA-427: Casa de Santiago Sánchez
+CASA-428: Casa de Teresa y Luis
+CASA-429: Casa de Micaela Rodríguez
+CASA-430: Casa de los Gómez Benítez
+CASA-431: Casa de José Lemos
+CASA-432: Casa de Álvaro Lima
+CASA-433: Casa de Patricia y Ignacio
+CASA-434: Casa de Don Leonardo Olivera
+CASA-435: Casa de Teresa Núñez
+CASA-436: Casa de la familia Rivero
+CASA-437: Casa de los Torres
+CASA-438: Casa de Valentina Sena
+CASA-439: Casa de Micaela Marrero
+CASA-440: Casa de Rosa Castillo
+CASA-441: Casa de Don Pablo Dutra
+CASA-442: Casa de Andrés Arbelo
+CASA-443: Casa de los Giménez
+CASA-444: Casa de Marta y Matías
+CASA-445: Casa de Diego Muniz
+CASA-446: Casa de los Olivera Techera
+CASA-447: Casa de Pablo Cardozo
+CASA-448: Casa de Hugo Castillo
+CASA-449: Chacra de los Brito
+CASA-450: Casa de los López Clavijo
+CASA-451: Casa de Facundo Cardozo
+CASA-452: Casa de los Clavijo Sosa
+CASA-453: Casa de Don Marcelo Arbelo
+CASA-454: Casa de los Cuello Benítez
+CASA-455: Casa de Silvia y Carlos
+CASA-456: Casa de Sofía Acosta
+CASA-457: Casa de Álvaro Píriz
+CASA-458: Casa de los Cardozo Moreira
+CASA-459: Casa de Lucía Umpiérrez
+CASA-460: Casa de los Cuello Rodríguez
+CASA-461: Casa de Lorena Marrero
+CASA-462: Casa de Teresa Suárez
+CASA-463: Casa de los Martirena Ramos
+CASA-464: Casa de Ana Morales
+CASA-465: Casa de Pablo Lombardo
+CASA-466: Casa de la familia Rossi
+CASA-467: Casa de los Sánchez
+CASA-468: Casa de los Benítez
+CASA-469: Casa de los Cardozo Borges
+CASA-470: Casa de la familia Sánchez
+CASA-471: Casa de los Techera
+CASA-472: Casa de Daniel Martirena
+CASA-473: Casa de Teresa y Diego
+CASA-474: Casa de los Brito Suárez
+CASA-475: Casa de los Bentancor Medina
+CASA-476: Casa de los Viera
+CASA-477: Casa de la familia Etchegaray
+CASA-478: Casa de los Rosano Medina
+CASA-479: Casa de José Varela
+CASA-480: Casa de la abuela Laura
+CASA-481: Casa de los Acosta
+CASA-482: Casa de Ana Gómez
+CASA-483: Casa de Doña Camila Rodríguez
+CASA-484: Casa de Doña Natalia Dutra
+CASA-485: Casa de los García
+CASA-486: Casa de los Silva
+CASA-487: Casa de Hugo Sánchez
+CASA-488: Casa de la familia Rosano
+CASA-489: Casa de Mario Gómez
+CASA-490: Casa de los Rocha Lombardo
+CASA-491: Casa de Marcelo Suárez
+CASA-492: Casa de Fabián Cardozo
+CASA-493: Casa de los Rocha Hernández
+CASA-494: Casa de Graciela Castro
+CASA-495: Casa de Sofía Ferrari
+CASA-496: Casa de los Núñez Martínez
+CASA-497: Casa de Marcelo Romero
+CASA-498: Casa de los Borges
+CASA-499: Casa de Beatriz Silveira
+CASA-500: Casa de la familia Dutra
+CASA-501: Casa de los Silveira
+CASA-502: Casa de la familia Ruiz
+CASA-503: Casa de los Rodríguez Muniz
+CASA-504: Casa de los Gómez Pereira
+CASA-505: Casa de los Nieves Castillo
+CASA-506: Casa de la familia Bentancor
+CASA-507: Casa de Fernanda Torres
+CASA-508: Casa de los Ramos Rivero
+CASA-509: Casa de Doña Valentina Romero
+CASA-510: Casa de Gabriela Varela
+CASA-511: Casa de Doña Micaela Torres
+CASA-512: Casa de Facundo Olivera
+CASA-513: Casa de Martín Ruiz
+CASA-514: Casa de Mariana Moreira
+CASA-515: Casa de Micaela Duarte
+CASA-516: Casa de los Pintos
+CASA-517: Casa de los Carballo Lombardo
+CASA-518: Casa de los Moreira Cardozo
+CASA-519: Casa de la familia López
+CASA-520: Casa de Camila Ferreira
+CASA-521: Casa de la familia Pérez
+CASA-522: Casa de los Méndez Clavijo
+CASA-523: Casa de Rosa Sena
+CASA-524: Casa de Noelia Ortiz
+CASA-525: Casa de los Núñez Moreira
+CASA-526: Casa de los Dutra Umpiérrez
+CASA-527: Casa de los Lima Machado
+CASA-528: Casa de los Ruiz Martirena
+CASA-529: Casa de los Rodríguez Rosano
+CASA-530: Casa de los Viera Dutra
+CASA-531: Casa de Facundo Martínez
+CASA-532: Casa de los Ramos
+CASA-533: Casa de los Nieves
+CASA-534: Casa de Don Bruno Quintana
+CASA-535: Casa de los García López
+CASA-536: Casa de Álvaro Romero
+CASA-537: Casa de Doña Micaela Moreira
+CASA-538: Casa de Inés Hernández
+CASA-539: Casa de Don Rodrigo Sánchez
+CASA-540: Casa de los Quintana Larrosa
+CASA-541: Casa de Gabriela y José
+CASA-542: Casa de Alicia Bonilla
+CASA-543: Casa de Ignacio Nieves
+CASA-544: Casa de Ana Ruiz
+CASA-545: Chacra de los Medina
+CASA-546: Casa de Don Federico Ruiz
+CASA-547: Casa de los Brito Borges
+CASA-548: Casa de Alberto Rodríguez
+CASA-549: Casa de Andrea Silva
+CASA-550: Casa de Marta Pereira
+CASA-551: Casa de los Acosta Cuello
+CASA-552: Casa de los Vázquez Sosa
+CASA-553: Casa de Matías Castro
+CASA-554: Casa de los Ruiz Ramos
+CASA-555: Casa de Daniel Olivera
+CASA-556: Casa de Ignacio Núñez
+CASA-557: Casa de la familia Fernández
+CASA-558: Casa de Doña Teresa Morales
+CASA-559: Chacra de los Dutra
+CASA-560: Casa de Laura Ramos
+CASA-561: Casa de Inés Lemos
+CASA-562: Casa de Florencia y Pablo
+CASA-563: Casa de los Muniz Dutra
+CASA-564: Casa de Carolina Acosta
+CASA-565: Casa de Doña Mónica Bentancor
+CASA-566: Casa de Carlos Píriz
+CASA-567: Casa de los Lima
+CASA-568: Casa de los Vázquez Giménez
+CASA-569: Casa de Agustina Pérez
+CASA-570: Casa de los Píriz Ruiz
+CASA-571: Casa de los Larrosa
+CASA-572: Casa de Lucía y Juan
+CASA-573: Casa de Juan Morales
+CASA-574: Casa de Mónica Marrero
+CASA-575: Casa de Andrea López
+CASA-576: Casa de Matías Dutra
+CASA-577: Casa de Ricardo Gadea
+CASA-578: Casa de los Cabral Bianchi
+CASA-579: Casa de Juan Nieves
+CASA-580: Casa de Marcelo Rossi
+CASA-581: Casa de Santiago Carballo
+CASA-582: Casa de los Machado
+CASA-583: Casa de los Fagúndez Martínez
+CASA-584: Casa de los García Cabrera
+CASA-585: Casa de Doña Laura Sena
+CASA-586: Casa de Don Carlos Rocha
+CASA-587: Casa de Silvia Ortiz
+CASA-588: Casa de Don Andrés Iturralde
+CASA-589: Casa de Don Ignacio Suárez
+CASA-590: Casa de los Torres Dutra
+CASA-591: Casa de Don Diego Barreto
+CASA-592: Casa de Bruno Barreto
+CASA-593: Casa de los Silva Ramos
+CASA-594: Casa de Beatriz Gómez
+CASA-595: Casa de Ignacio Bianchi
+CASA-596: Casa de los Lemos Iturralde
+CASA-597: Casa de Elena Cabral
+CASA-598: Casa de Lorena Suárez
+CASA-599: Casa de la familia Moreira
+CASA-600: Casa de Andrea y Rodrigo
+CASA-601: Casa de los Ferrari
+CASA-602: Casa de los Suárez Pérez
+CASA-603: Casa de los Bentancor Rosano
+CASA-604: Casa de la familia Marrero
+CASA-605: Casa de Fernanda Techera
+CASA-606: Casa de la familia Sena
+CASA-607: Casa de los Castillo Gómez
+CASA-608: Casa de los Cardozo Morales
+CASA-609: Casa de Andrea Sena
+CASA-610: Casa de Don Ricardo Ramos
+CASA-611: Casa de Micaela Fleitas
+CASA-612: Casa de los Marrero
+CASA-613: Casa de los Cardozo Sosa
+CASA-614: Casa de los Píriz Etchegaray
+CASA-615: Chacra de los Álvarez
+CASA-616: Casa de Sebastián Cuello
+CASA-617: Casa de los Barreto Rossi
+CASA-618: Casa de Don Martín Rossi
+CASA-619: Casa de Micaela y Facundo
+CASA-620: Casa de Doña Silvia Benítez
+CASA-621: Casa de Beatriz Ferreira
+CASA-622: Casa de los Moreira Morales
+CASA-623: Casa de los Larrosa Bianchi
+CASA-624: Casa de Marta y Gonzalo
+CASA-625: Casa de los Gadea Correa
+CASA-626: Casa de Don Matías Martirena
+CASA-627: Casa de Patricia y Álvaro
+CASA-628: Casa de los Rosano Morales
+CASA-629: Casa de Andrea Ortiz
+CASA-630: Casa de Jorge Sena
+CASA-631: Casa de Camila y Sebastián
+CASA-632: Casa de los González
+CASA-633: Casa de los Castro Moreira
+CASA-634: Casa de los Olivera Etchegaray
+CASA-635: Casa de los Marrero Carballo
+CASA-636: Casa de Don José Correa
+CASA-637: Casa de Agustina Martínez
+CASA-638: Casa de los Píriz Méndez
+CASA-639: Casa de Beatriz Viera
+CASA-640: Casa de Rosa Gadea
+CASA-641: Casa de los Barreto Duarte
+CASA-642: Casa de Natalia Rivero
+CASA-643: Casa de Nicolás Techera
+CASA-644: Casa de Camila Castro
+CASA-645: Casa de Natalia Carballo
+CASA-646: Casa de Don Jorge Lemos
+CASA-647: Casa de la familia Méndez
+CASA-648: Casa de los Vázquez Moreira
+CASA-649: Casa de Graciela Gadea
+CASA-650: Casa de los Techera Bianchi
+CASA-651: Casa de Diego Castillo
+CASA-652: Casa de Don Rodrigo Camacho
+CASA-653: Casa de los Martínez Vázquez
+CASA-654: Casa de Paula Umpiérrez
+CASA-655: Casa de Sofía y Carlos
+CASA-656: Casa de Natalia Larrosa
+CASA-657: Casa de los Ruiz Hernández
+CASA-658: Casa de Mónica y Leonardo
+CASA-659: Casa de los Bonilla
+CASA-660: Casa de Carolina Hernández
+CASA-661: Casa de Santiago Lima
+CASA-662: Casa de Doña Beatriz Nieves
+CASA-663: Casa de Juan Cabrera
+CASA-664: Casa de Juan Cabral
+CASA-665: Casa de los Cabral
+CASA-666: Casa de Juan Clavijo
+CASA-667: Casa de Don Pablo Gómez
+CASA-668: Casa de Cecilia López
+CASA-669: Casa de Fabián Pérez
+CASA-670: Casa de la familia Arbelo
+CASA-671: Casa de los Arbelo Camacho
+CASA-672: Casa de Florencia Barreto
+CASA-673: Casa de los Vázquez
+CASA-674: Casa de los Rodríguez
+CASA-675: Casa de los Pérez Álvarez
+CASA-676: Casa de Rosa Sánchez
+CASA-677: Casa de los Suárez Píriz
+CASA-678: Casa de Don Pablo Álvarez
+CASA-679: Casa de la familia Correa
+CASA-680: Casa de la familia Lombardo
+CASA-681: Casa de la familia Duarte
+CASA-682: Casa de los Díaz Gadea
+CASA-683: Casa de Luis Bonilla
+CASA-684: Casa de los Gómez González
+CASA-685: Casa de la familia Ferrari
+CASA-686: Casa de los López Núñez
+CASA-687: Casa de Bruno Píriz
+CASA-688: Casa de los Rosano Hernández
+CASA-689: Casa de los Clavijo Cabrera
+CASA-690: Casa de los Torres Castillo
+CASA-691: Casa de los Gómez
+CASA-692: Casa de Noelia Fagúndez
+CASA-693: Casa de Matías Suárez
+CASA-694: Casa de la familia Cardozo
+CASA-695: Casa de Don Luis Sena
+CASA-696: Casa del tío Diego
+CASA-697: Casa de la familia Ferreira
+CASA-698: Casa de la familia Bianchi
+CASA-699: Casa de Jorge Nieves
+CASA-700: Casa de los Martirena Fagúndez
+CASA-701: Casa de Don Andrés Lima
+CASA-702: Casa de los Dutra Cabrera
+CASA-703: Casa de Elena y Ricardo
+CASA-704: Casa de los Borges Torres
+CASA-705: Casa de Mariana Lombardo
+CASA-706: Casa de Doña Lucía Bianchi
+CASA-707: Casa de la familia Carballo
+CASA-708: Casa de los Cardozo Ramos
+CASA-709: Casa de Don Facundo Ruiz
+CASA-710: Casa de Doña Micaela Sena
+CASA-711: Casa de la familia Píriz
+CASA-712: Casa de los Cardozo Ortiz
+CASA-713: Casa de Inés Machado
+CASA-714: Casa de Leonardo Moreira
+CASA-715: Casa de la familia Umpiérrez
+CASA-716: Casa de los Lima Rossi
+CASA-717: Casa de los Pérez Martínez
+CASA-718: Casa del tío Fabián
+CASA-719: Casa de los Borges Álvarez
+CASA-720: Casa de la familia Romero
+CASA-721: Casa de Lucía y Pablo
+CASA-722: Casa de los Clavijo Silveira
+CASA-723: Casa de los Pérez Techera
+CASA-724: Casa de Agustina López
+CASA-725: Casa de Lorena y Joaquín
+CASA-726: Casa de los Bonilla Clavijo
+CASA-727: Casa de los Cuello
+CASA-728: Casa del tío Bruno
+CASA-729: Casa de la familia Castro
+CASA-730: Casa de los Correa Brito
+CASA-731: Casa de Mario Pérez
+CASA-732: Casa de Alberto Romero
+CASA-733: Casa de Doña Camila Fleitas
+CASA-734: Casa de los Lombardo Ortiz
+CASA-735: Casa de los Bianchi
+CASA-736: Casa de Agustina Sosa
+CASA-737: Casa de Teresa Pérez
+CASA-738: Casa de los Viera Borges
+CASA-739: Casa de los Romero Torres
+CASA-740: Casa de Mónica y Facundo
+CASA-741: Casa de la familia Lima
+CASA-742: Casa de Doña Laura Suárez
+CASA-743: Casa de Carlos García
+CASA-744: Casa de Fabián Rosano
+CASA-745: Casa de Mónica Quintana
+CASA-746: Casa de los Iturralde Pereira
+CASA-747: Casa de los Muniz
+CASA-748: Casa de Daniel Medina
+CASA-749: Casa de la familia Muniz
+CASA-750: Casa de Valentina y Ignacio
+CASA-751: Casa de los Ferreira García
+CASA-752: Casa de los Nieves Carballo
+CASA-753: Casa de los Moreira Quintana
+CASA-754: Casa de Doña Rosa Brito
+CASA-755: Casa de Andrea y Carlos
+CASA-756: Casa de los Suárez
+CASA-757: Casa de Alicia Ruiz
+CASA-758: Casa de Bruno Duarte
+CASA-759: Casa de Jorge Sánchez
+CASA-760: Casa de los Pereira
+CASA-761: Casa de los Cuello Cabrera
+CASA-762: Casa de los Fernández Sena
+CASA-763: Casa de los Acosta Dutra
+CASA-764: Casa de la familia Nieves
+CASA-765: Casa de los Lombardo Fagúndez
+CASA-766: Casa de Don Daniel Muniz
+CASA-767: Casa de los Barreto
+CASA-768: Casa de los Bentancor Larrosa
+CASA-769: Casa de la familia Barreto
+CASA-770: Casa de Carlos Rossi
+CASA-771: Casa de la familia Suárez
+CASA-772: Casa de Don Alberto Cuello
+CASA-773: Casa de la abuela Ana
+CASA-774: Casa del tío Juan
+CASA-775: Casa de Rosa y Alberto
+CASA-776: Casa de los Dutra
+CASA-777: Casa de Federico Suárez
+CASA-778: Casa de los Moreira Bentancor
+CASA-779: Casa de Don Gonzalo García
+CASA-780: Casa de Gabriela y Carlos
+CASA-781: Casa de Marcelo Olivera
+CASA-782: Casa de los Castillo
+CASA-783: Casa de Florencia Benítez
+CASA-784: Casa de Federico Silveira
+CASA-785: Casa de Patricia Carballo
+CASA-786: Casa de la familia Torres
+CASA-787: Casa de Rosa Nieves
+CASA-788: Casa de la familia Iturralde
+CASA-789: Casa de Martín Viera
+CASA-790: Casa de los Romero Olivera
+CASA-791: Casa de la familia Lemos
+CASA-792: Casa de los Suárez Romero
+CASA-793: Casa de Fernanda Carballo
+CASA-794: Casa de Joaquín Gómez
+CASA-795: Casa de los Iturralde
+CASA-796: Casa de los Correa Torres
+CASA-797: Casa de Ignacio Ferreira
+CASA-798: Casa de los Techera Rosano
+CASA-799: Casa de Doña Agustina Bentancor
+CASA-800: Casa de los Vázquez Pérez
+CASA-801: Casa de Doña Valentina Umpiérrez
+CASA-802: Casa de los Lombardo Cuello
+CASA-803: Casa de Mónica Techera
+CASA-804: Casa de los Cardozo Romero
+CASA-805: Casa de los Duarte
+CASA-806: Casa de Facundo Cabrera
+CASA-807: Casa de Teresa Fagúndez
+CASA-808: Casa de Doña Micaela Ruiz
+CASA-809: Casa de los Rocha Brito
+CASA-810: Casa de los Camacho
+CASA-811: Casa de los Clavijo Olivera
+CASA-812: Casa de Don Leonardo Umpiérrez
+CASA-813: Casa de Marcelo Morales
+CASA-814: Casa de Doña Agustina Lima
+CASA-815: Casa de Don Carlos Moreira
+CASA-816: Casa de los Sena Umpiérrez
+CASA-817: Casa de Paula Pereira
+CASA-818: Casa de los Brito Silveira
+CASA-819: Casa de los Fleitas
+CASA-820: Casa de los Bonilla Sosa
+CASA-821: Casa de Federico Pintos
+CASA-822: Casa de Don Nicolás Bianchi
+CASA-823: Casa de los Varela
+CASA-824: Casa de los Sena
+CASA-825: Casa de Don Gustavo Giménez
+CASA-826: Casa de la familia Pintos
+CASA-827: Casa de los Silva Clavijo
+CASA-828: Casa de los Duarte Lemos
+CASA-829: Casa de los Rodríguez Giménez
+CASA-830: Casa de Natalia y Ignacio
+CASA-831: Casa de Sofía y Facundo
+CASA-832: Casa de Federico Dutra
+CASA-833: Casa de los Camacho Cabral
+CASA-834: Casa de los Cardozo Fagúndez
+CASA-835: Casa de Matías Pintos
+CASA-836: Casa de Ignacio Varela
+CASA-837: Casa de Micaela Rosano
+CASA-838: Casa de los Silva Nieves
+CASA-839: Casa de Gabriela Machado
+CASA-840: Casa de Don Alberto Martínez
+CASA-841: Casa de la familia Techera
+CASA-842: Casa de Patricia y Andrés
+CASA-843: Casa de la familia Núñez
+CASA-844: Casa de Rosa Castro
+CASA-845: Casa de la familia Fleitas
+CASA-846: Casa de Carlos Pérez
+CASA-847: Casa de Lucía y Federico
+CASA-848: Casa de Andrés Píriz
+CASA-849: Casa de los Ferreira Vázquez
+CASA-850: Casa de Rosa Fernández
+CASA-851: Casa de Facundo Romero
+CASA-852: Casa de los Sosa Arbelo
+CASA-853: Casa de los Cabral Acosta
+CASA-854: Casa de Lucía Pintos
+CASA-855: Casa de Matías Rosano
+CASA-856: Casa de Noelia y Pablo
+CASA-857: Casa de Doña Ana Castillo
+CASA-858: Casa de los Gadea
+CASA-859: Casa de Luis Brito
+CASA-860: Casa de Doña Gabriela Techera
+CASA-861: Casa de Facundo Díaz
+CASA-862: Casa de Don Santiago Cabrera
+CASA-863: Casa de Sebastián Rocha
+CASA-864: Casa de Mariana Cabral
+CASA-865: Casa de Mónica Fernández
+CASA-866: Casa de los Pérez
+CASA-867: Casa de los Píriz
+CASA-868: Casa de Don Facundo Moreira
+CASA-869: Casa de los Rivero
+CASA-870: Casa de Pablo Fagúndez
+CASA-871: Casa de los Fagúndez Suárez
+CASA-872: Casa de Jorge Gadea
+HOSP-01: Policlínica Barrio Sur
+HOSP-02: Policlínica del Cerro
+HOSP-03: Policlínica de la Teja
+HOSP-04: Policlínica de Malvín Norte
+HOSP-05: Policlínica del Prado
+HOSP-06: Policlínica de Colón
+HOSP-07: Policlínica de Sayago
+HOSP-08: Policlínica de Piedras Blancas
+HOSP-09: Policlínica del Buceo
+HOSP-10: Policlínica de Casavalle
+HOSP-11: Policlínica de Maroñas
+HOSP-12: Policlínica de la Unión
+HOSP-13: Policlínica de Pocitos
+HOSP-14: Policlínica del Paso de la Arena
+HOSP-15: Policlínica de Punta de Rieles
+HOSP-16: Centro de Salud de Peñarol
+HOSP-17: Centro de Salud de Belvedere
+HOSP-18: Centro de Salud de Nuevo París
+HOSP-19: Centro de Salud Barrio Sur
+HOSP-20: Centro de Salud del Cerro
+HOSP-21: Centro de Salud de la Teja
+HOSP-22: Centro de Salud de Malvín Norte
+HOSP-23: Centro de Salud del Prado
+HOSP-24: Centro de Salud de Colón
+HOSP-25: Centro de Salud de Sayago
+HOSP-26: Hospital del Prado
+HOSP-27: Hospital del Este
+HOSP-28: Hospital del Oeste
+HOSP-29: Hospital del Norte
+HOSP-30: Hospital de la Costa
+HOSP-31: Sanatorio del Centro
+HOSP-32: Sanatorio La Aurora
+HOSP-33: Sanatorio Las Acacias
+HOSP-34: Emergencia Móvil del Cordón
+HOSP-35: Policlínica Municipal Goes
+HOSP-36: Clínica Odontológica Escolar
+HOSP-37: Centro de Rehabilitación Sur
+HOSP-38: Hospital Pediátrico del Parque
+HOSP-39: Vacunatorio de Tres Cruces
+HOSP-40: Policlínica del Cordón

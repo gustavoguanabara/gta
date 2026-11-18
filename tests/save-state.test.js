@@ -53,9 +53,9 @@ test('salva, carrega e limpa estado do jogo e inventário com escopo por histór
 });
 
 test('formatContinueLabel exibe missão atual ou modo livre', () => {
-  assert.equal(formatContinueLabel(null), 'Entrar na Cidade');
-  assert.equal(formatContinueLabel({ currentMissionIndex: 1, freeRoamMode: false }), 'Continuar (Missão 2)');
-  assert.equal(formatContinueLabel({ currentMissionIndex: 4, freeRoamMode: true }), 'Continuar (Modo Livre)');
+  assert.equal(formatContinueLabel(null), 'Entrar a la ciudad');
+  assert.equal(formatContinueLabel({ currentMissionIndex: 1, freeRoamMode: false }), 'Continuar (Misión 2)');
+  assert.equal(formatContinueLabel({ currentMissionIndex: 4, freeRoamMode: true }), 'Continuar (modo libre)');
 });
 
 test('persiste missões desbloqueadas e mantém apenas a primeira missão no novo jogo', () => {
@@ -89,4 +89,17 @@ test('persiste missões desbloqueadas e mantém apenas a primeira missão no nov
   }));
   const loadedLegacy = loadGameState('Missão Vibe Coding', storage);
   assert.deepEqual(loadedLegacy.unlockedMissionIndices, [0, 1, 2]);
+});
+
+test('el guardado conserva bitcoin y misiones extra cumplidas', async () => {
+  const { createSaveSnapshot, saveGameState, loadGameState } = await import('../src/core/save-state.js');
+  const data = new Map();
+  const storage = { getItem: (k) => data.get(k) ?? null, setItem: (k, v) => data.set(k, v), removeItem: (k) => data.delete(k) };
+  const snap = createSaveSnapshot({ storyKey: 'x', bitcoin: 42.7, completedEncounterIds: ['a', 'a', 'b'], player: { x: 1, y: 2 } });
+  assert.equal(snap.bitcoin, 42);
+  assert.deepEqual(snap.completedEncounterIds, ['a', 'b']);
+  saveGameState(snap, storage);
+  const loaded = loadGameState('x', storage);
+  assert.equal(loaded.bitcoin, 42);
+  assert.deepEqual(loaded.completedEncounterIds, ['a', 'b']);
 });

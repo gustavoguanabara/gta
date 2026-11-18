@@ -10,6 +10,7 @@ import {
   parseCharacterMarkdown,
   parseMissionMarkdown,
   parseEncounterMarkdown,
+  parseStreetEventMarkdown,
   parseMapMarkdown,
   replaceLocationCodesWithNames,
   validateAssetPath,
@@ -40,55 +41,67 @@ test('carrega e valida o pacote de história de exemplo completo contra a cidade
   const cityMap = new CityMap();
   const manifest = parseStoryManifest(fs.readFileSync(path.join(storyDir, 'story.md'), 'utf8'), 'story.md');
 
-  assert.equal(manifest.title, 'GTA: Missão Vibe Coding');
+  assert.equal(manifest.title, 'Expedición CC · Modo Ciudad');
   assert.ok(manifest.characters.length >= 3);
-  assert.ok(manifest.missions.length >= 2);
 
   for (const charId of manifest.characters) {
     const raw = fs.readFileSync(path.join(storyDir, 'characters', `${charId}.md`), 'utf8');
     const charDef = parseCharacterMarkdown(raw, `characters/${charId}.md`);
     assert.equal(charDef.id, charId);
-    assert.ok(charDef.sprites.top);
-    assert.ok(charDef.sprites.front);
-    assert.ok(charDef.sprites.left);
-    assert.ok(charDef.sprites.right);
+    for (const view of ['top', 'front', 'left', 'right']) {
+      assert.ok(charDef.sprites[view]);
+      assert.ok(fs.existsSync(path.join(storyDir, charDef.sprites[view])), `Sprite ausente: ${charDef.sprites[view]}`);
+    }
   }
 
-  const m1 = parseMissionMarkdown(
-    fs.readFileSync(path.join(storyDir, 'missions', '01-caixa-secreta.md'), 'utf8'),
-    'missions/01-caixa-secreta.md',
-    cityMap
-  );
-  assert.equal(m1.startLocation, 'CASA-01');
-  assert.equal(m1.targetLocation, 'COM-320');
-  assert.ok(m1.introCutscene.steps.length >= 2);
-  const choiceStep = m1.introCutscene.steps.find((s) => s.choices?.length);
-  assert.ok(choiceStep);
-  assert.equal(choiceStep.choices.length, 3);
-  assert.ok(choiceStep.choices.every((c) => c.outcome === 'next'));
-  assert.ok(m1.outroCutscene.steps.some((step) => step.type === 'deliver' && step.itemId === 'caixa-secreta'));
-
-  assert.equal(manifest.missions.length, 5);
+  assert.equal(manifest.missions.length, 7);
   assert.equal(manifest.collectibles.length, 12);
+
+  const codes = new Set();
+  const letters = [];
+  for (const missionId of manifest.missions) {
+    const m = parseMissionMarkdown(
+      fs.readFileSync(path.join(storyDir, 'missions', `${missionId}.md`), 'utf8'),
+      `missions/${missionId}.md`,
+      cityMap,
+    );
+    assert.ok(m.introCutscene.steps.length >= 1, missionId);
+    assert.ok(m.outroCutscene.steps.length >= 3, missionId);
+    assert.ok(!codes.has(m.targetLocation), `Destino repetido: ${m.targetLocation}`);
+    codes.add(m.targetLocation);
+    if (m.roofLogo) assert.ok(fs.existsSync(path.join(storyDir, m.roofLogo)), `Logo ausente: ${m.roofLogo}`);
+
+    // Toda pergunta tem exatamente uma resposta CORRECTO e os links locais existem.
+    for (const step of m.outroCutscene.steps) {
+      if (step.choices?.some((c) => c.outcome === 'retry')) {
+        assert.equal(step.choices.filter((c) => c.outcome === 'next' && c.feedback).length, 1, missionId);
+      }
+      if (step.link?.relative) {
+        assert.ok(fs.existsSync(path.join(storyDir, step.link.url)), `Página ausente: ${step.link.url}`);
+      }
+      if (step.type === 'video') {
+        assert.ok(fs.existsSync(path.join(storyDir, step.url)), `Video ausente: ${step.url} (corran npm run render:all en video/)`);
+        assert.ok(step.transcript.length > 0, `Video sin falas: ${step.url}`);
+      }
+    }
+    if (m.rewardItem) {
+      const item = parseItemMarkdown(
+        fs.readFileSync(path.join(storyDir, 'items', `${m.rewardItem}.md`), 'utf8'),
+        `items/${m.rewardItem}.md`,
+      );
+      letters.push(item.name.slice(-1));
+    }
+  }
+  // As letras dos seis cofres formam a palavra secreta.
+  assert.equal(letters.length, 6);
+  assert.equal([...letters].sort().join(''), [...'FUTURO'].sort().join(''));
+
   const disqueteItem = parseItemMarkdown(
     fs.readFileSync(path.join(storyDir, 'items', 'disquete.md'), 'utf8'),
     'items/disquete.md'
   );
   assert.equal(disqueteItem.category, 'extra');
   assert.equal(disqueteItem.rarity, 'especial');
-  const caixaItem = parseItemMarkdown(
-    fs.readFileSync(path.join(storyDir, 'items', 'caixa-secreta.md'), 'utf8'),
-    'items/caixa-secreta.md'
-  );
-  assert.equal(caixaItem.category, 'missao');
-  const m5 = parseMissionMarkdown(
-    fs.readFileSync(path.join(storyDir, 'missions', '05-chave-do-vibe-coding.md'), 'utf8'),
-    'missions/05-chave-do-vibe-coding.md',
-    cityMap
-  );
-  assert.equal(m5.outroCutscene.leftChar, '');
-  assert.equal(m5.outroCutscene.rightChar, '');
-  assert.equal(m5.outroCutscene.background, 'splash/splash-end.png');
 });
 
 test('rejeita caminhos de assets externos ou com traversal', () => {
@@ -159,9 +172,10 @@ test('map/map.md mapeia todos os locais da cidade e substitui códigos em falas 
   const mapRaw = fs.readFileSync(path.join(storyDir, 'map/map.md'), 'utf8');
   const locationNames = parseMapMarkdown(mapRaw, 'map/map.md');
 
-  assert.equal(locationNames.get('COM-01'), 'Farmácia Bom Preço');
-  assert.equal(locationNames.get('RUA-01'), 'Av. Aurélio Valporto');
-  assert.equal(locationNames.get('CASA-02'), 'Casa do Mauro');
+  assert.equal(locationNames.get('COM-01'), 'Bazar La Tecla');
+  assert.equal(locationNames.get('RUA-01'), 'Av. 18 de Julio');
+  assert.equal(locationNames.get('COM-30'), 'Puerto de partida');
+  assert.equal(locationNames.get('CASA-02'), 'Casa de Doña Camila Sena');
 
   for (const code of cityMap.locationsByCode.keys()) {
     assert.ok(locationNames.has(code), `Código ausente em map/map.md: ${code}`);
@@ -171,7 +185,7 @@ test('map/map.md mapeia todos os locais da cidade e substitui códigos em falas 
   const speech = 'leve essa encomenda para a CASA-02 na RUA-02';
   assert.equal(
     replaceLocationCodesWithNames(speech, locationNames),
-    'leve essa encomenda para a Casa do Mauro na Rua dos Guararapes'
+    'leve essa encomenda para a Casa de Doña Camila Sena na Bv. Artigas'
   );
 });
 
@@ -450,7 +464,7 @@ bg: RUA
     url: 'https://www.cursoemvideo.com/',
   });
   assert.deepEqual(mission.introCutscene.steps[1].link, {
-    label: 'Visualizar o link',
+    label: 'Ver el enlace',
     url: 'https://www.cursoemvideo.com/cursos',
   });
 });
@@ -498,12 +512,12 @@ right: mentor
 test('parseEncounterMarkdown lê encontro extra em construção e rejeita local não edificável', () => {
   const map = new CityMap();
   const sampleDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../story');
-  const raw = fs.readFileSync(path.join(sampleDir, 'missions/extra-casa-hostnet.md'), 'utf-8');
-  const encounter = parseEncounterMarkdown(raw, 'missions/extra-casa-hostnet.md', map);
+  const raw = fs.readFileSync(path.join(sampleDir, 'missions/extra-mesa-inscripciones.md'), 'utf-8');
+  const encounter = parseEncounterMarkdown(raw, 'missions/extra-mesa-inscripciones.md', map);
 
-  assert.equal(encounter.id, 'extra-casa-hostnet');
+  assert.equal(encounter.id, 'extra-mesa-inscripciones');
   assert.ok(encounter.npc);
-  assert.equal(encounter.location, 'CASA-63');
+  assert.equal(encounter.location, 'COM-29');
   assert.match(encounter.roofColor, /^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/);
   assert.ok(encounter.cutscene.steps.length >= 2);
 
@@ -542,4 +556,123 @@ test('parseEncounterMarkdown lê encontro extra em construção e rejeita local 
       ),
     StoryParseError,
   );
+});
+
+test('parseMissionMarkdown entende opções em espanhol com CORRECTO/REINTENTAR e LINK relativo', () => {
+  const mission = parseMissionMarkdown(`---
+id: m-es
+title: Missão em espanhol
+start: CASA-01
+target: COM-02
+reward_item: cofre-x
+roof_color: #00A096
+roof_logo: logos-cursos/web.svg
+---
+## CUTSCENE_FIM
+left: prota
+right: mentor
+- mentor: Abran el laboratorio.
+- LINK: Abrir laboratorio -> puzzles/web.html
+- mentor: ¿Qué código les dio?
+- OPCION: ETIQUETA -> CORRECTO: ¡Ese es!
+- OPCIÓN: BUCLE -> REINTENTAR: Ese es de otra isla.
+- OPCION: Salir -> SIGUIENTE
+- OPCION: Volver -> ATRAS
+`, 'm-es.md');
+
+  assert.equal(mission.rewardItem, 'cofre-x');
+  assert.equal(mission.roofColor, '#00A096');
+  assert.equal(mission.roofLogo, 'logos-cursos/web.svg');
+  const steps = mission.outroCutscene.steps;
+  assert.deepEqual(steps[0].link, { label: 'Abrir laboratorio', url: 'puzzles/web.html', relative: true });
+  assert.deepEqual(steps[1].choices, [
+    { label: 'ETIQUETA', outcome: 'next', reason: '', feedback: '¡Ese es!' },
+    { label: 'BUCLE', outcome: 'retry', reason: '', feedback: 'Ese es de otra isla.' },
+    { label: 'Salir', outcome: 'next', reason: '', feedback: '' },
+    { label: 'Volver', outcome: 'back', reason: '', feedback: '' },
+  ]);
+
+  assert.throws(
+    () => parseMissionMarkdown(`---
+id: m-es
+title: X
+start: CASA-01
+target: COM-02
+---
+## CUTSCENE_FIM
+- mentor: Hola
+- LINK: Mal -> ../fuera.html
+`, 'm-es.md'),
+    StoryParseError,
+  );
+});
+
+test('- VIDEO: absorbe las falas simples siguientes y deja interactivas las que tienen opciones o LINK', () => {
+  const mission = parseMissionMarkdown(`---
+id: m-video
+title: Video
+start: CASA-01
+target: COM-02
+---
+## CUTSCENE_FIM
+left: prota
+right: mentor
+- VIDEO: videos/m-video-fin-1.mp4
+- mentor: Hola.
+- prota: Hola, ¿qué hay?
+- mentor: Abran el laboratorio.
+- LINK: Abrir -> puzzles/web.html
+- mentor: ¿Código?
+- OPCION: A -> CORRECTO: Bien.
+- OPCION: B -> REINTENTAR: No.
+- VIDEO: videos/m-video-fin-2.mp4
+- mentor: Acá está el cofre.
+`, 'm-video.md');
+  const steps = mission.outroCutscene.steps;
+  assert.equal(steps.length, 4);
+  assert.equal(steps[0].type, 'video');
+  assert.equal(steps[0].url, 'videos/m-video-fin-1.mp4');
+  assert.deepEqual(steps[0].transcript.map((l) => l.speaker), ['mentor', 'prota']);
+  assert.ok(steps[1].link);
+  assert.equal(steps[2].choices.length, 2);
+  assert.equal(steps[3].type, 'video');
+  assert.equal(steps[3].transcript[0].text, 'Acá está el cofre.');
+
+  assert.throws(
+    () => parseMissionMarkdown(`---
+id: m
+title: X
+start: CASA-01
+target: COM-02
+---
+## CUTSCENE_FIM
+- VIDEO: videos/malo.gif
+`, 'm.md'),
+    StoryParseError,
+  );
+});
+
+test('eventos de la calle y misiones extra con premio se leen desde story/', () => {
+  const storyDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../story');
+  const map = new CityMap();
+  const manifest = parseStoryManifest(fs.readFileSync(path.join(storyDir, 'story.md'), 'utf8'), 'story.md');
+  assert.ok(manifest.streetEvents.length >= 6);
+  for (const id of manifest.streetEvents) {
+    const ev = parseStreetEventMarkdown(fs.readFileSync(path.join(storyDir, 'eventos', `${id}.md`), 'utf8'), `eventos/${id}.md`);
+    assert.equal(ev.id, id);
+    assert.ok(ev.rewardBtc > 0, id);
+    assert.ok(ev.bubble.length <= 40, id);
+    const ask = ev.cutscene.steps.find((s) => s.choices?.length);
+    assert.equal(ask.choices.filter((c) => c.outcome === 'next' && c.feedback).length, 1, id);
+  }
+  const memes = manifest.encounters.filter((id) => id.startsWith('extra-meme-'));
+  assert.ok(memes.length >= 8);
+  for (const id of memes) {
+    const enc = parseEncounterMarkdown(fs.readFileSync(path.join(storyDir, 'missions', `${id}.md`), 'utf8'), `missions/${id}.md`, map);
+    assert.equal(enc.mode, 'libre');
+    assert.ok(manifest.items.includes(enc.rewardItem), `${id}: ${enc.rewardItem}`);
+    assert.ok(fs.existsSync(path.join(storyDir, enc.roofLogo)), enc.roofLogo);
+  }
+  assert.throws(() => parseStreetEventMarkdown('---\nid: x\nbubble: hola\nreward_btc: mucho\n---\n## CUTSCENE\n- a: b\n', 'x.md'), StoryParseError);
+  assert.throws(() => parseEncounterMarkdown('---\nid: x\nnpc: a\nlocation: CASA-63\nmodo: a veces\n---\n## CUTSCENE\n- a: b\n', 'x.md', map), StoryParseError);
 });

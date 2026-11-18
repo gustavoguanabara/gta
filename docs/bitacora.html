@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bitácora de expedición</title>
+<style>
+  :root { --azul: #05428F; --verde: #00A096; --amarillo: #FFC800; --tinta: #1D1D1B; --gris: #5A666A; --borde: #B9C7CB; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fff; color: var(--tinta); font: 15px/1.45 Montserrat, Verdana, "DejaVu Sans", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 40px; }
+  header { background: var(--azul); color: #fff; padding: 16px 18px; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; }
+  header h1 { margin: 0; font-size: 26px; font-weight: 800; }
+  header p { margin: 0; color: #DCEBF5; font-size: 13px; }
+  .campos { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .campo { border-bottom: 2px solid var(--borde); padding: 18px 0 4px; font-size: 12px; color: var(--gris); font-weight: 700; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th { background: var(--azul); color: #fff; text-align: left; font-size: 12px; padding: 6px 8px; }
+  td { border: 1px solid var(--borde); padding: 8px; vertical-align: top; height: 64px; }
+  td.isla { width: 26%; font-weight: 700; }
+  td.isla span { display: block; font-weight: 500; font-size: 12px; color: var(--gris); }
+  td.letra { width: 12%; text-align: center; }
+  .caja { display: inline-block; width: 40px; height: 40px; border: 2px dashed var(--borde); }
+  .chip { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+  h2 { font-size: 16px; margin: 22px 0 6px; }
+  .palabra { display: flex; gap: 8px; }
+  .palabra span { width: 52px; height: 52px; border: 2px solid var(--tinta); background: #FFF8D6; }
+  .lineas div { border-bottom: 1px solid var(--borde); height: 30px; }
+  .pie { margin-top: 18px; font-size: 11px; color: var(--gris); }
+  @media print { main { padding: 0; } header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } th { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  @media (max-width: 560px) { .campos { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div><p>Ceibal · Ciencias de la Computación</p><h1>Bitácora de expedición</h1></div>
+    <p>Expedición CC · Modo Ciudad</p>
+  </header>
+
+  <div class="campos">
+    <div class="campo">Nombre del equipo</div>
+    <div class="campo">Piloto</div>
+    <div class="campo">Escriba</div>
+    <div class="campo">Navegante</div>
+  </div>
+
+  <table>
+    <thead><tr><th>Edificio</th><th>Predicción (antes de probar)</th><th>¿Qué aprendimos?</th><th>Letra</th></tr></thead>
+    <tbody>
+      <tr><td class="isla"><i class="chip" style="background:#00A096"></i>Puerto de partida<span>¿Quién puede anotarse en la Fase 1?</span></td><td></td><td></td><td class="letra"><i class="caja"></i></td></tr>
+      <tr><td class="isla"><i class="chip" style="background:#0C88CA"></i>Isla Web<span>¿Qué hace HTML, qué hace CSS y qué hace JS?</span></td><td></td><td></td><td class="letra"><i class="caja"></i></td></tr>
+      <tr><td class="isla"><i class="chip" style="background:#F39219"></i>Volcán Python<span>¿Qué muestra print("1" + "1")?</span></td><td></td><td></td><td class="letra"><i class="caja"></i></td></tr>
+      <tr><td class="isla"><i class="chip" style="background:#30A936"></i>Mina de Datos<span>¿Cuántos cursos tiene la Fase 1?</span></td><td></td><td></td><td class="letra"><i class="caja"></i></td></tr>
+      <tr><td class="isla"><i class="chip" style="background:#9225A5"></i>Torre IA<span>¿Se puede detectar al 100 % de los bots?</span></td><td></td><td></td><td class="letra"><i class="caja"></i></td></tr>
+      <tr><td class="isla"><i class="chip" style="background:#FFC800"></i>Taller Micro:bit<span>¿Qué es un evento?</span></td><td></td><td></td><td class="letra"><i class="caja"></i></td></tr>
+    </tbody>
+  </table>
+
+  <h2>La palabra secreta</h2>
+  <div class="palabra" aria-label="Seis casillas para la palabra secreta"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <h2>¿Qué curso nos gustaría hacer y por qué?</h2>
+  <div class="lineas"><div></div><div></div><div></div></div>
+
+  <p class="pie">Cursos online y gratuitos para bachillerato público de Secundaria y UTU. Atentos a la próxima convocatoria en ceibal.edu.uy</p>
+</main>
+</body>
+</html>

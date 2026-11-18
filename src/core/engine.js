@@ -29,16 +29,16 @@ import { createSaveSnapshot, saveGameState } from './save-state.js?v=2';
 import { getPendingMissionAssetUrls, preloadMissionAssets } from '../story/story-loader.js';
 
 const PEDESTRIAN_CHAT_LINES = [
-  'Opa! Cuidado com o trânsito por aqui!',
-  'Você viu onde deixei a chave do meu carro?',
-  'Dia bonito para dar uma volta na praça, né?',
-  'Dizem que o Empório São Jorge tem as melhores entregas!',
-  'Ei, você parece com pressa! Tá fazendo alguma missão?',
-  'Se acelerar demais nas curvas vai sair derrapando!',
-  'Tô só dando uma caminhada tranquila na calçada.',
-  'Hoje a cidade está bem movimentada!',
-  'Cuidado para não cair na água nas bordas da ilha!',
-  'Se precisar de carona, tem vários carros estacionados por aí.'
+  '¡Ojo! ¡Cuidado con el tránsito por acá!',
+  '¿Vieron dónde dejé la llave del auto?',
+  'Lindo día para dar una vuelta por la plaza, ¿no?',
+  '¡Dicen que en el almacén de la esquina hacen los mejores envíos!',
+  '¡Epa, parece que andan apurados! ¿Están en alguna misión?',
+  '¡Si aceleran mucho en las curvas, van a derrapar!',
+  'Solo estoy dando una caminata tranquila por la vereda.',
+  '¡Hoy la ciudad está bien movida!',
+  '¡Cuidado con caerse al agua en los bordes de la isla!',
+  'Si necesitan que los lleven, hay varios autos estacionados por ahí.'
 ];
 
 export class Engine {
@@ -75,6 +75,12 @@ export class Engine {
     this.collectibleFullToastCooldown = 0;
     this.worldCollectibles = [];
     this.collectedExtraIds = new Set();
+    this.bitcoin = 0;
+    this.completedEncounterIds = new Set();
+    this.streetEvent = null;
+    this.streetEventTimer = 25;
+    this.streetEventBubbleTimer = 0;
+    this.streetEventQueue = [];
     this.unlockedMissionIndices = new Set([0]);
 
     this.pathfinder = null;
@@ -190,14 +196,14 @@ export class Engine {
   #onKeyDown = null;
 
   initWorld() {
-    this.hud.showLoading(35, 'Gerando ilha e cidade-base 30x30...');
+    this.hud.showLoading(35, 'Generando isla y ciudad base 30x30...');
     if (!this.cityMap) {
       this.cityMap = new CityMap();
     }
     this.#buildEncounterNpcs();
     this.pathfinder = new RoadPathfinder(this.cityMap);
 
-    this.hud.showLoading(70, 'Iniciando tráfego e pedestres...');
+    this.hud.showLoading(70, 'Iniciando tránsito y peatones...');
     this.resetMatch();
 
     this.#handleResize();
@@ -213,7 +219,7 @@ export class Engine {
     window.addEventListener('pagehide', this.#onPageHide);
     document.addEventListener('visibilitychange', this.#onVisibilityChange);
 
-    this.hud.showLoading(100, 'Pronto!');
+    this.hud.showLoading(100, '¡Listo!');
     console.info('[Engine] Cidade-ilha inicializada com', this.cityMap.locationsByCode.size, 'locais codificados.');
   }
 
@@ -241,6 +247,8 @@ export class Engine {
       itemPickedUp: this.itemPickedUp,
       inventorySlots: this.inventory.getSlots(),
       collectedExtraIds: [...this.collectedExtraIds],
+      bitcoin: this.bitcoin,
+      completedEncounterIds: [...this.completedEncounterIds],
       completedNpcPoints: this.completedNpcPoints,
       player: {
         x: this.player.x,
@@ -311,15 +319,15 @@ export class Engine {
 
     if (pendingUrls.length > 0) {
       this.paused = true;
-      this.hud.showLoading(10, `Carregando ${mission.title}...`);
+      this.hud.showLoading(10, `Cargando ${mission.title}...`);
       await preloadMissionAssets(this.storyPackage, clamped, {
         includeSplash: false,
         preloadedUrls: this.preloadedUrls,
         onProgress: ({ loaded, total, ratio }) => {
-          this.hud.showLoading(10 + ratio * 85, `Carregando recursos da missão (${loaded}/${total})...`);
+          this.hud.showLoading(10 + ratio * 85, `Cargando recursos de la misión (${loaded}/${total})...`);
         },
       });
-      this.hud.showLoading(100, 'Missão pronta!');
+      this.hud.showLoading(100, '¡Misión lista!');
       this.hud.showGameHud();
       this.paused = false;
     }
@@ -345,6 +353,10 @@ export class Engine {
     this.#syncInventoryHud();
 
     this.collectedExtraIds = new Set(savedState.collectedExtraIds || []);
+    this.bitcoin = Math.max(0, Math.floor(Number(savedState.bitcoin) || 0));
+    this.completedEncounterIds = new Set(savedState.completedEncounterIds || []);
+    this.#buildEncounterNpcs();
+    this.#syncBitcoinHud();
     for (const c of this.worldCollectibles) {
       if (this.collectedExtraIds.has(c.id) || this.inventory.hasItem(c.id)) {
         c.collected = true;
@@ -404,7 +416,7 @@ export class Engine {
         : mission.objective;
       this.hud?.showMissionBanner?.(clamped + 1, bannerObjective);
     } else {
-      this.hud?.showToast?.('Modo exploração livre restaurado.');
+      this.hud?.showToast?.('Modo exploración libre restaurado.');
     }
     this.#persistSaveState();
   }
@@ -426,15 +438,15 @@ export class Engine {
 
     if (pendingUrls.length > 0) {
       this.paused = true;
-      this.hud.showLoading(10, `Carregando ${mission.title}...`);
+      this.hud.showLoading(10, `Cargando ${mission.title}...`);
       await preloadMissionAssets(this.storyPackage, clamped, {
         includeSplash: false,
         preloadedUrls: this.preloadedUrls,
         onProgress: ({ loaded, total, ratio }) => {
-          this.hud.showLoading(10 + ratio * 85, `Carregando recursos da missão (${loaded}/${total})...`);
+          this.hud.showLoading(10 + ratio * 85, `Cargando recursos de la misión (${loaded}/${total})...`);
         }
       });
-      this.hud.showLoading(100, 'Missão pronta!');
+      this.hud.showLoading(100, '¡Misión lista!');
       this.hud.showGameHud();
       this.paused = false;
     }
@@ -558,6 +570,131 @@ export class Engine {
     this.hud?.setInventoryCount?.(this.inventory.getCount(), this.inventory.capacity);
   }
 
+  #syncBitcoinHud(delta = 0) {
+    this.hud?.setBitcoin?.(this.bitcoin, delta);
+  }
+
+  #addBitcoin(amount) {
+    const n = Math.max(0, Math.floor(Number(amount) || 0));
+    if (!n) return;
+    this.bitcoin += n;
+    this.#syncBitcoinHud(n);
+  }
+
+  // Premio de un encuentro (misiones extra): solo la primera vez.
+  #rewardEncounter(npc) {
+    if (!npc || this.completedEncounterIds.has(npc.id)) return;
+    if (!npc.rewardItem && !npc.rewardBtc) return;
+    this.completedEncounterIds.add(npc.id);
+    const parts = [];
+    let imageUrl = '';
+    if (npc.rewardItem && !this.inventory.hasItem(npc.rewardItem)) {
+      const def = this.storyPackage?.items?.get(npc.rewardItem);
+      if (def) {
+        this.#grantMissionItem(npc.rewardItem);
+        parts.push(def.name);
+        imageUrl = def.imageUrl || '';
+      }
+    }
+    if (npc.rewardBtc) {
+      this.#addBitcoin(npc.rewardBtc);
+      parts.push(`₿ ${npc.rewardBtc}`);
+    }
+    if (parts.length) {
+      this.hud?.showToast?.(`¡Misión extra cumplida! Ganaron: ${parts.join(' + ')}`, { durationMs: 5000, imageUrl, imageAlt: parts[0] });
+    }
+    this.#persistSaveState();
+  }
+
+  // ---- Eventos de la calle: alguien cerca pide ayuda; resolverlo da ₿ ----
+  #nextStreetEvent() {
+    const events = this.storyPackage?.streetEvents || [];
+    const available = events.filter((e) => e.mode !== 'libre' || this.freeRoamMode);
+    if (available.length === 0) return null;
+    if (this.streetEventQueue.length === 0) {
+      this.streetEventQueue = [...available].sort(() => Math.random() - 0.5);
+    }
+    return this.streetEventQueue.shift();
+  }
+
+  #clearStreetEvent(cooldown = 30) {
+    if (this.streetEvent?.ped) delete this.streetEvent.ped.cityEvent;
+    this.streetEvent = null;
+    // Durante la campaña los eventos son menos frecuentes, para no distraer de las islas.
+    this.streetEventTimer = this.freeRoamMode ? cooldown : Math.max(cooldown, 90);
+  }
+
+  #updateStreetEvents(dt) {
+    if (this.paused || !this.storyPackage?.streetEvents?.length || this.cutscene?.active) return;
+    const peds = this.trafficManager?.pedestrians || [];
+    if (this.streetEvent) {
+      const { ped } = this.streetEvent;
+      const alive = ped && peds.includes(ped) && ped.state !== 'downed';
+      const far = alive && Math.hypot(ped.x - this.player.x, ped.y - this.player.y) > 1600;
+      this.streetEvent.age += dt;
+      if (!alive || far || this.streetEvent.age > 150) {
+        this.#clearStreetEvent(15);
+        return;
+      }
+      ped.speed = 0;
+      this.streetEventBubbleTimer -= dt;
+      if (this.streetEventBubbleTimer <= 0) {
+        this.streetEventBubbleTimer = 6;
+        this.hud.showNpcSpeechBubble(ped, `❗ ${this.streetEvent.event.bubble}`, this.#worldToScreen(ped.x, ped.y - 22));
+      }
+      return;
+    }
+    this.streetEventTimer -= dt;
+    if (this.streetEventTimer > 0) return;
+    const candidates = peds.filter((p) => {
+      if (p.state === 'downed' || p.cityEvent) return false;
+      const d = Math.hypot(p.x - this.player.x, p.y - this.player.y);
+      return d > 140 && d < 650;
+    });
+    if (candidates.length === 0) {
+      this.streetEventTimer = 4;
+      return;
+    }
+    const event = this.#nextStreetEvent();
+    if (!event) return;
+    const ped = candidates[Math.floor(Math.random() * candidates.length)];
+    ped.cityEvent = event.id;
+    this.streetEvent = { event, ped, age: 0 };
+    this.streetEventBubbleTimer = 0;
+    if (event.notice) this.hud.showToast(`🔔 ${event.notice}`, 6000);
+  }
+
+  #findNearbyStreetEventPed() {
+    const ev = this.streetEvent;
+    if (!ev?.ped || this.player.inVehicleId) return null;
+    return Math.hypot(ev.ped.x - this.player.x, ev.ped.y - this.player.y) < 70 ? ev : null;
+  }
+
+  #playStreetEvent(ev) {
+    this.player.speed = 0;
+    const { event } = ev;
+    this.cutscene.play(event.cutscene, this.storyPackage.characters, (result) => {
+      if (result?.outcome === 'gameover') {
+        this.#clearStreetEvent(30);
+        return;
+      }
+      const firstTry = result?.stats && result.stats.wrong === 0;
+      const amount = firstTry ? event.rewardBtc : Math.ceil(event.rewardBtc / 2);
+      this.#addBitcoin(amount);
+      let imageUrl = '';
+      if (event.rewardItem && !this.inventory.hasItem(event.rewardItem)) {
+        const def = this.storyPackage?.items?.get(event.rewardItem);
+        if (def) {
+          this.#grantMissionItem(event.rewardItem);
+          imageUrl = def.imageUrl || '';
+        }
+      }
+      this.hud.showToast(`¡Bien hecho! +₿ ${amount}${firstTry ? '' : ' (la mitad, por los intentos)'}`, { durationMs: 4500, imageUrl });
+      this.#clearStreetEvent(35);
+      this.#persistSaveState();
+    });
+  }
+
   #grantMissionItem(itemId) {
     const itemDef = this.storyPackage?.items?.get(itemId);
     if (!itemDef) return;
@@ -565,7 +702,7 @@ export class Engine {
     if (!res.ok && res.reason === 'inventory_full') {
       console.warn(`[Engine] Inventário cheio (${this.inventory.capacity}/${this.inventory.capacity}); não foi possível adicionar "${itemDef.name}".`);
       if (typeof window !== 'undefined' && typeof window.alert === 'function') {
-        window.alert(`Inventário cheio (${this.inventory.capacity}/${this.inventory.capacity})! Não foi possível guardar "${itemDef.name}".`);
+        window.alert(`¡Inventario lleno (${this.inventory.capacity}/${this.inventory.capacity})! No se pudo guardar "${itemDef.name}".`);
       }
       return;
     }
@@ -609,6 +746,10 @@ export class Engine {
     this.collectibleFullToastCooldown = 0;
     this.worldCollectibles = [];
     this.collectedExtraIds = new Set();
+    this.streetEvent = null;
+    this.streetEventTimer = 25;
+    this.streetEventBubbleTimer = 0;
+    this.streetEventQueue = [];
     if (this.storyPackage?.items instanceof Map) {
       for (const item of this.storyPackage.items.values()) {
         if (item.category === 'extra' && item.worldPoint) {
@@ -713,7 +854,7 @@ export class Engine {
     this.lastVehicleChunkKey = current.key;
   }
 
-  applyDamage(amount, fatalReason = 'Você se deu mal!', { bypassResistance = false } = {}) {
+  applyDamage(amount, fatalReason = '¡Perdiste!', { bypassResistance = false } = {}) {
     if (this.player.isDead || amount <= 0) return;
     const effectiveDamage = bypassResistance ? amount : Math.max(1, Math.round(amount * 0.55));
     this.player.health = Math.max(0, this.player.health - effectiveDamage);
@@ -786,9 +927,24 @@ export class Engine {
   #buildEncounterNpcs() {
     this.encounterNpcs = [];
     this.encounterLocationCodes = new Map();
+    if (!this.cityMap) return;
+    // Edifícios-alvo de missões com telhado personalizado (ex.: prédio de cada curso).
+    for (const mission of this.storyPackage?.missions || []) {
+      if (!mission?.roofColor && !mission?.roofLogo) continue;
+      try {
+        this.cityMap.resolveIndoorOppositePosition(mission.targetLocation);
+        this.encounterLocationCodes.set(mission.targetLocation, {
+          roofColor: mission.roofColor || '#d6282e',
+          roofLogo: mission.roofLogo || '',
+        });
+      } catch (err) {
+        console.warn(`[Engine] Telhado da missão "${mission.id}" ignorado: ${err.message}`);
+      }
+    }
     const encounters = this.storyPackage?.encounters;
-    if (!this.cityMap || !Array.isArray(encounters) || encounters.length === 0) return;
+    if (!Array.isArray(encounters) || encounters.length === 0) return;
     for (const encounter of encounters) {
+      if (encounter.mode === 'libre' && !this.freeRoamMode) continue;
       try {
         const pos = this.cityMap.resolveIndoorOppositePosition(encounter.location);
         this.encounterLocationCodes.set(encounter.location, {
@@ -801,6 +957,8 @@ export class Engine {
           location: encounter.location,
           prompt: encounter.prompt,
           cutscene: encounter.cutscene,
+          rewardItem: encounter.rewardItem,
+          rewardBtc: encounter.rewardBtc,
           x: pos.x,
           y: pos.y,
           angle: pos.angle,
@@ -893,6 +1051,17 @@ export class Engine {
         }
       }
       this.setObjective(null);
+      if (mission.rewardItem && !this.inventory.hasItem(mission.rewardItem)) {
+        this.#grantMissionItem(mission.rewardItem);
+        const rewardDef = this.storyPackage?.items?.get(mission.rewardItem);
+        if (rewardDef) {
+          this.hud?.showToast?.(`¡Recibieron: ${rewardDef.name}!`, {
+            durationMs: 5000,
+            imageUrl: rewardDef.imageUrl || '',
+            imageAlt: rewardDef.name,
+          });
+        }
+      }
       const hasNext = this.currentMissionIndex + 1 < this.storyPackage.missions.length;
       this.paused = true;
       this.hud.showMissionComplete(mission.title, hasNext, () => {
@@ -902,6 +1071,8 @@ export class Engine {
         } else {
           this.freeRoamMode = true;
           this.setObjective(null);
+          this.#buildEncounterNpcs();
+          this.hud.showToast('¡Modo libre! Busquen los techos de colores: hay misiones extra para llenar la mochila. Y atentos a la gente que pide ayuda en la calle: ganan ₿.', 9000);
           this.#persistSaveState();
         }
       });
@@ -909,9 +1080,9 @@ export class Engine {
 
     const openDeliveryModal = (expectedId, onSuccess, onCancel) => {
       this.inventoryController.openDelivery(this.inventory, {
-        prompt: mission.deliveryPrompt || 'Escolha o item correto do seu inventário para entregar:',
+        prompt: mission.deliveryPrompt || 'Elijan del inventario el objeto correcto para entregar:',
         expectedItemId: expectedId || mission.requireItem,
-        wrongItemMessage: mission.wrongItemMessage || 'Não é esse item que eu procuro!',
+        wrongItemMessage: mission.wrongItemMessage || '¡Ese no es el objeto que estoy buscando!',
         wrongItemMessages: this.storyPackage?.wrongItemLines || [],
         onDeliver: () => {
           this.#syncInventoryHud();
@@ -933,7 +1104,7 @@ export class Engine {
           this.storyPackage.characters,
           (result) => {
             if (result?.outcome === 'gameover') {
-              this.triggerGameOver(result.reason || 'Você falhou na missão.');
+              this.triggerGameOver(result.reason || 'La misión falló.');
             } else {
               finishMission();
             }
@@ -1082,7 +1253,7 @@ export class Engine {
     this.paused = true;
     const activeMission = this.storyPackage?.missions?.[this.currentMissionIndex];
     const objectiveText = this.freeRoamMode
-      ? 'Exploração livre'
+      ? 'Exploración libre'
       : (activeMission?.objective || '');
     this.hud.openExpandedMap(objectiveText);
     this.#resetExpandedMapView();
@@ -1217,7 +1388,7 @@ export class Engine {
       this.#updateExplosions(scaledDt);
 
       this.hud.updateStatus({
-        locationCode: this.getLocationDisplayName(this.cityMap.getLocationAt(this.player.x, this.player.y)?.code || 'CIDADE'),
+        locationCode: this.getLocationDisplayName(this.cityMap.getLocationAt(this.player.x, this.player.y)?.code || 'CIUDAD'),
         vehicle: null,
         isDrifting: false,
         objectiveCode: this.getLocationDisplayName(this.objectiveCode),
@@ -1235,7 +1406,7 @@ export class Engine {
       this.#updateParticles(dt);
       this.#updateExplosions(dt);
       this.hud.updateStatus({
-        locationCode: this.getLocationDisplayName(this.cityMap.getLocationAt(this.player.x, this.player.y)?.code || 'CIDADE'),
+        locationCode: this.getLocationDisplayName(this.cityMap.getLocationAt(this.player.x, this.player.y)?.code || 'CIUDAD'),
         vehicle: null,
         isDrifting: false,
         objectiveCode: this.getLocationDisplayName(this.objectiveCode),
@@ -1279,7 +1450,7 @@ export class Engine {
       }
 
       this.hud.updateStatus({
-        locationCode: 'ÁGUA',
+        locationCode: 'AGUA',
         vehicle: null,
         isDrifting: false,
         objectiveCode: this.getLocationDisplayName(this.objectiveCode),
@@ -1288,7 +1459,7 @@ export class Engine {
 
       if (progress >= 1) {
         this.player.sinking.active = false;
-        this.applyDamage(this.player.health || 100, 'Você caiu na água nos limites da ilha!', { bypassResistance: true });
+        this.applyDamage(this.player.health || 100, '¡Te caíste al agua en el borde de la isla!', { bypassResistance: true });
       }
       return;
     }
@@ -1318,7 +1489,7 @@ export class Engine {
             { x: this.player.x + 8, y: this.player.y - 6, size: 8, angle: 0, alpha: 0.78 },
             { x: this.player.x - 7, y: this.player.y + 7, size: 7, angle: 0, alpha: 0.78 }
           );
-          this.applyDamage(Math.max(1, Math.round(ejRes.extraDamage * 0.75)), 'Você colidiu fortemente após ser ejetado!');
+          this.applyDamage(Math.max(1, Math.round(ejRes.extraDamage * 0.75)), '¡Choque fuerte después de salir despedido!');
         }
         this.#resolvePlayerMissionNpcCollision();
       } else if (this.player.enteringVehicle) {
@@ -1395,9 +1566,16 @@ export class Engine {
             this.player.speed = 0;
             this.cutscene.play(encounterNpc.cutscene, this.storyPackage.characters, (result) => {
               if (result?.outcome === 'gameover') {
-                this.triggerGameOver(result.reason || 'Fim de linha!');
+                this.triggerGameOver(result.reason || '¡Fin del camino!');
+                return;
               }
+              this.#rewardEncounter(encounterNpc);
             });
+            return;
+          }
+          const eventPed = this.#findNearbyStreetEventPed();
+          if (eventPed && this.cutscene) {
+            this.#playStreetEvent(eventPed);
             return;
           }
           const nearest = findNearestVehicle(this.player.x, this.player.y, this.vehicles);
@@ -1631,7 +1809,7 @@ export class Engine {
       if (!this.player.inVehicleId && !this.player.isDead && !this.pendingGameOver && this.player.burnCooldown <= 0) {
         if (isTouchingVehicle(this.player.x, this.player.y, this.player.radius, v, 7)) {
           this.player.burnCooldown = 0.45;
-          this.applyDamage(14, 'Você se queimou em um veículo em chamas!');
+          this.applyDamage(14, '¡Te quemaste con un vehículo en llamas!');
         }
       }
 
@@ -1691,7 +1869,7 @@ export class Engine {
           angle: Math.random() * Math.PI * 2,
           alpha: 0.72,
         });
-        this.applyDamage(dmg, 'Você foi atropelado por um veículo!');
+        this.applyDamage(dmg, '¡Te atropelló un vehículo!');
         break;
       }
     }
@@ -1817,7 +1995,7 @@ export class Engine {
           sourceVehicleId: activeVehicle.id
         };
         this.input.consumeExitTrigger();
-        this.applyDamage(Math.max(1, Math.round(impact.damage * 0.7)), 'Você sofreu uma colisão fatal!');
+        this.applyDamage(Math.max(1, Math.round(impact.damage * 0.7)), '¡Sufriste un choque fatal!');
       }
     }
 
@@ -1837,7 +2015,7 @@ export class Engine {
     }
 
     const loc = this.cityMap.getLocationAt(this.player.x, this.player.y);
-    this.player.currentLocationCode = loc ? loc.code : 'CIDADE';
+    this.player.currentLocationCode = loc ? loc.code : 'CIUDAD';
     this.player.insideLocationCode =
       !this.player.inVehicleId && loc && (loc.type === 'house' || loc.type === 'commerce' || loc.type === 'hospital')
         ? loc.code
@@ -1847,9 +2025,11 @@ export class Engine {
     if (isInsideHospital && !this.wasInsideHospital && this.player.health < 100) {
       this.player.health = 100;
       this.hud.triggerHealFlash();
-      this.hud.showToast('Vida recuperada no hospital!');
+      this.hud.showToast('¡Vida recuperada en el hospital!');
     }
     this.wasInsideHospital = isInsideHospital;
+
+    this.#updateStreetEvents(dt);
 
     if (this.collectibleFullToastCooldown > 0) {
       this.collectibleFullToastCooldown = Math.max(0, this.collectibleFullToastCooldown - dt);
@@ -1864,7 +2044,7 @@ export class Engine {
       if (Math.hypot(this.player.x - c.x, this.player.y - c.y) <= 44) {
         if (this.inventory.isFull()) {
           if (this.collectibleFullToastCooldown <= 0) {
-            this.hud.showToast(`Inventário cheio! Libere espaço para pegar ${c.name}.`);
+            this.hud.showToast(`¡Inventario lleno! Liberen espacio para agarrar ${c.name}.`);
             this.collectibleFullToastCooldown = 3.0;
           }
           continue;
@@ -1892,7 +2072,7 @@ export class Engine {
     if (reachedPickup) {
       this.itemPickedUp = true;
       const itemDef = this.storyPackage?.items?.get(activeMission.giveItem);
-      const itemName = itemDef?.name || 'Item';
+      const itemName = itemDef?.name || 'Objeto';
       if (this.objectivePoint && itemDef?.imageUrl) {
         const screenPos = this.#worldToScreen(this.objectivePoint.x, this.objectivePoint.y);
         this.hud.updateWorldPickupItem(false);
@@ -1902,7 +2082,7 @@ export class Engine {
         this.#grantMissionItem(activeMission.giveItem);
       }
       const targetName = this.locationNames.get(activeMission.targetLocation) || activeMission.targetLocation;
-      this.hud.showToast(`${itemName} guardada no inventário! Leve até ${targetName}.`, {
+      this.hud.showToast(`¡${itemName} guardado en el inventario! Llévenlo a ${targetName}.`, {
         imageUrl: itemDef?.imageUrl || '',
         imageAlt: itemName
       });
@@ -1968,9 +2148,9 @@ export class Engine {
 
     const nearbyEncounterNpc = this.#findNearbyEncounterNpc();
     const objectiveHint = this.#isNearInteriorStoryNpc()
-      ? 'Aperte Ação para falar'
+      ? 'Toquen Acción para hablar'
       : nearbyEncounterNpc
-        ? (nearbyEncounterNpc.prompt || 'Aperte Ação para falar')
+        ? (nearbyEncounterNpc.prompt || 'Toquen Acción para hablar')
         : this.getLocationDisplayName(this.objectiveCode);
 
     if (this.hudDisplayHealth < this.player.health) {
@@ -2074,7 +2254,7 @@ export class Engine {
             ex.hitIds.add('player');
             const dmg = computeShockwaveDamage(pDist, ex.shockMaxRadius, 95);
             if (dmg > 0) {
-              this.applyDamage(dmg, 'Você foi atingido pelo deslocamento de ar da explosão!');
+              this.applyDamage(dmg, '¡Te alcanzó la onda expansiva de la explosión!');
             }
           }
         }
@@ -2307,7 +2487,7 @@ export class Engine {
       this.player.sinkAlpha = 0;
       this.hud.triggerDamageFlash();
       hitIds.add('player');
-      this.triggerGameOver('Seu veículo explodiu!');
+      this.triggerGameOver('¡Tu vehículo explotó!');
     }
 
     this.shakeTimer = 0.55;

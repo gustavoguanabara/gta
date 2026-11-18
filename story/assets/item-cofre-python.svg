@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" shape-rendering="crispEdges">
+<rect x="6" y="12" width="52" height="16" fill="#8B5A2B"/><rect x="6" y="12" width="52" height="4" fill="#A9743F"/>
+<rect x="6" y="28" width="52" height="28" fill="#8B5A2B"/><rect x="6" y="52" width="52" height="4" fill="#5E3B1A"/>
+<rect x="6" y="26" width="52" height="5" fill="#F39219"/>
+<rect x="4" y="12" width="4" height="44" fill="#FFC800"/><rect x="56" y="12" width="4" height="44" fill="#FFC800"/>
+<rect x="22" y="33" width="20" height="20" fill="#FFF8D6" stroke="#1D1D1B" stroke-width="2"/>
+<text x="32" y="49" text-anchor="middle" font-family="'Press Start 2P',monospace,sans-serif" font-weight="700" font-size="16" fill="#1D1D1B">F</text>
+</svg>

@@ -25,6 +25,25 @@ export class CutsceneController {
     this.linkBtn = document.getElementById('cutscene-link-btn');
     this.nextBtn = document.getElementById('cutscene-next-btn');
     this.webModal = new WebModalController();
+    this.videoLayer = document.getElementById('cutscene-video-layer');
+    this.videoEl = document.getElementById('cutscene-video');
+    this.videoSkipBtn = document.getElementById('cutscene-video-skip');
+    this.videoTranscriptEl = document.getElementById('cutscene-video-transcript');
+    this.videoActive = false;
+    this.videoSoundBtn = document.getElementById('cutscene-video-sound');
+    this.videoMuted = false;
+    try { this.videoMuted = localStorage.getItem('cc_video_sonido') === 'off'; } catch { /* sin almacenamiento */ }
+    this.#syncSoundButton();
+    this.videoSoundBtn?.addEventListener('click', () => {
+      // Se basa en el estado real del video (pudo haber sido silenciado por el navegador).
+      this.videoMuted = !(this.videoActive ? this.videoEl.muted : this.videoMuted);
+      try { localStorage.setItem('cc_video_sonido', this.videoMuted ? 'off' : 'on'); } catch { /* ignorar */ }
+      if (this.videoEl) this.videoEl.muted = this.videoMuted;
+      this.#syncSoundButton();
+    });
+    this.videoEl?.addEventListener('ended', () => this.#endVideo());
+    this.videoEl?.addEventListener('error', () => this.#videoFailed());
+    this.videoSkipBtn?.addEventListener('click', () => this.#endVideo());
 
     this.active = false;
     this.awaitingDelivery = false;
@@ -41,6 +60,10 @@ export class CutsceneController {
     this.prevLeft = false;
     this.prevRight = false;
     this.recentBackgroundsByType = new Map();
+    this.wrongChoices = new Set();
+    this.stats = { correct: 0, firstTry: 0, wrong: 0 };
+    this.feedbackActive = false;
+    this.feedbackEl = null;
 
     this.linkBtn?.addEventListener('click', () => this.openStepLink());
     this.nextBtn.addEventListener('click', () => this.advance());
@@ -107,6 +130,9 @@ export class CutsceneController {
     this.selectedActionIndex = 0;
     this.onFinish = onFinish;
     this.onDeliverRequest = options.onDeliverRequest || null;
+    this.wrongChoices = new Set();
+    this.stats = { correct: 0, firstTry: 0, wrong: 0 };
+    this.#clearFeedback();
     this.prevAction = true;
     this.prevUp = false;
     this.prevDown = false;
@@ -130,7 +156,7 @@ export class CutsceneController {
       this.bgLabel.textContent = '';
       this.bgLabel.classList.add('hidden');
     } else {
-      this.bgLabel.textContent = rawBgText || 'Cena Lateral';
+      this.bgLabel.textContent = rawBgText || 'Escena';
       this.bgLabel.classList.remove('hidden');
     }
     if (this.stageEl) {
@@ -176,11 +202,19 @@ export class CutsceneController {
   }
 
   renderStep() {
+    this.#clearFeedback();
     const step = this.cutscene.steps[this.stepIndex];
     if (!step) {
+      this.#hideVideo();
       this.finish({ outcome: 'complete', reason: '' });
       return;
     }
+
+    if (step.type === 'video') {
+      this.#playVideo(step);
+      return;
+    }
+    this.#hideVideo();
 
     if (step.type === 'deliver') {
       if (typeof this.onDeliverRequest === 'function') {
@@ -242,6 +276,10 @@ export class CutsceneController {
         btn.className = 'cutscene-choice-btn';
         if (isKeyboardUiMode() && idx === this.selectedChoiceIndex) btn.classList.add('selected');
         btn.textContent = choice.label;
+        if (this.wrongChoices.has(choice)) {
+          btn.classList.add('is-wrong');
+          btn.disabled = true;
+        }
         btn.addEventListener('click', () => {
           this.#selectChoice(choice);
         });
@@ -251,7 +289,7 @@ export class CutsceneController {
       this.choicesEl.classList.add('hidden');
       this.nextBtn.classList.remove('hidden');
       this.nextBtn.textContent =
-        this.stepIndex >= this.cutscene.steps.length - 1 ? 'Concluir cena' : 'Continuar';
+        this.stepIndex >= this.cutscene.steps.length - 1 ? 'Terminar escena' : 'Continuar';
       if (step.link) {
         if (this.linkBtn) {
           this.linkBtn.textContent = step.link.label;
@@ -264,6 +302,80 @@ export class CutsceneController {
       }
       this.#syncActionSelection();
     }
+  }
+
+  #playVideo(step) {
+    if (!this.videoLayer || !this.videoEl) {
+      this.#videoFailed();
+      return;
+    }
+    this.videoActive = true;
+    this.videoLayer.classList.remove('hidden');
+    if (this.videoTranscriptEl) {
+      this.videoTranscriptEl.textContent = (step.transcript || [])
+        .map((line) => `${line.speaker}: ${line.text}`)
+        .join(' ');
+    }
+    // En pantallas verticales se usa la versión vertical (videos/vertical/...), si existe.
+    const portrait = Boolean(globalThis.matchMedia?.('(orientation: portrait)').matches);
+    const url = portrait && !step.noVertical ? step.url.replace(/\/videos\/([^/]+)$/, '/videos/vertical/$1') : step.url;
+    this.currentVideoStep = step;
+    if (this.videoEl.getAttribute('src') !== url) this.videoEl.src = url;
+    try { this.videoEl.currentTime = 0; } catch { /* ignore */ }
+    this.videoEl.muted = this.videoMuted;
+    this.videoEl.volume = 0.9;
+    const playing = this.videoEl.play();
+    if (playing?.catch) {
+      playing.catch(() => {
+        // El navegador bloqueó el sonido automático: seguimos en silencio.
+        if (!this.videoActive || this.videoEl.muted) return;
+        this.videoEl.muted = true;
+        this.#syncSoundButton(true);
+        this.videoEl.play().catch(() => { /* queda el botón Saltar */ });
+      });
+    }
+  }
+
+  #syncSoundButton(forcedMute = false) {
+    if (!this.videoSoundBtn) return;
+    const muted = forcedMute || this.videoMuted;
+    this.videoSoundBtn.textContent = muted ? '🔇' : '🔊';
+    this.videoSoundBtn.setAttribute('aria-pressed', String(!muted));
+    this.videoSoundBtn.setAttribute('aria-label', muted ? 'Sonido apagado: tocar para activar' : 'Sonido activado: tocar para silenciar');
+  }
+
+  #hideVideo() {
+    if (!this.videoActive && this.videoLayer?.classList.contains('hidden')) return;
+    this.videoActive = false;
+    this.videoEl?.pause();
+    this.videoLayer?.classList.add('hidden');
+  }
+
+  #endVideo() {
+    if (!this.active || !this.videoActive) return;
+    this.videoActive = false;
+    this.videoEl?.pause();
+    this.prevAction = true;
+    this.stepIndex += 1;
+    this.selectedChoiceIndex = 0;
+    this.renderStep();
+  }
+
+  // Si el video no carga, se prueba la versión horizontal y, si tampoco, se muestran sus falas.
+  #videoFailed() {
+    if (!this.active) return;
+    const step = this.cutscene?.steps?.[this.stepIndex];
+    if (!step || step.type !== 'video') return;
+    if (!step.noVertical && this.videoEl?.getAttribute('src') !== step.url) {
+      step.noVertical = true;
+      this.#playVideo(step);
+      return;
+    }
+    this.videoActive = false;
+    this.videoLayer?.classList.add('hidden');
+    const speech = (step.transcript || []).map((line) => ({ speaker: line.speaker, text: line.text }));
+    this.cutscene.steps.splice(this.stepIndex, 1, ...speech);
+    this.renderStep();
   }
 
   openStepLink() {
@@ -289,23 +401,39 @@ export class CutsceneController {
     const step = this.cutscene?.steps?.[this.stepIndex];
     if (!step) return;
 
+    if (step.type === 'video') {
+      const actionNow = Boolean(inputState.actionPressed ?? inputState.action);
+      if (actionNow && !this.prevAction) this.#endVideo();
+      this.prevAction = actionNow;
+      return;
+    }
+
     const up = Boolean(inputState.moveY < -0.5);
     const down = Boolean(inputState.moveY > 0.5);
     const left = Boolean(inputState.moveX < -0.5);
     const right = Boolean(inputState.moveX > 0.5);
     const action = Boolean(inputState.actionPressed ?? inputState.action);
 
-    if (step.choices && step.choices.length > 0) {
+    if (this.feedbackActive) {
+      if (action && !this.prevAction) this.advance();
+    } else if (step.choices && step.choices.length > 0) {
+      const moveChoice = (delta) => {
+        const n = step.choices.length;
+        let idx = this.selectedChoiceIndex;
+        for (let i = 0; i < n; i += 1) {
+          idx = (idx + delta + n) % n;
+          if (!this.wrongChoices.has(step.choices[idx])) break;
+        }
+        this.selectedChoiceIndex = idx;
+        this.#syncChoiceSelection();
+      };
       if (up && !this.prevUp) {
         setUiInputMode('keyboard');
-        this.selectedChoiceIndex =
-          (this.selectedChoiceIndex - 1 + step.choices.length) % step.choices.length;
-        this.#syncChoiceSelection();
+        moveChoice(-1);
       }
       if (down && !this.prevDown) {
         setUiInputMode('keyboard');
-        this.selectedChoiceIndex = (this.selectedChoiceIndex + 1) % step.choices.length;
-        this.#syncChoiceSelection();
+        moveChoice(1);
       }
       if (action && !this.prevAction) {
         const chosen = step.choices[this.selectedChoiceIndex];
@@ -342,6 +470,27 @@ export class CutsceneController {
 
   #selectChoice(choice) {
     if (!choice) return;
+    if (this.feedbackActive) return;
+    if (choice.outcome === 'retry') {
+      // Resposta errada: marca o botão, mostra a pista e mantém as opções.
+      this.wrongChoices.add(choice);
+      this.stats.wrong += 1;
+      this.#showChoiceFeedback(choice.feedback, false);
+      return;
+    }
+    if (choice.outcome === 'back') {
+      this.stepIndex = Math.max(0, this.stepIndex - 1);
+      this.selectedChoiceIndex = 0;
+      this.prevAction = true;
+      this.renderStep();
+      return;
+    }
+    if (choice.outcome === 'next' && choice.feedback) {
+      this.stats.correct += 1;
+      if (!this.#stepHasWrongAnswer()) this.stats.firstTry += 1;
+      this.#showChoiceFeedback(choice.feedback, true);
+      return;
+    }
     if (choice.outcome === 'next') {
       if (this.stepIndex < this.cutscene.steps.length - 1) {
         this.stepIndex += 1;
@@ -356,10 +505,58 @@ export class CutsceneController {
     this.finish({ outcome: choice.outcome, reason: choice.reason || '' });
   }
 
+  #stepHasWrongAnswer() {
+    const step = this.cutscene?.steps?.[this.stepIndex];
+    return Boolean(step?.choices?.some((c) => this.wrongChoices.has(c)));
+  }
+
+  #showChoiceFeedback(text, isCorrect) {
+    const step = this.cutscene?.steps?.[this.stepIndex];
+    if (!step) return;
+    this.feedbackEl?.remove();
+    const box = document.createElement('p');
+    box.className = `cutscene-feedback ${isCorrect ? 'is-correct' : 'is-wrong'}`;
+    box.setAttribute('role', 'status');
+    box.textContent = `${isCorrect ? '✔ ¡Correcto! ' : '✘ '}${text || ''}`;
+    this.feedbackEl = box;
+    this.textEl.insertAdjacentElement('afterend', box);
+
+    if (isCorrect) {
+      this.feedbackActive = true;
+      this.choicesEl.replaceChildren();
+      this.choicesEl.classList.add('hidden');
+      this.nextBtn.classList.remove('hidden');
+      this.nextBtn.textContent =
+        this.stepIndex >= this.cutscene.steps.length - 1 ? 'Terminar escena' : 'Continuar';
+      this.selectedActionIndex = 1;
+      this.prevAction = true;
+      this.#syncActionSelection();
+    } else {
+      const buttons = [...this.choicesEl.querySelectorAll('.cutscene-choice-btn')];
+      step.choices.forEach((choice, idx) => {
+        const btn = buttons[idx];
+        if (!btn) return;
+        const wrong = this.wrongChoices.has(choice);
+        btn.classList.toggle('is-wrong', wrong);
+        btn.disabled = wrong;
+      });
+      const firstOpen = step.choices.findIndex((c) => !this.wrongChoices.has(c));
+      if (firstOpen !== -1) this.selectedChoiceIndex = firstOpen;
+      this.prevAction = true;
+      this.#syncChoiceSelection();
+    }
+  }
+
+  #clearFeedback() {
+    this.feedbackActive = false;
+    this.feedbackEl?.remove();
+    this.feedbackEl = null;
+  }
+
   advance() {
     if (!this.active || this.awaitingDelivery) return;
     const step = this.cutscene.steps[this.stepIndex];
-    if (step?.choices && step.choices.length > 0) return;
+    if (step?.choices && step.choices.length > 0 && !this.feedbackActive) return;
 
     if (this.stepIndex < this.cutscene.steps.length - 1) {
       this.stepIndex += 1;
@@ -371,6 +568,9 @@ export class CutsceneController {
   }
 
   finish(result) {
+    this.#hideVideo();
+    this.#clearFeedback();
+    if (result && typeof result === 'object') result.stats = { ...this.stats };
     this.webModal.close();
     this.active = false;
     this.screen.classList.add('hidden');

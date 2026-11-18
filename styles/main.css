@@ -1067,6 +1067,36 @@ body {
   color: #fef08a;
 }
 
+.cutscene-choice-btn.is-wrong,
+.cutscene-choice-btn.is-wrong:hover {
+  border-color: rgba(248, 113, 113, 0.7);
+  background: rgba(127, 29, 29, 0.55);
+  color: #fecaca;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.cutscene-feedback {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: clamp(13px, 1.9vw, 15px);
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.cutscene-feedback.is-correct {
+  background: rgba(22, 101, 52, 0.85);
+  border: 1px solid #4ade80;
+  color: #dcfce7;
+}
+
+.cutscene-feedback.is-wrong {
+  background: rgba(127, 29, 29, 0.85);
+  border: 1px solid #f87171;
+  color: #fee2e2;
+}
+
 .cutscene-actions {
   display: flex;
   flex-wrap: wrap;
@@ -2469,3 +2499,30 @@ body {
     width: min(44%, 240px);
   }
 }
+
+/* Temporizador de expedición */
+.timer-badge { font-variant-numeric: tabular-nums; font-weight: 800; }
+.timer-badge.is-low { background: rgba(245, 158, 11, 0.92); color: #1d1d1b; }
+.timer-badge.is-up { background: rgba(220, 38, 38, 0.95); color: #fff; animation: timer-blink 1s steps(1) infinite; }
+@keyframes timer-blink { 50% { opacity: 0.55; } }
+@media (prefers-reduced-motion: reduce) { .timer-badge.is-up { animation: none; } }
+.start-timer { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 10px 0 4px; font-weight: 700; color: #f8fafc; }
+.start-timer select { min-height: 40px; padding: 6px 10px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(15, 23, 42, 0.85); color: #f8fafc; font: inherit; }
+
+/* Diálogos en video */
+.cutscene-video-layer { position: absolute; inset: 0; z-index: 5; background: #000; display: flex; align-items: center; justify-content: center; border-radius: inherit; overflow: hidden; }
+.cutscene-video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+.cutscene-video-skip { position: absolute; right: 14px; bottom: 14px; appearance: none; border: 1px solid rgba(255,255,255,.45); background: rgba(10,14,22,.72); color: #fff; font-weight: 800; font-size: 14px; padding: 10px 16px; min-height: 44px; border-radius: 999px; cursor: pointer; }
+.cutscene-video-skip:hover, .cutscene-video-skip:focus-visible { background: #fbbf24; color: #111; border-color: #fbbf24; }
+.visually-hidden-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Contador de bitcoin */
+.btc-badge { position: relative; font-variant-numeric: tabular-nums; font-weight: 800; gap: 6px; }
+.btc-badge .btc-symbol { color: #f7931a; font-weight: 900; }
+.btc-badge.btc-gain { animation: btc-pop .6s ease-out; }
+.btc-badge.btc-gain::after { content: attr(data-delta); position: absolute; right: -6px; top: -4px; color: #fbbf24; font-weight: 900; font-size: 13px; text-shadow: 0 1px 2px #000; animation: btc-float 1.4s ease-out forwards; pointer-events: none; }
+@keyframes btc-pop { 40% { transform: scale(1.18); background: rgba(247, 147, 26, 0.9); color: #111; } }
+@keyframes btc-float { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-26px); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .btc-badge.btc-gain, .btc-badge.btc-gain::after { animation: none; } }
+.cutscene-video-sound { position: absolute; left: 14px; bottom: 14px; appearance: none; width: 48px; height: 48px; border-radius: 999px; border: 1px solid rgba(255,255,255,.45); background: rgba(10,14,22,.72); color: #fff; font-size: 20px; cursor: pointer; }
+.cutscene-video-sound:hover, .cutscene-video-sound:focus-visible { background: #fbbf24; color: #111; }

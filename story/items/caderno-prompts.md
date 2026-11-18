@@ -1,7 +1,7 @@
 ---
 id: caderno-prompts
-name: Caderno de Prompts Secretos
-description: Anotações proibidas com fórmulas mágicas para a IA acertar o código de primeira.
+name: Cuaderno de prompts
+description: Apuntes para pedirle cosas claras a una IA. Primera regla: revisar siempre lo que responde.
 image: assets/item-caderno-prompts.svg
 location: CASA-42
 category: extra

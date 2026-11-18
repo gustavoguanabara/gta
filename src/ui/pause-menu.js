@@ -182,7 +182,7 @@ export class PauseMenuController {
         btn.disabled = true;
         btn.classList.add('locked');
         btn.setAttribute('aria-disabled', 'true');
-        btn.title = 'Jogue esta missão primeiro para desbloqueá-la';
+        btn.title = 'Jueguen primero esta misión para desbloquearla';
         btn.textContent = `🔒 ${mission.title}`;
       } else {
         btn.textContent = mission.title;

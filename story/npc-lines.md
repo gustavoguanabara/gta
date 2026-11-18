@@ -1,225 +1,217 @@
-<!-- Máximo permitido: 60 caracteres por frase (2 a 3 linhas no balão). Mensagens maiores que 60 caracteres são ignoradas pelo sistema. -->
-# Falas dos NPCs na Rua — Tecnologia e IA
+<!-- Máximo permitido: 60 caracteres por frase (2 a 3 líneas en el globo). Los mensajes de más de 60 caracteres son ignorados por el sistema. -->
+# Frases de los NPC en la calle — Tecnología, IA y vida de barrio
 
-- Meu prompt funcionou de primeira. Tô assustado.
-- A IA disse que tá pronto, mas nem compila.
-- Hoje acordei pensando em código e dormi em JSON.
-- O bug não é meu, é comportamento emergente.
-- Alguém viu meus tokens? Acabaram no meio da frase.
-- Pedi um botão simples e a IA criou um ERP.
-- Se funcionar em produção, não encosta mais!
-- Minha GPU tá pedindo férias no Caribe.
-- CSS é fácil, difícil é centralizar uma div.
-- Testei na minha máquina e juro que tava lindo.
-- A IA alucinou tanto que inventou uma linguagem nova.
-- Só mais um prompt e eu juro que vou dormir.
-- Commit sem mensagem é sinal de desespero.
-- Apaguei o node_modules e ganhei 40 GB de paz.
-- O servidor caiu, mas a culpa foi do cache.
-- Vibe coding é programar no poder da fé e do café.
-- A IA pediu desculpas e quebrou outra coisa.
-- Já tentei reiniciar e até rezar pro roteador.
-- Coloquei um console.log e resolvi minha vida.
-- O cliente quer IA até no filtro de café.
-- Fui debugar um erro e achei três piores.
-- Documentação? O código é autoexplicativo, confia.
-- Esse algoritmo roda em O de Deus me ajude.
-- A nuvem é só o computador de outra pessoa.
-- Fiz deploy na sexta e mudei de nome.
-- Sem café, meu cérebro retorna erro 503.
-- A IA escreveu um poema em vez de SQL.
-- Minha memória RAM tá chorando com 80 abas.
-- Quebrei o layout só trocando uma vírgula.
-- Hoje o Wi-Fi tá mais lento que tartaruga no gelo.
-- O chatbot disse que eu tenho razão. Que suspeito!
-- Se der erro 404, finge que é minimalismo.
-- Atualizei a biblioteca e nada mais abriu.
-- Nenhuma IA vai superar a preguiça humana.
-- Meu código tem sentimentos: às vezes funciona, às vezes não.
-- A IA me elogiou antes de apagar meu banco.
-- Esqueci o ponto e vírgula e perdi duas horas.
-- Tive uma ideia genial, mas o Copilot já tinha feito.
-- Tá rodando liso, só não abre o console.
-- A placa de vídeo esquentou tanto que fritou meu pão.
-- Backup é igual cinto: só lembra quando bate.
-- Mudei uma cor e o backend parou de responder.
-- A IA tá tão esperta que já reclama de reunião.
-- Minha senha tem 18 caracteres e eu já esqueci.
-- Só queria um café sem precisar aceitar cookies.
-- O estagiário deu force push na main de novo!
-- Meu teclado RGB aumenta o FPS do código.
-- Quem precisa de mapa quando tem GPS com IA?
-- A bateria do celular dura menos que uma daily.
-- Regex parece senha de alienígena, ninguém entende.
-- A IA gerou 500 linhas pra somar dois números.
-- Se tá lento, coloca um spinner bonito que resolve.
-- Hoje sonhei que eu era um loop infinito.
-- Faltou luz e meu código foi pra outra dimensão.
-- Não é gambiarra, é arquitetura alternativa.
-- O robô da esquina já sabe mais JavaScript que eu.
-- Limpei o cache e metade do site sumiu.
-- A IA respondeu com confiança total... tudo errado!
-- Preciso de mais memória, no PC e na cabeça.
-- Toda reunião podia ser uma mensagem no chat.
-- A tela azul apareceu bem na hora do print.
-- Aprendi Python ontem e hoje já sou especialista.
-- Esse erro só acontece quando o chefe tá olhando.
-- O código legado morde quem tenta refatorar.
-- Coloquei dark mode pra parecer mais profissional.
-- A IA disse "ótima pergunta" e não respondeu nada.
-- Meu mouse sem fio acabou a pilha no meio do clutch.
-- Tô treinando uma rede neural pra escolher meu almoço.
-- Se não tiver bug, não fui eu que programei.
-- A internet caiu bem na hora do upload final.
-- Criei uma IA que só gera desculpas pro chefe.
-- O código tá feio, mas passou nos testes!
-- Alguém desligou o servidor pra carregar o celular.
-- Minha vida é um eterno Ctrl+C e Ctrl+V.
-- O autocorretor tá tentando sabotar meu prompt.
-- A placa de vídeo custa mais que meu carro.
-- Hoje vou codar sem olhar o Stack Overflow... mentira.
-- A IA fez um código tão bom que eu não entendi.
-- O relógio do servidor tá em outro fuso horário.
-- Troquei o cabo USB e o bug desapareceu.
-- A inteligência artificial já sabe fazer café?
-- Meu disco tá 99% cheio de prints de erro.
-- O botão funciona, só tem que clicar com carinho.
-- A IA sugeriu deletar tudo e começar de novo.
-- Fui dormir às 3h resolvendo um erro de digitação.
-- O sistema tá fora do ar, mas o design tá lindo.
-- Essa API retorna tudo, menos o que eu pedi.
-- A latência hoje tá viajando de carroça.
-- Quem inventou o fuso horário em banco de dados?
-- Meu código funciona por pura pressão psicológica.
-- A IA me chamou de mestre e depois deu timeout.
-- O ventilador do notebook parece um avião decolando.
-- Só confio em código que já falhou pelo menos três vezes.
-- Meu prompt tinha 200 palavras e eu escrevi "faz bonitinho".
-- O usuário clicou onde não devia e quebrou tudo.
-- A nuvem choveu e molhou meu deploy.
-- Testar em produção dá mais adrenalina que corrida.
-- A IA ficou filosofando sobre o sentido do null.
-- Meu código não tem bugs, tem surpresas interativas.
-- Esqueci de salvar antes de fechar o editor!
-- O terminal ficou verde e eu já me senti hacker.
-- A rede neural confundiu um gato com uma torradeira.
-- Hoje o algoritmo só tá me recomendando coisa errada.
-- O servidor reiniciou sozinho por solidão.
-- Escrevi "por favor" no prompt só por garantia.
-- A bateria em 1% dura mais que meu foco em 100%.
-- O JSON quebrou por causa de uma vírgula sobrando.
-- A IA criou uma função recursiva que nunca mais voltou.
-- Meu fone Bluetooth conectou na TV do vizinho.
-- Se der undefined, coloca um ponto de interrogação.
-- O design ficou responsivo, menos no celular de verdade.
-- A IA respondeu em inglês no meio da frase em português.
-- Meu notebook esquenta tanto que dispensa aquecedor.
-- O banco de dados sumiu, mas eu tenho fé.
-- A barra de progresso travou em 99% desde ontem.
-- Criei um atalho que demora mais que o caminho longo.
-- A IA disse que não pode fazer isso e fez mesmo assim.
-- O código antigo é patrimônio histórico, não mexe!
-- Hoje eu só queria um Ctrl+Z pra vida real.
-- A impressora sentiu meu medo e travou o papel.
-- O Dockerfile funcionou na primeira! Tô sonhando?
-- Minha senha expirou e eu já não sei quem sou.
-- O bot de atendimento me transferiu pra outro bot.
-- Coloquei IA no meu despertador e ele me julgou.
-- A internet de fibra aqui parece barbante molhado.
-- O commit tinha 1 arquivo e 4.000 linhas alteradas.
-- A IA inventou uma biblioteca que nunca existiu.
-- Meu navegador tá com tanta aba que virou acordeão.
-- Se não sabe explicar, fala que é microsserviço.
-- O capacitor da placa deu tchau e foi embora.
-- Fui otimizar 2ms e quebrei o sistema inteiro.
-- A IA escreveu um comentário dizendo "não mexa aqui".
-- O dark mode salvou minha visão às 2 da manhã.
-- Meu código tem mais comentários que lógica.
-- O servidor aguenta tudo, menos dois usuários juntos.
-- A senha precisa de letra, número, símbolo e um poema.
-- O teclado mecânico acorda até o quarteirão inteiro.
-- A IA gerou uma imagem com sete dedos na mão!
-- Hoje meu cérebro deu segfault antes do almoço.
-- O cache antigo tá assombrando essa página.
-- Se tá funcionando no Safari, já merece um troféu.
-- O cabo HDMI só pega se dobrar pra esquerda.
-- Pedi código limpo e recebi uma enciclopédia.
-- A rede caiu bem na hora do último chefe.
-- Meu Git tá com tanto conflito que precisa de terapia.
-- A IA aprendeu sarcasmo e agora só me zoa.
-- O pendrive só entra na terceira tentativa.
-- Era só uma pequena alteração... três horas depois.
-- A tela travou, mas o mouse ainda mexe com esperança.
-- O servidor tá rodando num notebook velho atrás do armário.
-- A IA me recomendou descansar. Quem ela pensa que é?
-- Esse bug é tão raro que só acontece às terças.
-- Meu código passa no lint, mas falha na vida.
-- O cliente pediu "algo simples, tipo a Netflix".
-- A placa de vídeo tá piscando RGB pra disfarçar o lag.
-- Esqueci o await e tudo aconteceu fora de ordem!
-- A IA traduziu "bug" como "inseto no sistema".
-- O monitor apagou pra economizar energia enquanto eu pensava.
-- Se o usuário não lê o aviso, a culpa é do aviso.
-- Meu script virou um monstro que nem eu controlo.
-- O JSON veio como string dentro de outra string!
-- A IA criou um CSS com 9999 de z-index.
-- Hoje meu café tá compilando em modo lento.
-- O roteador só precisa de um tapinha técnico.
-- A API deu 200 OK com mensagem de erro dentro!
-- O modelo de IA respondeu: "Depende". Muito útil!
-- Meu disco SSD tá mais cheio que ônibus em horário de pico.
-- Fiz um loop tão rápido que viajei no tempo.
-- A IA disse "certamente!" e errou tudo de novo.
-- O app fechou sozinho pra poupar minha paciência.
-- Meu código tem personalidade própria, não obedece ninguém.
-- Só queria que o CSS entendesse o que eu sinto.
-- A placa-mãe apitou em código Morse hoje cedo.
-- O login social me deslogou de todas as contas.
-- A IA resumiu meu texto deixando maior que o original.
-- O mouse travou bem na hora de clicar em salvar.
-- Hoje o algoritmo tá mais confuso que eu.
-- O servidor de testes virou produção sem ninguém notar.
-- A bateria do notebook durou exatos 14 minutos.
-- O autocomplete completou minha frase com tristeza.
-- A IA achou um bug que eu nem sabia que existia.
-- Esse erro de CORS me persegue até nos sonhos.
-- Troquei HTTP por HTTPS e o mundo voltou a girar.
-- O terminal disse "Permission denied" pro dono do PC.
-- A IA sugeriu usar mais uma camada de abstração.
-- Meu código tá rodando a 60 FPS na base do milagre.
-- O botão de voltar fechou o aplicativo inteiro.
-- A nuvem hoje tá nublada e cheia de latência.
-- Pedi um gráfico e a IA desenhou com asteriscos.
-- O sistema pediu atualização bem na hora da apresentação.
-- Meu pen drive sumiu no bolso junto com meus sonhos.
-- A IA começou a responder em latim do nada.
-- O deploy demorou 20 minutos pra falhar no último segundo.
-- Se tá lento, culpa a renderização do navegador.
-- O carregador só funciona em um ângulo de 47 graus.
-- A IA disse que entendeu o contexto e mudou tudo.
-- Meu código tá tão limpo que até brilha no escuro.
-- O backup tava corrompido desde 2022, parabéns!
-- A tela do celular quebrou bem em cima do botão OK.
-- Hoje o Vibe Coding tá mais pra Vibe Debugging.
-- A IA escreveu um teste que sempre retorna true.
-- O servidor pediu mais memória e eu dei um tapinha.
-- Meu teclado travou no Caps Lock e agora eu só grito!
-- A API mudou sem avisar ninguém, clássico.
-- O sistema de login entrou em loop de verificação.
-- A IA me pediu pra ser mais específico no pedido.
-- O cooler tá fazendo barulho de liquidificador.
-- Só queria um banco de dados que não reclame de tipo.
-- Meu código funcionou e eu nem sei por quê!
-- A IA gerou um SVG que parece um ovo frito.
-- O cron job rodou três vezes no mesmo segundo.
-- Meu código tá em beta eterno desde o ano passado.
-- A placa de rede desistiu no meio da reunião.
-- O usuário digitou emoji no campo de CPF.
-- A IA disse "ótima ideia" pra pior ideia do dia.
-- Hoje vou codar offline pra ninguém ver meus erros.
-- O script de limpeza apagou a pasta errada!
-- A interface ficou linda, pena que não salva nada.
-- O servidor voltou do além depois do terceiro reboot.
-- A IA respondeu tão rápido que fiquei desconfiado.
-- Todo mundo quer IA, mas ninguém quer limpar os dados.
-- Fim do expediente, hora de pensar em código no banho.
+- Mi programa anduvo de primera. Estoy asustado, bo.
+- La IA dice que está pronto, pero ni corre.
+- Me dormí pensando en Python y soñé con sangrías.
+- Ese bug no es mío, es una funcionalidad sorpresa.
+- ¿Alguien vio el cargador de la ceibalita?
+- Le pedí un botón a la IA y me hizo una app entera.
+- Si anda, no lo toques más. Regla de oro.
+- Mi ceibalita pide vacaciones en Punta del Diablo.
+- Centrar un div es más difícil que el ingreso a UTU.
+- En mi máquina andaba, te lo juro por el mate.
+- La IA inventó un dato tan lindo que casi me lo creo.
+- Un ejercicio más de Scratch y me voy a dormir.
+- Me olvidé el punto y coma y se cayó todo.
+- Borré la carpeta de pruebas y gané paz interior.
+- Se cayó el wifi del liceo justo en la evaluación.
+- Programo con mate en una mano y el mouse en la otra.
+- La IA me pidió disculpas y rompió otra cosa.
+- Ya reinicié el router y le hablé con cariño.
+- Puse un print y entendí la vida, ta.
+- Mi tía quiere IA hasta en la cafetera.
+- Fui a arreglar un error y encontré tres peores.
+- ¿Comentarios en el código? Bo, se entiende solo.
+- Ese algoritmo es más lento que el bondi de las 7.
+- La nube es la compu de otra persona, nomás.
+- Subí cambios un viernes y me mudé a Tacuarembó.
+- Sin mate mi cerebro tira error 503.
+- Le pedí una tabla a la IA y me escribió un poema.
+- El micro:bit me mostró una carita feliz. Día hecho.
+- ¿Viste la feria del domingo? Hay pendrives y boniatos.
+- Mi abuela ya sabe usar la ceibalita mejor que yo.
+- Programé un juego en Scratch para la clase. ¡De una!
+- El profe dijo "es fácil" y perdí dos horas.
+- La variable se llamaba "x2final_ahora_si". Ta mal.
+- Me quedé sin batería en la mitad del bondi.
+- Aprendí que un bucle infinito no termina nunca. Nunca.
+- ¿Python es una serpiente o un lenguaje? Las dos, bo.
+- En la UTU armamos un robot que barre. Más o menos.
+- Hoy el wifi de la plaza vuela. Aprovechemos.
+- Mi código compila, pero no sé por qué. No pregunto.
+- El micro:bit cuenta mis pasos. Hoy caminé 40.
+- La IA me corrigió la ortografía y me cambió el nombre.
+- Tengo más pestañas abiertas que alumnos tiene el liceo.
+- Ta, ya sé: el error era una mayúscula.
+- Hice un sitio con HTML y quedó todo azul. Me encanta.
+- Mi perro pisó el teclado y arregló el bug.
+- Un if adentro de otro if adentro de otro if... socorro.
+- ¿Sabías que 0.1 más 0.2 no da 0.3? Pensalo.
+- Me pidieron una planilla y les hice un gráfico de torta.
+- El sensor de luz del micro:bit detectó que es de día.
+- Voy al almacén por galletitas y vuelvo a programar.
+- Con la IA hay que pensar igual. No hace magia.
+- Mi hermana hizo una animación y quedé re orgulloso.
+- La impresora del liceo tiene vida propia.
+- ¿Contraseña "1234"? Bo, cambiala ya.
+- Antes de compartir, verificá la fuente. Siempre.
+- La IA no sabe todo, solo habla con mucha confianza.
+- Le enseñé a mi abuelo a mandar fotos. Gran logro.
+- Hoy hay feria en el barrio y wifi en la plaza. Ideal.
+- El bondi vino lleno y yo pensando en algoritmos.
+- Hice un semáforo con el micro:bit. Rojo, amarillo, verde.
+- Mi primer "Hola, mundo" lo imprimí tres veces.
+- Lo que anda en Scratch, anda en el corazón.
+- ¿Una lista empieza en cero o en uno? Depende, bo.
+- Guardé el archivo como "final_final_v3". Ahora sí.
+- El mate se enfrió mientras arreglaba un error.
+- Mi compu hace ruido de lavarropas cuando compilo.
+- Probé el código en la ceibalita y anduvo joya.
+- No es lentitud, es procesamiento con calma.
+- Ta bravo el ejercicio de recursión, ¿no?
+- Una función que se llama a sí misma... ¡qué locura!
+- Si la IA te responde, igual chequeá los datos.
+- Me puse a ordenar números y terminé ordenando el cuarto.
+- La docente de informática es una crack.
+- El grupo de la clase tiene 300 mensajes sin leer.
+- Hice un juego de preguntas para repasar historia.
+- ¡Mi programa adivinó el número que pensé!
+- Aprendí a usar la terminal y me siento hacker.
+- Copiar y pegar sin entender no es programar.
+- Guardá seguido, que la luz se corta cuando quiere.
+- Hoy en la plaza hay taller de robótica. ¡Vamos!
+- La IA me escribió el código, pero yo lo entendí.
+- Mi gato se acostó arriba del teclado otra vez.
+- ¿Viste el partido? Yo estaba depurando, perdón.
+- Un buen nombre de variable vale oro.
+- El algoritmo de la abuela para el guiso es secreto.
+- Pensé que era un bug y era que no había guardado.
+- La pantalla del micro:bit es chiquita pero gigante.
+- Me salió un error en rojo y casi lloro.
+- Leer el mensaje de error ayuda. Posta.
+- Hoy aprendí qué es un píxel. Son cuadraditos.
+- Le pregunté a la IA por el clima y me dio un ensayo.
+- Si el código tiene sangría torcida, Python se ofende.
+- En el liceo hicimos una base de datos de bichos.
+- Me llevé la ceibalita a la rambla. Vista y código.
+- Una tabla bien hecha te salva la vida.
+- ¿Para qué sirve un for? Para no repetir, bo.
+- Mi hermano chico ya programa en Scratch. Crack.
+- El router del barrio es más viejo que yo.
+- Paso a paso se llega. Como el bondi, despacito.
+- No sé qué hice, pero ahora anda. No toco nada.
+- La IA aprende de datos, así que cuidemos los datos.
+- Me hice un sitio web para mi banda de cumbia.
+- ¿Probaste apagar y prender? Clásico que funciona.
+- Puse un emoji en el nombre del archivo. Error.
+- Prefiero un código simple antes que uno complicado.
+- El micro:bit sabe si lo sacudís. Es magia, casi.
+- Hoy me toca exponer el proyecto. Nervios a full.
+- En la clase de datos hicimos encuestas en el patio.
+- El que inventó los atajos de teclado es un genio.
+- Ctrl+Z me salvó la tarde otra vez.
+- Mi compu se actualizó justo cuando la necesitaba.
+- La IA me dijo que mi idea era genial. Sospechoso.
+- Revisé el código tres veces y era un espacio de más.
+- ¿Vamos a la cantina? Hay tortas fritas.
+- Llueve, así que hoy se programa adentro.
+- El parque tiene wifi y bancos con sombra. Ideal.
+- Un error es solo una pista para aprender.
+- Hice un contador de mates con el micro:bit.
+- Mi celu se quedó sin memoria por las fotos del perro.
+- El profe de matemática dice que todo es algoritmo.
+- Bo, ¿me pasás el link del ejercicio?
+- Hoy no hay clase de educación física. Hay de robótica.
+- Si no comentás el código, mañana no lo entendés.
+- La IA traduce, pero el "bo" no le sale.
+- Hice un dibujo con píxeles de la bandera de Artigas.
+- Aprendí que los datos también cuentan historias.
+- ¡Mi primer programa en Python saludó a toda la clase!
+- Con un buen plan, el código se escribe solo. Casi.
+- Ta, me voy que se me va el bondi.
+- Hoy toca feria y después clase de programación.
+- ¿Viste que los semáforos también tienen algoritmos?
+- La compu no se equivoca, hace lo que le decís.
+- Le puse música a mi juego de Scratch. ¡Quedó bárbaro!
+- El liceo tiene un club de programación. ¡Sumate!
+- Mi programa le gana al ta-te-ti a mi primo.
+- Las contraseñas son como el cepillo de dientes.
+- Escribí "pyhton" y me tiré media hora buscando el error.
+- Si la IA dice algo raro, preguntale a una persona.
+- Hice una página web para la cooperativa del barrio.
+- El micro:bit mide la temperatura. Hace calor, bo.
+- Me encanta cuando el código pasa todas las pruebas.
+- Hoy la tarea es armar un algoritmo para hacer mate.
+- Primero el agua, después la yerba. Así es el algoritmo.
+- No hay pregunta tonta en clase de informática.
+- Me equivoqué y aprendí. Doble ganancia.
+- Mi compañero programa cantando. Raro, pero anda.
+- Los robots no se cansan, pero se traban.
+- Ayer descubrí los diccionarios en Python. ¡Una joya!
+- Hoy el sol pega fuerte y la pantalla no se ve.
+- Pedí ayuda en el foro y me respondieron enseguida.
+- ¿Querés jugar al juego que hice? Es de esquivar bondis.
+- Tengo un archivo que se llama "no_borrar". Lo borré.
+- La IA hace resúmenes, pero el libro es mejor.
+- En la UTU aprendí a soldar y a programar. ¡Combo!
+- ¿Cuántos bits tiene un byte? Ocho, de una.
+- El código limpio es como la casa ordenada.
+- Me tomé un mate por cada error que encontré. Tengo frío.
+- Mi abuela dice que la nube es donde llueve. Tiene razón.
+- Hoy armamos una estación meteorológica con micro:bit.
+- ¿Viste qué lindo quedó el mural de la escuela?
+- El wifi del almacén se llama "SinClave". Es mentira.
+- Hice un quiz de geografía de Uruguay. ¿Te animás?
+- El "else" es el plan B de la vida.
+- Un booleano solo dice sí o no. Como mi viejo.
+- Programar es como cocinar: receta y paciencia.
+- La docente dijo "muy bien". Lo enmarco.
+- ¿Un bucle while? Mientras haya mate, sigo.
+- Le di de comer al perro antes que a la compu.
+- Hoy aprendí que un error 404 es "no encontrado".
+- El cyber de la esquina tiene las mejores sillas.
+- La ceibalita aguantó todo el año. Campeona.
+- Me pidieron un diagrama de flujo y dibujé un río.
+- Dividí el problema en partes chicas y salió.
+- La IA no tiene sentimientos, pero yo sí. Cuidame.
+- Hoy toca presentación de proyectos en el patio.
+- Mi programa ordena la lista de la feria. ¡Por precio!
+- En el bondi leo sobre algoritmos. Pasa rápido el viaje.
+- Si dos personas revisan, se ven más errores.
+- Pensá antes de escribir código. Ahorra tiempo.
+- Mi robot avanza, gira y choca. Lo normal.
+- El micro:bit y yo ya somos amigos.
+- Se me cortó la luz y no había guardado. Lección.
+- ¿Viste la helada de hoy? Ni el teclado quiere arrancar.
+- Hice una app para avisar cuándo pasa el bondi.
+- Un programa sin pruebas es una apuesta, bo.
+- Los datos sin contexto no dicen nada.
+- Hoy en el club hicimos carreras de robots.
+- Mi teclado tiene migas de bizcochos. Perdón.
+- Aprendí a hacer gráficos con datos del clima.
+- La IA no copia la tarea por vos, te ayuda a pensar.
+- Le pregunté a la IA y después lo confirmé en el libro.
+- El que pregunta, aprende. El que copia, no.
+- Programar en equipo es como jugar al fútbol.
+- Mi juego tiene un bug: el personaje vuela. Lo dejo.
+- La nueva versión de mi app tiene modo oscuro. ¡Al fin!
+- Ese sitio web carga más lento que la cola del banco.
+- Hoy hace frío. Ideal para programar con un té.
+- ¿Viste que en Uruguay todas las escuelas tienen compus?
+- La programación también es para vos. Animate.
+- Me salió el ejercicio a la primera y no lo puedo creer.
+- Cada vez que guardo, respiro tranquilo.
+- La IA me ayudó a entender, pero lo hice yo.
+- Hoy armé un circuito y se prendió la luz. ¡Emoción!
+- Soñé que era una variable y me cambiaban el valor.
+- Mi código es como mi cuarto: funciona, pero no mires.
+- El profesor dijo que el error es parte del camino.
+- ¿Escuchaste el tamboril? Hoy hay llamadas en el barrio.
+- Ta lindo el día para salir a buscar wifi en la plaza.
+- Mi calculadora casera ya suma y resta. Falta dividir.
+- Bo, ¿cómo era el atajo para copiar? Ah, ta.
+- Le enseñé a mi primo a programar el micro:bit.
+- Mis datos están ordenados. Mi mochila, no tanto.
+- Hice un programa que me recuerda tomar agua.
+- ¡De una! Hoy terminamos el proyecto final.

@@ -1,15 +1,16 @@
 ---
-title: GTA: Missão Vibe Coding
-page_title: Missão Vibe Coding — Curso em Vídeo
-subtitle: Cruzando a cidade para descobrir o segredo guardado em uma caixa secreta e lidando com GPUs, servidores e robôs!
+title: Expedición CC · Modo Ciudad
+page_title: Expedición CC · Modo Ciudad — Ceibal
+subtitle: Seis edificios, seis cursos del programa Ciencias de la Computación y un cofre en cada uno. ¿Llegan a abrirlos todos?
 splash: splash/splash-start.png
-characters: guanabara, jason, lucia, pundar, maltmon, kaue
-items: caixa-secreta, placa-video, servidor, peca-robo, chave-secreta
+characters: equipo, rosario, nacho, martina, joaquin, camila, facundo, elsa, thiago, vale
+items: cofre-puerto, cofre-web, cofre-python, cofre-datos, cofre-ia, cofre-microbit, meme-six-seven, meme-pato-de-goma, meme-funciona-en-mi-compu, meme-html-no-programa, meme-bug-feature, meme-ia-alucina, meme-drop-table, meme-ctrl-z
 collectibles: disquete, pente-memoria, conector-ethernet, cooler-rgb, bateria-robo, caderno-prompts, token-dourado, manual-regex, cracha-gafanhoto, caneca-cafe, oculos-vibe-coder, pendrive-criptografado
-missions: 01-caixa-secreta, 02-placa-de-video, 03-servidor-alucinado, 04-peca-do-robo, 05-chave-do-vibe-coding
-encounters: extra-casa-hostnet
+missions: 01-puerto, 02-isla-web, 03-volcan-python, 04-mina-de-datos, 05-torre-ia, 06-taller-microbit, 07-cierre
+encounters: extra-mesa-inscripciones, extra-meme-six-seven, extra-meme-pato-de-goma, extra-meme-funciona-en-mi-compu, extra-meme-html-no-programa, extra-meme-bug-feature, extra-meme-ia-alucina, extra-meme-drop-table, extra-meme-ctrl-z
+street_events: senora-cruzar, phishing-sms, wifi-gratis, contrasena-segura, pilas-reciclaje, noticia-falsa
 ---
 
-# Missão Vibe Coding
+# Expedición CC · Modo Ciudad
 
-Uma aventura bem-humorada pelo universo do Curso em Vídeo, Inteligência Artificial e Vibe Coding.
+Versión de la Expedición CC (Ceibal · Programa Ciencias de la Computación) sobre el motor de mundo abierto GTA de Gustavo Guanabara.

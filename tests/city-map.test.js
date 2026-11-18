@@ -31,8 +31,8 @@ test('gera cidade-base 30x30 com códigos únicos de ruas, casas, comércios e p
 
 test('sinaliza erro descritivo ao resolver código de local inexistente', () => {
   const map = new CityMap();
-  assert.throws(() => map.resolveLocationCode('NAO-EXISTE-99'), /Código de local inexistente/);
-  assert.throws(() => map.resolveLocationCode(''), /Código de local inválido/);
+  assert.throws(() => map.resolveLocationCode('NAO-EXISTE-99'), /Código de lugar inexistente/);
+  assert.throws(() => map.resolveLocationCode(''), /Código de lugar inválido/);
 });
 
 test('identifica entrada em interior térreo pelo getLocationAt', () => {
