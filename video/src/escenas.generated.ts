@@ -1089,5 +1089,931 @@ export const ESCENAS: Escena[] = [
         "profile": "Coordinadora del Puerto de partida · Fase 1"
       }
     ]
+  },
+  {
+    "id": "extra-meme-six-seven-escena-1",
+    "missionId": "extra-meme-six-seven",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#E2203F",
+    "logo": "assets/item-meme-six-seven.svg",
+    "left": "equipo",
+    "right": "thiago",
+    "lines": [
+      {
+        "speaker": "thiago",
+        "name": "Thiago",
+        "text": "¡SIX SEVEN! 🤷 ¿Lo entendieron? Nadie lo entiende y por eso es gracioso."
+      },
+      {
+        "speaker": "thiago",
+        "name": "Thiago",
+        "text": "Les regalo mi cartel si me ganan un desafío de Python."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        175,
+        143
+      ],
+      "outro": 15,
+      "total": 353
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "thiago",
+        "name": "Thiago",
+        "profile": "Estudiante de 2.° de bachillerato, rey de los memes"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-six-seven-escena-2",
+    "missionId": "extra-meme-six-seven",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 2,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#E2203F",
+    "logo": "assets/item-meme-six-seven.svg",
+    "left": "equipo",
+    "right": "thiago",
+    "lines": [
+      {
+        "speaker": "thiago",
+        "name": "Thiago",
+        "text": "Tomen el cartel. Ahora son oficialmente six seven."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        136
+      ],
+      "outro": 15,
+      "total": 171
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "thiago",
+        "name": "Thiago",
+        "profile": "Estudiante de 2.° de bachillerato, rey de los memes"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-pato-de-goma-escena-1",
+    "missionId": "extra-meme-pato-de-goma",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#F39219",
+    "logo": "assets/item-meme-pato-de-goma.svg",
+    "left": "equipo",
+    "right": "martina",
+    "lines": [
+      {
+        "speaker": "martina",
+        "name": "Martina",
+        "text": "¿Ven este pato? Es mi herramienta favorita de programación."
+      },
+      {
+        "speaker": "martina",
+        "name": "Martina",
+        "text": "Cuando un programa no anda, se lo explico al pato, línea por línea."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        152,
+        166
+      ],
+      "outro": 15,
+      "total": 353
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "martina",
+        "name": "Martina",
+        "profile": "Tutora de Programación 1, 2 y 3"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-pato-de-goma-escena-2",
+    "missionId": "extra-meme-pato-de-goma",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 2,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#F39219",
+    "logo": "assets/item-meme-pato-de-goma.svg",
+    "left": "equipo",
+    "right": "martina",
+    "lines": [
+      {
+        "speaker": "martina",
+        "name": "Martina",
+        "text": "Llévense uno. Tengo como veinte."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        104
+      ],
+      "outro": 15,
+      "total": 139
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "martina",
+        "name": "Martina",
+        "profile": "Tutora de Programación 1, 2 y 3"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-funciona-en-mi-compu-escena-1",
+    "missionId": "extra-meme-funciona-en-mi-compu",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#0C88CA",
+    "logo": "assets/item-meme-funciona-en-mi-compu.svg",
+    "left": "equipo",
+    "right": "nacho",
+    "lines": [
+      {
+        "speaker": "nacho",
+        "name": "Nacho",
+        "text": "¡En mi compu funciona! 😤 Pero en el celular la página se ve toda rota."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        173
+      ],
+      "outro": 15,
+      "total": 208
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "nacho",
+        "name": "Nacho",
+        "profile": "Tutor de Desarrollo web"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-funciona-en-mi-compu-escena-2",
+    "missionId": "extra-meme-funciona-en-mi-compu",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 2,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#0C88CA",
+    "logo": "assets/item-meme-funciona-en-mi-compu.svg",
+    "left": "equipo",
+    "right": "nacho",
+    "lines": [
+      {
+        "speaker": "nacho",
+        "name": "Nacho",
+        "text": "Tomen este sticker para la ceibalita. Que nunca les pase."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        149
+      ],
+      "outro": 15,
+      "total": 184
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "nacho",
+        "name": "Nacho",
+        "profile": "Tutor de Desarrollo web"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-html-no-programa-escena-1",
+    "missionId": "extra-meme-html-no-programa",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#E34F26",
+    "logo": "assets/item-meme-html-no-programa.svg",
+    "left": "equipo",
+    "right": "vale",
+    "lines": [
+      {
+        "speaker": "vale",
+        "name": "Vale",
+        "text": "En mi clase se pelean todos los días: ¿HTML es un lenguaje de programación o no?"
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        189
+      ],
+      "outro": 15,
+      "total": 224
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "vale",
+        "name": "Vale",
+        "profile": "Estudiante de UTU, fan de la tecnología"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-html-no-programa-escena-2",
+    "missionId": "extra-meme-html-no-programa",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 2,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#E34F26",
+    "logo": "assets/item-meme-html-no-programa.svg",
+    "left": "equipo",
+    "right": "vale",
+    "lines": [
+      {
+        "speaker": "vale",
+        "name": "Vale",
+        "text": "Tengo justo la remera para el debate. Es suya."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        129
+      ],
+      "outro": 15,
+      "total": 164
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "vale",
+        "name": "Vale",
+        "profile": "Estudiante de UTU, fan de la tecnología"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-bug-feature-escena-1",
+    "missionId": "extra-meme-bug-feature",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#30A936",
+    "logo": "assets/item-meme-bug-feature.svg",
+    "left": "equipo",
+    "right": "facundo",
+    "lines": [
+      {
+        "speaker": "facundo",
+        "name": "Facundo",
+        "text": "Mi micro:bit muestra un corazón cuando la agito... pero tenía que mostrar una flecha."
+      },
+      {
+        "speaker": "facundo",
+        "name": "Facundo",
+        "text": "Le voy a decir a todos que no es un bug, ¡es una feature! 😎"
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        198,
+        154
+      ],
+      "outro": 15,
+      "total": 387
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "facundo",
+        "name": "Facundo",
+        "profile": "Tutor de Micro:bit"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-bug-feature-escena-2",
+    "missionId": "extra-meme-bug-feature",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 2,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#30A936",
+    "logo": "assets/item-meme-bug-feature.svg",
+    "left": "equipo",
+    "right": "facundo",
+    "lines": [
+      {
+        "speaker": "facundo",
+        "name": "Facundo",
+        "text": "Llévense este bicho de recuerdo. Yo voy a arreglar mi código."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        156
+      ],
+      "outro": 15,
+      "total": 191
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "facundo",
+        "name": "Facundo",
+        "profile": "Tutor de Micro:bit"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-ia-alucina-escena-1",
+    "missionId": "extra-meme-ia-alucina",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#9225A5",
+    "logo": "assets/item-meme-ia-alucina.svg",
+    "left": "equipo",
+    "right": "camila",
+    "lines": [
+      {
+        "speaker": "camila",
+        "name": "Camila",
+        "text": "Le pregunté a una IA quién inventó el wifi y me dijo que fue Artigas. 🤔"
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        175
+      ],
+      "outro": 15,
+      "total": 210
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "camila",
+        "name": "Camila",
+        "profile": "Tutora de IA desde cero y Profundización en IA"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-ia-alucina-escena-2",
+    "missionId": "extra-meme-ia-alucina",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 2,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#9225A5",
+    "logo": "assets/item-meme-ia-alucina.svg",
+    "left": "equipo",
+    "right": "camila",
+    "lines": [
+      {
+        "speaker": "camila",
+        "name": "Camila",
+        "text": "Tomen este gorro anti-alucinaciones. Funciona solo si lo usan junto con la cabeza."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        193
+      ],
+      "outro": 15,
+      "total": 228
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "camila",
+        "name": "Camila",
+        "profile": "Tutora de IA desde cero y Profundización en IA"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-drop-table-escena-1",
+    "missionId": "extra-meme-drop-table",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#30A936",
+    "logo": "assets/item-meme-drop-table.svg",
+    "left": "equipo",
+    "right": "joaquin",
+    "lines": [
+      {
+        "speaker": "joaquin",
+        "name": "Joaquín",
+        "text": "¿Conocen el chiste del pibe que se llamaba Robert'); DROP TABLE estudiantes;--?"
+      },
+      {
+        "speaker": "joaquin",
+        "name": "Joaquín",
+        "text": "El sistema del liceo guardó el nombre tal cual... y se borró la tabla entera. 😱"
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        187,
+        189
+      ],
+      "outro": 15,
+      "total": 411
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "joaquin",
+        "name": "Joaquín",
+        "profile": "Tutor de Datos para la acción"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-drop-table-escena-2",
+    "missionId": "extra-meme-drop-table",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 2,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#30A936",
+    "logo": "assets/item-meme-drop-table.svg",
+    "left": "equipo",
+    "right": "joaquin",
+    "lines": [
+      {
+        "speaker": "joaquin",
+        "name": "Joaquín",
+        "text": "Tomen esta goma. Úsenla con cuidado."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        112
+      ],
+      "outro": 15,
+      "total": 147
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "joaquin",
+        "name": "Joaquín",
+        "profile": "Tutor de Datos para la acción"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-ctrl-z-escena-1",
+    "missionId": "extra-meme-ctrl-z",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#FFC800",
+    "logo": "assets/item-meme-ctrl-z.svg",
+    "left": "equipo",
+    "right": "vale",
+    "lines": [
+      {
+        "speaker": "vale",
+        "name": "Vale",
+        "text": "¡Ayuda! Borré sin querer toda la tarea de Programación. 😭"
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        150
+      ],
+      "outro": 15,
+      "total": 185
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "vale",
+        "name": "Vale",
+        "profile": "Estudiante de UTU, fan de la tecnología"
+      }
+    ]
+  },
+  {
+    "id": "extra-meme-ctrl-z-escena-2",
+    "missionId": "extra-meme-ctrl-z",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 2,
+    "missionNumber": 0,
+    "title": "",
+    "color": "#FFC800",
+    "logo": "assets/item-meme-ctrl-z.svg",
+    "left": "equipo",
+    "right": "vale",
+    "lines": [
+      {
+        "speaker": "vale",
+        "name": "Vale",
+        "text": "Les regalo esta tecla dorada. Se la merecen."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        126
+      ],
+      "outro": 15,
+      "total": 161
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "vale",
+        "name": "Vale",
+        "profile": "Estudiante de UTU, fan de la tecnología"
+      }
+    ]
+  },
+  {
+    "id": "senora-cruzar-escena-1",
+    "missionId": "senora-cruzar",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "Doña Elsa quiere cruzar",
+    "color": "#00A096",
+    "logo": "",
+    "left": "equipo",
+    "right": "elsa",
+    "lines": [
+      {
+        "speaker": "elsa",
+        "name": "Doña Elsa",
+        "text": "Ay, gurises, con tanto auto no me animo a cruzar. ¿Me dan una mano?"
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        166
+      ],
+      "outro": 15,
+      "total": 201
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "elsa",
+        "name": "Doña Elsa",
+        "profile": "Vecina del barrio, va todos los días a la feria"
+      }
+    ]
+  },
+  {
+    "id": "phishing-sms-escena-1",
+    "missionId": "phishing-sms",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "Mensaje sospechoso",
+    "color": "#00A096",
+    "logo": "",
+    "left": "equipo",
+    "right": "vale",
+    "lines": [
+      {
+        "speaker": "vale",
+        "name": "Vale",
+        "text": "Me llegó esto: \"CEIBAL: tu ceibalita será bloqueada HOY. Entrá a ceibal-premios.xyz y poné tu contraseña\"."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        210
+      ],
+      "outro": 15,
+      "total": 245
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "vale",
+        "name": "Vale",
+        "profile": "Estudiante de UTU, fan de la tecnología"
+      }
+    ]
+  },
+  {
+    "id": "wifi-gratis-escena-1",
+    "missionId": "wifi-gratis",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "Wi-Fi gratis",
+    "color": "#00A096",
+    "logo": "",
+    "left": "equipo",
+    "right": "thiago",
+    "lines": [
+      {
+        "speaker": "thiago",
+        "name": "Thiago",
+        "text": "¡Encontré una red \"Plaza_Libre_Gratis_REAL\"! Para entrar pide mi usuario y contraseña de Google."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        210
+      ],
+      "outro": 15,
+      "total": 245
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "thiago",
+        "name": "Thiago",
+        "profile": "Estudiante de 2.° de bachillerato, rey de los memes"
+      }
+    ]
+  },
+  {
+    "id": "contrasena-segura-escena-1",
+    "missionId": "contrasena-segura",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "Contraseña nueva",
+    "color": "#00A096",
+    "logo": "",
+    "left": "equipo",
+    "right": "elsa",
+    "lines": [
+      {
+        "speaker": "elsa",
+        "name": "Doña Elsa",
+        "text": "Mi nieto me hizo una cuenta en la compu y me pide una contraseña."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        163
+      ],
+      "outro": 15,
+      "total": 198
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "elsa",
+        "name": "Doña Elsa",
+        "profile": "Vecina del barrio, va todos los días a la feria"
+      }
+    ]
+  },
+  {
+    "id": "pilas-reciclaje-escena-1",
+    "missionId": "pilas-reciclaje",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "Pilas usadas",
+    "color": "#00A096",
+    "logo": "",
+    "left": "equipo",
+    "right": "thiago",
+    "lines": [
+      {
+        "speaker": "thiago",
+        "name": "Thiago",
+        "text": "Tengo pilas viejas del joystick. Las tiro en esta papelera y listo."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        166
+      ],
+      "outro": 15,
+      "total": 201
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "thiago",
+        "name": "Thiago",
+        "profile": "Estudiante de 2.° de bachillerato, rey de los memes"
+      }
+    ]
+  },
+  {
+    "id": "noticia-falsa-escena-1",
+    "missionId": "noticia-falsa",
+    "kind": "encounter",
+    "section": "escena",
+    "order": 1,
+    "missionNumber": 0,
+    "title": "Video viral",
+    "color": "#00A096",
+    "logo": "",
+    "left": "equipo",
+    "right": "vale",
+    "lines": [
+      {
+        "speaker": "vale",
+        "name": "Vale",
+        "text": "¡Miren! Un video dice que mañana la Rambla se va a inundar entera. Lo hizo una IA, pero parece re real."
+      }
+    ],
+    "reward": null,
+    "timing": {
+      "intro": 20,
+      "perLine": [
+        210
+      ],
+      "outro": 15,
+      "total": 245
+    },
+    "characters": [
+      {
+        "id": "equipo",
+        "name": "Equipo explorador",
+        "profile": "Estudiantes de bachillerato en expedición"
+      },
+      {
+        "id": "vale",
+        "name": "Vale",
+        "profile": "Estudiante de UTU, fan de la tecnología"
+      }
+    ]
   }
 ];

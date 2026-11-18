@@ -57,11 +57,12 @@ const SPEECH = /^- ([^:]+):\s*(.+)$/;
 const files = [
   ...list(manifest.missions).map((id) => ({ id, kind: 'mission' })),
   ...list(manifest.encounters).map((id) => ({ id, kind: 'encounter' })),
+  ...list(manifest.street_events).map((id) => ({ id, kind: 'encounter', dir: 'eventos' })),
 ];
 
 const scenes = [];
-files.forEach(({ id, kind }, missionIndex) => {
-  const file = path.join(storyDir, 'missions', `${id}.md`);
+files.forEach(({ id, kind, dir = 'missions' }, missionIndex) => {
+  const file = path.join(storyDir, dir, `${id}.md`);
   const { meta, lines, end } = readFront(fs.readFileSync(file, 'utf8'));
   const out = lines.slice(0, end + 1);
   let section = null;

@@ -104,7 +104,7 @@ PRACA-35: Plaza del Candombe
 PRACA-36: Plazoleta del Ombú
 
 ## Comercios
-COM-01: Polirrubro del Paso Molino
+COM-01: Bazar La Tecla
 COM-02: Taller Micro:bit
 COM-03: Centro Ceibal
 COM-04: Mascotas La Garra
@@ -134,9 +134,9 @@ COM-27: Electrónica Doña Blanca
 COM-28: Regalería La Tacuara
 COM-29: Mesa de inscripciones
 COM-30: Puerto de partida
-COM-31: Café de Aguada
+COM-31: Kiosco Six Seven
 COM-32: Bar de Colón
-COM-33: Pinturería Lo de Fito
+COM-33: Taller El Bicho
 COM-34: Sastrería Los Amigos
 COM-35: Bazar Lo de Toto
 COM-36: Autoservice Doña Blanca
@@ -155,7 +155,7 @@ COM-48: Óptica El Arroyo
 COM-49: Tortas y Postres La Cumparsita
 COM-50: Torre IA
 COM-51: Isla Web
-COM-52: Mercería Don Tito
+COM-52: Biblioteca del Barrio
 COM-53: Juguetería El Hornero
 COM-54: Pañalería El Tamboril
 COM-55: Verdulería de Peñarol
@@ -175,7 +175,7 @@ COM-68: Bar El Progreso
 COM-69: Pinturería El Parador
 COM-70: Lavandería El Parador
 COM-71: Taller Mecánico Dos Hermanos
-COM-72: Taller Mecánico Don Ruben
+COM-72: Café del Pato
 COM-73: Mina de Datos
 COM-74: Volcán Python
 COM-75: Cyber La Torcaza
@@ -206,9 +206,9 @@ COM-99: Bicicletería de Peñarol
 COM-100: Bar de Punta Gorra
 COM-101: Relojería El Sol
 COM-102: Mascotas La Uruguaya
-COM-103: Chivitería El Tamboril
+COM-103: Cyber La Pantalla
 COM-104: Granja La Barra
-COM-105: Casa de Fotos Doña Marta
+COM-105: Tienda de Remeras Vale
 COM-106: Florería La Tacuara
 COM-107: Granja de Tres Cruces
 COM-108: Librería La Cuadra
@@ -234,7 +234,7 @@ COM-127: Rotisería Doña Blanca
 COM-128: Juguetería del Buceo
 COM-129: Pizzería de la Teja
 COM-130: Pinturería de Tres Cruces
-COM-131: Zapatería Don Ruben
+COM-131: Papelería Bobby
 COM-132: Panadería de Colón
 COM-133: Panchería de Palermo
 COM-134: Óptica de Tres Cruces

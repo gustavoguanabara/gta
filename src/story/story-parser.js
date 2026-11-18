@@ -93,6 +93,7 @@ export function parseStoryManifest(rawText, fileName = 'story.md') {
   const items = parseListField(meta.items);
   const collectibles = parseListField(meta.collectibles);
   const encounters = parseListField(meta.encounters);
+  const streetEvents = parseListField(meta.street_events || meta.eventos);
 
   return {
     title: meta.title,
@@ -104,6 +105,7 @@ export function parseStoryManifest(rawText, fileName = 'story.md') {
     items,
     collectibles,
     encounters,
+    streetEvents,
     description: body,
   };
 }
@@ -530,6 +532,48 @@ export function parseEncounterMarkdown(rawText, fileName = 'encounter.md', cityM
     prompt: String(meta.prompt || '').trim(),
     roofColor,
     roofLogo,
+    ...parseRewardFields(meta, fileName),
+    cutscene,
+  };
+}
+
+// Campos opcionales de premio y disponibilidad (encuentros y eventos de la calle).
+function parseRewardFields(meta, fileName) {
+  const rawMode = String(meta.modo || meta.mode || 'siempre').trim().toLowerCase();
+  if (!['siempre', 'libre'].includes(rawMode)) {
+    throw new StoryParseError(fileName, 2, `Modo inválido "${rawMode}". Usen "siempre" o "libre" (solo en modo libre).`);
+  }
+  const rawBtc = String(meta.reward_btc || '').trim();
+  const rewardBtc = rawBtc ? Number(rawBtc) : 0;
+  if (!Number.isInteger(rewardBtc) || rewardBtc < 0 || rewardBtc > 1000) {
+    throw new StoryParseError(fileName, 2, `reward_btc inválido "${rawBtc}". Usen un número entero entre 0 y 1000.`);
+  }
+  return {
+    mode: rawMode,
+    rewardItem: String(meta.reward_item || '').trim(),
+    rewardBtc,
+  };
+}
+
+export function parseStreetEventMarkdown(rawText, fileName = 'evento.md') {
+  const { meta, body, bodyStartLine } = parseFrontmatter(rawText, fileName);
+  if (!meta.id || !meta.bubble) {
+    throw new StoryParseError(fileName, 2, 'El evento debe definir "id" y "bubble" (texto corto del globo).');
+  }
+  if (String(meta.bubble).length > 40) {
+    throw new StoryParseError(fileName, 2, 'El texto de "bubble" debe tener como máximo 40 caracteres.');
+  }
+  const { sections, sectionStarts } = splitMarkdownSections(body, bodyStartLine, ['CUTSCENE']);
+  const cutscene = parseCutsceneBlock(sections.CUTSCENE, sectionStarts.CUTSCENE, fileName);
+  if (cutscene.steps.length === 0) {
+    throw new StoryParseError(fileName, sectionStarts.CUTSCENE, 'El evento debe tener una sección "## CUTSCENE" con al menos una fala.');
+  }
+  return {
+    id: String(meta.id).trim(),
+    title: String(meta.title || meta.id).trim(),
+    bubble: String(meta.bubble).trim(),
+    notice: String(meta.aviso || meta.notice || '').trim(),
+    ...parseRewardFields(meta, fileName),
     cutscene,
   };
 }

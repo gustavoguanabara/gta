@@ -10,6 +10,7 @@ import {
   parseCharacterMarkdown,
   parseMissionMarkdown,
   parseEncounterMarkdown,
+  parseStreetEventMarkdown,
   parseMapMarkdown,
   replaceLocationCodesWithNames,
   validateAssetPath,
@@ -171,7 +172,7 @@ test('map/map.md mapeia todos os locais da cidade e substitui códigos em falas 
   const mapRaw = fs.readFileSync(path.join(storyDir, 'map/map.md'), 'utf8');
   const locationNames = parseMapMarkdown(mapRaw, 'map/map.md');
 
-  assert.equal(locationNames.get('COM-01'), 'Polirrubro del Paso Molino');
+  assert.equal(locationNames.get('COM-01'), 'Bazar La Tecla');
   assert.equal(locationNames.get('RUA-01'), 'Av. 18 de Julio');
   assert.equal(locationNames.get('COM-30'), 'Puerto de partida');
   assert.equal(locationNames.get('CASA-02'), 'Casa de Doña Camila Sena');
@@ -649,4 +650,29 @@ target: COM-02
 `, 'm.md'),
     StoryParseError,
   );
+});
+
+test('eventos de la calle y misiones extra con premio se leen desde story/', () => {
+  const storyDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../story');
+  const map = new CityMap();
+  const manifest = parseStoryManifest(fs.readFileSync(path.join(storyDir, 'story.md'), 'utf8'), 'story.md');
+  assert.ok(manifest.streetEvents.length >= 6);
+  for (const id of manifest.streetEvents) {
+    const ev = parseStreetEventMarkdown(fs.readFileSync(path.join(storyDir, 'eventos', `${id}.md`), 'utf8'), `eventos/${id}.md`);
+    assert.equal(ev.id, id);
+    assert.ok(ev.rewardBtc > 0, id);
+    assert.ok(ev.bubble.length <= 40, id);
+    const ask = ev.cutscene.steps.find((s) => s.choices?.length);
+    assert.equal(ask.choices.filter((c) => c.outcome === 'next' && c.feedback).length, 1, id);
+  }
+  const memes = manifest.encounters.filter((id) => id.startsWith('extra-meme-'));
+  assert.ok(memes.length >= 8);
+  for (const id of memes) {
+    const enc = parseEncounterMarkdown(fs.readFileSync(path.join(storyDir, 'missions', `${id}.md`), 'utf8'), `missions/${id}.md`, map);
+    assert.equal(enc.mode, 'libre');
+    assert.ok(manifest.items.includes(enc.rewardItem), `${id}: ${enc.rewardItem}`);
+    assert.ok(fs.existsSync(path.join(storyDir, enc.roofLogo)), enc.roofLogo);
+  }
+  assert.throws(() => parseStreetEventMarkdown('---\nid: x\nbubble: hola\nreward_btc: mucho\n---\n## CUTSCENE\n- a: b\n', 'x.md'), StoryParseError);
+  assert.throws(() => parseEncounterMarkdown('---\nid: x\nnpc: a\nlocation: CASA-63\nmodo: a veces\n---\n## CUTSCENE\n- a: b\n', 'x.md', map), StoryParseError);
 });

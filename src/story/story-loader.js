@@ -4,6 +4,7 @@ import {
   parseItemMarkdown,
   parseMissionMarkdown,
   parseEncounterMarkdown,
+  parseStreetEventMarkdown,
   parseMapMarkdown,
   replaceLocationCodesWithNames,
   validateAssetPath,
@@ -542,7 +543,23 @@ export async function loadStoryPackage(basePath = './story', cityMap = null, opt
       if (encounter.roofLogo) {
         encounter.roofLogo = withBust(`${cleanBase}/${encounter.roofLogo}`);
       }
+      if (encounter.rewardItem && !items.has(encounter.rewardItem)) {
+        throw new StoryParseError(encounterFile, 2, `Ítem "${encounter.rewardItem}" (reward_item) no declarado en story.md.`);
+      }
       return encounter;
+    }),
+  );
+
+  const streetEvents = await Promise.all(
+    (manifest.streetEvents || []).map(async (eventId) => {
+      const eventFile = `eventos/${eventId}.md`;
+      const raw = await readStoryText(`${cleanBase}/${eventFile}`, eventFile);
+      const event = parseStreetEventMarkdown(raw, eventFile);
+      await hydrateCutscene(event.cutscene, 'RUA-01', eventFile);
+      if (event.rewardItem && !items.has(event.rewardItem)) {
+        throw new StoryParseError(eventFile, 2, `Ítem "${event.rewardItem}" (reward_item) no declarado en story.md.`);
+      }
+      return event;
     }),
   );
 
@@ -562,6 +579,7 @@ export async function loadStoryPackage(basePath = './story', cityMap = null, opt
     items,
     missions,
     encounters,
+    streetEvents,
     locationNames,
   };
 }

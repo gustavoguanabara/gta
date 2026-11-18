@@ -916,6 +916,20 @@ export class HudController {
     this.activePickupShowcase = showcase;
   }
 
+  setBitcoin(value, delta = 0) {
+    const badge = document.getElementById('btc-badge');
+    const text = document.getElementById('btc-text');
+    if (!badge || !text) return;
+    text.textContent = String(Math.max(0, Math.floor(value || 0)));
+    badge.setAttribute('aria-label', `Bitcoin: ${text.textContent}`);
+    if (delta > 0) {
+      badge.classList.remove('btc-gain');
+      void badge.offsetWidth;
+      badge.classList.add('btc-gain');
+      badge.dataset.delta = `+${delta}`;
+    }
+  }
+
   showToast(message, options = 3600) {
     if (!this.hudToastEl) return;
     const opts = typeof options === 'number' ? { durationMs: options } : (options || {});

@@ -1,5 +1,5 @@
 // Renderiza todos los videos de diálogo a ../story/videos/<id>.mp4 con un solo bundle.
-// Uso: npm run render:all   (opcional: un filtro, ej. npm run render:all -- 03-volcan, o -- -v para solo verticales)
+// Uso: npm run render:all   (opcional: un filtro, ej. npm run render:all -- 03-volcan; -- -v para solo verticales; -- --faltantes para no rehacer los que ya existen)
 import { bundle } from '@remotion/bundler';
 import { getCompositions, renderMedia } from '@remotion/renderer';
 import fs from 'node:fs';
@@ -9,7 +9,9 @@ import { fileURLToPath } from 'node:url';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.resolve(here, '../../story/videos');
 fs.mkdirSync(outDir, { recursive: true });
-const filtro = process.argv[2] || '';
+const args = process.argv.slice(2);
+const soloFaltantes = args.includes('--faltantes');
+const filtro = args.find((a) => !a.startsWith('--')) || '';
 const browserExecutable = fs.existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined;
 
 const serveUrl = await bundle({ entryPoint: path.resolve(here, '../src/index.ts') });
@@ -21,6 +23,7 @@ for (const composition of comps) {
   const outputLocation = vertical
     ? path.join(outDir, 'vertical', `${composition.id.slice(0, -2)}.mp4`)
     : path.join(outDir, `${composition.id}.mp4`);
+  if (soloFaltantes && fs.existsSync(outputLocation)) continue;
   await renderMedia({
     serveUrl,
     composition,

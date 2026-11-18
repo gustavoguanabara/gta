@@ -75,6 +75,12 @@ export class Engine {
     this.collectibleFullToastCooldown = 0;
     this.worldCollectibles = [];
     this.collectedExtraIds = new Set();
+    this.bitcoin = 0;
+    this.completedEncounterIds = new Set();
+    this.streetEvent = null;
+    this.streetEventTimer = 25;
+    this.streetEventBubbleTimer = 0;
+    this.streetEventQueue = [];
     this.unlockedMissionIndices = new Set([0]);
 
     this.pathfinder = null;
@@ -241,6 +247,8 @@ export class Engine {
       itemPickedUp: this.itemPickedUp,
       inventorySlots: this.inventory.getSlots(),
       collectedExtraIds: [...this.collectedExtraIds],
+      bitcoin: this.bitcoin,
+      completedEncounterIds: [...this.completedEncounterIds],
       completedNpcPoints: this.completedNpcPoints,
       player: {
         x: this.player.x,
@@ -345,6 +353,10 @@ export class Engine {
     this.#syncInventoryHud();
 
     this.collectedExtraIds = new Set(savedState.collectedExtraIds || []);
+    this.bitcoin = Math.max(0, Math.floor(Number(savedState.bitcoin) || 0));
+    this.completedEncounterIds = new Set(savedState.completedEncounterIds || []);
+    this.#buildEncounterNpcs();
+    this.#syncBitcoinHud();
     for (const c of this.worldCollectibles) {
       if (this.collectedExtraIds.has(c.id) || this.inventory.hasItem(c.id)) {
         c.collected = true;
@@ -558,6 +570,131 @@ export class Engine {
     this.hud?.setInventoryCount?.(this.inventory.getCount(), this.inventory.capacity);
   }
 
+  #syncBitcoinHud(delta = 0) {
+    this.hud?.setBitcoin?.(this.bitcoin, delta);
+  }
+
+  #addBitcoin(amount) {
+    const n = Math.max(0, Math.floor(Number(amount) || 0));
+    if (!n) return;
+    this.bitcoin += n;
+    this.#syncBitcoinHud(n);
+  }
+
+  // Premio de un encuentro (misiones extra): solo la primera vez.
+  #rewardEncounter(npc) {
+    if (!npc || this.completedEncounterIds.has(npc.id)) return;
+    if (!npc.rewardItem && !npc.rewardBtc) return;
+    this.completedEncounterIds.add(npc.id);
+    const parts = [];
+    let imageUrl = '';
+    if (npc.rewardItem && !this.inventory.hasItem(npc.rewardItem)) {
+      const def = this.storyPackage?.items?.get(npc.rewardItem);
+      if (def) {
+        this.#grantMissionItem(npc.rewardItem);
+        parts.push(def.name);
+        imageUrl = def.imageUrl || '';
+      }
+    }
+    if (npc.rewardBtc) {
+      this.#addBitcoin(npc.rewardBtc);
+      parts.push(`₿ ${npc.rewardBtc}`);
+    }
+    if (parts.length) {
+      this.hud?.showToast?.(`¡Misión extra cumplida! Ganaron: ${parts.join(' + ')}`, { durationMs: 5000, imageUrl, imageAlt: parts[0] });
+    }
+    this.#persistSaveState();
+  }
+
+  // ---- Eventos de la calle: alguien cerca pide ayuda; resolverlo da ₿ ----
+  #nextStreetEvent() {
+    const events = this.storyPackage?.streetEvents || [];
+    const available = events.filter((e) => e.mode !== 'libre' || this.freeRoamMode);
+    if (available.length === 0) return null;
+    if (this.streetEventQueue.length === 0) {
+      this.streetEventQueue = [...available].sort(() => Math.random() - 0.5);
+    }
+    return this.streetEventQueue.shift();
+  }
+
+  #clearStreetEvent(cooldown = 30) {
+    if (this.streetEvent?.ped) delete this.streetEvent.ped.cityEvent;
+    this.streetEvent = null;
+    // Durante la campaña los eventos son menos frecuentes, para no distraer de las islas.
+    this.streetEventTimer = this.freeRoamMode ? cooldown : Math.max(cooldown, 90);
+  }
+
+  #updateStreetEvents(dt) {
+    if (this.paused || !this.storyPackage?.streetEvents?.length || this.cutscene?.active) return;
+    const peds = this.trafficManager?.pedestrians || [];
+    if (this.streetEvent) {
+      const { ped } = this.streetEvent;
+      const alive = ped && peds.includes(ped) && ped.state !== 'downed';
+      const far = alive && Math.hypot(ped.x - this.player.x, ped.y - this.player.y) > 1600;
+      this.streetEvent.age += dt;
+      if (!alive || far || this.streetEvent.age > 150) {
+        this.#clearStreetEvent(15);
+        return;
+      }
+      ped.speed = 0;
+      this.streetEventBubbleTimer -= dt;
+      if (this.streetEventBubbleTimer <= 0) {
+        this.streetEventBubbleTimer = 6;
+        this.hud.showNpcSpeechBubble(ped, `❗ ${this.streetEvent.event.bubble}`, this.#worldToScreen(ped.x, ped.y - 22));
+      }
+      return;
+    }
+    this.streetEventTimer -= dt;
+    if (this.streetEventTimer > 0) return;
+    const candidates = peds.filter((p) => {
+      if (p.state === 'downed' || p.cityEvent) return false;
+      const d = Math.hypot(p.x - this.player.x, p.y - this.player.y);
+      return d > 140 && d < 650;
+    });
+    if (candidates.length === 0) {
+      this.streetEventTimer = 4;
+      return;
+    }
+    const event = this.#nextStreetEvent();
+    if (!event) return;
+    const ped = candidates[Math.floor(Math.random() * candidates.length)];
+    ped.cityEvent = event.id;
+    this.streetEvent = { event, ped, age: 0 };
+    this.streetEventBubbleTimer = 0;
+    if (event.notice) this.hud.showToast(`🔔 ${event.notice}`, 6000);
+  }
+
+  #findNearbyStreetEventPed() {
+    const ev = this.streetEvent;
+    if (!ev?.ped || this.player.inVehicleId) return null;
+    return Math.hypot(ev.ped.x - this.player.x, ev.ped.y - this.player.y) < 70 ? ev : null;
+  }
+
+  #playStreetEvent(ev) {
+    this.player.speed = 0;
+    const { event } = ev;
+    this.cutscene.play(event.cutscene, this.storyPackage.characters, (result) => {
+      if (result?.outcome === 'gameover') {
+        this.#clearStreetEvent(30);
+        return;
+      }
+      const firstTry = result?.stats && result.stats.wrong === 0;
+      const amount = firstTry ? event.rewardBtc : Math.ceil(event.rewardBtc / 2);
+      this.#addBitcoin(amount);
+      let imageUrl = '';
+      if (event.rewardItem && !this.inventory.hasItem(event.rewardItem)) {
+        const def = this.storyPackage?.items?.get(event.rewardItem);
+        if (def) {
+          this.#grantMissionItem(event.rewardItem);
+          imageUrl = def.imageUrl || '';
+        }
+      }
+      this.hud.showToast(`¡Bien hecho! +₿ ${amount}${firstTry ? '' : ' (la mitad, por los intentos)'}`, { durationMs: 4500, imageUrl });
+      this.#clearStreetEvent(35);
+      this.#persistSaveState();
+    });
+  }
+
   #grantMissionItem(itemId) {
     const itemDef = this.storyPackage?.items?.get(itemId);
     if (!itemDef) return;
@@ -609,6 +746,10 @@ export class Engine {
     this.collectibleFullToastCooldown = 0;
     this.worldCollectibles = [];
     this.collectedExtraIds = new Set();
+    this.streetEvent = null;
+    this.streetEventTimer = 25;
+    this.streetEventBubbleTimer = 0;
+    this.streetEventQueue = [];
     if (this.storyPackage?.items instanceof Map) {
       for (const item of this.storyPackage.items.values()) {
         if (item.category === 'extra' && item.worldPoint) {
@@ -803,6 +944,7 @@ export class Engine {
     const encounters = this.storyPackage?.encounters;
     if (!Array.isArray(encounters) || encounters.length === 0) return;
     for (const encounter of encounters) {
+      if (encounter.mode === 'libre' && !this.freeRoamMode) continue;
       try {
         const pos = this.cityMap.resolveIndoorOppositePosition(encounter.location);
         this.encounterLocationCodes.set(encounter.location, {
@@ -815,6 +957,8 @@ export class Engine {
           location: encounter.location,
           prompt: encounter.prompt,
           cutscene: encounter.cutscene,
+          rewardItem: encounter.rewardItem,
+          rewardBtc: encounter.rewardBtc,
           x: pos.x,
           y: pos.y,
           angle: pos.angle,
@@ -927,6 +1071,8 @@ export class Engine {
         } else {
           this.freeRoamMode = true;
           this.setObjective(null);
+          this.#buildEncounterNpcs();
+          this.hud.showToast('¡Modo libre! Busquen los techos de colores: hay misiones extra para llenar la mochila. Y atentos a la gente que pide ayuda en la calle: ganan ₿.', 9000);
           this.#persistSaveState();
         }
       });
@@ -1421,8 +1567,15 @@ export class Engine {
             this.cutscene.play(encounterNpc.cutscene, this.storyPackage.characters, (result) => {
               if (result?.outcome === 'gameover') {
                 this.triggerGameOver(result.reason || '¡Fin del camino!');
+                return;
               }
+              this.#rewardEncounter(encounterNpc);
             });
+            return;
+          }
+          const eventPed = this.#findNearbyStreetEventPed();
+          if (eventPed && this.cutscene) {
+            this.#playStreetEvent(eventPed);
             return;
           }
           const nearest = findNearestVehicle(this.player.x, this.player.y, this.vehicles);
@@ -1875,6 +2028,8 @@ export class Engine {
       this.hud.showToast('¡Vida recuperada en el hospital!');
     }
     this.wasInsideHospital = isInsideHospital;
+
+    this.#updateStreetEvents(dt);
 
     if (this.collectibleFullToastCooldown > 0) {
       this.collectibleFullToastCooldown = Math.max(0, this.collectibleFullToastCooldown - dt);

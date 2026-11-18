@@ -46,6 +46,8 @@ export function createSaveSnapshot({
   inventorySlots = [],
   collectedExtraIds = [],
   completedNpcPoints = [],
+  bitcoin = 0,
+  completedEncounterIds = [],
   player = {},
 } = {}) {
   const health = Number.isFinite(player.health) ? Math.max(1, Math.min(100, player.health)) : 100;
@@ -72,6 +74,10 @@ export function createSaveSnapshot({
       ? completedNpcPoints
         .filter((pt) => pt && Number.isFinite(pt.x) && Number.isFinite(pt.y))
         .map((pt) => ({ x: pt.x, y: pt.y }))
+      : [],
+    bitcoin: Math.max(0, Math.floor(Number(bitcoin) || 0)),
+    completedEncounterIds: Array.isArray(completedEncounterIds)
+      ? [...new Set(completedEncounterIds.map((id) => String(id)).filter(Boolean))]
       : [],
     player: {
       x: Number.isFinite(player.x) ? player.x : 0,
@@ -128,6 +134,10 @@ export function loadGameState(storyKey = 'default', storage = getDefaultStorage(
         : [],
       completedNpcPoints: Array.isArray(parsed.completedNpcPoints)
         ? parsed.completedNpcPoints.filter((pt) => pt && Number.isFinite(pt.x) && Number.isFinite(pt.y))
+        : [],
+      bitcoin: Math.max(0, Math.floor(Number(parsed.bitcoin) || 0)),
+      completedEncounterIds: Array.isArray(parsed.completedEncounterIds)
+        ? parsed.completedEncounterIds.map((id) => String(id)).filter(Boolean)
         : [],
       player: {
         x: parsed.player.x,
