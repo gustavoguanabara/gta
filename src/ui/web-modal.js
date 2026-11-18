@@ -98,7 +98,13 @@ export class WebModalController {
     const stageWidth = this.stageEl.clientWidth;
     if (!stageWidth) return;
     const targetVirtualWidth = 1120;
-    const scale = Math.min(0.8, Math.max(0.45, stageWidth / targetVirtualWidth));
+    // Las páginas de la propia historia (laboratorios) ya son adaptables: se muestran sin achicar.
+    let local = false;
+    try {
+      const u = new URL(this.url, globalThis.location?.href);
+      local = u.origin === globalThis.location?.origin && u.pathname.includes('/story/');
+    } catch { /* URL externa */ }
+    const scale = local ? 1 : Math.min(0.8, Math.max(0.45, stageWidth / targetVirtualWidth));
     const sizePct = `${(100 / scale).toFixed(4)}%`;
     this.iframe.style.width = sizePct;
     this.iframe.style.height = sizePct;
