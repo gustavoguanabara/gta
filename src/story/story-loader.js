@@ -450,6 +450,14 @@ export async function loadStoryPackage(basePath = './story', cityMap = null, opt
     cutscene.background = replaceLocationCodesWithNames(cutscene.background, locationNames);
     for (const step of cutscene.steps) {
       step.text = replaceLocationCodesWithNames(step.text, locationNames);
+      if (step.type === 'video' && step.url && !/^(?:https?:)?\/\//.test(step.url) && !step.url.startsWith(cleanBase)) {
+        step.url = `${cleanBase}/${step.url}`;
+      }
+      if (Array.isArray(step.transcript)) {
+        for (const line of step.transcript) {
+          line.text = replaceLocationCodesWithNames(line.text, locationNames);
+        }
+      }
       if (step.link?.relative) {
         step.link.url = `${cleanBase}/${step.link.url}`;
         step.link.relative = false;

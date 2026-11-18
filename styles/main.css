@@ -2508,3 +2508,10 @@ body {
 @media (prefers-reduced-motion: reduce) { .timer-badge.is-up { animation: none; } }
 .start-timer { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 10px 0 4px; font-weight: 700; color: #f8fafc; }
 .start-timer select { min-height: 40px; padding: 6px 10px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(15, 23, 42, 0.85); color: #f8fafc; font: inherit; }
+
+/* Diálogos en video */
+.cutscene-video-layer { position: absolute; inset: 0; z-index: 5; background: #000; display: flex; align-items: center; justify-content: center; border-radius: inherit; overflow: hidden; }
+.cutscene-video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+.cutscene-video-skip { position: absolute; right: 14px; bottom: 14px; appearance: none; border: 1px solid rgba(255,255,255,.45); background: rgba(10,14,22,.72); color: #fff; font-weight: 800; font-size: 14px; padding: 10px 16px; min-height: 44px; border-radius: 999px; cursor: pointer; }
+.cutscene-video-skip:hover, .cutscene-video-skip:focus-visible { background: #fbbf24; color: #111; border-color: #fbbf24; }
+.visually-hidden-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

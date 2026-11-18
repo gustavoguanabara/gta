@@ -83,6 +83,22 @@ En los diálogos de las misiones se pueden usar estas instrucciones:
 - OPCION: Seguir -> SIGUIENTE
 ```
 
+### Diálogos en video
+
+Los diálogos se ven como videos animados: título de misión, personajes que entran, quien habla resaltado, texto que se escribe solo y cofre con la letra. Los hace el proyecto [Remotion](https://www.remotion.dev) de la carpeta [`video/`](./video), a partir del mismo Markdown.
+
+En las misiones, `- VIDEO: videos/<id>.mp4` reemplaza a las falas simples que lo siguen. Las falas con opciones o con `LINK` siguen siendo interactivas en el juego. Si un video no carga, el juego muestra esas falas como diálogo común.
+
+Después de cambiar un texto:
+
+```bash
+cd video
+npm install
+npm run sync         # marca los bloques de video en story/missions y prepara los datos
+npm run render:all   # genera story/videos/*.mp4 (o: npm run render:all -- 03-volcan)
+npm run dev          # opcional: Remotion Studio para previsualizar
+```
+
 En el encabezado de cada misión:
 - `reward_item:` entrega un ítem al completar la misión.
 - `roof_color:` y `roof_logo:` pintan el techo del edificio de destino.

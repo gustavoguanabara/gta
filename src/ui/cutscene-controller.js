@@ -25,6 +25,14 @@ export class CutsceneController {
     this.linkBtn = document.getElementById('cutscene-link-btn');
     this.nextBtn = document.getElementById('cutscene-next-btn');
     this.webModal = new WebModalController();
+    this.videoLayer = document.getElementById('cutscene-video-layer');
+    this.videoEl = document.getElementById('cutscene-video');
+    this.videoSkipBtn = document.getElementById('cutscene-video-skip');
+    this.videoTranscriptEl = document.getElementById('cutscene-video-transcript');
+    this.videoActive = false;
+    this.videoEl?.addEventListener('ended', () => this.#endVideo());
+    this.videoEl?.addEventListener('error', () => this.#videoFailed());
+    this.videoSkipBtn?.addEventListener('click', () => this.#endVideo());
 
     this.active = false;
     this.awaitingDelivery = false;
@@ -186,9 +194,16 @@ export class CutsceneController {
     this.#clearFeedback();
     const step = this.cutscene.steps[this.stepIndex];
     if (!step) {
+      this.#hideVideo();
       this.finish({ outcome: 'complete', reason: '' });
       return;
     }
+
+    if (step.type === 'video') {
+      this.#playVideo(step);
+      return;
+    }
+    this.#hideVideo();
 
     if (step.type === 'deliver') {
       if (typeof this.onDeliverRequest === 'function') {
@@ -278,6 +293,53 @@ export class CutsceneController {
     }
   }
 
+  #playVideo(step) {
+    if (!this.videoLayer || !this.videoEl) {
+      this.#videoFailed();
+      return;
+    }
+    this.videoActive = true;
+    this.videoLayer.classList.remove('hidden');
+    if (this.videoTranscriptEl) {
+      this.videoTranscriptEl.textContent = (step.transcript || [])
+        .map((line) => `${line.speaker}: ${line.text}`)
+        .join(' ');
+    }
+    if (this.videoEl.getAttribute('src') !== step.url) this.videoEl.src = step.url;
+    try { this.videoEl.currentTime = 0; } catch { /* ignore */ }
+    const playing = this.videoEl.play();
+    if (playing?.catch) playing.catch(() => { /* sin autoplay: queda el botón Saltar */ });
+  }
+
+  #hideVideo() {
+    if (!this.videoActive && this.videoLayer?.classList.contains('hidden')) return;
+    this.videoActive = false;
+    this.videoEl?.pause();
+    this.videoLayer?.classList.add('hidden');
+  }
+
+  #endVideo() {
+    if (!this.active || !this.videoActive) return;
+    this.videoActive = false;
+    this.videoEl?.pause();
+    this.prevAction = true;
+    this.stepIndex += 1;
+    this.selectedChoiceIndex = 0;
+    this.renderStep();
+  }
+
+  // Si el video no carga, se muestran sus falas como diálogo común.
+  #videoFailed() {
+    if (!this.active) return;
+    const step = this.cutscene?.steps?.[this.stepIndex];
+    if (!step || step.type !== 'video') return;
+    this.videoActive = false;
+    this.videoLayer?.classList.add('hidden');
+    const speech = (step.transcript || []).map((line) => ({ speaker: line.speaker, text: line.text }));
+    this.cutscene.steps.splice(this.stepIndex, 1, ...speech);
+    this.renderStep();
+  }
+
   openStepLink() {
     if (!this.active || this.awaitingDelivery || this.webModal.active) return;
     const step = this.cutscene?.steps?.[this.stepIndex];
@@ -300,6 +362,13 @@ export class CutsceneController {
     }
     const step = this.cutscene?.steps?.[this.stepIndex];
     if (!step) return;
+
+    if (step.type === 'video') {
+      const actionNow = Boolean(inputState.actionPressed ?? inputState.action);
+      if (actionNow && !this.prevAction) this.#endVideo();
+      this.prevAction = actionNow;
+      return;
+    }
 
     const up = Boolean(inputState.moveY < -0.5);
     const down = Boolean(inputState.moveY > 0.5);
@@ -461,6 +530,7 @@ export class CutsceneController {
   }
 
   finish(result) {
+    this.#hideVideo();
     this.#clearFeedback();
     if (result && typeof result === 'object') result.stats = { ...this.stats };
     this.webModal.close();

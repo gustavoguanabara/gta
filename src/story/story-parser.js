@@ -158,6 +158,29 @@ export function parseCharacterMarkdown(rawText, fileName = 'character.md') {
 
 const OPTION_PREFIXES = ['- OPCAO:', '- OPCION:', '- OPCIÓN:'];
 
+// Un paso VIDEO reemplaza a las falas simples que lo siguen (quedan como transcripción).
+// Una fala con opciones, LINK o una entrega no se absorbe: sigue siendo interactiva.
+function absorbVideoTranscripts(cutscene) {
+  const steps = [];
+  let currentVideo = null;
+  for (const step of cutscene.steps) {
+    if (step.type === 'video') {
+      currentVideo = step;
+      steps.push(step);
+      continue;
+    }
+    const isPlainSpeech = !step.type && !step.link && !(step.choices && step.choices.length > 0);
+    if (currentVideo && isPlainSpeech) {
+      currentVideo.transcript.push({ speaker: step.speaker, text: step.text });
+      continue;
+    }
+    currentVideo = null;
+    steps.push(step);
+  }
+  cutscene.steps = steps;
+  return cutscene;
+}
+
 function parseCutsceneBlock(blockLines, startLine, fileName) {
   const cutscene = {
     leftChar: '',
@@ -182,6 +205,16 @@ function parseCutsceneBlock(blockLines, startLine, fileName) {
         speaker: '',
         text: '',
       });
+      continue;
+    }
+
+    if (trimmed.startsWith('- VIDEO:')) {
+      const videoPath = trimmed.slice('- VIDEO:'.length).trim();
+      if (!/\.(mp4|webm)$/i.test(videoPath)) {
+        throw new StoryParseError(fileName, lineNum, `Video inválido "${videoPath}". Usen un archivo .mp4 o .webm dentro de la historia.`);
+      }
+      pendingChoices = null;
+      cutscene.steps.push({ type: 'video', url: validateAssetPath(videoPath, fileName, lineNum), speaker: '', text: '', transcript: [] });
       continue;
     }
 
@@ -228,7 +261,7 @@ function parseCutsceneBlock(blockLines, startLine, fileName) {
       }
 
       const lastStep = cutscene.steps[cutscene.steps.length - 1];
-      if (!lastStep || lastStep.type === 'deliver') {
+      if (!lastStep || lastStep.type === 'deliver' || lastStep.type === 'video') {
         throw new StoryParseError(
           fileName,
           lineNum,
@@ -337,7 +370,7 @@ function parseCutsceneBlock(blockLines, startLine, fileName) {
     }
   }
 
-  return cutscene;
+  return absorbVideoTranscripts(cutscene);
 }
 
 function splitMarkdownSections(body, bodyStartLine, allowedNames) {

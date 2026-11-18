@@ -14,6 +14,7 @@ left: equipo
 right: camila
 bg: Llamada desde Torre IA
 
+- VIDEO: videos/05-torre-ia-inicio-1.mp4
 - Camila: Hola, equipo, soy Camila, tutora de IA. Un videojuego necesita un anti-cheat y al grupo de la clase le llega spam.
 - Camila: Vengan a la Torre IA a entrenar una inteligencia artificial. Ojo: la IA también se equivoca.
 
@@ -22,6 +23,7 @@ left: equipo
 right: camila
 bg: Interior de COM-50
 
+- VIDEO: videos/05-torre-ia-fin-1.mp4
 - Camila: Esta es la Torre IA. IA desde cero (Fase 1) explica qué es y cómo funciona. Profundización en IA (Fase 2) trabaja técnicas, aplicaciones y desafíos éticos.
 - Camila: Para ganarse el cofre, resuelvan los desafíos del laboratorio. Cuando terminen, les va a dar un código de desbloqueo.
 - LINK: Abrir laboratorio -> puzzles/ia.html
@@ -31,5 +33,6 @@ bg: Interior de COM-50
 - OPCION: ACCESO -> REINTENTAR: Ese código no es de esta isla. Revisen el laboratorio.
 - OPCION: UMBRAL -> CORRECTO: ¡Ese es! Terminaron los desafíos de Torre IA.
 - OPCION: Volver a abrir el laboratorio -> ATRAS
+- VIDEO: videos/05-torre-ia-fin-2.mp4
 - Camila: Para la bitácora: Un modelo ajusta su regla mirando ejemplos. Cuando se equivoca, una persona tiene que revisar.
 - Camila: Acá está el cofre de Torre IA. Adentro hay una letra: T. ¡Anótenla!

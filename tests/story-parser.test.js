@@ -78,6 +78,10 @@ test('carrega e valida o pacote de história de exemplo completo contra a cidade
       if (step.link?.relative) {
         assert.ok(fs.existsSync(path.join(storyDir, step.link.url)), `Página ausente: ${step.link.url}`);
       }
+      if (step.type === 'video') {
+        assert.ok(fs.existsSync(path.join(storyDir, step.url)), `Video ausente: ${step.url} (corran npm run render:all en video/)`);
+        assert.ok(step.transcript.length > 0, `Video sin falas: ${step.url}`);
+      }
     }
     if (m.rewardItem) {
       const item = parseItemMarkdown(
@@ -598,6 +602,51 @@ target: COM-02
 - mentor: Hola
 - LINK: Mal -> ../fuera.html
 `, 'm-es.md'),
+    StoryParseError,
+  );
+});
+
+test('- VIDEO: absorbe las falas simples siguientes y deja interactivas las que tienen opciones o LINK', () => {
+  const mission = parseMissionMarkdown(`---
+id: m-video
+title: Video
+start: CASA-01
+target: COM-02
+---
+## CUTSCENE_FIM
+left: prota
+right: mentor
+- VIDEO: videos/m-video-fin-1.mp4
+- mentor: Hola.
+- prota: Hola, ¿qué hay?
+- mentor: Abran el laboratorio.
+- LINK: Abrir -> puzzles/web.html
+- mentor: ¿Código?
+- OPCION: A -> CORRECTO: Bien.
+- OPCION: B -> REINTENTAR: No.
+- VIDEO: videos/m-video-fin-2.mp4
+- mentor: Acá está el cofre.
+`, 'm-video.md');
+  const steps = mission.outroCutscene.steps;
+  assert.equal(steps.length, 4);
+  assert.equal(steps[0].type, 'video');
+  assert.equal(steps[0].url, 'videos/m-video-fin-1.mp4');
+  assert.deepEqual(steps[0].transcript.map((l) => l.speaker), ['mentor', 'prota']);
+  assert.ok(steps[1].link);
+  assert.equal(steps[2].choices.length, 2);
+  assert.equal(steps[3].type, 'video');
+  assert.equal(steps[3].transcript[0].text, 'Acá está el cofre.');
+
+  assert.throws(
+    () => parseMissionMarkdown(`---
+id: m
+title: X
+start: CASA-01
+target: COM-02
+---
+## CUTSCENE_FIM
+- VIDEO: videos/malo.gif
+`, 'm.md'),
     StoryParseError,
   );
 });

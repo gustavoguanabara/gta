@@ -226,6 +226,11 @@
             <span id="cutscene-right-name" class="cutscene-actor-name"></span>
           </div>
         </div>
+        <div id="cutscene-video-layer" class="cutscene-video-layer hidden">
+          <video id="cutscene-video" class="cutscene-video" playsinline muted preload="auto" aria-describedby="cutscene-video-transcript"></video>
+          <div id="cutscene-video-transcript" class="visually-hidden-text"></div>
+          <button id="cutscene-video-skip" type="button" class="cutscene-video-skip">Saltar ▸</button>
+        </div>
         <div class="cutscene-dialog-box">
           <div id="cutscene-speaker" class="cutscene-speaker"></div>
           <p id="cutscene-text" class="cutscene-text"></p>
