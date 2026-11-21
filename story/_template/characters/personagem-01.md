@@ -1,6 +1,6 @@
 ---
 id: personagem-01
-name: João da Silva
+name: marcelo castrp
 profile: Jovem explorador da cidade, sempre pronto para encarar novos desafios.
 traits: Ágil, curioso, determinado
 skin_color: #f1c27d
